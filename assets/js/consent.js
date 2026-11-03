@@ -95,7 +95,7 @@
         '<div class="fpgc-prefs">' +
           '<details><summary>' + T.functional + '<span class="fpgc-always">' + T.always + '</span></summary><p>' + T.functionalText + '</p></details>' +
           '<details><summary>' + T.statistics + '<input type="checkbox" data-cat="statistics" aria-label="' + T.statistics + '"></summary><p>' + T.statisticsText + '</p></details>' +
-          '<details><summary>' + T.marketing + '<input type="checkbox" data-cat="marketing" aria-label="' + T.marketing + '"></summary><p>' + T.marketingText + '<br><strong>' + T.services + '</strong></p></details>' +
+          '<details><summary>' + T.marketing + '<input type="checkbox" data-cat="marketing" aria-label="' + T.marketing + '"></summary><p>' + T.marketingText + (document.querySelector('[data-yt]') ? '<br><strong>' + T.services + '</strong>' : '') + '</p></details>' +
         '</div>' +
         '<div class="fpgc-buttons">' +
           '<button type="button" class="fpgc-primary" data-act="accept">' + T.accept + '</button>' +
