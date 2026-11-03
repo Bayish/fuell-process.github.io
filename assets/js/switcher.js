@@ -9,7 +9,7 @@
     ['/v4/', '4', 'Re:Build'],
     ['/v5/', '5', 'Vention']
   ];
-  var BASE = '/fuell-process-preview/';
+  var BASE = '/fuell-process.github.io/';
   var path = '/' + location.pathname.replace(/index\.html$/, '').slice(BASE.length);
   var match = path.match(/^\/v[1345]\//);
   var current = match ? match[0] : '/';

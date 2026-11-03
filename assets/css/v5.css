@@ -35,7 +35,7 @@ h1, h2, h3 { font-weight: 700; letter-spacing: -0.03em; }
 .btn--ghost:hover { border-color: var(--ink); }
 
 /* Hero */
-.v-hero { position: relative; min-height: min(100svh, 920px); display: flex; align-items: center; overflow: hidden; color: #fff; background: var(--deep) url("/fuell-process-preview/assets/video/build-hd-poster.webp") center / cover; }
+.v-hero { position: relative; min-height: min(100svh, 920px); display: flex; align-items: center; overflow: hidden; color: #fff; background: var(--deep) url("/fuell-process.github.io/assets/video/build-hd-poster.webp") center / cover; }
 .v-hero__video { position: absolute; inset: 0; }
 .v-hero__shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(6,24,44,.95) 0%, rgba(6,24,44,.8) 40%, rgba(4,63,113,.35) 100%), linear-gradient(0deg, rgba(6,24,44,.9), transparent 35%); }
 .v-hero__inner { position: relative; padding-top: 140px; padding-bottom: 80px; }

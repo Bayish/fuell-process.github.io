@@ -28,7 +28,7 @@ h1, h2, h3 { font-weight: 400; letter-spacing: .01em; }
 .btn--ghost:hover { border-color: var(--accent); }
 
 /* Hero */
-.r-hero { position: relative; min-height: 100svh; display: flex; align-items: flex-end; overflow: hidden; background: #000 url("/fuell-process-preview/assets/video/tanks-hd-poster.webp") center / cover; }
+.r-hero { position: relative; min-height: 100svh; display: flex; align-items: flex-end; overflow: hidden; background: #000 url("/fuell-process.github.io/assets/video/tanks-hd-poster.webp") center / cover; }
 .r-hero__video { position: absolute; inset: 0; filter: grayscale(.85) contrast(1.1) brightness(.75); }
 .r-hero__shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(18,18,18,.7), rgba(18,18,18,.25) 40%, rgba(18,18,18,.95)); }
 .r-hero__inner { position: relative; padding-top: 160px; padding-bottom: clamp(48px, 7vw, 88px); }
@@ -115,7 +115,7 @@ h1, h2, h3 { font-weight: 400; letter-spacing: .01em; }
 .faq summary::after { border-radius: 999px; color: var(--accent); }
 
 /* CTA */
-.r-cta { position: relative; overflow: hidden; padding-block: clamp(110px, 14vw, 200px); text-align: center; background: #000 url("/fuell-process-preview/assets/video/hoses-hd-poster.webp") center / cover; }
+.r-cta { position: relative; overflow: hidden; padding-block: clamp(110px, 14vw, 200px); text-align: center; background: #000 url("/fuell-process.github.io/assets/video/hoses-hd-poster.webp") center / cover; }
 .r-cta__video { position: absolute; inset: 0; filter: grayscale(.6) brightness(.5); }
 .r-cta__shade { position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(18,18,18,.45), rgba(18,18,18,.92) 70%); }
 .r-cta__inner { position: relative; }
