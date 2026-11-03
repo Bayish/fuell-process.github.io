@@ -1,2 +1,17 @@
+# fuell-process.com – all crawlers welcome, including AI search and AI training crawlers.
 User-agent: *
-Disallow: /
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Optional, once confirmed by management (Cloudflare Content Signals):
+# Content-Signal: search=yes, ai-input=yes, ai-train=yes
+
+Sitemap: https://fuell-process.com/sitemap.xml
