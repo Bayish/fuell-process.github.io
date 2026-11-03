@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="googlebot" content="noindex, nofollow">
+  <style>html.fpg-locked body{display:none!important}html.fpg-denied body>*:not(.fpg-deny){display:none!important}.fpg-deny{font:16px/1.6 system-ui,sans-serif;max-width:520px;margin:18vh auto;padding:0 24px;color:#1b1f23}.fpg-deny button{margin-top:16px;padding:10px 18px;font:inherit;cursor:pointer}</style>
+  <script>
+  /* Preview access check – simple browser prompt, not real security. */
+  (function () {
+    var H = '9a2ebb00508dfcb446b7c845bf572ad95cef7db6b07c463ba793637099b58980', K = 'fpg-preview', root = document.documentElement;
+    try { if (sessionStorage.getItem(K) === H) return; } catch (e) {}
+    root.classList.add('fpg-locked');
+    function deny() {
+      function show() {
+        root.classList.remove('fpg-locked'); root.classList.add('fpg-denied');
+        var d = document.createElement('div'); d.className = 'fpg-deny';
+        d.innerHTML = '<h1 style="font-size:24px">Geschützte Vorschau / Protected preview</h1><p>Benutzername oder Passwort falsch. / Wrong username or password.</p><button type="button">Erneut versuchen / Try again</button>';
+        d.querySelector('button').onclick = function () { location.reload(); };
+        document.body.insertBefore(d, document.body.firstChild);
+      }
+      if (document.body) show(); else document.addEventListener('DOMContentLoaded', show);
+    }
+    var u = window.prompt('Geschützte Vorschau – Benutzername / Protected preview – username:');
+    if (u === null) return deny();
+    var p = window.prompt('Passwort / Password:');
+    if (p === null) return deny();
+    if (!(window.crypto && crypto.subtle)) return deny();
+    crypto.subtle.digest('SHA-256', new TextEncoder().encode(u.trim() + ':' + p)).then(function (buf) {
+      var h = Array.prototype.map.call(new Uint8Array(buf), function (x) { return ('0' + x.toString(16)).slice(-2); }).join('');
+      if (h === H) { try { sessionStorage.setItem(K, H); } catch (e) {} root.classList.remove('fpg-locked'); }
+      else deny();
+    }, deny);
+  })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Version 5 – Vention | Cookie-Richtlinie | Füll Process Group</title>
+  <meta name="description" content="Die Website der Füll Process Group verwendet keine Cookies, keinen lokalen Speicher und keine Tracking-Dienste.">
+  <!-- Design version 5 (Vention) for review only: not indexed, canonical points to the live page. -->
+  <link rel="canonical" href="https://fuell-process.com/">
+  <meta name="theme-color" content="#06182c">
+  <link rel="icon" href="/fuell-process-preview/assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/fuell-process-preview/assets/img/apple-touch-icon.png">
+  <link rel="preload" href="/fuell-process-preview/assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/fuell-process-preview/assets/css/v5.css">
+  <script>document.documentElement.classList.add('js')</script>
+</head>
+<body class="legal">
+  <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
+
+  <header class="site-header">
+    <div class="nav-pill">
+      <a class="brand" href="/fuell-process-preview/v5/" aria-label="Füll Process Group – Startseite">
+        <img src="/fuell-process-preview/assets/img/fuell-process-group-logo.png" width="300" height="78" alt="Füll Process Group">
+      </a>
+      <nav class="nav-main" aria-label="Hauptnavigation">
+        <a href="/fuell-process-preview/v5/#gruppe">Gruppe</a>
+        <a href="/fuell-process-preview/v5/#unternehmen">Unternehmen</a>
+        <a href="/fuell-process-preview/v5/#maerkte">Märkte</a>
+        <a href="/fuell-process-preview/v5/#werte">Werte</a>
+        <a href="/fuell-process-preview/v5/#faq">FAQ</a>
+      </nav>
+      <div class="nav-actions">
+        <div class="lang-switch" role="group" aria-label="Sprache"><span aria-current="true" lang="de">DE</span><a href="/fuell-process-preview/v5/en/cookie-policy-eu/" hreflang="en" lang="en" aria-label="English">EN</a></div>
+        <a class="btn btn--primary" href="/fuell-process-preview/v5/#kontakt">Kontakt aufnehmen</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-mobile" aria-label="Menü öffnen">
+          <svg class="icon-open" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <svg class="icon-close" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </div>
+    <nav class="nav-mobile" id="nav-mobile" aria-label="Mobile Navigation">
+      <a href="/fuell-process-preview/v5/#gruppe">Gruppe</a>
+      <a href="/fuell-process-preview/v5/#unternehmen">Unternehmen</a>
+      <a href="/fuell-process-preview/v5/#maerkte">Märkte</a>
+      <a href="/fuell-process-preview/v5/#werte">Werte</a>
+      <a href="/fuell-process-preview/v5/#faq">FAQ</a>
+      <a href="/fuell-process-preview/v5/#kontakt">Kontakt</a>
+    </nav>
+  </header>
+
+  <main id="inhalt">
+    <section class="page-hero">
+      <div class="container">
+        <ol class="breadcrumb" aria-label="Breadcrumb">
+          <li><a href="/fuell-process-preview/v5/">Startseite</a></li>
+          <li aria-current="page">Cookie Policy (EU)</li>
+        </ol>
+        <h1>Cookie Policy (EU)</h1>
+      </div>
+    </section>
+    <div class="container">
+      <article class="prose">
+<p><em>Diese Cookie-Richtlinie wurde zuletzt am 1. Oktober 2024 aktualisiert und gilt für Bürger und Einwohner mit ständigem Wohnsitz im Europäischen Wirtschaftsraum und der Schweiz.</em><br></p>
+<h2>1. Einführung</h2>
+<p>Unsere Website, <a href="https://fuell-process.com">https://fuell-process.com</a> (im folgenden: „Die Website“) verwendet Cookies und ähnliche Technologien (der Einfachheit halber werden all diese unter „Cookies“ zusammengefasst). Cookies werden außerdem von uns beauftragten Drittparteien platziert. In dem unten stehendem Dokument informieren wir dich über die Verwendung von Cookies auf unserer Website.</p>
+<h2>2. Was sind Cookies?</h2>
+<p>Ein Cookie ist eine einfache kleine Datei, die gemeinsam mit den Seiten einer Internetadresse versendet und vom Webbrowser auf dem PC oder einem anderen Gerät gespeichert werden kann. Die darin gespeicherten Informationen können während folgender Besuche zu unseren oder den Servern relevanter Drittanbieter gesendet werden.</p>
+<h2>3. Was sind Skripte?</h2>
+<p>Ein Script ist ein Stück Programmcode, das benutzt wird, um unserer Website Funktionalität und Interaktivität zu ermöglichen. Dieser Code wird auf unseren Servern oder auf deinem Gerät ausgeführt.</p>
+<h2>4. Was ist ein Web Beacon?</h2>
+<p>Ein Web-Beacon (auch Pixel-Tag genannt), ist ein kleines unsichtbares Textfragment oder Bild auf einer Website, das benutzt wird, um den Verkehr auf der Website zu überwachen. Um dies zu ermöglichen werden diverse Daten von dir mittels Web-Beacons gespeichert.</p>
+<h2>5. Cookies</h2>
+<h3>5.1 Technische oder funktionelle Cookies</h3>
+<p>Einige Cookies stellen sicher, dass bestimmte Teile der Website ordnungsgemäß funktionieren und deine Benutzereinstellungen weiterhin in Erinnerung bleiben. Durch das Setzen funktionaler Cookies erleichtern wir dir den Besuch unserer Website. Auf diese Weise musst du beim Besuch unserer Website nicht wiederholt dieselben Informationen eingeben, so bleiben Artikel beispielsweise in deinem Warenkorb, bis du bezahlst. Wir können diese Cookies ohne deine Einwilligung platzieren.</p>
+<h3>5.2 Marketing- / Tracking-Cookies</h3>
+<p>Marketing- / Tracking-Cookies sind Cookies oder eine andere Form der lokalen Speicherung, die zur Erstellung von Benutzerprofilen verwendet werden, um Werbung anzuzeigen oder den Benutzer auf dieser Website oder über mehrere Websites hinweg für ähnliche Marketingzwecke zu verfolgen.</p>
+<h2>6. Platzierte Cookies</h2>
+<details><summary><h3>WordPress</h3>
+<p>Funktional</p>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="/fuell-process-preview/assets/img/fuell-process-group-logo.png" width="300" height="78" alt="Füll Process Group" loading="lazy">
+          <p>Dosiersysteme, Systemlösungen und Laborautomation aus einer Gruppe.</p>
+          <address>Füll Process SA · Moosgrabenstrasse 12 · 8595 Altnau · Schweiz</address>
+        </div>
+        <div>
+          <h2>Gruppe</h2>
+          <ul>
+            <li><a href="/fuell-process-preview/v5/#gruppe">Über die Gruppe</a></li>
+            <li><a href="/fuell-process-preview/v5/#maerkte">Märkte</a></li>
+            <li><a href="/fuell-process-preview/v5/#faq">FAQ</a></li>
+            <li><a href="/fuell-process-preview/v5/#kontakt">Kontakt</a></li>
+            <li><a href="https://www.youtube.com/@fullprocesss.a.2441" rel="noopener">YouTube</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Unternehmen</h2>
+          <ul>
+            <li><a href="https://fuell-dispensing.com/" rel="noopener">Füll Systembau</a></li>
+            <li><a href="https://tecosbruhinag.ch/" rel="noopener">Tecos Bruhin</a></li>
+            <li><a href="https://www.fuell-labautomation.com/" rel="noopener">Füll Lab Automation</a></li>
+            <li><a href="https://polystone-chemical.de/" rel="noopener">POLYSTONE Chemical</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Rechtliches</h2>
+          <ul><li><a href="/fuell-process-preview/v5/impressum/">Impressum</a></li><li><a href="/fuell-process-preview/v5/datenschutzerklaerung/">Datenschutzerklärung</a></li><li><a href="/fuell-process-preview/v5/cookie-policy-eu/">Cookie-Richtlinie</a></li></ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Füll Process SA</span>
+        <span>Kein Tracking, keine Cookies beim Seitenaufruf.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/fuell-process-preview/assets/js/switcher.js"></script>
+  <script src="/fuell-process-preview/assets/js/main.js" defer></script>
+</body>
+</html>

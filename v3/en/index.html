@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="googlebot" content="noindex, nofollow">
+  <style>html.fpg-locked body{display:none!important}html.fpg-denied body>*:not(.fpg-deny){display:none!important}.fpg-deny{font:16px/1.6 system-ui,sans-serif;max-width:520px;margin:18vh auto;padding:0 24px;color:#1b1f23}.fpg-deny button{margin-top:16px;padding:10px 18px;font:inherit;cursor:pointer}</style>
+  <script>
+  /* Preview access check – simple browser prompt, not real security. */
+  (function () {
+    var H = '9a2ebb00508dfcb446b7c845bf572ad95cef7db6b07c463ba793637099b58980', K = 'fpg-preview', root = document.documentElement;
+    try { if (sessionStorage.getItem(K) === H) return; } catch (e) {}
+    root.classList.add('fpg-locked');
+    function deny() {
+      function show() {
+        root.classList.remove('fpg-locked'); root.classList.add('fpg-denied');
+        var d = document.createElement('div'); d.className = 'fpg-deny';
+        d.innerHTML = '<h1 style="font-size:24px">Geschützte Vorschau / Protected preview</h1><p>Benutzername oder Passwort falsch. / Wrong username or password.</p><button type="button">Erneut versuchen / Try again</button>';
+        d.querySelector('button').onclick = function () { location.reload(); };
+        document.body.insertBefore(d, document.body.firstChild);
+      }
+      if (document.body) show(); else document.addEventListener('DOMContentLoaded', show);
+    }
+    var u = window.prompt('Geschützte Vorschau – Benutzername / Protected preview – username:');
+    if (u === null) return deny();
+    var p = window.prompt('Passwort / Password:');
+    if (p === null) return deny();
+    if (!(window.crypto && crypto.subtle)) return deny();
+    crypto.subtle.digest('SHA-256', new TextEncoder().encode(u.trim() + ':' + p)).then(function (buf) {
+      var h = Array.prototype.map.call(new Uint8Array(buf), function (x) { return ('0' + x.toString(16)).slice(-2); }).join('');
+      if (h === H) { try { sessionStorage.setItem(K, H); } catch (e) {} root.classList.remove('fpg-locked'); }
+      else deny();
+    }, deny);
+  })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Version 3 – Machina | Füll Process Group – Dosing Systems & Lab Automation | Switzerland</title>
+  <meta name="description" content="Füll Process Group brings together Füll Systembau, Tecos Bruhin and Füll Lab Automation: dosing systems, storage systems and lab automation from one source.">
+  <!-- Design version 3 (Machina) for review only: not indexed, canonical points to the live page. -->
+  <link rel="canonical" href="https://fuell-process.com/">
+  <meta name="theme-color" content="#0b0b0c">
+  <link rel="icon" href="/fuell-process-preview/assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/fuell-process-preview/assets/img/apple-touch-icon.png">
+  <link rel="preload" href="/fuell-process-preview/assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/fuell-process-preview/assets/css/v3.css">
+  <script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+  <a class="skip-link" href="#inhalt">Skip to content</a>
+
+  <header class="site-header">
+    <div class="nav-pill">
+      <a class="brand" href="/fuell-process-preview/v3/en/" aria-label="Füll Process Group – Home">
+        <img src="/fuell-process-preview/assets/img/fuell-process-group-logo.png" width="300" height="78" alt="Füll Process Group">
+      </a>
+      <nav class="nav-main" aria-label="Main navigation">
+        <a href="#group">Group</a>
+        <a href="#companies">Companies</a>
+        <a href="#markets">Markets</a>
+        <a href="#values">Values</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="nav-actions">
+        <div class="lang-switch" role="group" aria-label="Language"><a href="/fuell-process-preview/v3/" hreflang="de" lang="de" aria-label="Deutsch">DE</a><span aria-current="true" lang="en">EN</span></div>
+        <a class="btn btn--outline" href="#contact">Contact</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-mobile" aria-label="Open menu">
+          <svg class="icon-open" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <svg class="icon-close" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </div>
+    <nav class="nav-mobile" id="nav-mobile" aria-label="Mobile navigation">
+      <a href="#group">Group</a>
+      <a href="#companies">Companies</a>
+      <a href="#markets">Markets</a>
+      <a href="#values">Values</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="inhalt">
+    <section class="m-hero" aria-labelledby="hero-title">
+      <video class="m-hero__video" data-bg muted playsinline loop preload="none" poster="/fuell-process-preview/assets/video/build-hd-poster.webp" aria-hidden="true"><source data-src="/fuell-process-preview/assets/video/build-hd.mp4" type="video/mp4"></video>
+      <div class="m-hero__shade" aria-hidden="true"></div>
+      <div class="container m-hero__inner">
+        <h1 id="hero-title">
+          <span class="m-kicker">Füll Process Group — Dosing systems &amp; lab automation</span>
+          <span class="visually-hidden">Dosing. System solutions. Automation.</span>
+          <span class="m-title" aria-hidden="true" data-scramble="DOSING. SYSTEM SOLUTIONS. AUTOMATION.">DOSING. SYSTEM SOLUTIONS. AUTOMATION.</span>
+        </h1>
+        <p class="m-hero__lead">Four specialised companies – Füll Systembau, Tecos Bruhin, Füll Lab Automation and POLYSTONE Chemical – develop dosing systems, storage systems and lab automation as well as high-quality colour and beauty products.</p>
+        <div class="m-hero__actions">
+          <a class="btn btn--primary" href="#companies">Explore our companies <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a class="btn btn--outline" href="#contact">Contact</a>
+        </div>
+      </div>
+      <a class="m-scroll" href="#group" aria-label="Scroll down"><span></span></a>
+    </section>
+
+    <section class="m-facts" aria-label="The group in figures"><div class="container"><dl class="m-facts__grid"><div class="fact" data-reveal style="--d:0.00s"><dt class="visually-hidden">Werner Füll founds the company</dt><dd><span class="fact__value">1965</span><span class="fact__label">Werner Füll founds the company</span></dd></div><div class="fact" data-reveal style="--d:0.08s"><dt class="visually-hidden">client-specific dispensing plants and tank farms worldwide</dt><dd><span class="fact__value"><span data-count="2500">2500</span><span class="plus">+</span></span><span class="fact__label">client-specific dispensing plants and tank farms worldwide</span></dd></div><div class="fact" data-reveal style="--d:0.16s"><dt class="visually-hidden">specialised companies in Switzerland, Germany and France</dt><dd><span class="fact__value">4</span><span class="fact__label">specialised companies in Switzerland, Germany and France</span></dd></div><div class="fact" data-reveal style="--d:0.24s"><dt class="visually-hidden">years average length of service</dt><dd><span class="fact__value"><span data-count="10">10</span><span class="plus">+</span></span><span class="fact__label">years average length of service</span></dd></div></dl></div></section>
+
+    <section class="section" id="group" aria-labelledby="group-title">
+      <div class="container about">
+        <div class="about__text" data-reveal>
+          <p class="eyebrow">/ About the group</p>
+          <h2 class="h2" id="group-title">One group. Four specialists – from dosing technology to cosmetics.</h2>
+          <p class="lead">Füll Process SA, based in Altnau in the canton of Thurgau, is the parent company of the Füll Process Group.</p>
+          <p>It brings together four specialised companies: Füll Systembau GmbH in Idstein (Germany), Tecos Bruhin AG in Altnau (Switzerland), Füll Lab Automation GmbH in Ostfildern (Germany) and POLYSTONE Chemical GmbH with production in Blieskastel (Germany) and Bitche (France). They develop and manufacture gravimetric and volumetric dosing systems, agitators, storage systems and laboratory automation as well as high-quality colour and beauty products for professional beauty brands worldwide.</p>
+          <p>Solutions for diverse markets: paints and coatings, printing inks, sealants and adhesives, cosmetics and care products, food, flavors, fine chemicals and textiles, and plant protection.</p>
+        </div>
+        <figure class="org" data-reveal style="--d:.1s">
+          <figcaption>Structure of the Füll Process Group</figcaption>
+          <ol>
+            <li>
+              <div class="org__node org__node--group"><strong>Füll Process SA</strong><span>Altnau, Switzerland · Parent company</span></div>
+              <ol class="org__level">
+                <li><div class="org__node org__node--co co-sb"><strong>Füll Systembau GmbH</strong><span>Idstein, Germany · Dosing systems &amp; agitators</span></div></li>
+                <li><div class="org__node org__node--co co-tecos"><strong>Tecos Bruhin AG</strong><span>Moosgrabenstrasse 12, Altnau (CH) · Dosing of pasty media</span></div></li>
+                <li><div class="org__node org__node--co co-lab"><strong>Füll Lab Automation GmbH</strong><span>Ostfildern, Germany · Lab automation</span></div></li>
+                <li><div class="org__node org__node--co co-poly"><strong>POLYSTONE Chemical GmbH</strong><span>Blieskastel (DE) and Bitche (FR) · Cosmetics &amp; private label</span></div></li>
+              </ol>
+            </li>
+          </ol>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section m-cap" id="companies" aria-labelledby="companies-title">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">/ Our companies</p>
+          <h2 class="h2" id="companies-title"><span class="visually-hidden">Four companies. One group.</span><span aria-hidden="true" data-scramble="FOUR COMPANIES. ONE GROUP.">FOUR COMPANIES. ONE GROUP.</span></h2>
+        </div>
+        <div class="rows">
+          <article class="row row--sb" data-reveal>
+            <div class="row__media"><video class="row__video" data-bg muted playsinline loop preload="none" poster="/fuell-process-preview/assets/video/tanks-hd-poster.webp" aria-hidden="true"><source data-src="/fuell-process-preview/assets/video/tanks-hd.mp4" type="video/mp4"></video><span class="row__tag">/01 — Idstein · Germany</span></div>
+            <div class="row__body">
+              <p class="row__idx">/01</p>
+              <h3><span class="visually-hidden">Füll Systembau</span><span aria-hidden="true" data-scramble="FÜLL SYSTEMBAU">FÜLL SYSTEMBAU</span></h3>
+              <p>Production of gravimetric and volumetric dosing systems, agitators, storage systems and other equipment. Development of gravimetric dosing systems and customer-specific process automation.</p>
+              <ul class="tags" aria-label="Focus areas"><li>Dosing systems</li><li>Agitators</li><li>Storage systems</li><li>Process automation</li></ul>
+              <a class="btn btn--outline" href="https://fuell-dispensing.com/?lang=en" rel="noopener">Füll Systembau – dosing systems &amp; agitators <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+          </article><article class="row row--tecos row--flip" data-reveal>
+            <div class="row__media"><video class="row__video" data-bg muted playsinline loop preload="none" poster="/fuell-process-preview/assets/video/hoses-hd-poster.webp" aria-hidden="true"><source data-src="/fuell-process-preview/assets/video/hoses-hd.mp4" type="video/mp4"></video><span class="row__tag">/02 — Altnau · Switzerland</span></div>
+            <div class="row__body">
+              <p class="row__idx">/02</p>
+              <h3><span class="visually-hidden">Tecos Bruhin</span><span aria-hidden="true" data-scramble="TECOS BRUHIN">TECOS BRUHIN</span></h3>
+              <p>Develops and manufactures gravimetric dosing systems for pasty liquids and provides engineering services for industrial dosing and automation applications.</p>
+              <ul class="tags" aria-label="Focus areas"><li>Gravimetric dosing</li><li>Pasty media</li><li>Engineering</li></ul>
+              <a class="btn btn--outline" href="https://tecosbruhinag.ch/" rel="noopener">Tecos Bruhin – dosing systems for pasty media <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+          </article><article class="row row--lab" data-reveal>
+            <div class="row__media"><img class="row__img" src="/fuell-process-preview/assets/img/fuell-lab-automation-bls-hd.webp" width="1920" height="1200" loading="lazy" decoding="async" alt="Füll Lab Automation BLS system: robot arm dosing inside an enclosed lab cell"><span class="row__tag">/03 — Ostfildern · Germany</span></div>
+            <div class="row__body">
+              <p class="row__idx">/03</p>
+              <h3><span class="visually-hidden">Füll Lab Automation</span><span aria-hidden="true" data-scramble="FÜLL LAB AUTOMATION">FÜLL LAB AUTOMATION</span></h3>
+              <p>Develops and sells automation solutions for high-throughput development and quality control of liquid, powdered and pasty materials.</p>
+              <ul class="tags" aria-label="Focus areas"><li>Lab automation</li><li>High throughput</li><li>Quality control</li></ul>
+              <a class="btn btn--outline" href="https://www.fuell-labautomation.com/" rel="noopener">Füll Lab Automation – laboratory automation <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+          </article><article class="row row--poly row--flip" data-reveal>
+            <div class="row__media"><img class="row__img" src="/fuell-process-preview/assets/img/polystone-kosmetik-hd.webp" width="1080" height="675" loading="lazy" decoding="async" alt="Open bottles with gel in nude and rosé shades flowing out"><span class="row__tag">/04 — Germany · France</span></div>
+            <div class="row__body">
+              <p class="row__idx">/04</p>
+              <h3><span class="visually-hidden">POLYSTONE Chemical</span><span aria-hidden="true" data-scramble="POLYSTONE CHEMICAL">POLYSTONE CHEMICAL</span></h3>
+              <p>Has been developing and producing high-quality UV gel and permanent make-up products for 40 years – as a private-label partner for beauty brands worldwide, with sites in Germany and France.</p>
+              <ul class="tags" aria-label="Focus areas"><li>Private label</li><li>UV gel</li><li>Permanent make-up</li><li>Made in Germany</li></ul>
+              <a class="btn btn--outline" href="https://polystone-chemical.de/en/" rel="noopener">POLYSTONE – cosmetics &amp; private label <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section products" id="products" aria-labelledby="products-title" data-slider-wrap>
+      <div class="container">
+        <div class="products__head" data-reveal>
+          <div>
+            <p class="eyebrow">/ Products</p>
+            <h2 class="h2" id="products-title">Products and solutions</h2>
+            <p class="lead">Dosing systems, storage systems, dosing valves, lab automation and nail cosmetics from the Füll Process Group companies – drag, swipe or use the arrows.</p>
+          </div>
+          <div class="products__nav">
+            <button type="button" data-slider-prev aria-label="Previous products"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13 8H3M7 4L3 8l4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <button type="button" data-slider-next aria-label="Next products"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          </div>
+        </div>
+      </div>
+      <div class="products__track" data-slider tabindex="0" role="region" aria-label="Products and solutions – scrolls horizontally">
+          <a class="product product--sb" href="https://fuell-dispensing.com/?lang=en" rel="noopener">
+            <figure class="product__media"><img src="/fuell-process-preview/assets/img/produkt-dosieranlage-fs182-hd.webp" width="1600" height="900" loading="lazy" decoding="async" alt="FS 182.2 dosing system with operator terminal and dosing trolley"><span class="product__num">01</span></figure>
+            <span class="product__co">Füll Systembau</span>
+            <h3>Dosing systems</h3>
+            <span class="product__more">Visit website <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a><a class="product product--sb" href="https://fuell-dispensing.com/?lang=en" rel="noopener">
+            <figure class="product__media"><img src="/fuell-process-preview/assets/img/produkt-tanklager-hd.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Stainless steel tank of a tank farm with piping"><span class="product__num">02</span></figure>
+            <span class="product__co">Füll Systembau</span>
+            <h3>Storage systems</h3>
+            <span class="product__more">Visit website <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a><a class="product product--tecos" href="https://tecosbruhinag.ch/" rel="noopener">
+            <figure class="product__media"><img src="/fuell-process-preview/assets/img/produkt-dosierung-pastoes-hd.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Dosing head filling a pasty medium into sample vials"><span class="product__num">03</span></figure>
+            <span class="product__co">Tecos Bruhin</span>
+            <h3>Dosing of pasty media</h3>
+            <span class="product__more">Visit website <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a><a class="product product--tecos" href="https://tecosbruhinag.ch/" rel="noopener">
+            <figure class="product__media"><img src="/fuell-process-preview/assets/img/produkt-dosierventile-hd.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Pneumatic dosing valves with hose and pipe connections"><span class="product__num">04</span></figure>
+            <span class="product__co">Tecos Bruhin</span>
+            <h3>Dosing valves and piping</h3>
+            <span class="product__more">Visit website <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a><a class="product product--lab" href="https://www.fuell-labautomation.com/" rel="noopener">
+            <figure class="product__media"><img src="/fuell-process-preview/assets/img/produkt-labor-bls-roboter-hd.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Robot arm of a lab automation system while dosing"><span class="product__num">05</span></figure>
+            <span class="product__co">Füll Lab Automation</span>
+            <h3>High-throughput lab automation</h3>
+            <span class="product__more">Visit website <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a><a class="product product--lab" href="https://www.fuell-labautomation.com/" rel="noopener">
+            <figure class="product__media"><img src="/fuell-process-preview/assets/img/produkt-labor-cls-hd.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Employee operating a Füll Lab Automation laboratory system"><span class="product__num">06</span></figure>
+            <span class="product__co">Füll Lab Automation</span>
+            <h3>Automated lab systems</h3>
+            <span class="product__more">Visit website <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a><a class="product product--poly" href="https://polystone-chemical.de/en/" rel="noopener">
+            <figure class="product__media"><img src="/fuell-process-preview/assets/img/produkt-polystone-gel-hd.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Gel in nude and rosé shades flowing from open bottles"><span class="product__num">07</span></figure>
+            <span class="product__co">POLYSTONE Chemical</span>
+            <h3>UV gels and nail cosmetics</h3>
+            <span class="product__more">Visit website <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+      </div>
+      <div class="container"><div class="products__progress" aria-hidden="true"><span data-slider-progress></span></div></div>
+    </section>
+
+    <section class="m-band" aria-labelledby="calipso-title">
+      <div class="container m-band__inner">
+        <div class="m-band__text" data-reveal>
+          <p class="eyebrow">/ Software</p>
+          <h2 class="h2" id="calipso-title">CALIPSO. Orders and recipes.</h2>
+          <p class="lead">Füll Systembau's dosing software runs batch processes fully automatically – with a consistent flow of information from the tank farm through the dispensing centre to the laboratory.</p>
+          <a class="btn btn--outline" href="https://fuell-dispensing.com/?lang=en" rel="noopener">More at Füll Systembau <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="m-band__media" data-reveal style="--d:.1s"><video class="m-band__video" data-bg muted playsinline loop preload="none" poster="/fuell-process-preview/assets/video/calipso-poster.webp" aria-hidden="true"><source data-src="/fuell-process-preview/assets/video/calipso.mp4" type="video/mp4"></video></div>
+      </div>
+    </section>
+
+    <section class="section" id="markets" aria-labelledby="markets-title">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">/ Markets</p>
+          <h2 class="h2" id="markets-title">Solutions for diverse markets</h2>
+        </div>
+        <ol class="m-markets"><li data-reveal style="--d:0.00s"><span>/01</span>Paints and coatings</li><li data-reveal style="--d:0.05s"><span>/02</span>Printing inks</li><li data-reveal style="--d:0.10s"><span>/03</span>Sealants and adhesives</li><li data-reveal style="--d:0.15s"><span>/04</span>Cosmetics and personal care</li><li data-reveal style="--d:0.00s"><span>/05</span>Food</li><li data-reveal style="--d:0.05s"><span>/06</span>Flavours</li><li data-reveal style="--d:0.10s"><span>/07</span>Fine chemicals and textiles</li><li data-reveal style="--d:0.15s"><span>/08</span>Crop protection</li></ol>
+      </div>
+    </section>
+
+    <section class="section m-values" id="values" aria-labelledby="values-title">
+      <video class="m-values__video" data-bg muted playsinline loop preload="none" poster="/fuell-process-preview/assets/video/hoses-hd-poster.webp" aria-hidden="true"><source data-src="/fuell-process-preview/assets/video/hoses-hd.mp4" type="video/mp4"></video>
+      <div class="m-values__shade" aria-hidden="true"></div>
+      <div class="container" style="position:relative">
+        <div class="section-head" data-reveal><p class="eyebrow">/ Values</p><h2 class="h2" id="values-title">Our strengths and values</h2></div>
+        <ul class="values__grid"><li class="value" data-reveal style="--d:0.00s"><span class="value__num">01</span><h3>Quality</h3><p>The basis of our thinking – from the smallest screw to commissioning.</p></li><li class="value" data-reveal style="--d:0.06s"><span class="value__num">02</span><h3>Flexibility</h3><p>Small or large, standard or customized – your requirements count.</p></li><li class="value" data-reveal style="--d:0.12s"><span class="value__num">03</span><h3>Service</h3><p>Fast, available, measurable. From the first contact to customer service.</p></li><li class="value" data-reveal style="--d:0.00s"><span class="value__num">04</span><h3>Versatility</h3><p>The spectrum of our possibilities is very broad. We offer solutions for almost every need.</p></li><li class="value" data-reveal style="--d:0.06s"><span class="value__num">05</span><h3>Employees</h3><p>Highly motivated, highly qualified and with an average length of service of over 10 years.</p></li><li class="value" data-reveal style="--d:0.12s"><span class="value__num">06</span><h3>Experience</h3><p>The source of our ideas – from the first dosing system to the present day.</p></li></ul>
+      </div>
+    </section>
+
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <div class="container faq">
+        <div data-reveal><p class="eyebrow">/ FAQ</p><h2 class="h2" id="faq-title">Frequently asked questions</h2></div>
+        <div class="faq__list" data-reveal style="--d:.08s"><details open><summary>Which companies belong to the Füll Process Group?</summary><div><p>The Füll Process Group comprises four companies: <strong>Füll Systembau GmbH</strong> in Idstein (Germany) for dosing systems, agitators and storage systems, <strong>Tecos Bruhin AG</strong> in Altnau (Switzerland) for gravimetric dosing systems for pasty media, <strong>Füll Lab Automation GmbH</strong> in Ostfildern (Germany) for laboratory automation and <strong>POLYSTONE Chemical GmbH</strong> with sites in Blieskastel (Germany) and Bitche (France) for nail cosmetics and permanent make-up. The parent company is Füll Process SA in Altnau, Switzerland.</p></div></details>
+<details><summary>Which industries does the Füll Process Group serve?</summary><div><p>Paints and coatings, printing inks, sealants and adhesives, cosmetics and personal care, food, flavours, fine chemicals and textiles, and crop protection. With POLYSTONE, the group is also a private-label partner for nail cosmetics and permanent make-up.</p></div></details>
+<details><summary>Who should I contact with a specific enquiry?</summary><div><p>For product enquiries, quotations and service, please contact the relevant company directly: <a href="https://fuell-dispensing.com/?lang=en">Füll Systembau</a> for dosing systems, agitators and storage systems, <a href="https://tecosbruhinag.ch/">Tecos Bruhin</a> for dosing pasty media, <a href="https://www.fuell-labautomation.com/">Füll Lab Automation</a> for laboratory automation and <a href="https://polystone-chemical.de/en/">POLYSTONE</a> for cosmetics and private label. General enquiries about the group go to Füll Process SA in Altnau.</p></div></details>
+<details><summary>Where is the Füll Process Group based?</summary><div><p>Füll Process SA is located at Moosgrabenstrasse 12, 8595 Altnau, in the canton of Thurgau, Switzerland. The group companies operate in Switzerland (Altnau), Germany (Idstein, Ostfildern, Blieskastel) and France (Bitche).</p></div></details></div>
+      </div>
+    </section>
+
+    <section class="section" id="contact" aria-labelledby="contact-title" style="padding-top:0">
+      <div class="container contact">
+        <div class="contact__card" data-reveal>
+          <p class="eyebrow">/ Contact</p>
+          <h2 class="h2" id="contact-title">Talk to us.</h2>
+          <address><strong>Füll Process SA</strong><br>Moosgrabenstrasse 12<br>8595 Altnau<br>Switzerland</address>
+          <ul class="contact__lines">
+            <li><span>Phone</span><a href="tel:+41716945424">+41 71 694 54 24</a></li>
+            <!-- TO CONFIRM: e-mail address -->
+            <li><span>E-mail</span><a href="mailto:info@fuell-process.com">info@fuell-process.com</a></li>
+          </ul>
+          <a class="btn btn--ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Moosgrabenstrasse+12%2C+8595+Altnau%2C+Switzerland" rel="noopener">Get directions <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="contact__card contact__card--dark" data-reveal style="--d:.08s">
+          <h3 class="h3">Go straight to the right company</h3>
+          <p class="lead">For product enquiries, quotations and service:</p>
+          <ul class="direct-links">
+            <li><a class="sb" href="https://fuell-dispensing.com/?lang=en" rel="noopener"><span class="left"><span class="dot"></span><span><strong>Füll Systembau</strong><small>Dosing systems, agitators, storage systems</small></span></span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a class="tecos" href="https://tecosbruhinag.ch/" rel="noopener"><span class="left"><span class="dot"></span><span><strong>Tecos Bruhin</strong><small>Dosing of pasty media, engineering</small></span></span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a class="lab" href="https://www.fuell-labautomation.com/" rel="noopener"><span class="left"><span class="dot"></span><span><strong>Füll Lab Automation</strong><small>Lab automation, high throughput</small></span></span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a class="poly" href="https://polystone-chemical.de/en/" rel="noopener"><span class="left"><span class="dot"></span><span><strong>POLYSTONE Chemical</strong><small>Cosmetics, private label</small></span></span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="/fuell-process-preview/assets/img/fuell-process-group-logo.png" width="300" height="78" alt="Füll Process Group" loading="lazy">
+          <p>Dosing systems, system solutions and lab automation from one group.</p>
+          <address>Füll Process SA · Moosgrabenstrasse 12 · 8595 Altnau · Switzerland</address>
+        </div>
+        <div>
+          <h2>Group</h2>
+          <ul>
+            <li><a href="#group">About the group</a></li>
+            <li><a href="#markets">Markets</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="https://www.youtube.com/@fullprocesss.a.2441" rel="noopener">YouTube</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Companies</h2>
+          <ul>
+            <li><a href="https://fuell-dispensing.com/?lang=en" rel="noopener">Füll Systembau</a></li>
+            <li><a href="https://tecosbruhinag.ch/" rel="noopener">Tecos Bruhin</a></li>
+            <li><a href="https://www.fuell-labautomation.com/" rel="noopener">Füll Lab Automation</a></li>
+            <li><a href="https://polystone-chemical.de/en/" rel="noopener">POLYSTONE Chemical</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Legal</h2>
+          <ul><li><a href="/fuell-process-preview/v3/en/imprint/">Imprint</a></li><li><a href="/fuell-process-preview/v3/en/data-protection/">Privacy policy</a></li><li><a href="/fuell-process-preview/v3/en/cookie-policy-eu/">Cookie policy</a></li></ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Füll Process SA</span>
+        <span>No tracking, no cookies on page load.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/fuell-process-preview/assets/js/switcher.js"></script>
+  <script src="/fuell-process-preview/assets/js/main.js" defer></script>
+</body>
+</html>
