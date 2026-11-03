@@ -85,6 +85,30 @@
   document.querySelectorAll('[data-yt]').forEach(function (link) {
     link.addEventListener('click', function (e) {
       e.preventDefault();
+      // YouTube is a Marketing service in the consent banner: without consent, ask first
+      var consent = window.fpgConsent;
+      if (consent && !consent.has('marketing')) {
+        var en = (root.lang || '').slice(0, 2) === 'en';
+        if (link.parentNode.querySelector('.yt-consent')) return;
+        var note = document.createElement('div');
+        note.className = 'yt-consent';
+        note.setAttribute('role', 'alert');
+        note.style.cssText = 'position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:20px;text-align:center;background:rgba(1,22,43,.92);color:#fff;font-size:14px;line-height:1.5';
+        note.innerHTML = '<p style="margin:0;max-width:42ch">' + (en
+          ? 'This video is provided by YouTube (Google). To play it, please allow <strong>Marketing</strong> in the consent settings.'
+          : 'Dieses Video wird von YouTube (Google) bereitgestellt. Zum Abspielen stimmen Sie bitte <strong>Marketing</strong> in den Cookie-Einstellungen zu.') + '</p>' +
+          '<span style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center">' +
+          '<button type="button" data-ok style="padding:10px 16px;border:0;border-radius:6px;background:#f5a524;color:#01162b;font-weight:600;cursor:pointer">' + (en ? 'Accept and play' : 'Akzeptieren und abspielen') + '</button>' +
+          '<button type="button" data-settings style="padding:10px 16px;border:1px solid rgba(255,255,255,.5);border-radius:6px;background:none;color:#fff;cursor:pointer">' + (en ? 'Settings' : 'Einstellungen') + '</button></span>';
+        link.parentNode.appendChild(note);
+        note.querySelector('[data-ok]').addEventListener('click', function () {
+          consent.grant('marketing');
+          note.remove();
+          link.click();   // now with consent: loads the video
+        });
+        note.querySelector('[data-settings]').addEventListener('click', function () { note.remove(); consent.open(); });
+        return;
+      }
       var frame = document.createElement('iframe');
       frame.src = 'https://www.youtube-nocookie.com/embed/' + link.getAttribute('data-yt') + '?autoplay=1&rel=0&modestbranding=1';
       frame.title = link.getAttribute('data-title') || 'Video';
