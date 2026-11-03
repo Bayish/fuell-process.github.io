@@ -134,7 +134,7 @@ h1, h2, h3 { font-weight: 700; letter-spacing: -0.03em; }
 .site-footer { background: var(--deep); color: #fff; }
 .site-footer a, .site-footer address { color: rgba(255,255,255,.75); }
 .site-footer a:hover { color: #fff; }
-.site-footer h2, .footer-brand p, .footer-bottom { color: rgba(255,255,255,.55); }
+.site-footer h2, .site-footer .footer-title, .footer-brand p, .footer-bottom { color: rgba(255,255,255,.55); }
 .footer-bottom { border-top-color: rgba(255,255,255,.1); }
 
 /* Legal pages – dark hero so the white header stays readable */
