@@ -2,6 +2,7 @@
 @import url("base.css");
 
 :root {
+  --section: clamp(56px, 6.5vw, 96px);  /* v5: tighter section spacing */
   --bg: #ffffff; --surface: #ffffff; --surface-2: #f3f6fa;
   --ink: #0d1b2a; --ink-2: #44546a; --muted: #5a6878;
   --line: #e3e8ef; --line-strong: #cdd6e1;
@@ -177,7 +178,7 @@ h1, h2, h3 { font-weight: 700; letter-spacing: -0.03em; }
 .v-poly__actions { display: flex; flex-wrap: wrap; gap: 12px; }
 .btn--poly { background: var(--c-poly); color: #fff; box-shadow: 0 6px 20px rgba(224,68,3,.3); }
 .btn--poly:hover { background: #c23a02; transform: translateY(-1px); }
-.v-poly__facts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: clamp(36px, 5vw, 56px) 0 0; }
+.v-poly .v-poly__facts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: clamp(32px, 4vw, 48px) 0 0; }
 .v-poly__facts .fact { padding: 22px 22px; background: #fff; border: 1px solid #f3dcd2; border-radius: var(--radius-lg); }
 .v-poly__facts .fact__value { display: block; font-size: clamp(30px, 3.2vw, 42px); font-weight: 700; letter-spacing: -0.03em; color: #b33602; }
 .v-poly__facts .plus { color: var(--c-poly); }
@@ -189,7 +190,7 @@ h1, h2, h3 { font-weight: 700; letter-spacing: -0.03em; }
 .v-poly__card div { padding: 20px 22px 24px; }
 .v-poly__card h3 { margin: 0 0 8px; font-size: 18px; }
 .v-poly__card p { margin: 0; font-size: 14.5px; line-height: 1.6; color: var(--ink-2); }
-@media (max-width: 960px) { .v-poly__grid { grid-template-columns: 1fr; } .v-poly__media { min-height: 0; aspect-ratio: 4 / 3; } .v-poly__facts { grid-template-columns: 1fr 1fr; } .v-poly__cards { grid-template-columns: 1fr; } .v-poly__card { display: grid; grid-template-columns: 200px 1fr; } .v-poly__card img { height: 100%; aspect-ratio: auto; } }
+@media (max-width: 960px) { .v-poly__grid { grid-template-columns: 1fr; } .v-poly__media { min-height: 0; aspect-ratio: 4 / 3; } .v-poly .v-poly__facts { grid-template-columns: 1fr 1fr; } .v-poly__cards { grid-template-columns: 1fr; } .v-poly__card { display: grid; grid-template-columns: 200px 1fr; } .v-poly__card img { height: 100%; aspect-ratio: auto; } }
 @media (max-width: 560px) { .v-poly__card { grid-template-columns: 1fr; } .v-poly__card img { aspect-ratio: 16 / 10; } }
 /* 10 markets: 5 columns on wide screens */
 @media (min-width: 1001px) { .v-markets { grid-template-columns: repeat(5, 1fr); } }
