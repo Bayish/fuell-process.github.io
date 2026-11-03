@@ -701,7 +701,7 @@ h1, h2, h3, h4 {
 .film { background: var(--navy-950); }
 .videos {
   display: grid;
-  grid-template-columns: 1.4fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 24px;
 }
 @media (max-width: 900px) { .videos { grid-template-columns: 1fr; } }
