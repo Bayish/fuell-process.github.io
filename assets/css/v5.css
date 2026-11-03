@@ -158,3 +158,35 @@ h1, h2, h3 { font-weight: 700; letter-spacing: -0.03em; }
 .brand, .footer-brand > img { border-radius: 10px; }
 
 .contact__card--dark .direct-links .poly { --c: var(--c-poly); }
+
+/* POLYSTONE showcase (weighting: POLYSTONE 40 %, Füll Systembau + Tecos 40 %, Füll Lab Automation 20 %) */
+.v-poly { background: linear-gradient(180deg, #fff7f3 0%, #fff 100%); border-top: 1px solid #f6e1d8; }
+.v-poly .eyebrow { background: rgba(224,68,3,.1); color: #b33602; }
+.v-poly__grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(28px, 4vw, 64px); align-items: center; }
+.v-poly__media { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow); aspect-ratio: 16 / 11; }
+.v-poly__media img { width: 100%; height: 100%; object-fit: cover; object-position: 70% 30%; }
+.v-poly__claim { margin: 6px 0 14px; font-size: 15px; font-weight: 600; letter-spacing: .04em; color: #b33602; }
+.v-poly__text > p:not(.eyebrow):not(.v-poly__claim):not(.v-poly__for-label) { margin: 0 0 14px; color: var(--ink-2); }
+.v-poly__text .lead { color: var(--ink); }
+.v-poly__for-label { margin: 18px 0 8px; font-size: 12.5px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.v-poly__text .tags { margin-bottom: 22px; }
+.v-poly__text .tags li { border-color: rgba(224,68,3,.35); color: #8f2c02; background: #fff; }
+.v-poly__actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn--poly { background: var(--c-poly); color: #fff; box-shadow: 0 6px 20px rgba(224,68,3,.3); }
+.btn--poly:hover { background: #c23a02; transform: translateY(-1px); }
+.v-poly__facts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: clamp(36px, 5vw, 56px) 0 0; }
+.v-poly__facts .fact { padding: 22px 22px; background: #fff; border: 1px solid #f3dcd2; border-radius: var(--radius-lg); }
+.v-poly__facts .fact__value { display: block; font-size: clamp(30px, 3.2vw, 42px); font-weight: 700; letter-spacing: -0.03em; color: #b33602; }
+.v-poly__facts .plus { color: var(--c-poly); }
+.v-poly__facts .fact__label { display: block; margin-top: 8px; font-size: 14px; line-height: 1.45; color: var(--muted); }
+.v-poly__facts dd { margin: 0; }
+.v-poly__cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 16px 0 0; padding: 0; list-style: none; }
+.v-poly__card { overflow: hidden; background: #fff; border: 1px solid var(--line); border-radius: var(--radius-lg); }
+.v-poly__card img { width: 100%; aspect-ratio: 4 / 3; height: auto; object-fit: cover; }
+.v-poly__card div { padding: 20px 22px 24px; }
+.v-poly__card h3 { margin: 0 0 8px; font-size: 18px; }
+.v-poly__card p { margin: 0; font-size: 14.5px; line-height: 1.6; color: var(--ink-2); }
+@media (max-width: 960px) { .v-poly__grid { grid-template-columns: 1fr; } .v-poly__facts { grid-template-columns: 1fr 1fr; } .v-poly__cards { grid-template-columns: 1fr; } .v-poly__card { display: grid; grid-template-columns: 200px 1fr; } .v-poly__card img { height: 100%; aspect-ratio: auto; } }
+@media (max-width: 560px) { .v-poly__card { grid-template-columns: 1fr; } .v-poly__card img { aspect-ratio: 16 / 10; } }
+/* 10 markets: 5 columns on wide screens */
+@media (min-width: 1001px) { .v-markets { grid-template-columns: repeat(5, 1fr); } }

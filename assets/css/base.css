@@ -274,6 +274,7 @@ mark.tbc { background: #fff1b8; color: #5c4708; padding: 1px 6px; border-radius:
 .co-poly { border-left-color: var(--c-poly); }
 .direct-links .poly { --c: var(--c-poly); }
 .product--poly { --c: var(--c-poly); }
+.product--poly .product__co { color: #b33602; }  /* small text: darker POLYSTONE orange for AA contrast */
 .company--poly { --c: var(--c-poly); }
 
 /* Company colours win over theme border/text rules */
