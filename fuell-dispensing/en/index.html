@@ -93,11 +93,11 @@
       </div>
     </section>
 
-    <section class="journey" aria-labelledby="journey-title">
+    <section class="journey" id="journey" data-tour="systems" aria-labelledby="journey-title">
       <div class="container">
         <div class="section-label"><p class="eyebrow">System types</p><h2 class="h2" id="journey-title">From simple to complex</h2></div>
         <figure class="journey__stage frame">
-          <canvas id="journey" aria-hidden="true"></canvas>
+          <canvas aria-hidden="true"></canvas>
           <ol class="stage__ladder" data-ladder><li><a href="#fs-ms"><b>01</b>FS MS</a></li><li><a href="#fs-xs"><b>02</b>FS XS</a></li><li><a href="#lx5"><b>03</b>LX5</a></li><li><a href="#fs-2005-2"><b>04</b>FS 2005.2</a></li><li><a href="#fs-182-2"><b>05</b>FS 182.2</a></li><li><a href="#fs-188"><b>06</b>FS 188</a></li></ol>
           <div class="stage__scale" aria-hidden="true"><span>simple</span><span>→</span><span>complex</span></div>
           <div class="stage__level" data-stage-level aria-hidden="true">01</div>
@@ -106,6 +106,21 @@
           <figcaption class="visually-hidden">Schematic illustration, not to scale</figcaption>
         </figure>
         <ol class="journey__steps"><li id="fs-ms" data-step data-name="FS MS" aria-label="01 FS MS"></li><li id="fs-xs" data-step data-name="FS XS" aria-label="02 FS XS"></li><li id="lx5" data-step data-name="LX5" aria-label="03 LX5"></li><li id="fs-2005-2" data-step data-name="FS 2005.2" aria-label="04 FS 2005.2"></li><li id="fs-182-2" data-step data-name="FS 182.2" aria-label="05 FS 182.2"></li><li id="fs-188" data-step data-name="FS 188" aria-label="06 FS 188"></li></ol>
+      </div>
+    </section>
+    <section class="journey" id="agitators" data-tour="agitators" aria-labelledby="agitators-title">
+      <div class="container">
+        <div class="section-label"><p class="eyebrow">Agitators</p><h2 class="h2" id="agitators-title">Five designs</h2></div>
+        <figure class="journey__stage frame">
+          <canvas aria-hidden="true"></canvas>
+          <ol class="stage__ladder" data-ladder><li><a href="#rw-einbau"><b>01</b>Built-in agitator</a></li><li><a href="#rw-deckel"><b>02</b>Lid agitator</a></li><li><a href="#rw-ibc"><b>03</b>IBC agitator</a></li><li><a href="#rw-stativ"><b>04</b>Stand agitator</a></li><li><a href="#rw-sonder"><b>05</b>Custom agitator</a></li></ol>
+          
+          <div class="stage__level" data-stage-level aria-hidden="true">01</div>
+          <div class="stage__name" data-stage-name aria-live="polite">Built-in agitator</div>
+          <div class="stage__meter" data-stage-meter aria-hidden="true"><span style="--i:0"></span><span style="--i:1"></span><span style="--i:2"></span><span style="--i:3"></span><span style="--i:4"></span></div>
+          <figcaption class="visually-hidden">Schematic illustration, not to scale</figcaption>
+        </figure>
+        <ol class="journey__steps"><li id="rw-einbau" data-step data-name="Built-in agitator" aria-label="01 Built-in agitator"></li><li id="rw-deckel" data-step data-name="Lid agitator" aria-label="02 Lid agitator"></li><li id="rw-ibc" data-step data-name="IBC agitator" aria-label="03 IBC agitator"></li><li id="rw-stativ" data-step data-name="Stand agitator" aria-label="04 Stand agitator"></li><li id="rw-sonder" data-step data-name="Custom agitator" aria-label="05 Custom agitator"></li></ol>
       </div>
     </section>
   </main>
@@ -120,6 +135,6 @@
   </footer>
 
   <script src="/fuell-process.github.io/fuell-dispensing/assets/js/main.js?v=2b878198" defer></script>
-  <script src="/fuell-process.github.io/fuell-dispensing/assets/js/dispensing.js?v=086a22e9" defer></script>
+  <script src="/fuell-process.github.io/fuell-dispensing/assets/js/dispensing.js?v=3df58b1a" defer></script>
 </body>
 </html>

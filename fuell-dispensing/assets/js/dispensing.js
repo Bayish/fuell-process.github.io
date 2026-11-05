@@ -307,15 +307,51 @@
     frame(performance.now(), 0);
   })();
 
-  // ======================================================================= 2) six systems from simple to complex
-  (function () {
-    var canvas = document.getElementById('journey');
-    var steps = Array.prototype.slice.call(document.querySelectorAll('[data-step]'));
+  // ======================================================================= 2) tours: sticky schematic switched by scrolling
+  // A tour section holds a canvas, step markers [data-step], a ladder [data-ladder] and the level / name / meter overlays.
+  function tour(section, buildScenes, zoom) {
+    zoom = zoom || 1;                                   // compact scenes (agitators) are drawn larger; on phones at most 1.25x
+    if (!section) return;
+    var canvas = section.querySelector('canvas');
+    var steps = Array.prototype.slice.call(section.querySelectorAll('[data-step]'));
     if (!canvas || !canvas.getContext || !steps.length) return;
-    var e = new Engine(canvas, function (W, H) { return H > W * 1.1 ? [W * 1.3, 0.5] : [Math.min(W * 0.95, H * 1.55), 0.47]; });
-    var levelEl = document.querySelector('[data-stage-level]'), nameEl = document.querySelector('[data-stage-name]');
-    var meter = Array.prototype.slice.call(document.querySelectorAll('[data-stage-meter] span'));
-    var ladder = Array.prototype.slice.call(document.querySelectorAll('[data-ladder] a'));
+    var e = new Engine(canvas, function (W, H) { return H > W * 1.1 ? [W * 1.3 * Math.min(zoom, 1.25), 0.5] : [Math.min(W * 0.95, H * 1.55) * zoom, 0.47]; });
+    var levelEl = section.querySelector('[data-stage-level]'), nameEl = section.querySelector('[data-stage-name]');
+    var meter = Array.prototype.slice.call(section.querySelectorAll('[data-stage-meter] span'));
+    var ladder = Array.prototype.slice.call(section.querySelectorAll('[data-ladder] a'));
+    var SC = buildScenes(e);
+    var current = 0, next = -1, fadeDir = 0, anim = null;
+    function frame(t, dt) {
+      if (fadeDir === -1) { e.fade -= dt * 4; if (e.fade <= 0) { e.fade = 0; current = next; fadeDir = 1; } }
+      else if (fadeDir === 1) { e.fade += dt * 4; if (e.fade >= 1) { e.fade = 1; fadeDir = 0; } }
+      e.draw(SC[current], t); SC[current].dyn(t);
+    }
+    function setStep(i) {
+      if (i < 0 || i === next) return;
+      next = i;
+      if (!anim || !anim.running()) { current = i; e.fade = 1; fadeDir = 0; frame(performance.now(), 0); } else fadeDir = -1;
+      if (levelEl) levelEl.textContent = (i < 9 ? '0' : '') + (i + 1);
+      if (nameEl) nameEl.textContent = steps[i].getAttribute('data-name');
+      meter.forEach(function (el, k) { el.classList.toggle('on', k <= i); });
+      ladder.forEach(function (el, k) { el.classList.toggle('is-active', k === i); });
+    }
+    e.resize();
+    window.addEventListener('resize', function () { e.resize(); if (!anim || !anim.running()) frame(performance.now(), 0); });
+    // ?step=<id> opens a tour on one step (direct links, presentations)
+    var wanted = (location.search.match(/[?&]step=([a-z0-9-]+)/) || [])[1];
+    var wantedIdx = wanted ? steps.findIndex(function (el) { return el.id === wanted; }) : -1;
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (en) {
+        en.forEach(function (x) { if (x.isIntersecting && (scrollY > 0 || wantedIdx < 0)) setStep(steps.indexOf(x.target)); });
+      }, { rootMargin: '-45% 0px -45% 0px' });
+      steps.forEach(function (el) { io.observe(el); });
+    }
+    setStep(Math.max(0, wantedIdx));
+    anim = animate(canvas, frame);
+  }
+
+  // ---------- dispensing systems, simple -> complex
+  tour(document.querySelector('[data-tour="systems"]'), function (e) {
     var SC = [];
 
     (function () {   // 01 FS MS – valves in one row; the scale moves the container from valve to valve
@@ -429,33 +465,131 @@
       SC.push(s);
     })();
 
-    var current = 0, next = -1, fadeDir = 0;
-    function frame(t, dt) {
-      if (fadeDir === -1) { e.fade -= dt * 4; if (e.fade <= 0) { e.fade = 0; current = next; fadeDir = 1; } }
-      else if (fadeDir === 1) { e.fade += dt * 4; if (e.fade >= 1) { e.fade = 1; fadeDir = 0; } }
-      e.draw(SC[current], t); SC[current].dyn(t);
+    return SC;
+  });
+
+  // ---------- agitators: five designs (fuell-dispensing.com, "Rührwerke")
+  tour(document.querySelector('[data-tour="agitators"]'), function (e) {
+    var SC = [];
+    function impeller(x, y, z, r, ang, blades, rgb, folded) {          // rotating blades seen in perspective
+      for (var b = 0; b < blades; b++) {
+        var a = ang + b * 6.2832 / blades, rr = folded ? r * 0.15 : r, dy = folded ? -r * 0.8 : 0;
+        e.seg([x, y, z], [x + Math.cos(a) * rr, y + dy, z + Math.sin(a) * rr], rgb || AMBER, 0.95, 2.2);
+      }
     }
-    function setStep(i) {
-      if (i < 0 || i === next) return;
-      next = i;
-      if (!anim || !anim.running()) { current = i; e.fade = 1; fadeDir = 0; frame(performance.now(), 0); } else fadeDir = -1;
-      if (levelEl) levelEl.textContent = (i < 9 ? '0' : '') + (i + 1);
-      if (nameEl) nameEl.textContent = steps[i].getAttribute('data-name');
-      meter.forEach(function (el, k) { el.classList.toggle('on', k <= i); });
-      ladder.forEach(function (el, k) { el.classList.toggle('is-active', k === i); });
+    function swirl(x, z, r, y0, y1, t, n, speed) {                      // liquid moved by the agitator
+      for (var i = 0; i < n; i++) {
+        var a = t * speed + i * 2.399, rr = r * (0.35 + 0.6 * ((i * 0.618) % 1)), y = y0 + (y1 - y0) * ((i * 0.381 + t * speed * 0.05) % 1);
+        e.dot(x + Math.cos(a) * rr, y, z + Math.sin(a) * rr, 1.6, AMBER, 0.75);
+      }
     }
-    var anim = null;
-    e.resize();
-    window.addEventListener('resize', function () { e.resize(); if (!anim.running()) frame(performance.now(), 0); });
-    // ?step=fs-188 opens the page on one system (direct links, presentations)
-    var wanted = (location.search.match(/[?&]step=([a-z0-9-]+)/) || [])[1];
-    if ('IntersectionObserver' in window) {
-      var io = new IntersectionObserver(function (en) {
-        en.forEach(function (x) { if (x.isIntersecting && (scrollY > 0 || !wanted)) setStep(steps.indexOf(x.target)); });
-      }, { rootMargin: '-45% 0px -45% 0px' });
-      steps.forEach(function (el) { io.observe(el); });
-    }
-    setStep(wanted ? Math.max(0, steps.findIndex(function (el) { return el.id === wanted; })) : 0);
-    anim = animate(canvas, frame);
-  })();
+    function drum(s, x, z, r, h) { s.cyl(x, z, r, 0.05, h, 0.12, 22); s.ring(x, h, z, r * 0.92, 22); }
+    function motor(s, x, y, z) { s.box(x, y, z, 0.6, 0.55, 0.6); s.box(x, y - 0.38, z, 0.36, 0.22, 0.36); }
+
+    (function () {   // 1 built-in agitator: mounted from above on a tank flange, with a circulation pipe
+      var s = new Scene(); s.floor(6, 3.5);
+      s.tank(-0.6, 0, 1.4, 2.6);
+      s.box(-0.6, 4.25, 0, 0.9, 0.12, 0.9);                     // flange
+      motor(s, -0.6, 4.75, 0);
+      s.line([-0.6, 4.35, 0], [-0.6, 1.0, 0]);                 // shaft
+      s.pipe([[-0.6, 0.6, 0], [-0.6, 0.3, 0], [2.6, 0.3, 0], [2.6, 3.9, 0], [0.4, 3.9, 0], [0.4, 3.4, 0]]);   // circulation pipe
+      s.box(2.6, 0.55, 0, 0.6, 0.5, 0.6);                       // pump
+      s.dyn = function (t) {
+        var a = t * 0.006;
+        impeller(-0.6, 1.5, 0, 1.0, a, 3); impeller(-0.6, 2.7, 0, 0.9, a + 0.5, 3);
+        swirl(-0.6, 0, 1.25, 1.1, 3.6, t, 60, 0.002);
+        e.flow(s.pipes[0], t, 8, 0.00022);
+        e.dot(2.6, 0.85, 0, 4 + Math.sin(t * 0.01), GREEN, 0.9);
+      };
+      SC.push(s);
+    })();
+
+    (function () {   // 2 lid agitator: set on the delivery container (drum), locked, stirs, lifted for the next one
+      var s = new Scene(); s.floor(5, 3.5);
+      drum(s, 0, 0, 1.0, 2.0); drum(s, 3.0, -0.6, 1.0, 2.0);
+      s.line([-2.6, 0, 0], [-2.6, 5.0, 0]);                     // simple lifting aid behind
+      s.dyn = function (t) {
+        var p = phase(t, 9000), lift = p < 0.18 ? 1.6 * (1 - p / 0.18) : p > 0.82 ? 1.6 * ((p - 0.82) / 0.18) : 0;
+        var y = 2.05 + lift, stir = lift === 0;
+        for (var i = 0; i < 26; i++) { var aa = i / 26 * 6.2832; e.dot(Math.cos(aa) * 1.02, y, Math.sin(aa) * 1.02, 1.3, SKY, 0.9); }   // lid
+        e.seg([-1.0, y, 0], [1.0, y, 0], SKY, 0.7, 1.4);
+        e.seg([0, y, 0], [0, y + 0.7, 0], SKY, 0.8, 1.4);
+        e.seg([-0.3, y + 0.7, -0.3], [0.3, y + 0.7, 0.3], SKY, 0.8, 1.2); e.seg([-0.3, y + 1.2, -0.3], [0.3, y + 1.2, 0.3], SKY, 0.8, 1.2);
+        e.seg([0, y, 0], [0, y - 1.5, 0], SKY, 0.85, 1.5);      // shaft
+        impeller(0, y - 1.55, 0, 0.6, stir ? t * 0.008 : 0, 3, stir ? AMBER : SKY);
+        if (stir) { swirl(0, 0, 0.9, 0.2, 1.9, t, 40, 0.0022); e.dot(0, y + 0.95, 0, 4, GREEN, 0.9); }
+        else e.dot(-1.0, y, 0, 4, AMBER, 0.6 + 0.3 * Math.sin(t * 0.01));          // lock / release
+      };
+      SC.push(s);
+    })();
+
+    (function () {   // 3 IBC agitator: on a support bar, folding agitator through the small opening
+      var s = new Scene(); s.floor(5, 3.5);
+      var w = 2.4, d = 2.0, h = 2.3;
+      s.box(0, 0.15, 0, w + 0.2, 0.3, d + 0.2);                // pallet
+      s.box(0, 0.3 + h / 2, 0, w, h, d);                       // cage
+      for (var x = -w / 2; x <= w / 2 + 1e-6; x += w / 6) s.line([x, 0.3, d / 2], [x, 0.3 + h, d / 2]);
+      for (var y = 0.3; y <= 0.3 + h + 1e-6; y += h / 5) s.line([-w / 2, y, d / 2], [w / 2, y, d / 2]);
+      s.ring(0, 0.3 + h, 0, 0.3, 14);                          // small opening
+      s.box(0, 0.3 + h + 0.12, 0, w + 0.4, 0.14, 0.3);          // support bar across the IBC
+      motor(s, 0, 0.3 + h + 0.6, 0);
+      s.dyn = function (t) {
+        var p = phase(t, 10000), top = 0.3 + h + 0.25;
+        var depth = p < 0.2 ? p / 0.2 : p > 0.85 ? 1 - (p - 0.85) / 0.15 : 1;          // lower / raise
+        var folded = p < 0.25 || p > 0.8, yImp = top - 0.2 - depth * 1.7;
+        e.seg([0, top, 0], [0, yImp, 0], SKY, 0.85, 1.5);
+        impeller(0, yImp, 0, 0.8, folded ? 0.6 : t * 0.007, 2, folded ? SKY : AMBER, folded);
+        if (!folded) { swirl(0, 0, 1.0, 0.45, 2.3, t, 50, 0.002); e.dot(0, 0.3 + h + 0.95, 0, 4, GREEN, 0.9); }
+      };
+      SC.push(s);
+    })();
+
+    (function () {   // 4 stand agitator: stand with arm, agitator raised and lowered (pneumatically) into the container
+      var s = new Scene(); s.floor(5, 3.5);
+      s.box(-2.2, 0.08, 0, 1.4, 0.16, 1.4);                    // base plate
+      s.box(-2.2, 2.6, 0, 0.3, 5.0, 0.3);                      // column
+      s.cyl(-2.2, 0, 0.22, 0.4, 2.4, 0.4, 8);                   // pneumatic cylinder
+      drum(s, 0.4, 0, 1.0, 2.0);
+      s.dyn = function (t) {
+        var p = phase(t, 8000), up = p < 0.15 ? 1 - p / 0.15 : p > 0.8 ? (p - 0.8) / 0.2 : 0;
+        var y = 3.0 + up * 1.8, stir = up === 0;
+        e.seg([-2.2, y, 0], [0.4, y, 0], SKY, 0.85, 2);           // arm
+        e.seg([-2.35, y - 0.3, 0], [-2.05, y - 0.3, 0], SKY, 0.7, 1.2);
+        e.seg([0.4, y, 0], [0.4, y + 0.6, 0], SKY, 0.85, 1.4);    // motor
+        e.seg([0.1, y + 0.6, -0.2], [0.7, y + 0.6, 0.2], SKY, 0.8, 1.2);
+        e.seg([0.4, y, 0], [0.4, y - 2.5, 0], SKY, 0.85, 1.5);    // shaft
+        impeller(0.4, y - 2.55, 0, 0.6, stir ? t * 0.008 : 0, 3, stir ? AMBER : SKY);
+        e.dot(-2.2, 2.45 + up * 0.5, 0, 4, up > 0 && up < 1 ? AMBER : SKY, 0.85);  // pneumatic lift
+        if (stir) { swirl(0.4, 0, 0.9, 0.2, 1.9, t, 40, 0.0022); e.dot(0.4, y + 0.6, 0, 4, GREEN, 0.9); }
+      };
+      SC.push(s);
+    })();
+
+    (function () {   // 5 custom agitator: special vessel, process integration and automatic cleaning
+      var s = new Scene(); s.floor(7, 4);
+      s.tank(-1.0, 0, 1.3, 2.4);
+      s.box(-1.0, 4.1, 0, 0.9, 0.12, 0.9); motor(s, -1.0, 4.65, 0);
+      s.line([-1.0, 4.2, 0], [-1.0, 0.9, 0]);
+      s.ring(-0.3, 3.3, 0.4, 0.18, 10);                         // spray head
+      s.tank(-3.4, -1.8, 0.65, 1.6);                             // cleaning liquid tank
+      s.pipe([[-3.4, 0.8, -1.8], [-3.4, 0.4, -1.8], [-2.6, 0.4, -1.8], [-2.6, 4.0, 0.4], [-0.3, 4.0, 0.4], [-0.3, 3.4, 0.4]]);   // cleaning supply
+      s.box(2.9, 0.9, 1.4, 2.2, 1.0, 1.6);                       // following process
+      s.pipe([[-1.0, 0.6, 0], [-1.0, 0.3, 0], [0.9, 0.3, 0], [0.9, 0.3, 1.4], [1.8, 0.3, 1.4], [1.8, 1.2, 1.4]]);                 // outlet to process
+      s.dyn = function (t) {
+        var p = phase(t, 12000), clean = p > 0.62, a = t * 0.006;
+        impeller(-1.0, 1.4, 0, 0.95, a, 4, clean ? SKY : AMBER); impeller(-1.0, 2.6, 0, 0.85, a + 0.4, 4, clean ? SKY : AMBER);
+        if (!clean) { swirl(-1.0, 0, 1.15, 1.0, 3.4, t, 60, 0.002); e.flow(s.pipes[1], t, 8, 0.00022); }
+        else {
+          e.flow(s.pipes[0], t, 8, 0.0003, 0.9);
+          for (var i = 0; i < 26; i++) {                              // spray from the cleaning head
+            var ang = i * 0.7 + t * 0.003, f = ((t * 0.0015) + i / 26) % 1;
+            e.dot(-0.3 + Math.cos(ang) * 1.1 * f, 3.3 - 1.8 * f * f, 0.4 + Math.sin(ang) * 1.1 * f, 1.5, SKY, 0.9 * (1 - f));
+          }
+          e.dot(-3.4, 2.9, -1.8, 4 + Math.sin(t * 0.01), GREEN, 0.9);
+        }
+      };
+      SC.push(s);
+    })();
+    return SC;
+  }, 1.6);
 })();
