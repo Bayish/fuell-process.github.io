@@ -25,6 +25,16 @@
         toggle.setAttribute('aria-expanded', 'false');
       });
     });
+    // Tap outside the header or switch to desktop width: close the menu
+    document.addEventListener('click', function (e) {
+      if (root.classList.contains('nav-open') && !header.contains(e.target)) {
+        root.classList.remove('nav-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+    window.matchMedia('(min-width: 1061px)').addEventListener('change', function (mq) {
+      if (mq.matches) { root.classList.remove('nav-open'); toggle.setAttribute('aria-expanded', 'false'); }
+    });
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && root.classList.contains('nav-open')) {
         root.classList.remove('nav-open');
