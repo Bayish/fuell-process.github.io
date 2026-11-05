@@ -159,7 +159,7 @@
     var unitEls = Array.prototype.slice.call(panel.querySelectorAll('[data-cal-units] li')).map(function (li) {
       return { li: li, state: li.querySelector('[data-u-state]'), time: li.querySelector('[data-u-time]') };
     });
-    var simT = 0, unitAngle = [];
+    var simT = 0, unitAngle = [], tankAngle = [];
     var lang = document.documentElement.lang.slice(0, 2);
 
     // --- scene: tank farm (large tanks), small containers with stirrers, pipes, dosing head, scale, control
@@ -167,7 +167,10 @@
     s.floor(7, 4);
     s.layer = 'storage';
     var big = [[-5.6, -2.6], [-3.6, -2.6], [-1.6, -2.6]];
-    big.forEach(function (b) { s.tank(b[0], b[1], 0.85, 2.3); s.box(b[0] + 0.9, 0.3, b[1] + 0.9, 0.5, 0.6, 0.5); });       // tank + pump
+    big.forEach(function (b) {
+      s.tank(b[0], b[1], 0.85, 2.3); s.box(b[0] + 0.9, 0.3, b[1] + 0.9, 0.5, 0.6, 0.5);     // tank + recirculation pump
+      s.box(b[0], 4.05, b[1], 0.42, 0.4, 0.42); s.line([b[0], 3.85, b[1]], [b[0], 1.6, b[1]]);   // agitator: motor + shaft
+    });
     s.box(3.0, 0.85, -2.5, 4.4, 0.08, 1.4);                                                                                   // table for small containers
     s.line([0.85, 0, -3.15], [0.85, 0.85, -3.15]); s.line([5.15, 0, -3.15], [5.15, 0.85, -3.15]); s.line([0.85, 0, -1.85], [0.85, 0.85, -1.85]); s.line([5.15, 0, -1.85], [5.15, 0.85, -1.85]);
     var small = [[1.6, -2.5], [2.6, -2.5], [3.6, -2.5], [4.6, -2.5]];
@@ -266,6 +269,8 @@
       big.forEach(function (b, i) {
         var st = cycles[i] ? unitState(cycles[i]) : { on: true };
         if (st.on) e.flow(s.pipes[i * 2 + 1], t, 4, 0.0002, 0.8);
+        tankAngle[i] = (tankAngle[i] || 0) + (st.on ? 0.16 : 0);
+        for (var bl = 0; bl < 3; bl++) { var ga = tankAngle[i] + bl * 2.094; e.seg([b[0], 1.7, b[1]], [b[0] + Math.cos(ga) * 0.6, 1.7, b[1] + Math.sin(ga) * 0.6], st.on ? AMBER : SKY, st.on ? 0.9 : 0.45, st.on ? 2 : 1, 'storage'); }
         e.dot(b[0] + 0.9, 0.65, b[1] + 0.9, st.on ? 5 + Math.sin(t * 0.01) : 2.5, st.on ? GREEN : SKY, st.on ? 0.95 : 0.45, 'storage');
       });
       // small containers: the stirrer only turns while it is on
@@ -310,15 +315,14 @@
   // ======================================================================= 2) tours: sticky schematic switched by scrolling
   // A tour section holds a canvas, step markers [data-step], a ladder [data-ladder] and the level / name / meter overlays.
   function tour(section, buildScenes, zoom) {
-    zoom = zoom || 1;                                   // compact scenes (agitators) are drawn larger; on phones at most 1.25x
     if (!section) return;
+    zoom = zoom || 1;                                   // compact scenes (agitators) are drawn larger; on phones at most 1.25x
     var canvas = section.querySelector('canvas');
-    var steps = Array.prototype.slice.call(section.querySelectorAll('[data-step]'));
-    if (!canvas || !canvas.getContext || !steps.length) return;
+    var buttons = Array.prototype.slice.call(section.querySelectorAll('[data-goto]'));
+    if (!canvas || !canvas.getContext || !buttons.length) return;
     var e = new Engine(canvas, function (W, H) { return H > W * 1.1 ? [W * 1.3 * Math.min(zoom, 1.25), 0.5] : [Math.min(W * 0.95, H * 1.55) * zoom, 0.47]; });
     var levelEl = section.querySelector('[data-stage-level]'), nameEl = section.querySelector('[data-stage-name]');
     var meter = Array.prototype.slice.call(section.querySelectorAll('[data-stage-meter] span'));
-    var ladder = Array.prototype.slice.call(section.querySelectorAll('[data-ladder] a'));
     var SC = buildScenes(e);
     var current = 0, next = -1, fadeDir = 0, anim = null;
     function frame(t, dt) {
@@ -327,26 +331,26 @@
       e.draw(SC[current], t); SC[current].dyn(t);
     }
     function setStep(i) {
-      if (i < 0 || i === next) return;
+      i = (i + SC.length) % SC.length;
+      if (i === next) return;
       next = i;
       if (!anim || !anim.running()) { current = i; e.fade = 1; fadeDir = 0; frame(performance.now(), 0); } else fadeDir = -1;
       if (levelEl) levelEl.textContent = (i < 9 ? '0' : '') + (i + 1);
-      if (nameEl) nameEl.textContent = steps[i].getAttribute('data-name');
+      if (nameEl) nameEl.textContent = buttons[i].getAttribute('data-name');
       meter.forEach(function (el, k) { el.classList.toggle('on', k <= i); });
-      ladder.forEach(function (el, k) { el.classList.toggle('is-active', k === i); });
+      buttons.forEach(function (el, k) { el.setAttribute('aria-pressed', String(k === i)); });
     }
+    // Only the buttons change the schematic (names, previous / next)
+    buttons.forEach(function (b, k) { b.addEventListener('click', function () { setStep(k); }); });
+    var prev = section.querySelector('[data-prev]'), nxt = section.querySelector('[data-next]');
+    if (prev) prev.addEventListener('click', function () { setStep(next - 1); });
+    if (nxt) nxt.addEventListener('click', function () { setStep(next + 1); });
     e.resize();
     window.addEventListener('resize', function () { e.resize(); if (!anim || !anim.running()) frame(performance.now(), 0); });
     // ?step=<id> opens a tour on one step (direct links, presentations)
     var wanted = (location.search.match(/[?&]step=([a-z0-9-]+)/) || [])[1];
-    var wantedIdx = wanted ? steps.findIndex(function (el) { return el.id === wanted; }) : -1;
-    if ('IntersectionObserver' in window) {
-      var io = new IntersectionObserver(function (en) {
-        en.forEach(function (x) { if (x.isIntersecting && (scrollY > 0 || wantedIdx < 0)) setStep(steps.indexOf(x.target)); });
-      }, { rootMargin: '-45% 0px -45% 0px' });
-      steps.forEach(function (el) { io.observe(el); });
-    }
-    setStep(Math.max(0, wantedIdx));
+    var wi = wanted ? buttons.findIndex(function (b) { return b.getAttribute('data-id') === wanted; }) : -1;
+    setStep(Math.max(0, wi));
     anim = animate(canvas, frame);
   }
 
@@ -389,22 +393,31 @@
       };
       SC.push(s);
     })();
-    (function () {   // 03 LX5 – laboratory: shelves with dozens of components, a dosing head serves them
-      var s = new Scene(), cells = []; s.floor(6, 3.5);
-      for (var row = 0; row < 3; row++) {
-        s.box(0, 1.0 + row, -1.4, 9.6, 0.06, 1.0);
-        for (var c = 0; c < 10; c++) { var x = -4.3 + c * 0.95; s.cyl(x, -1.4, 0.2, 1.05 + row, 1.55 + row, 0.12, 10); cells.push([x, 1.55 + row, -1.4]); }
+    (function () {   // 03 LX5 – laboratory: dozens of component containers in a rack, each piped to one central dosing station
+      var s = new Scene(), cols = [], st = [0, 2.2, 1.6]; s.floor(6, 3.5);
+      s.box(0, 2.1, -1.6, 9.0, 4.2, 1.2);                                   // rack
+      for (var row = 0; row < 2; row++) {
+        s.box(0, 1.2 + row * 1.6, -1.6, 9.0, 0.05, 1.2);
+        for (var c = 0; c < 9; c++) {
+          var x = -4.0 + c * 1.0, y0 = 1.25 + row * 1.6;
+          s.cyl(x, -1.6, 0.28, y0, y0 + 1.0, 0.14, 12);
+          if (row === 0 || c % 2 === 0) cols.push([x, y0, -1.6]);
+        }
       }
-      s.line([-4.9, 0, -0.9], [-4.9, 3.6, -0.9]); s.line([4.9, 0, -0.9], [4.9, 3.6, -0.9]);
-      s.box(0, 3.75, 0.2, 10.0, 0.12, 0.12); s.box(2.8, 0.5, 1.6, 1.0, 1.0, 1.0);
+      cols.forEach(function (p, i) {                                          // hoses to the dosing station
+        var tx = st[0] - 0.35 + (i % 6) * 0.14, tz = st[2] - 0.2 + Math.floor(i / 6) * 0.14;
+        s.pipe([[p[0], p[1], p[2] + 0.3], [p[0], p[1] - 0.1, -0.6], [tx, 3.6, -0.6], [tx, 3.6, tz], [tx, st[1] + 0.35, tz]]);
+      });
+      s.box(st[0], st[1] + 0.2, st[2], 1.3, 0.4, 1.0);                      // central dosing station (valve block)
+      s.box(st[0], 0.12, st[2], 1.3, 0.24, 1.0);                             // scale
+      s.line([st[0] - 0.65, 0, st[2] + 0.5], [st[0] - 0.65, st[1], st[2] + 0.5]); s.line([st[0] + 0.65, 0, st[2] + 0.5], [st[0] + 0.65, st[1], st[2] + 0.5]);
+      s.box(3.6, 0.6, 2.0, 0.8, 1.2, 0.6); s.box(3.6, 1.5, 2.0, 0.8, 0.5, 0.06);   // operator terminal
       s.dyn = function (t) {
-        var p = phase(t, 12000), k = Math.floor(p * 6), f = (p * 6) % 1, target = cells[(k * 7) % cells.length];
-        var hx = f < 0.5 ? target[0] : target[0] * (1 - (f - 0.5) * 2);
-        e.seg([hx, 3.75, 0.2], [hx, 3.0, 0.2], AMBER, 0.9, 2);
-        e.dot(hx, 2.95, 0.2, 5, AMBER, 0.9);
-        e.dot(target[0], target[1] + 0.15, target[2], 7, AMBER, 0.35 + 0.4 * Math.sin(t * 0.006));
-        e.container(0, 0.2, 0.35, (k + f) / 6);
-        if (f > 0.5) e.drops(0, 0.2, 2.9, 0.95, t);
+        var p = phase(t, 12000), k = Math.floor(p * 6), f = (p * 6) % 1, pi = (k * 5) % s.pipes.length;
+        e.flow(s.pipes[pi], t, 8, 0.0003);
+        var src = cols[pi]; e.dot(src[0], src[1] + 1.15, src[2], 6, AMBER, 0.4 + 0.4 * Math.sin(t * 0.006));
+        e.container(st[0], st[2], 0.35, (k + f) / 6);
+        e.drops(st[0], st[2], st[1], 0.95, t);
       };
       SC.push(s);
     })();
@@ -425,23 +438,27 @@
       };
       SC.push(s);
     })();
-    (function () {   // 05 FS 182.2 – larger centre fed from a tank farm, two weighing stations
+    (function () {   // 05 FS 182.2 – dispensing centre with viewing window and terminal; container on a trolley; fed from tank storage
       var s = new Scene(), tx = [-4.8, -2.4, 0, 2.4, 4.8]; s.floor(7, 4);
-      s.box(0, 2.1, 0.6, 5.6, 4.2, 2.4);
-      [-1.3, 1.3].forEach(function (cx) {
-        for (var i = 0; i < 10; i++) { var a = i / 10 * 6.2832; s.box(cx + Math.cos(a) * 0.6, 3.3, 0.6 + Math.sin(a) * 0.6, 0.14, 0.38, 0.14); }
-        s.box(cx, 0.12, 0.6, 1.2, 0.24, 1.0);
-      });
+      s.box(0, 2.1, 0.6, 5.6, 4.2, 2.4);                                    // cabinet
+      s.box(0, 2.3, 1.81, 2.2, 1.4, 0.04);                                  // viewing window
+      for (var i = 0; i < 12; i++) { var a = i / 12 * 6.2832; s.box(Math.cos(a) * 0.75, 3.4, 0.6 + Math.sin(a) * 0.6, 0.14, 0.38, 0.14); }
+      s.box(0, 0.1, 0.6, 1.4, 0.2, 1.2);                                    // weighing position
+      s.box(4.0, 0.7, 2.6, 0.9, 1.4, 0.6); s.box(4.0, 1.7, 2.6, 0.9, 0.6, 0.06);   // operator terminal
       tx.forEach(function (x, i) {
         s.tank(x, -3.0, 0.75, 1.9);
-        var target = i < 3 ? -1.3 : 1.3, off = (i % 3 - 1) * 0.25;
-        s.pipe([[x, 0.8, -3.0], [x, 0.5, -3.0], [x, 0.5, -1.4], [x, 4.6, -1.4], [target + off, 4.6, 0.6], [target + off, 3.5, 0.6]]);
+        var off = (i - 2) * 0.22;
+        s.pipe([[x, 0.8, -3.0], [x, 0.5, -3.0], [x, 0.5, -1.4], [x, 4.6, -1.4], [off, 4.6, 0.6], [off, 3.6, 0.6]]);
       });
       s.dyn = function (t) {
-        var p = phase(t, 10000), k = Math.floor(p * 5);
-        e.flow(s.pipes[k], t, 8, 0.00026); e.flow(s.pipes[(k + 2) % 5], t, 5, 0.0002);
-        e.container(-1.3, 0.6, 0.42, (p * 2) % 1); e.container(1.3, 0.6, 0.42, (p * 2 + 0.5) % 1);
-        e.drops(-1.3, 0.6, 2.9, 1.0, t); e.drops(1.3, 0.6, 2.9, 1.0, t + 300);
+        var p = phase(t, 11000), k = Math.floor(p * 5), x, fill;
+        if (p < 0.15) { x = 2.9 - p / 0.15 * 2.9; fill = 0; }                // trolley pushed in
+        else if (p < 0.85) { x = 0; fill = (p - 0.15) / 0.7; }
+        else { x = (p - 0.85) / 0.15 * 2.9; fill = 1; }                     // trolley out
+        e.seg([x - 0.6, 0.18, 0.1], [x + 0.6, 0.18, 0.1], SKY, 0.8, 1.4); e.seg([x - 0.6, 0.18, 1.1], [x + 0.6, 0.18, 1.1], SKY, 0.8, 1.4);
+        e.dot(x - 0.5, 0.06, 0.1, 2.5, SKY, 0.8); e.dot(x + 0.5, 0.06, 1.1, 2.5, SKY, 0.8);
+        e.container(x, 0.6, 0.45, fill);
+        if (p >= 0.15 && p < 0.85) { e.flow(s.pipes[Math.floor((p - 0.15) / 0.7 * 5)], t, 8, 0.00026); e.drops(0, 0.6, 3.1, 0.4 + 0.6 * fill, t); }
       };
       SC.push(s);
     })();
@@ -452,7 +469,7 @@
       s.line([2.0, 3.1, -0.4], [2.0, 4.4, -0.4]); s.box(2.0, 4.6, -0.4, 0.6, 0.4, 0.6);
       s.box(5.3, 0.9, 1.8, 3.0, 1.0, 2.2);
       for (var x = 4.0; x <= 6.6; x += 0.35) s.line([x, 1.42, 0.8], [x, 1.42, 2.8]);
-      [-5, -3, -1].forEach(function (tx, i) { s.pipe([[tx, 0.8, -2.4], [tx, 0.45, -2.4], [tx, 0.45, -1.0], [tx, 4.0, -1.0], [1.6 + i * 0.4, 4.0, -0.4], [1.6 + i * 0.4, 3.0, -0.4]]); });
+      [-5, -3, -1].forEach(function (tx, i) { s.pipe([[tx, 0.8, -2.4], [tx, 0.45, -2.4], [tx, 0.45, -1.0], [tx, 4.0, -1.0], [1.6 + i * 0.4, 4.0, -0.4], [1.6 + i * 0.4, 3.0, -0.4]]); s.box(tx, 2.2, -1.0, 0.4, 0.5, 0.4); });   // mass flow meter
       s.pipe([[2.0, 0.75, -0.4], [2.0, 0.35, -0.4], [2.0, 0.35, 1.8], [3.8, 0.35, 1.8], [3.8, 1.5, 1.8], [4.2, 1.5, 1.8]]);
       s.dyn = function (t) {
         var k = Math.floor(phase(t, 7500) * 3), a = t * 0.004;
@@ -507,7 +524,6 @@
     (function () {   // 2 lid agitator: set on the delivery container (drum), locked, stirs, lifted for the next one
       var s = new Scene(); s.floor(5, 3.5);
       drum(s, 0, 0, 1.0, 2.0); drum(s, 3.0, -0.6, 1.0, 2.0);
-      s.line([-2.6, 0, 0], [-2.6, 5.0, 0]);                     // simple lifting aid behind
       s.dyn = function (t) {
         var p = phase(t, 9000), lift = p < 0.18 ? 1.6 * (1 - p / 0.18) : p > 0.82 ? 1.6 * ((p - 0.82) / 0.18) : 0;
         var y = 2.05 + lift, stir = lift === 0;
