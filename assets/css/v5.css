@@ -1,5 +1,5 @@
 /* Version 5 – "Vention" style: modern product site, navy hero video, blue buttons, white sections, tabs */
-@import url("base.css");
+@import url("base.css?v=4d750645");
 
 :root {
   --section: clamp(56px, 6.5vw, 96px);  /* v5: tighter section spacing */
