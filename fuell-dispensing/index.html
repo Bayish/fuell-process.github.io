@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="de-DE">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="googlebot" content="noindex, nofollow">
+  <style>html.fpg-locked body{display:none!important}html.fpg-denied body>*:not(.fpg-deny){display:none!important}.fpg-deny{font:16px/1.6 system-ui,sans-serif;max-width:520px;margin:18vh auto;padding:0 24px;color:#1b1f23}.fpg-deny button{margin-top:16px;padding:10px 18px;font:inherit;cursor:pointer}</style>
+  <script>
+  /* Preview access check – simple browser prompt, not real security. */
+  (function () {
+    var H = '9a2ebb00508dfcb446b7c845bf572ad95cef7db6b07c463ba793637099b58980', K = 'fpg-preview', root = document.documentElement;
+    try { if (sessionStorage.getItem(K) === H) return; } catch (e) {}
+    root.classList.add('fpg-locked');
+    function deny() {
+      function show() {
+        root.classList.remove('fpg-locked'); root.classList.add('fpg-denied');
+        var d = document.createElement('div'); d.className = 'fpg-deny';
+        d.innerHTML = '<h1 style="font-size:24px">Geschützte Vorschau / Protected preview</h1><p>Benutzername oder Passwort falsch. / Wrong username or password.</p><button type="button">Erneut versuchen / Try again</button>';
+        d.querySelector('button').onclick = function () { location.reload(); };
+        document.body.insertBefore(d, document.body.firstChild);
+      }
+      if (document.body) show(); else document.addEventListener('DOMContentLoaded', show);
+    }
+    var u = window.prompt('Geschützte Vorschau – Benutzername / Protected preview – username:');
+    if (u === null) return deny();
+    var p = window.prompt('Passwort / Password:');
+    if (p === null) return deny();
+    if (!(window.crypto && crypto.subtle)) return deny();
+    crypto.subtle.digest('SHA-256', new TextEncoder().encode(u.trim() + ':' + p)).then(function (buf) {
+      var h = Array.prototype.map.call(new Uint8Array(buf), function (x) { return ('0' + x.toString(16)).slice(-2); }).join('');
+      if (h === H) { try { sessionStorage.setItem(K, H); } catch (e) {} root.classList.remove('fpg-locked'); }
+      else deny();
+    }, deny);
+  })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dosieranlagen – von einfach bis komplex | Füll Systembau</title>
+  <meta name="description" content="Sechs Dosieranlagen von Füll Systembau als Schema: FS MS, FS XS, LX5, FS 2005.2, FS 182.2 und FS 188 – von einfach bis komplex.">
+  <!-- Design prototype: not indexed until it replaces the live page -->
+  <link rel="canonical" href="https://fuell-dispensing.com/dosieranlagen-ruehrwerke-lagersysteme/">
+  <meta name="theme-color" content="#01162b">
+  <link rel="icon" href="/fuell-process.github.io/fuell-dispensing/assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="preload" href="/fuell-process.github.io/fuell-dispensing/assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/fuell-process.github.io/fuell-dispensing/assets/css/style.css?v=347bafc8">
+  <link rel="stylesheet" href="/fuell-process.github.io/fuell-dispensing/assets/css/dispensing.css?v=665d16b5">
+  <script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+  <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
+
+  <header class="site-header">
+    <div class="nav-pill">
+      <a class="brand" href="/fuell-process.github.io/fuell-dispensing/" aria-label="Füll Systembau">
+        <img src="/fuell-process.github.io/fuell-dispensing/assets/img/fuell-systembau-logo.png" width="256" height="70" alt="Füll Systembau">
+      </a>
+      <div class="nav-actions">
+        <div class="lang-switch" role="group" aria-label="Language"><span aria-current="true" lang="de">DE</span><a href="/fuell-process.github.io/fuell-dispensing/en/" hreflang="en" lang="en" aria-label="English">EN</a></div>
+      </div>
+    </div>
+  </header>
+
+  <main id="inhalt">
+    <section class="intro">
+      <div class="container">
+        <h1><span class="h1-brand">Füll Systembau · Dosieranlagen</span>Dosieranlagen<span class="soft">von einfach bis komplex</span></h1>
+      </div>
+    </section>
+
+    <section class="build" aria-labelledby="build-title">
+      <div class="container">
+        <div class="section-label"><p class="eyebrow">Aufbau</p><h2 class="h2" id="build-title">So ist eine Dosieranlage aufgebaut</h2></div>
+        <div class="build__grid">
+          <div class="build__visual">
+            <figure class="build__stage frame">
+              <canvas id="build" aria-hidden="true"></canvas>
+              <figcaption class="visually-hidden">Schematische Darstellung, nicht massstabsgetreu</figcaption>
+            </figure>
+            <div class="layers" role="group" aria-label="Teil der Anlage hervorheben"><button type="button" class="layer layer--storage" data-layer="storage" aria-pressed="false"><span class="sw" aria-hidden="true"></span>Lager: Großtanks und Kleingebinde</button><button type="button" class="layer layer--lines" data-layer="lines" aria-pressed="false"><span class="sw" aria-hidden="true"></span>Leitungen und Umwälzung</button><button type="button" class="layer layer--head" data-layer="head" aria-pressed="false"><span class="sw" aria-hidden="true"></span>Dosierkopf mit Ventilen</button><button type="button" class="layer layer--scale" data-layer="scale" aria-pressed="false"><span class="sw" aria-hidden="true"></span>Waage (gravimetrisch) oder HX5 (volumetrisch)</button><button type="button" class="layer layer--control" data-layer="control" aria-pressed="false"><span class="sw" aria-hidden="true"></span>Steuerung: SPS und CALIPSO</button></div>
+          </div>
+          <aside class="calipso" data-calipso data-recipe="[{&quot;name&quot;: &quot;Komponente A&quot;, &quot;src&quot;: &quot;Großtank 1&quot;, &quot;pipe&quot;: &quot;L1&quot;, &quot;target&quot;: 12.0, &quot;unit&quot;: &quot;kg&quot;, &quot;rate&quot;: 1.5, &quot;method&quot;: &quot;grav&quot;, &quot;share&quot;: 0.4}, {&quot;name&quot;: &quot;Komponente B&quot;, &quot;src&quot;: &quot;Großtank 2&quot;, &quot;pipe&quot;: &quot;L2&quot;, &quot;target&quot;: 6.5, &quot;unit&quot;: &quot;kg&quot;, &quot;rate&quot;: 1.2, &quot;method&quot;: &quot;grav&quot;, &quot;share&quot;: 0.25}, {&quot;name&quot;: &quot;Komponente C&quot;, &quot;src&quot;: &quot;Kleingebinde 1&quot;, &quot;pipe&quot;: &quot;S1&quot;, &quot;target&quot;: 850.0, &quot;unit&quot;: &quot;g&quot;, &quot;rate&quot;: 120.0, &quot;method&quot;: &quot;grav&quot;, &quot;share&quot;: 0.12}, {&quot;name&quot;: &quot;Komponente D&quot;, &quot;src&quot;: &quot;Kleingebinde 2&quot;, &quot;pipe&quot;: &quot;S2&quot;, &quot;target&quot;: 120.0, &quot;unit&quot;: &quot;g&quot;, &quot;rate&quot;: 40.0, &quot;method&quot;: &quot;grav&quot;, &quot;share&quot;: 0.05}, {&quot;name&quot;: &quot;Komponente E&quot;, &quot;src&quot;: &quot;Großtank 3&quot;, &quot;pipe&quot;: &quot;L3&quot;, &quot;target&quot;: 2.5, &quot;unit&quot;: &quot;L&quot;, &quot;rate&quot;: 0.5, &quot;method&quot;: &quot;vol&quot;, &quot;share&quot;: 0.1}, {&quot;name&quot;: &quot;Komponente F&quot;, &quot;src&quot;: &quot;Kleingebinde 3&quot;, &quot;pipe&quot;: &quot;S3&quot;, &quot;target&quot;: 250.0, &quot;unit&quot;: &quot;ml&quot;, &quot;rate&quot;: 60.0, &quot;method&quot;: &quot;vol&quot;, &quot;share&quot;: 0.08}]" data-labels="{&quot;wait&quot;: &quot;Wartet&quot;, &quot;run&quot;: &quot;Dosiert&quot;, &quot;done&quot;: &quot;Fertig&quot;, &quot;running&quot;: &quot;In Betrieb&quot;, &quot;finished&quot;: &quot;Auftrag fertig&quot;, &quot;grav&quot;: &quot;Waage · gravimetrisch&quot;, &quot;vol&quot;: &quot;HX5 · volumetrisch&quot;, &quot;remove&quot;: &quot;Gebinde entnehmen&quot;, &quot;on&quot;: &quot;Läuft&quot;, &quot;off&quot;: &quot;Pause&quot;, &quot;feed&quot;: &quot;Läuft · Dosierung&quot;, &quot;cycle&quot;: &quot;{on} s an · {off} s aus&quot;}" data-cycles="[{&quot;id&quot;: &quot;L1&quot;, &quot;name&quot;: &quot;Großtank 1&quot;, &quot;kind&quot;: &quot;Pumpe · Umwälzung&quot;, &quot;type&quot;: &quot;pump&quot;, &quot;on&quot;: 20, &quot;off&quot;: 10, &quot;offset&quot;: 0}, {&quot;id&quot;: &quot;L2&quot;, &quot;name&quot;: &quot;Großtank 2&quot;, &quot;kind&quot;: &quot;Pumpe · Umwälzung&quot;, &quot;type&quot;: &quot;pump&quot;, &quot;on&quot;: 20, &quot;off&quot;: 10, &quot;offset&quot;: 7}, {&quot;id&quot;: &quot;L3&quot;, &quot;name&quot;: &quot;Großtank 3&quot;, &quot;kind&quot;: &quot;Pumpe · Umwälzung&quot;, &quot;type&quot;: &quot;pump&quot;, &quot;on&quot;: 20, &quot;off&quot;: 10, &quot;offset&quot;: 14}, {&quot;id&quot;: &quot;S1&quot;, &quot;name&quot;: &quot;Kleingebinde 1&quot;, &quot;kind&quot;: &quot;Rührwerk&quot;, &quot;type&quot;: &quot;stir&quot;, &quot;on&quot;: 8, &quot;off&quot;: 12, &quot;offset&quot;: 0}, {&quot;id&quot;: &quot;S2&quot;, &quot;name&quot;: &quot;Kleingebinde 2&quot;, &quot;kind&quot;: &quot;Rührwerk&quot;, &quot;type&quot;: &quot;stir&quot;, &quot;on&quot;: 8, &quot;off&quot;: 12, &quot;offset&quot;: 5}, {&quot;id&quot;: &quot;S3&quot;, &quot;name&quot;: &quot;Kleingebinde 3&quot;, &quot;kind&quot;: &quot;Rührwerk&quot;, &quot;type&quot;: &quot;stir&quot;, &quot;on&quot;: 8, &quot;off&quot;: 12, &quot;offset&quot;: 10}, {&quot;id&quot;: &quot;S4&quot;, &quot;name&quot;: &quot;Kleingebinde 4&quot;, &quot;kind&quot;: &quot;Rührwerk&quot;, &quot;type&quot;: &quot;stir&quot;, &quot;on&quot;: 8, &quot;off&quot;: 12, &quot;offset&quot;: 15}]" aria-label="CALIPSO">
+            <div class="cal-top"><span class="cal-logo">CALIPSO</span><span class="cal-order">Auftrag 0815</span><span class="cal-status" data-cal-status>Bereit</span></div>
+            <dl class="cal-info">
+              <div><dt>Aktiv</dt><dd data-cal-active>–</dd></div>
+              <div><dt>Messung</dt><dd data-cal-scale>–</dd></div>
+              <div><dt>Zeit</dt><dd data-cal-total>00:00</dd></div>
+            </dl>
+            <div class="cal-bar" aria-hidden="true"><span data-cal-bar></span></div>
+            <table class="cal-table"><thead><tr><th>#</th><th>Komponente</th><th>Soll</th><th>Ist</th><th>Zeit</th><th>Status</th></tr></thead><tbody><tr><td class="c-n">1</td><td><strong>Komponente A</strong><small>Großtank 1</small></td><td class="c-num">12,000 kg</td><td class="c-num">–</td><td class="c-num">–</td><td><span class="chip">–</span></td></tr><tr><td class="c-n">2</td><td><strong>Komponente B</strong><small>Großtank 2</small></td><td class="c-num">6,500 kg</td><td class="c-num">–</td><td class="c-num">–</td><td><span class="chip">–</span></td></tr><tr><td class="c-n">3</td><td><strong>Komponente C</strong><small>Kleingebinde 1</small></td><td class="c-num">850,0 g</td><td class="c-num">–</td><td class="c-num">–</td><td><span class="chip">–</span></td></tr><tr><td class="c-n">4</td><td><strong>Komponente D</strong><small>Kleingebinde 2</small></td><td class="c-num">120,0 g</td><td class="c-num">–</td><td class="c-num">–</td><td><span class="chip">–</span></td></tr><tr><td class="c-n">5</td><td><strong>Komponente E</strong><small>Großtank 3</small></td><td class="c-num">2,500 L</td><td class="c-num">–</td><td class="c-num">–</td><td><span class="chip">–</span></td></tr><tr><td class="c-n">6</td><td><strong>Komponente F</strong><small>Kleingebinde 3</small></td><td class="c-num">250,0 ml</td><td class="c-num">–</td><td class="c-num">–</td><td><span class="chip">–</span></td></tr></tbody></table>
+            <div class="cal-units"><p class="cal-sub">Umwälzen und Rühren</p><ul data-cal-units><li class="unit unit--pump"><span class="unit__dot" aria-hidden="true"></span><span class="unit__name"><strong>Großtank 1</strong><small>Pumpe · Umwälzung</small></span><span class="unit__state" data-u-state>–</span><span class="unit__time" data-u-time>00:00</span><span class="unit__cycle">Umwälzen 20 s an · 10 s aus</span></li><li class="unit unit--pump"><span class="unit__dot" aria-hidden="true"></span><span class="unit__name"><strong>Großtank 2</strong><small>Pumpe · Umwälzung</small></span><span class="unit__state" data-u-state>–</span><span class="unit__time" data-u-time>00:00</span><span class="unit__cycle">Umwälzen 20 s an · 10 s aus</span></li><li class="unit unit--pump"><span class="unit__dot" aria-hidden="true"></span><span class="unit__name"><strong>Großtank 3</strong><small>Pumpe · Umwälzung</small></span><span class="unit__state" data-u-state>–</span><span class="unit__time" data-u-time>00:00</span><span class="unit__cycle">Umwälzen 20 s an · 10 s aus</span></li><li class="unit unit--stir"><span class="unit__dot" aria-hidden="true"></span><span class="unit__name"><strong>Kleingebinde 1</strong><small>Rührwerk</small></span><span class="unit__state" data-u-state>–</span><span class="unit__time" data-u-time>00:00</span><span class="unit__cycle">Rühren 8 s an · 12 s aus</span></li><li class="unit unit--stir"><span class="unit__dot" aria-hidden="true"></span><span class="unit__name"><strong>Kleingebinde 2</strong><small>Rührwerk</small></span><span class="unit__state" data-u-state>–</span><span class="unit__time" data-u-time>00:00</span><span class="unit__cycle">Rühren 8 s an · 12 s aus</span></li><li class="unit unit--stir"><span class="unit__dot" aria-hidden="true"></span><span class="unit__name"><strong>Kleingebinde 3</strong><small>Rührwerk</small></span><span class="unit__state" data-u-state>–</span><span class="unit__time" data-u-time>00:00</span><span class="unit__cycle">Rühren 8 s an · 12 s aus</span></li><li class="unit unit--stir"><span class="unit__dot" aria-hidden="true"></span><span class="unit__name"><strong>Kleingebinde 4</strong><small>Rührwerk</small></span><span class="unit__state" data-u-state>–</span><span class="unit__time" data-u-time>00:00</span><span class="unit__cycle">Rühren 8 s an · 12 s aus</span></li></ul></div>
+            <p class="cal-note">Simulation mit Beispielwerten – keine technischen Daten. Darstellung angelehnt an die Dosiersoftware CALIPSO.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="journey" aria-labelledby="journey-title">
+      <div class="container">
+        <div class="section-label"><p class="eyebrow">Anlagentypen</p><h2 class="h2" id="journey-title">Von einfach bis komplex</h2></div>
+        <figure class="journey__stage frame">
+          <canvas id="journey" aria-hidden="true"></canvas>
+          <ol class="stage__ladder" data-ladder><li><a href="#fs-ms"><b>01</b>FS MS</a></li><li><a href="#fs-xs"><b>02</b>FS XS</a></li><li><a href="#lx5"><b>03</b>LX5</a></li><li><a href="#fs-2005-2"><b>04</b>FS 2005.2</a></li><li><a href="#fs-182-2"><b>05</b>FS 182.2</a></li><li><a href="#fs-188"><b>06</b>FS 188</a></li></ol>
+          <div class="stage__scale" aria-hidden="true"><span>einfach</span><span>→</span><span>komplex</span></div>
+          <div class="stage__level" data-stage-level aria-hidden="true">01</div>
+          <div class="stage__name" data-stage-name aria-live="polite">FS MS</div>
+          <div class="stage__meter" data-stage-meter aria-hidden="true"><span style="--i:0"></span><span style="--i:1"></span><span style="--i:2"></span><span style="--i:3"></span><span style="--i:4"></span><span style="--i:5"></span></div>
+          <figcaption class="visually-hidden">Schematische Darstellung, nicht massstabsgetreu</figcaption>
+        </figure>
+        <ol class="journey__steps"><li id="fs-ms" data-step data-name="FS MS" aria-label="01 FS MS"></li><li id="fs-xs" data-step data-name="FS XS" aria-label="02 FS XS"></li><li id="lx5" data-step data-name="LX5" aria-label="03 LX5"></li><li id="fs-2005-2" data-step data-name="FS 2005.2" aria-label="04 FS 2005.2"></li><li id="fs-182-2" data-step data-name="FS 182.2" aria-label="05 FS 182.2"></li><li id="fs-188" data-step data-name="FS 188" aria-label="06 FS 188"></li></ol>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <span>© 2026 Füll Systembau GmbH · <a href="https://fuell-process.com/" rel="noopener">Ein Unternehmen der Füll Process Group</a></span>
+        <span><a href="https://fuell-dispensing.com/dosieranlagen-ruehrwerke-lagersysteme/" rel="noopener">Alle Details auf fuell-dispensing.com</a> · <a href="https://fuell-dispensing.com/kontakt-fuell/impressum-2/" rel="noopener">Impressum</a> · <a href="https://fuell-dispensing.com/kontakt-fuell/datenschutzhinweise/" rel="noopener">Datenschutz</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/fuell-process.github.io/fuell-dispensing/assets/js/main.js?v=2b878198" defer></script>
+  <script src="/fuell-process.github.io/fuell-dispensing/assets/js/dispensing.js?v=086a22e9" defer></script>
+</body>
+</html>
