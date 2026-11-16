@@ -41,7 +41,9 @@ h3 { font-size: 21px; font-weight: 600; }
 .langs summary::-webkit-details-marker { display: none; }
 .langs summary::after { content: ""; display: inline-block; margin-left: 8px; width: 7px; height: 7px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: translateY(-3px) rotate(45deg); }
 .langs ul { position: absolute; right: 0; top: 100%; z-index: 60; min-width: 160px; margin: 6px 0 0; padding: 6px; list-style: none; background: #fff; border: 1px solid var(--gray-100); box-shadow: 0 12px 30px rgba(0,0,0,.12); }
-.langs a { display: block; padding: 8px 12px; color: var(--ink); text-decoration: none; }
+.langs a { display: flex; align-items: center; gap: 10px; padding: 8px 12px; color: var(--ink); text-decoration: none; }
+.langs summary { display: inline-flex; align-items: center; gap: 8px; }
+.flag { flex: none; width: 21px; height: 14px; object-fit: cover; border-radius: 2px; box-shadow: 0 0 0 1px rgba(0,0,0,.18); }
 .langs a:hover, .langs a[aria-current="true"] { background: var(--gray-50); color: var(--red); font-weight: 700; }
 .header { position: sticky; top: 0; z-index: 50; background: #fff; border-bottom: 1px solid var(--gray-100); transition: box-shadow .3s; }
 .is-scrolled .header { box-shadow: 0 6px 24px rgba(0,0,0,.08); }
