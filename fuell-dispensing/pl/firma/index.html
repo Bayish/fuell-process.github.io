@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="googlebot" content="noindex, nofollow">
+  <style>html.fpg-locked body{display:none!important}html.fpg-denied body>*:not(.fpg-deny){display:none!important}.fpg-deny{font:16px/1.6 system-ui,sans-serif;max-width:520px;margin:18vh auto;padding:0 24px;color:#1b1f23}.fpg-deny button{margin-top:16px;padding:10px 18px;font:inherit;cursor:pointer}</style>
+  <script>
+  /* Preview access check – simple browser prompt, not real security. */
+  (function () {
+    var H = '9a2ebb00508dfcb446b7c845bf572ad95cef7db6b07c463ba793637099b58980', K = 'fpg-preview', root = document.documentElement;
+    try { if (sessionStorage.getItem(K) === H) return; } catch (e) {}
+    root.classList.add('fpg-locked');
+    function deny() {
+      function show() {
+        root.classList.remove('fpg-locked'); root.classList.add('fpg-denied');
+        var d = document.createElement('div'); d.className = 'fpg-deny';
+        d.innerHTML = '<h1 style="font-size:24px">Geschützte Vorschau / Protected preview</h1><p>Benutzername oder Passwort falsch. / Wrong username or password.</p><button type="button">Erneut versuchen / Try again</button>';
+        d.querySelector('button').onclick = function () { location.reload(); };
+        document.body.insertBefore(d, document.body.firstChild);
+      }
+      if (document.body) show(); else document.addEventListener('DOMContentLoaded', show);
+    }
+    var u = window.prompt('Geschützte Vorschau – Benutzername / Protected preview – username:');
+    if (u === null) return deny();
+    var p = window.prompt('Passwort / Password:');
+    if (p === null) return deny();
+    if (!(window.crypto && crypto.subtle)) return deny();
+    crypto.subtle.digest('SHA-256', new TextEncoder().encode(u.trim() + ':' + p)).then(function (buf) {
+      var h = Array.prototype.map.call(new Uint8Array(buf), function (x) { return ('0' + x.toString(16)).slice(-2); }).join('');
+      if (h === H) { try { sessionStorage.setItem(K, H); } catch (e) {} root.classList.remove('fpg-locked'); }
+      else deny();
+    }, deny);
+  })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Firma: Füll Systembau GmbH, Idstein (Niemcy) | Füll</title>
+  <meta name="description" content="Füll Systembau: instalacje dozujące, zbiornikowe i mieszające od 1965 r., ponad 2500 instalacji na świecie. Historia, mocne strony, certyfikaty i Füll Process Group.">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Füll Systembau">
+  <meta property="og:locale" content="pl_PL">
+  <meta property="og:url" content="https://bayish.github.io/fuell-process.github.io/fuell-dispensing/pl/firma/">
+  <meta property="og:title" content="Firma: Füll Systembau GmbH, Idstein (Niemcy) | Füll">
+  <meta property="og:description" content="Füll Systembau: instalacje dozujące, zbiornikowe i mieszające od 1965 r., ponad 2500 instalacji na świecie. Historia, mocne strony, certyfikaty i Füll Process Group.">
+  <meta property="og:image" content="https://bayish.github.io/fuell-process.github.io/fuell-dispensing/assets/img/dosieranlage-dosierzentrum.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/fuell-process.github.io/fuell-dispensing/assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/fuell-process.github.io/fuell-dispensing/assets/img/apple-touch-icon.png">
+  <link rel="preload" href="/fuell-process.github.io/fuell-dispensing/assets/fonts/montserrat-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fuell-process.github.io/fuell-dispensing/assets/fonts/pt-sans-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fuell-process.github.io/fuell-dispensing/assets/fonts/montserrat-600-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/fuell-process.github.io/fuell-dispensing/assets/css/site.css?v=fb40eacf">
+  <link rel="stylesheet" href="/fuell-process.github.io/fuell-dispensing/assets/css/knowledge.css?v=6ceba060">
+  <link rel="stylesheet" href="/fuell-process.github.io/fuell-dispensing/assets/css/page.css?v=42036166">
+  <script>document.documentElement.classList.add('js')</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://fuell-dispensing.com/pl/firma/#webpage",
+      "url": "https://fuell-dispensing.com/pl/firma/",
+      "name": "Firma: Füll Systembau GmbH, Idstein (Niemcy) | Füll",
+      "description": "Füll Systembau: instalacje dozujące, zbiornikowe i mieszające od 1965 r., ponad 2500 instalacji na świecie. Historia, mocne strony, certyfikaty i Füll Process Group.",
+      "inLanguage": "pl",
+      "isPartOf": {
+        "@id": "https://fuell-dispensing.com/#website"
+      },
+      "about": {
+        "@type": "Organization",
+        "@id": "https://fuell-dispensing.com/#organization",
+        "name": "Füll Systembau GmbH",
+        "url": "https://fuell-dispensing.com/"
+      },
+      "breadcrumb": {
+        "@id": "https://fuell-dispensing.com/pl/firma/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Start",
+          "item": "https://fuell-dispensing.com/pl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Firma",
+          "item": "https://fuell-dispensing.com/pl/firma/"
+        }
+      ],
+      "@id": "https://fuell-dispensing.com/pl/firma/#breadcrumb"
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#inhalt">Przejdź do treści</a>
+  <div class="topbar"><div class="container topbar__in">
+    <a class="topbar__phone" href="tel:+4961265980"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span>Telefon: +49 6126 598-0</span></a>
+    <details class="langs"><summary><span class="vh">Język: </span><img class="flag" src="/fuell-process.github.io/fuell-dispensing/assets/img/flags/pl.svg" width="21" height="14" alt="" aria-hidden="true">Polski</summary><ul><li><a href="/fuell-process.github.io/fuell-dispensing/unternehmen/" hreflang="de" lang="de"><img class="flag" src="/fuell-process.github.io/fuell-dispensing/assets/img/flags/de.svg" width="21" height="14" alt="" aria-hidden="true">Deutsch</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/company/" hreflang="en" lang="en"><img class="flag" src="/fuell-process.github.io/fuell-dispensing/assets/img/flags/gb.svg" width="21" height="14" alt="" aria-hidden="true">English</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/entreprise/" hreflang="fr" lang="fr"><img class="flag" src="/fuell-process.github.io/fuell-dispensing/assets/img/flags/fr.svg" width="21" height="14" alt="" aria-hidden="true">Français</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/empresa/" hreflang="es" lang="es"><img class="flag" src="/fuell-process.github.io/fuell-dispensing/assets/img/flags/es.svg" width="21" height="14" alt="" aria-hidden="true">Español</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/pl/firma/" hreflang="pl" lang="pl" aria-current="true"><img class="flag" src="/fuell-process.github.io/fuell-dispensing/assets/img/flags/pl.svg" width="21" height="14" alt="" aria-hidden="true">Polski</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/tr/sirket/" hreflang="tr" lang="tr"><img class="flag" src="/fuell-process.github.io/fuell-dispensing/assets/img/flags/tr.svg" width="21" height="14" alt="" aria-hidden="true">Türkçe</a></li></ul></details>
+  </div></div>
+  <header class="header">
+    <div class="container header__in">
+      <a class="brand" href="/fuell-process.github.io/fuell-dispensing/pl/" aria-label="Füll Systembau"><img src="/fuell-process.github.io/fuell-dispensing/assets/img/fuell-dispensing-logo.png" width="256" height="70" alt="FÜLL Dispensing Systems"></a>
+      <nav class="nav" id="nav" aria-label="Navigation"><ul class="menu"><li class="menu__item"><a class="menu__top" href="/fuell-process.github.io/fuell-dispensing/pl/instalacje-dozujace/">Produkty i usługi</a><button class="menu__toggle" type="button" aria-expanded="false" aria-controls="sub0" aria-label="Podmenu: Produkty i usługi"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="menu__sub" id="sub0"><li><a href="/fuell-process.github.io/fuell-dispensing/pl/instalacje-dozujace/">Przegląd: Produkty i usługi</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/pl/instalacje-dozujace/">Instalacje dozujące</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/pl/schematy/">Instalacje w schemacie</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/pl/oprogramowanie-dozujace/">Oprogramowanie dozujące</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/pl/mieszadla/">Mieszadła</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/pl/peryferia/">Osprzęt</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/pl/peryferia/#lagersysteme">Systemy magazynowe</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/pl/inzynieria/">Inżynieria</a></li></ul></li><li class="menu__item"><a class="menu__top" href="/fuell-process.github.io/fuell-dispensing/pl/rynki/">Rynki</a><button class="menu__toggle" type="button" aria-expanded="false" aria-controls="sub1" aria-label="Podmenu: Rynki"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="menu__sub" id="sub1"><li><a href="/fuell-process.github.io/fuell-dispensing/pl/rynki/">Przegląd: Rynki</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/pl/rynki/druk-opakowania/">Druk i opakowania</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/pl/rynki/farby-lakiery/">Farby i lakiery</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/pl/rynki/chemia/">Chemia</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/pl/rynki/kosmetyki-farmacja/">Kosmetyka, farmacja, żywność</a></li></ul></li><li class="menu__item"><a class="menu__top" href="/fuell-process.github.io/fuell-dispensing/pl/firma/">Firma</a><button class="menu__toggle" type="button" aria-expanded="false" aria-controls="sub2" aria-label="Podmenu: Firma"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="menu__sub" id="sub2"><li><a href="/fuell-process.github.io/fuell-dispensing/pl/firma/">Przegląd: Firma</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/pl/firma/#gruppe">Lokalizacje</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/pl/firma/#historie">Historia</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/pl/firma/#staerken">Mocne strony i wartości</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/pl/referencje/">Referencje</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/pl/referencje/#fallstudien">Studia przypadków</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/pl/firma/#zertifizierungen">Certyfikaty</a></li><li><a href="https://fuell-dispensing.com/company/vacancies/?lang=en">Oferty pracy (EN)</a></li></ul></li><li class="menu__item"><span class="menu__top">Info</span><button class="menu__toggle" type="button" aria-expanded="false" aria-controls="sub3" aria-label="Podmenu: Info"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="menu__sub" id="sub3"><li><a href="/fuell-process.github.io/fuell-dispensing/ratgeber/">Poradniki (DE)</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/glossar/">Słownik (DE)</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/pl/wideo/">Filmy</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/pl/do-pobrania/">Do pobrania</a></li><li><a href="https://www.youtube.com/channel/UCuraxCQK4nHG1uWadnqBxdQ" target="_blank" rel="noopener">Kanał YouTube <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li></ul></li><li class="menu__item"><a class="menu__top" href="/fuell-process.github.io/fuell-dispensing/pl/kontakt/">Kontakt</a><button class="menu__toggle" type="button" aria-expanded="false" aria-controls="sub4" aria-label="Podmenu: Kontakt"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="menu__sub" id="sub4"><li><a href="/fuell-process.github.io/fuell-dispensing/pl/kontakt/">Przegląd: Kontakt</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/pl/kontakt/">Formularz kontaktowy</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/pl/kontakt/#service">Serwis</a></li></ul></li></ul></nav>
+      <a class="btn btn--red header__cta" href="/fuell-process.github.io/fuell-dispensing/pl/kontakt/">Wyślij zapytanie</a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="inhalt">
+    <section class="pg-hero">
+      <div class="container pg-hero__in">
+        <div class="pg-hero__text">
+          <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/fuell-process.github.io/fuell-dispensing/pl/">Start</a></li><li aria-current="page">Firma</li></ol></nav>
+          <p class="eyebrow">Firma</p>
+          <h1>Füll Systembau: technika dozowania od 1965 r.</h1>
+          <p class="pg-hero__lead">Od ponad 50 lat Füll Systembau GmbH specjalizuje się w budowie instalacji dozujących, zbiornikowych i mieszających dla cieczy o niskiej do wysokiej lepkości z różnych branż. Na całym świecie zaplanowano, zmontowano i uruchomiono już ponad 2500 indywidualnych instalacji dozujących i zbiornikowych – ponad połowę za granicą.</p>
+          <div class="btns pg-hero__btns"><a class="btn btn--red" href="/fuell-process.github.io/fuell-dispensing/pl/kontakt/">Wyślij zapytanie <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="btn btn--outline" href="tel:+4961265980">+49 6126 598-0</a></div>
+        </div>
+        <figure class="pg-hero__media"><img class="" src="/fuell-process.github.io/fuell-dispensing/assets/img/anlage-rohrleitungen-terminal.webp" width="1400" height="937" alt="Rurociągi i system magazynowy instalacji Füll" fetchpriority="high" decoding="async"></figure>
+      </div>
+      <ul class="container pg-facts"><li><strong>1965</strong><span>założona przez Wernera Fülla</span></li><li><strong>2500+</strong><span>instalacji na świecie</span></li><li><strong>&gt; 50 %</strong><span>eksport</span></li><li><strong>Idstein</strong><span>planowanie, produkcja, montaż</span></li></ul>
+    </section>
+    <section class="section" id="profil" aria-labelledby="profil-t"><div class="container"><div class="head"><h2 id="profil-t">Co nas wyróżnia</h2></div><div class="kn-prose pg-prose"><p>Niezawodna, niewymagająca dużej konserwacji technika i bliski kontakt z klientami czynią Füll niezawodnym i innowacyjnym partnerem. Na podstawie Państwa wymagań opracowujemy technicznie i ekonomicznie najlepsze rozwiązanie – z uwzględnieniem wszystkich wymogów prawnych (np. WHG i ATEX), zasady dozowania i warunków przestrzennych.</p>
+<p>Nasze możliwości widać szczególnie w projektach o wysokich wymaganiach wobec produktów, procesów i otoczenia. Standaryzowane komponenty odpowiadają aktualnemu stanowi techniki i są podstawą zoptymalizowanych kosztowo, indywidualnych koncepcji.</p>
+<p>Zakład w Idstein odpowiada za produkcję, instalację i uruchomienie, serwis posprzedażny oraz sprzedaż indywidualnych systemów dozujących. Tu planowana, produkowana i montowana jest cała gama produktów. Własne działy oprogramowania, PLC i elektroniki zapewniają elastyczność w sterowaniu instalacjami i integracji z systemami ERP lub MES.</p></div></div></section>
+    <section class="section section--gray" id="staerken" aria-labelledby="staerken-t"><div class="container"><div class="head"><h2 id="staerken-t">Mocne strony i wartości</h2></div><div class="pg-cards pg-cards--3"><article class="pg-card"><div class="pg-card__body"><h3>Elastyczność</h3><p>Małe czy duże, standardowe czy na zamówienie – liczą się Państwa wymagania. Każdy klient ma własne produkty, procesy i warunki.</p></div></article><article class="pg-card"><div class="pg-card__body"><h3>Wszechstronność</h3><p>Spektrum naszych możliwości jest bardzo szerokie – oferujemy rozwiązania dla niemal każdej potrzeby.</p></div></article><article class="pg-card"><div class="pg-card__body"><h3>Serwis</h3><p>Szybki, dostępny, mierzalny – od pierwszego kontaktu po obsługę klienta.</p></div></article><article class="pg-card"><div class="pg-card__body"><h3>Pracownicy</h3><p>Zmotywowani, wykwalifikowani i średnio ponad 10 lat w firmie.</p></div></article><article class="pg-card"><div class="pg-card__body"><h3>Doświadczenie</h3><p>Źródło naszych pomysłów – od pierwszej automatycznej instalacji dozującej w 1977 r. do dziś.</p></div></article><article class="pg-card"><div class="pg-card__body"><h3>Jakość</h3><p>Podstawa naszego myślenia – od najmniejszej śruby po uruchomienie.</p></div></article></div></div></section>
+    <section class="section" id="historie" aria-labelledby="historie-t"><div class="container"><div class="head"><h2 id="historie-t">Historia</h2></div><ol class="pg-timeline"><li><span>1965</span><p>Werner Füll zakłada firmę jako tokarnię armatury w Niedernhausen koło Frankfurtu.</p></li><li><span>1973</span><p>Przeprowadzka do większych budynków – rosnąca liczba zamówień na magazyny zbiornikowe i instalacje dozujące.</p></li><li><span>1977</span><p>Instalacja pierwszej automatycznej instalacji dozującej.</p></li><li><span>1985</span><p>Pierwsza instalacja z obiegiem pracy wspieranym informatycznie (MS-DOS) i bezstopniowy zawór iglicowy do dozowania kroplowego.</p></li><li><span>1988</span><p>Przeprowadzka do własnego budynku biurowo-produkcyjnego w Idstein.</p></li><li><span>1993</span><p>Wprowadzenie oprogramowania dozującego CALIPSO.</p></li><li><span>1997</span><p>Certyfikacja wg DIN EN ISO 9001.</p></li><li><span>1999</span><p>Przejęcie przez szwajcarski holding Perrot Duval.</p></li><li><span>2003</span><p>Dopuszczenie produkcji mieszadeł i wskaźników poziomu wg ATEX.</p></li><li><span>2004</span><p>Serwosilniki do aktywacji i pozycjonowania zaworów.</p></li><li><span>2006</span><p>Kompaktowa automatyczna instalacja dozująca FS XS.</p></li><li><span>2008</span><p>Założenie Füll Engineering B.V. w Holandii dla wolumetrycznych instalacji dozujących.</p></li><li><span>2009</span><p>Automatyczny laboratoryjny system dozujący LX5.</p></li><li><span>2010</span><p>Wolumetryczna instalacja dozująca VX5.</p></li><li><span>2012</span><p>Oprogramowanie dozujące CALIPSO BATCH.</p></li><li><span>2013</span><p>Specjalne zawory przemysłowe do żywic i klejów o wysokiej lepkości.</p></li><li><span>2014</span><p>Sieć przedstawicieli handlowych w zakresie techniki mieszania w Niemczech.</p></li><li><span>2015</span><p>50-lecie firmy.</p></li><li><span>2016</span><p>Tecos Bruhin AG dołącza do Füll Process Group.</p></li></ol></div></section>
+    <section class="section section--gray" id="zertifizierungen" aria-labelledby="zertifizierungen-t"><div class="container"><div class="head"><h2 id="zertifizierungen-t">Certyfikaty</h2></div><div class="pg-cards pg-cards--2"><article class="pg-card"><div class="pg-card__body"><h3>ISO 9001</h3><p>Doradztwo, planowanie, projektowanie i budowa sterowanych komputerowo precyzyjnych systemów dozujących i magazynowych oraz instalacji procesowych dla przemysłu chemicznego. Nadzór: TÜV SÜD Management Service.</p></div></article><article class="pg-card"><div class="pg-card__body"><h3>ATEX</h3><p>Certyfikat WE wg załącznika IV dyrektywy 2014/34/UE na produkcję różnych urządzeń. Nadzór: TÜV SÜD Product Service (jednostka notyfikowana 0123).</p></div></article><article class="pg-card"><div class="pg-card__body"><h3>Zakład specjalistyczny WHG</h3><p>Instalowanie, konserwacja i naprawa instalacji do cieczy zagrażających wodom, zwłaszcza części istotnych dla bezpieczeństwa, takich jak zabezpieczenia przed przepełnieniem. Nadzór: TÜV Technische Überwachung Hessen.</p></div></article><article class="pg-card"><div class="pg-card__body"><h3>Certyfikowani spawacze</h3><p>Spawacze ze świadectwem egzaminu wg ISO 9606-1.</p></div></article></div></div></section>
+    <section class="section" id="gruppe" aria-labelledby="gruppe-t"><div class="container"><div class="head"><h2 id="gruppe-t">Część Füll Process Group</h2></div><div class="kn-prose pg-prose"><p>Füll Systembau należy do Füll Process Group z siedzibą w Weinfelden (Szwajcaria). Do grupy należą także Tecos Bruhin (instalacje dozujące do produktów pastowatych i instalacje myjące), Füll Lab Automation (automatyzacja laboratoriów dla R&amp;D i kontroli jakości) oraz POLYSTONE Chemical.</p>
+<p><a href="https://fuell-process.com/">Więcej o Füll Process Group</a></p></div></div></section>
+    <section class="section section--dark" aria-labelledby="kn-final">
+      <div class="container s-cta">
+        <div><h2 id="kn-final">Porozmawiajmy o Państwa zadaniu dozowania</h2><p>Prześlij nam swoje produkty, liczbę komponentów i wymaganą wydajność. W fazie wstępnego projektu pokażemy, która instalacja pasuje do Państwa produkcji.</p></div>
+        <div class="btns"><a class="btn btn--red" href="/fuell-process.github.io/fuell-dispensing/pl/kontakt/">Wyślij zapytanie <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="btn btn--light" href="tel:+4961265980">+49 6126 598-0</a></div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container footer__top">
+      <div class="footer__brand">
+        <img src="/fuell-process.github.io/fuell-dispensing/assets/img/fuell-dispensing-logo.png" width="256" height="70" alt="FÜLL Dispensing Systems" loading="lazy">
+        <address>Füll Systembau GmbH<br>Richard-Klinger-Straße 31<br>65510 Idstein, Niemcy</address>
+        <p><span class="footer__label">Centrala</span><a href="tel:+4961265980">+49 6126 598-0</a><br><a href="mailto:info@fuell-dispensing.com">info@fuell-dispensing.com</a></p>
+        <p><span class="footer__label">Serwis</span><a href="tel:+49612659822">+49 6126 598-22</a><br><a href="mailto:service@fuell-dispensing.com">service@fuell-dispensing.com</a><br><span class="footer__hours">Pn–czw 7–16, pt 7–13 (CET)</span></p>
+        <p><a href="https://fuell-process.com/">Firma należąca do Füll Process Group</a></p>
+      </div>
+      <nav class="footer__map" aria-label="Sitemap"><div class="fcol"><p class="fcol__title"><a href="/fuell-process.github.io/fuell-dispensing/pl/instalacje-dozujace/">Produkty i usługi</a></p><ul><li><a href="/fuell-process.github.io/fuell-dispensing/pl/instalacje-dozujace/">Instalacje dozujące</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/pl/schematy/">Instalacje w schemacie</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/pl/oprogramowanie-dozujace/">Oprogramowanie dozujące</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/pl/mieszadla/">Mieszadła</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/pl/peryferia/">Osprzęt</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/pl/peryferia/#lagersysteme">Systemy magazynowe</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/pl/inzynieria/">Inżynieria</a></li></ul></div><div class="fcol"><p class="fcol__title"><a href="/fuell-process.github.io/fuell-dispensing/pl/rynki/">Rynki</a></p><ul><li><a href="/fuell-process.github.io/fuell-dispensing/pl/rynki/druk-opakowania/">Druk i opakowania</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/pl/rynki/farby-lakiery/">Farby i lakiery</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/pl/rynki/chemia/">Chemia</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/pl/rynki/kosmetyki-farmacja/">Kosmetyka, farmacja, żywność</a></li></ul></div><div class="fcol"><p class="fcol__title"><a href="/fuell-process.github.io/fuell-dispensing/pl/firma/">Firma</a></p><ul><li><a href="/fuell-process.github.io/fuell-dispensing/pl/firma/#gruppe">Lokalizacje</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/pl/firma/#historie">Historia</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/pl/firma/#staerken">Mocne strony i wartości</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/pl/referencje/">Referencje</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/pl/referencje/#fallstudien">Studia przypadków</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/pl/firma/#zertifizierungen">Certyfikaty</a></li><li><a href="https://fuell-dispensing.com/company/vacancies/?lang=en">Oferty pracy (EN)</a></li></ul></div><div class="fcol"><p class="fcol__title">Info</p><ul><li><a href="/fuell-process.github.io/fuell-dispensing/ratgeber/">Poradniki (DE)</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/glossar/">Słownik (DE)</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/pl/wideo/">Filmy</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/pl/do-pobrania/">Do pobrania</a></li><li><a href="https://www.youtube.com/channel/UCuraxCQK4nHG1uWadnqBxdQ" target="_blank" rel="noopener">Kanał YouTube <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li></ul></div><div class="fcol"><p class="fcol__title"><a href="/fuell-process.github.io/fuell-dispensing/pl/kontakt/">Kontakt</a></p><ul><li><a href="/fuell-process.github.io/fuell-dispensing/pl/kontakt/">Formularz kontaktowy</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/pl/kontakt/#service">Serwis</a></li></ul></div></nav>
+    </div>
+    <div class="container footer__bottom"><span>© 2026 Füll Systembau GmbH</span>
+      <nav class="footer__links" aria-label="Nota prawna"><a href="https://fuell-dispensing.com/contact/imprint/?lang=en">Nota prawna</a><a href="https://fuell-dispensing.com/contact/data-protection-notice/?lang=en">Ochrona danych</a><a href="https://fuell-dispensing.com/info/general-business-terms/?lang=en">OWH</a></nav></div>
+  </footer>
+  <script src="/fuell-process.github.io/fuell-dispensing/assets/js/site.js?v=dddbd33f" defer></script>
+</body>
+</html>

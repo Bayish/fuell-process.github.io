@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="googlebot" content="noindex, nofollow">
+  <style>html.fpg-locked body{display:none!important}html.fpg-denied body>*:not(.fpg-deny){display:none!important}.fpg-deny{font:16px/1.6 system-ui,sans-serif;max-width:520px;margin:18vh auto;padding:0 24px;color:#1b1f23}.fpg-deny button{margin-top:16px;padding:10px 18px;font:inherit;cursor:pointer}</style>
+  <script>
+  /* Preview access check – simple browser prompt, not real security. */
+  (function () {
+    var H = '9a2ebb00508dfcb446b7c845bf572ad95cef7db6b07c463ba793637099b58980', K = 'fpg-preview', root = document.documentElement;
+    try { if (sessionStorage.getItem(K) === H) return; } catch (e) {}
+    root.classList.add('fpg-locked');
+    function deny() {
+      function show() {
+        root.classList.remove('fpg-locked'); root.classList.add('fpg-denied');
+        var d = document.createElement('div'); d.className = 'fpg-deny';
+        d.innerHTML = '<h1 style="font-size:24px">Geschützte Vorschau / Protected preview</h1><p>Benutzername oder Passwort falsch. / Wrong username or password.</p><button type="button">Erneut versuchen / Try again</button>';
+        d.querySelector('button').onclick = function () { location.reload(); };
+        document.body.insertBefore(d, document.body.firstChild);
+      }
+      if (document.body) show(); else document.addEventListener('DOMContentLoaded', show);
+    }
+    var u = window.prompt('Geschützte Vorschau – Benutzername / Protected preview – username:');
+    if (u === null) return deny();
+    var p = window.prompt('Passwort / Password:');
+    if (p === null) return deny();
+    if (!(window.crypto && crypto.subtle)) return deny();
+    crypto.subtle.digest('SHA-256', new TextEncoder().encode(u.trim() + ':' + p)).then(function (buf) {
+      var h = Array.prototype.map.call(new Uint8Array(buf), function (x) { return ('0' + x.toString(16)).slice(-2); }).join('');
+      if (h === H) { try { sessionStorage.setItem(K, H); } catch (e) {} root.classList.remove('fpg-locked'); }
+      else deny();
+    }, deny);
+  })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dispensing software CALIPSO, CALIPSO BATCH, AURORA | Füll</title>
+  <meta name="description" content="Dispensing software by Füll: CALIPSO for gravimetric systems, CALIPSO BATCH for semi-finished products, AURORA and AURORA-Mix – with ERP interface and dispensing log.">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Füll Systembau">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:url" content="https://bayish.github.io/fuell-process.github.io/fuell-dispensing/en/dispensing-software/">
+  <meta property="og:title" content="Dispensing software CALIPSO, CALIPSO BATCH, AURORA | Füll">
+  <meta property="og:description" content="Dispensing software by Füll: CALIPSO for gravimetric systems, CALIPSO BATCH for semi-finished products, AURORA and AURORA-Mix – with ERP interface and dispensing log.">
+  <meta property="og:image" content="https://bayish.github.io/fuell-process.github.io/fuell-dispensing/assets/img/dosieranlage-dosierzentrum.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/fuell-process.github.io/fuell-dispensing/assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/fuell-process.github.io/fuell-dispensing/assets/img/apple-touch-icon.png">
+  <link rel="preload" href="/fuell-process.github.io/fuell-dispensing/assets/fonts/montserrat-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fuell-process.github.io/fuell-dispensing/assets/fonts/pt-sans-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fuell-process.github.io/fuell-dispensing/assets/fonts/montserrat-600-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/fuell-process.github.io/fuell-dispensing/assets/css/site.css?v=fb40eacf">
+  <link rel="stylesheet" href="/fuell-process.github.io/fuell-dispensing/assets/css/knowledge.css?v=6ceba060">
+  <link rel="stylesheet" href="/fuell-process.github.io/fuell-dispensing/assets/css/page.css?v=42036166">
+  <script>document.documentElement.classList.add('js')</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://fuell-dispensing.com/en/dispensing-software/#webpage",
+      "url": "https://fuell-dispensing.com/en/dispensing-software/",
+      "name": "Dispensing software CALIPSO, CALIPSO BATCH, AURORA | Füll",
+      "description": "Dispensing software by Füll: CALIPSO for gravimetric systems, CALIPSO BATCH for semi-finished products, AURORA and AURORA-Mix – with ERP interface and dispensing log.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://fuell-dispensing.com/#website"
+      },
+      "about": {
+        "@type": "Organization",
+        "@id": "https://fuell-dispensing.com/#organization",
+        "name": "Füll Systembau GmbH",
+        "url": "https://fuell-dispensing.com/"
+      },
+      "breadcrumb": {
+        "@id": "https://fuell-dispensing.com/en/dispensing-software/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fuell-dispensing.com/en/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Dispensing software",
+          "item": "https://fuell-dispensing.com/en/dispensing-software/"
+        }
+      ],
+      "@id": "https://fuell-dispensing.com/en/dispensing-software/#breadcrumb"
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#inhalt">Skip to content</a>
+  <div class="topbar"><div class="container topbar__in">
+    <a class="topbar__phone" href="tel:+4961265980"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span>Phone: +49 6126 598-0</span></a>
+    <details class="langs"><summary><span class="vh">Language: </span><img class="flag" src="/fuell-process.github.io/fuell-dispensing/assets/img/flags/gb.svg" width="21" height="14" alt="" aria-hidden="true">English</summary><ul><li><a href="/fuell-process.github.io/fuell-dispensing/dosiersoftware/" hreflang="de" lang="de"><img class="flag" src="/fuell-process.github.io/fuell-dispensing/assets/img/flags/de.svg" width="21" height="14" alt="" aria-hidden="true">Deutsch</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/dispensing-software/" hreflang="en" lang="en" aria-current="true"><img class="flag" src="/fuell-process.github.io/fuell-dispensing/assets/img/flags/gb.svg" width="21" height="14" alt="" aria-hidden="true">English</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/logiciel-de-dosage/" hreflang="fr" lang="fr"><img class="flag" src="/fuell-process.github.io/fuell-dispensing/assets/img/flags/fr.svg" width="21" height="14" alt="" aria-hidden="true">Français</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/software-de-dosificacion/" hreflang="es" lang="es"><img class="flag" src="/fuell-process.github.io/fuell-dispensing/assets/img/flags/es.svg" width="21" height="14" alt="" aria-hidden="true">Español</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/pl/oprogramowanie-dozujace/" hreflang="pl" lang="pl"><img class="flag" src="/fuell-process.github.io/fuell-dispensing/assets/img/flags/pl.svg" width="21" height="14" alt="" aria-hidden="true">Polski</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/tr/dozaj-yazilimi/" hreflang="tr" lang="tr"><img class="flag" src="/fuell-process.github.io/fuell-dispensing/assets/img/flags/tr.svg" width="21" height="14" alt="" aria-hidden="true">Türkçe</a></li></ul></details>
+  </div></div>
+  <header class="header">
+    <div class="container header__in">
+      <a class="brand" href="/fuell-process.github.io/fuell-dispensing/en/" aria-label="Füll Systembau"><img src="/fuell-process.github.io/fuell-dispensing/assets/img/fuell-dispensing-logo.png" width="256" height="70" alt="FÜLL Dispensing Systems"></a>
+      <nav class="nav" id="nav" aria-label="Navigation"><ul class="menu"><li class="menu__item"><a class="menu__top" href="/fuell-process.github.io/fuell-dispensing/en/dispensing-systems/">Products &amp; Services</a><button class="menu__toggle" type="button" aria-expanded="false" aria-controls="sub0" aria-label="Submenu: Products &amp; Services"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="menu__sub" id="sub0"><li><a href="/fuell-process.github.io/fuell-dispensing/en/dispensing-systems/">Overview: Products &amp; Services</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/dispensing-systems/">Dispensing systems</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/schematics/">Systems as schematics</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/dispensing-software/">Dispensing software</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/agitators/">Agitators</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/peripherals/">Equipment</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/peripherals/#lagersysteme">Storage systems</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/engineering/">Engineering</a></li></ul></li><li class="menu__item"><a class="menu__top" href="/fuell-process.github.io/fuell-dispensing/en/markets/">Markets</a><button class="menu__toggle" type="button" aria-expanded="false" aria-controls="sub1" aria-label="Submenu: Markets"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="menu__sub" id="sub1"><li><a href="/fuell-process.github.io/fuell-dispensing/en/markets/">Overview: Markets</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/markets/printing-packaging/">Printing &amp; packaging</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/markets/paints-coatings/">Paints &amp; coatings</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/markets/chemicals/">Chemicals</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/markets/cosmetics-pharma/">Cosmetics, pharma, food</a></li></ul></li><li class="menu__item"><a class="menu__top" href="/fuell-process.github.io/fuell-dispensing/en/company/">Company</a><button class="menu__toggle" type="button" aria-expanded="false" aria-controls="sub2" aria-label="Submenu: Company"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="menu__sub" id="sub2"><li><a href="/fuell-process.github.io/fuell-dispensing/en/company/">Overview: Company</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/company/#gruppe">Locations</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/company/#historie">History</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/company/#staerken">Strengths &amp; values</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/references/">References</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/references/#fallstudien">Case studies</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/company/#zertifizierungen">Certification</a></li><li><a href="https://fuell-dispensing.com/company/vacancies/?lang=en">Job vacancies</a></li></ul></li><li class="menu__item"><span class="menu__top">Info</span><button class="menu__toggle" type="button" aria-expanded="false" aria-controls="sub3" aria-label="Submenu: Info"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="menu__sub" id="sub3"><li><a href="/fuell-process.github.io/fuell-dispensing/ratgeber/">Guides (DE)</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/glossar/">Glossary (DE)</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/videos/">Videos</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/downloads/">Downloads</a></li><li><a href="https://www.youtube.com/channel/UCuraxCQK4nHG1uWadnqBxdQ" target="_blank" rel="noopener">YouTube channel <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li></ul></li><li class="menu__item"><a class="menu__top" href="/fuell-process.github.io/fuell-dispensing/en/contact/">Contact</a><button class="menu__toggle" type="button" aria-expanded="false" aria-controls="sub4" aria-label="Submenu: Contact"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="menu__sub" id="sub4"><li><a href="/fuell-process.github.io/fuell-dispensing/en/contact/">Overview: Contact</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/contact/">Contact form</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/contact/#service">Service</a></li></ul></li></ul></nav>
+      <a class="btn btn--red header__cta" href="/fuell-process.github.io/fuell-dispensing/en/contact/">Send an enquiry</a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="inhalt">
+    <section class="pg-hero">
+      <div class="container pg-hero__in">
+        <div class="pg-hero__text">
+          <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/fuell-process.github.io/fuell-dispensing/en/">Home</a></li><li aria-current="page">Dispensing software</li></ol></nav>
+          <p class="eyebrow">Products &amp; services</p>
+          <h1>Dispensing software for every application</h1>
+          <p class="pg-hero__lead">The software decides how well a dispensing system fits into your processes. Füll develops it in-house: CALIPSO has controlled Füll dispensing systems since 1993 and manages all data for storing, dispensing and handling raw materials and finished mixtures.</p>
+          <div class="btns pg-hero__btns"><a class="btn btn--red" href="/fuell-process.github.io/fuell-dispensing/en/contact/">Send an enquiry <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="btn btn--outline" href="tel:+4961265980">+49 6126 598-0</a></div>
+        </div>
+        <figure class="pg-hero__media"><img class="" src="/fuell-process.github.io/fuell-dispensing/assets/img/anlage-steuerung-terminal.webp" width="1400" height="1126" alt="Dispensing system with control unit and terminal at Sherwin-Williams" fetchpriority="high" decoding="async"></figure>
+      </div>
+      <ul class="container pg-facts"><li><strong>since 1993</strong><span>CALIPSO in use</span></li><li><strong>5 programs</strong><span>for production, laboratory, dispensers and manual weighing</span></li><li><strong>ERP / MES</strong><span>customer-specific interfaces</span></li><li><strong>Remote maintenance</strong><span>via secure VPN connection</span></li></ul>
+    </section>
+    <section class="section" id="programme" aria-labelledby="programme-t"><div class="container"><div class="head"><h2 id="programme-t">The programs at a glance</h2></div><div class="pg-cards pg-cards--3"><article class="pg-card"><div class="pg-card__body"><span class="kn-cat">Gravimetric</span><h3>CALIPSO</h3><p>For gravimetric dispensing systems, with function modules for paints and coatings as well as printing and packaging. CALIPSO (Color And Liquid Processing Software) is the standard on Füll systems.</p></div></article><article class="pg-card"><div class="pg-card__body"><span class="kn-cat">Production</span><h3>CALIPSO BATCH</h3><p>For gravimetric dispensing systems in the production of paints and coatings from semi-finished products. Developed in 2012 for applications in the production environment.</p></div></article><article class="pg-card"><div class="pg-card__body"><span class="kn-cat">Volumetric</span><h3>AURORA</h3><p>Recipe management program for volumetric dispensing systems, usually used in label printing. AURORA is the basis for tailor-made ERP interfaces.</p></div></article><article class="pg-card"><div class="pg-card__body"><span class="kn-cat">VX5 / U-VX5</span><h3>Dispenser Manager</h3><p>Operating software of the volumetric dispensers: operation via PC with monitor, scale interface and optional online remote maintenance.</p></div></article><article class="pg-card"><div class="pg-card__body"><span class="kn-cat">Entry level</span><h3>AURORA-Mix</h3><p>Specially for manual weighing: together with a scale, the system guides the operator through the process steps to the finished mixture – the cost-effective entry into dispensing technology.</p></div></article></div></div></section>
+    <section class="section section--gray" id="dispenser-manager" aria-labelledby="dispenser-manager-t"><div class="container"><div class="pg-split"><div class="pg-split__text"><div class="head"><h2 id="dispenser-manager-t">Dispenser Manager: open to your systems</h2></div><div class="kn-prose pg-prose"><p>The Dispenser Manager is the operating system of the VX5 and U-VX5 volumetric dispensers. It is operated on a PC with monitor and can be flexibly connected to your existing systems:</p>
+<ul class="kn-list"><li>Recipe management, e.g. AURORA</li><li>Colour measurement systems, e.g. X-Rite, Gretag or Datacolor</li><li>ERP systems, e.g. DIBAC</li><li>Scale interface</li><li>Online remote maintenance (optional)</li></ul></div></div><figure class="pg-split__media"><img class="" src="/fuell-process.github.io/fuell-dispensing/assets/img/dispenser-manager.webp" width="835" height="728" alt="Dispenser Manager user interface" loading="lazy" decoding="async"></figure></div></div></section>
+    <section class="section" id="aufbau" aria-labelledby="aufbau-t"><div class="container"><div class="head"><h2 id="aufbau-t">How CALIPSO is structured</h2></div><div class="kn-prose pg-prose"><div class="kn-table"><table><thead><tr><th scope="col">Program part</th><th scope="col">Task</th></tr></thead><tbody><tr><td>CALIPSOProGUI</td><td>User interface on the workstation computer; connected to the plant server, optionally to a colour measurement system or host computer</td></tr><tr><td>CALIPSOProPLC</td><td>Software of the plant control (PLC)</td></tr><tr><td>CALIPSOProVi</td><td>on the plant server in the control cabinet; user interface on the terminal</td></tr></tbody></table></div></div></div></section>
+    <section class="section section--gray" id="standard" aria-labelledby="standard-t"><div class="container"><div class="head"><h2 id="standard-t">Standard functions of CALIPSO</h2></div><div class="pg-cards pg-cards--3"><article class="pg-card"><div class="pg-card__body"><h3>Order management</h3><p>Create orders and assign recipes.</p></div></article><article class="pg-card"><div class="pg-card__body"><h3>Recipe management</h3><p>Any number of recipes with all components and proportions; the quantities to be dispensed in kg are calculated.</p></div></article><article class="pg-card"><div class="pg-card__body"><h3>Recirculation and stirring intervals</h3><p>For product homogeneity and against sedimentation; components are divided into groups.</p></div></article><article class="pg-card"><div class="pg-card__body"><h3>Material stock</h3><p>Contents of the storage tanks as a bar chart – to detect shortages and estimate consumption.</p></div></article><article class="pg-card"><div class="pg-card__body"><h3>Parameter and scale management</h3><p>Optimise dispensing speed and accuracy; manage several dispensing centres with several scales.</p></div></article><article class="pg-card"><div class="pg-card__body"><h3>Container management</h3><p>Filling volume, tare weights and tolerances of every container; plausibility check as overfill protection.</p></div></article><article class="pg-card"><div class="pg-card__body"><h3>Password system</h3><p>Access rights for operators at the plant and in the PC program.</p></div></article><article class="pg-card"><div class="pg-card__body"><h3>Dispensing and error log</h3><p>Every dispensing and filling operation is saved – sortable, filterable and exportable for batch traceability.</p></div></article></div></div></section>
+    <section class="section" id="module" aria-labelledby="module-t"><div class="container"><div class="head"><h2 id="module-t">Optional modules</h2><p class="head__lead">Not included in the standard scope of delivery – depending on the industry, Füll sales selects the right extensions with you.</p></div><div class="pg-cards pg-cards--3"><article class="pg-card"><div class="pg-card__body"><h3>ERP interface</h3><p>Orders and recipes from your ERP system to CALIPSO via Ethernet. Every interface is adapted to the customer.</p></div></article><article class="pg-card"><div class="pg-card__body"><h3>Motif management</h3><p>Manage recipes for a print motif and calculate the required ink quantities from the area to be printed.</p></div></article><article class="pg-card"><div class="pg-card__body"><h3>Dispensing preparation</h3><p>Specify dispensing jobs and their sequence from the workstation PC – fewer entries for the operator on site.</p></div></article><article class="pg-card"><div class="pg-card__body"><h3>Residual ink storage</h3><p>Store residual inks from production with quantity and recipe, print a label and check for new dispensing jobs whether they can be reused.</p></div></article><article class="pg-card"><div class="pg-card__body"><h3>Base storage</h3><p>Virtual storage for raw materials that are not dispensed by the system, including manual components.</p></div></article><article class="pg-card"><div class="pg-card__body"><h3>VOC balance</h3><p>Store VOC shares per component, show the VOC quantity in the dispensing log and evaluate it over periods of time.</p></div></article><article class="pg-card"><div class="pg-card__body"><h3>Colour measurement interface</h3><p>Import recipe data from different colour measurement systems; the import function is adapted on customer request.</p></div></article></div></div></section>
+    <section class="section section--gray" aria-labelledby="pg-faq"><div class="container container--narrow"><div class="head"><h2 id="pg-faq">Frequently asked questions</h2></div><div class="faq"><details class="qa"><summary><h3>Does CALIPSO also run on older Füll systems?</h3></summary><p>Control and software can be modernised as part of a retrofit. Füll service will clarify with you which version fits.</p></details><details class="qa"><summary><h3>Can CALIPSO be connected to our ERP?</h3></summary><p>Yes, as an optional module. Every ERP interface is adapted to the customer, and the required functions are agreed together in advance.</p></details></div></div></section>
+    <section class="section section--dark" aria-labelledby="kn-final">
+      <div class="container s-cta">
+        <div><h2 id="kn-final">Talk to us about your dispensing task</h2><p>Send us your products, the number of components and the required throughput. In the pre-engineering phase we show you which system fits your production.</p></div>
+        <div class="btns"><a class="btn btn--red" href="/fuell-process.github.io/fuell-dispensing/en/contact/">Send an enquiry <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="btn btn--light" href="tel:+4961265980">+49 6126 598-0</a></div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container footer__top">
+      <div class="footer__brand">
+        <img src="/fuell-process.github.io/fuell-dispensing/assets/img/fuell-dispensing-logo.png" width="256" height="70" alt="FÜLL Dispensing Systems" loading="lazy">
+        <address>Füll Systembau GmbH<br>Richard-Klinger-Straße 31<br>65510 Idstein, Germany</address>
+        <p><span class="footer__label">Main office</span><a href="tel:+4961265980">+49 6126 598-0</a><br><a href="mailto:info@fuell-dispensing.com">info@fuell-dispensing.com</a></p>
+        <p><span class="footer__label">Service</span><a href="tel:+49612659822">+49 6126 598-22</a><br><a href="mailto:service@fuell-dispensing.com">service@fuell-dispensing.com</a><br><span class="footer__hours">Mon–Thu 7:00–16:00, Fri 7:00–13:00 (CET)</span></p>
+        <p><a href="https://fuell-process.com/">A company of the Füll Process Group</a></p>
+      </div>
+      <nav class="footer__map" aria-label="Sitemap"><div class="fcol"><p class="fcol__title"><a href="/fuell-process.github.io/fuell-dispensing/en/dispensing-systems/">Products &amp; Services</a></p><ul><li><a href="/fuell-process.github.io/fuell-dispensing/en/dispensing-systems/">Dispensing systems</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/schematics/">Systems as schematics</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/dispensing-software/">Dispensing software</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/agitators/">Agitators</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/peripherals/">Equipment</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/peripherals/#lagersysteme">Storage systems</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/engineering/">Engineering</a></li></ul></div><div class="fcol"><p class="fcol__title"><a href="/fuell-process.github.io/fuell-dispensing/en/markets/">Markets</a></p><ul><li><a href="/fuell-process.github.io/fuell-dispensing/en/markets/printing-packaging/">Printing &amp; packaging</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/markets/paints-coatings/">Paints &amp; coatings</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/markets/chemicals/">Chemicals</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/markets/cosmetics-pharma/">Cosmetics, pharma, food</a></li></ul></div><div class="fcol"><p class="fcol__title"><a href="/fuell-process.github.io/fuell-dispensing/en/company/">Company</a></p><ul><li><a href="/fuell-process.github.io/fuell-dispensing/en/company/#gruppe">Locations</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/company/#historie">History</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/company/#staerken">Strengths &amp; values</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/references/">References</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/references/#fallstudien">Case studies</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/company/#zertifizierungen">Certification</a></li><li><a href="https://fuell-dispensing.com/company/vacancies/?lang=en">Job vacancies</a></li></ul></div><div class="fcol"><p class="fcol__title">Info</p><ul><li><a href="/fuell-process.github.io/fuell-dispensing/ratgeber/">Guides (DE)</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/glossar/">Glossary (DE)</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/videos/">Videos</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/downloads/">Downloads</a></li><li><a href="https://www.youtube.com/channel/UCuraxCQK4nHG1uWadnqBxdQ" target="_blank" rel="noopener">YouTube channel <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li></ul></div><div class="fcol"><p class="fcol__title"><a href="/fuell-process.github.io/fuell-dispensing/en/contact/">Contact</a></p><ul><li><a href="/fuell-process.github.io/fuell-dispensing/en/contact/">Contact form</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/contact/#service">Service</a></li></ul></div></nav>
+    </div>
+    <div class="container footer__bottom"><span>© 2026 Füll Systembau GmbH</span>
+      <nav class="footer__links" aria-label="Imprint"><a href="https://fuell-dispensing.com/contact/imprint/?lang=en">Imprint</a><a href="https://fuell-dispensing.com/contact/data-protection-notice/?lang=en">Data protection</a><a href="https://fuell-dispensing.com/info/general-business-terms/?lang=en">Terms</a></nav></div>
+  </footer>
+  <script src="/fuell-process.github.io/fuell-dispensing/assets/js/site.js?v=dddbd33f" defer></script>
+</body>
+</html>

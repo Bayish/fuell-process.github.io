@@ -104,7 +104,7 @@
   .pg-cards--3, .pg-logos, .pg-contact { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 860px) {
-  .pg-hero__in, .pg-split { grid-template-columns: 1fr; }
+  .pg-hero__in, .pg-split { grid-template-columns: minmax(0, 1fr); }   /* minmax: wide tables scroll inside .kn-table instead of widening the page */
   .pg-split__media { position: static; }
   .pg-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .pg-facts li { border-left-width: 1px; border-top-width: 0; }

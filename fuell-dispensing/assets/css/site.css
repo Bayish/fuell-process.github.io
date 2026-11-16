@@ -367,6 +367,7 @@ h2 { font-size: clamp(26px, 3vw, 38px); }
 @media (max-width: 860px) { .contact--cta { grid-template-columns: 1fr; align-items: start; } .contact--cta .contact__actions { min-width: 0; } }
 
 /* Reveal on scroll – staggered fade/slide, image settle, growing heading line, scroll progress */
+html, body { overflow-x: clip; }   /* elements waiting to slide in from the side must not widen the page on phones */
 .js [data-reveal] { opacity: 0; transform: translate3d(0, 34px, 0); transition: opacity .9s var(--ease), transform .9s var(--ease); transition-delay: var(--d, 0s); will-change: opacity, transform; }
 .js [data-reveal="left"] { transform: translate3d(-48px, 0, 0); }
 .js [data-reveal="right"] { transform: translate3d(48px, 0, 0); }
