@@ -1,0 +1,78 @@
+/* Füll Systembau – Ratgeber and Glossar pages (on top of site.css). Same colours and fonts as the start page. */
+
+/* Page head with breadcrumb */
+.kn-head { padding: clamp(32px, 4.5vw, 56px) 0 clamp(20px, 3vw, 32px); background: var(--gray-50); border-bottom: 1px solid var(--gray-100); }
+.kn-head--hub { padding-bottom: clamp(32px, 4vw, 48px); }
+.kn-head h1 { max-width: 26ch; font-size: clamp(28px, 4vw, 46px); font-weight: 700; line-height: 1.12; color: var(--ink-2); }
+.kn-meta { margin: 14px 0 0; color: var(--muted); font-size: 15px; }
+.kn-hub-lead { max-width: 68ch; margin: 16px 0 18px; font-size: 18px; color: var(--ink-2); }
+.crumbs ol { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 20px; padding: 0; list-style: none; font-size: 14.5px; color: var(--muted); }
+.crumbs li + li::before { content: "›"; margin-right: 6px; color: var(--gray-300); }
+.crumbs a { color: var(--ink-2); }
+
+/* Article layout: table of contents + text */
+.kn-layout { display: grid; grid-template-columns: 260px minmax(0, 760px); gap: clamp(28px, 5vw, 64px); padding-block: clamp(36px, 5vw, 64px); }
+.kn-layout--term { grid-template-columns: minmax(0, 760px) 280px; }
+.kn-toc { align-self: start; position: sticky; top: 104px; padding: 20px 22px; background: var(--gray-50); border-top: 3px solid var(--red); font-size: 15px; }
+.kn-toc__title { margin: 0 0 10px; font: 700 12.5px/1 var(--head); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.kn-toc ol, .kn-toc ul { margin: 0 0 6px; padding-left: 18px; }
+.kn-toc li { margin: 6px 0; line-height: 1.35; }
+.kn-toc a { color: var(--ink-2); text-decoration: none; }
+.kn-toc a:hover { color: var(--red); text-decoration: underline; }
+.kn-toc__terms { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--gray-300); }
+.kn-side .kn-toc__title:not(:first-child) { margin-top: 20px; }
+
+/* Text */
+.kn-prose { font-size: 18px; line-height: 1.7; color: var(--ink); }
+.kn-prose h2 { margin: 44px 0 14px; font-size: clamp(22px, 2.4vw, 28px); text-transform: none; letter-spacing: 0; scroll-margin-top: 110px; }
+.kn-prose h2:first-of-type { margin-top: 32px; }
+.kn-prose p { margin: 0 0 16px; }
+.kn-lead { font-size: 20px; line-height: 1.6; color: var(--ink-2); }
+.kn-prose a { color: var(--red); }
+.kn-prose a.term { text-decoration: underline dotted; text-underline-offset: 3px; }
+.kn-list { margin: 0 0 18px; padding-left: 22px; }
+.kn-list li { margin: 8px 0; }
+.kn-list li::marker { color: var(--red); }
+.kn-table { margin: 6px 0 22px; overflow-x: auto; border: 1px solid var(--gray-100); }
+.kn-table table { width: 100%; border-collapse: collapse; font-size: 15.5px; line-height: 1.45; }
+.kn-table th { padding: 12px 14px; text-align: left; background: var(--gray-50); font: 700 14px/1.3 var(--head); color: var(--ink-2); border-bottom: 2px solid var(--red); }
+.kn-table td { padding: 11px 14px; border-top: 1px solid var(--gray-100); vertical-align: top; }
+.kn-dfn { padding: 20px 22px; background: var(--gray-50); border-left: 4px solid var(--red); font-size: 19px; line-height: 1.6; }
+
+/* Inline call to action */
+.kn-cta { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 8px 24px; margin: 28px 0; padding: 20px 22px; background: #fff; border: 1px solid var(--gray-100); border-top: 3px solid var(--red); font-size: 16px; line-height: 1.5; }
+.kn-cta strong { grid-column: 1; font: 700 17px/1.3 var(--head); color: var(--ink-2); }
+.kn-cta span { grid-column: 1; color: var(--ink-2); }
+.kn-cta .btn { grid-column: 2; grid-row: 1 / span 2; }
+.kn-prose .kn-cta a.btn { color: #fff; }
+
+/* Glossary hub */
+.kn-az { position: sticky; top: 84px; z-index: 5; display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 28px; padding: 12px 0; background: #fff; border-bottom: 1px solid var(--gray-100); }
+.kn-az a { display: grid; place-items: center; min-width: 40px; height: 40px; border: 1px solid var(--gray-300); color: var(--ink-2); font: 700 15px/1 var(--head); text-decoration: none; }
+.kn-az a:hover { border-color: var(--red); color: var(--red); }
+.kn-letter { padding: 8px 0 24px; scroll-margin-top: 150px; }
+.kn-letter h2 { margin-bottom: 14px; color: var(--red); font-size: 30px; }
+.kn-terms { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.kn-term { display: flex; flex-direction: column; gap: 6px; padding: 18px 20px; background: #fff; border: 1px solid var(--gray-100); border-left: 4px solid var(--red); color: var(--ink); text-decoration: none; transition: box-shadow .25s; }
+.kn-term:hover { box-shadow: 0 10px 26px rgba(0,0,0,.08); }
+.kn-term strong { font: 700 17px/1.3 var(--head); color: var(--ink-2); }
+.kn-term:hover strong { color: var(--red); }
+.kn-term span { font-size: 15.5px; line-height: 1.5; color: var(--ink-2); }
+
+/* Closing call to action (dark band) */
+.s-cta { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px 48px; }
+.s-cta p { max-width: 60ch; margin: 12px 0 0; color: rgba(255,255,255,.82); }
+.s-cta .btns { justify-content: flex-start; }
+
+@media (max-width: 960px) {
+  .kn-layout, .kn-layout--term { grid-template-columns: 1fr; }
+  .kn-toc { position: static; }
+}
+@media (max-width: 640px) {
+  .kn-prose { font-size: 17px; }
+  .kn-lead { font-size: 18px; }
+  .kn-terms { grid-template-columns: 1fr; }
+  .kn-cta { grid-template-columns: 1fr; }
+  .kn-cta .btn { grid-column: 1; grid-row: auto; justify-self: start; }
+  .kn-az { top: 70px; }
+}

@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="googlebot" content="noindex, nofollow">
+  <style>html.fpg-locked body{display:none!important}html.fpg-denied body>*:not(.fpg-deny){display:none!important}.fpg-deny{font:16px/1.6 system-ui,sans-serif;max-width:520px;margin:18vh auto;padding:0 24px;color:#1b1f23}.fpg-deny button{margin-top:16px;padding:10px 18px;font:inherit;cursor:pointer}</style>
+  <script>
+  /* Preview access check – simple browser prompt, not real security. */
+  (function () {
+    var H = '9a2ebb00508dfcb446b7c845bf572ad95cef7db6b07c463ba793637099b58980', K = 'fpg-preview', root = document.documentElement;
+    try { if (sessionStorage.getItem(K) === H) return; } catch (e) {}
+    root.classList.add('fpg-locked');
+    function deny() {
+      function show() {
+        root.classList.remove('fpg-locked'); root.classList.add('fpg-denied');
+        var d = document.createElement('div'); d.className = 'fpg-deny';
+        d.innerHTML = '<h1 style="font-size:24px">Geschützte Vorschau / Protected preview</h1><p>Benutzername oder Passwort falsch. / Wrong username or password.</p><button type="button">Erneut versuchen / Try again</button>';
+        d.querySelector('button').onclick = function () { location.reload(); };
+        document.body.insertBefore(d, document.body.firstChild);
+      }
+      if (document.body) show(); else document.addEventListener('DOMContentLoaded', show);
+    }
+    var u = window.prompt('Geschützte Vorschau – Benutzername / Protected preview – username:');
+    if (u === null) return deny();
+    var p = window.prompt('Passwort / Password:');
+    if (p === null) return deny();
+    if (!(window.crypto && crypto.subtle)) return deny();
+    crypto.subtle.digest('SHA-256', new TextEncoder().encode(u.trim() + ':' + p)).then(function (buf) {
+      var h = Array.prototype.map.call(new Uint8Array(buf), function (x) { return ('0' + x.toString(16)).slice(-2); }).join('');
+      if (h === H) { try { sessionStorage.setItem(K, H); } catch (e) {} root.classList.remove('fpg-locked'); }
+      else deny();
+    }, deny);
+  })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Downloads: Datenblätter, Fragebogen, Handbücher | Füll</title>
+  <meta name="description" content="Downloads von Füll Systembau: Datenblätter zu Dosieranlagen, Lagersystemen und Rührwerken, Fragebogen für Ihre Anfrage sowie Handbücher zur VX5.">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Füll Systembau">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:url" content="https://bayish.github.io/fuell-process.github.io/fuell-dispensing/downloads/">
+  <meta property="og:title" content="Downloads: Datenblätter, Fragebogen, Handbücher | Füll">
+  <meta property="og:description" content="Downloads von Füll Systembau: Datenblätter zu Dosieranlagen, Lagersystemen und Rührwerken, Fragebogen für Ihre Anfrage sowie Handbücher zur VX5.">
+  <meta property="og:image" content="https://bayish.github.io/fuell-process.github.io/fuell-dispensing/assets/img/dosieranlage-dosierzentrum.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/fuell-process.github.io/fuell-dispensing/assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/fuell-process.github.io/fuell-dispensing/assets/img/apple-touch-icon.png">
+  <link rel="preload" href="/fuell-process.github.io/fuell-dispensing/assets/fonts/montserrat-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fuell-process.github.io/fuell-dispensing/assets/fonts/pt-sans-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fuell-process.github.io/fuell-dispensing/assets/fonts/montserrat-600-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/fuell-process.github.io/fuell-dispensing/assets/css/site.css?v=7537ae1a">
+  <link rel="stylesheet" href="/fuell-process.github.io/fuell-dispensing/assets/css/knowledge.css?v=6ceba060">
+  <link rel="stylesheet" href="/fuell-process.github.io/fuell-dispensing/assets/css/page.css?v=d211af6f">
+  <script>document.documentElement.classList.add('js')</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://fuell-dispensing.com/downloads/#webpage",
+      "url": "https://fuell-dispensing.com/downloads/",
+      "name": "Downloads: Datenblätter, Fragebogen, Handbücher | Füll",
+      "description": "Downloads von Füll Systembau: Datenblätter zu Dosieranlagen, Lagersystemen und Rührwerken, Fragebogen für Ihre Anfrage sowie Handbücher zur VX5.",
+      "inLanguage": "de",
+      "isPartOf": {
+        "@id": "https://fuell-dispensing.com/#website"
+      },
+      "about": {
+        "@type": "Organization",
+        "@id": "https://fuell-dispensing.com/#organization",
+        "name": "Füll Systembau GmbH",
+        "url": "https://fuell-dispensing.com/"
+      },
+      "breadcrumb": {
+        "@id": "https://fuell-dispensing.com/downloads/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Start",
+          "item": "https://fuell-dispensing.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Downloads",
+          "item": "https://fuell-dispensing.com/downloads/"
+        }
+      ],
+      "@id": "https://fuell-dispensing.com/downloads/#breadcrumb"
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#inhalt">Zum Inhalt springen</a>
+  <div class="topbar"><div class="container topbar__in">
+    <a class="topbar__phone" href="tel:+4961265980"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span>Telefon: +49 6126 598-0</span></a>
+    <details class="langs"><summary><span class="vh">Sprache: </span>Deutsch</summary><ul><li><a href="/fuell-process.github.io/fuell-dispensing/downloads/" hreflang="de" lang="de" aria-current="true">Deutsch</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/" hreflang="en" lang="en">English</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/" hreflang="fr" lang="fr">Français</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/" hreflang="es" lang="es">Español</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/pl/" hreflang="pl" lang="pl">Polski</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/tr/" hreflang="tr" lang="tr">Türkçe</a></li></ul></details>
+  </div></div>
+  <header class="header">
+    <div class="container header__in">
+      <a class="brand" href="/fuell-process.github.io/fuell-dispensing/" aria-label="Füll Systembau"><img src="/fuell-process.github.io/fuell-dispensing/assets/img/fuell-dispensing-logo.png" width="256" height="70" alt="FÜLL Dispensing Systems"></a>
+      <nav class="nav" id="nav" aria-label="Navigation"><ul class="menu"><li class="menu__item"><a class="menu__top" href="/fuell-process.github.io/fuell-dispensing/dosieranlagen/">Produkte &amp; Leistungen</a><button class="menu__toggle" type="button" aria-expanded="false" aria-controls="sub0" aria-label="Untermenü: Produkte &amp; Leistungen"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="menu__sub" id="sub0"><li><a href="/fuell-process.github.io/fuell-dispensing/dosieranlagen/">Übersicht: Produkte &amp; Leistungen</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/dosieranlagen/">Dosieranlagen</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/anlagenschema/">Anlagen im Schema</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/dosiersoftware/">Dosiersoftware</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/ruehrwerke/">Rührwerke</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/peripherie/">Peripherie</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/peripherie/#lagersysteme">Lagersysteme</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/engineering/">Engineering</a></li></ul></li><li class="menu__item"><a class="menu__top" href="/fuell-process.github.io/fuell-dispensing/maerkte/">Märkte</a><button class="menu__toggle" type="button" aria-expanded="false" aria-controls="sub1" aria-label="Untermenü: Märkte"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="menu__sub" id="sub1"><li><a href="/fuell-process.github.io/fuell-dispensing/maerkte/">Übersicht: Märkte</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/maerkte/druck-verpackung/">Druck &amp; Verpackung</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/maerkte/farben-lacke/">Farbe &amp; Lack</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/maerkte/chemie/">Chemie</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/maerkte/kosmetik-pharma/">Kosmetik, Pharma, Food</a></li></ul></li><li class="menu__item"><a class="menu__top" href="/fuell-process.github.io/fuell-dispensing/unternehmen/">Unternehmen</a><button class="menu__toggle" type="button" aria-expanded="false" aria-controls="sub2" aria-label="Untermenü: Unternehmen"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="menu__sub" id="sub2"><li><a href="/fuell-process.github.io/fuell-dispensing/unternehmen/">Übersicht: Unternehmen</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/unternehmen/#gruppe">Standorte</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/unternehmen/#historie">Historie</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/unternehmen/#staerken">Stärken &amp; Werte</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/referenzen/">Referenzen</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/referenzen/#fallstudien">Fallbeispiele</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/unternehmen/#zertifizierungen">Zertifizierungen</a></li><li><a href="https://fuell-dispensing.com/unternehmen/aktuelle-stellenangebote/">Stellenangebote</a></li></ul></li><li class="menu__item"><span class="menu__top">Info</span><button class="menu__toggle" type="button" aria-expanded="false" aria-controls="sub3" aria-label="Untermenü: Info"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="menu__sub" id="sub3"><li><a href="/fuell-process.github.io/fuell-dispensing/ratgeber/">Ratgeber</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/glossar/">Glossar</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/videos/">Videos</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/downloads/">Downloads</a></li><li><a href="https://www.youtube.com/channel/UCuraxCQK4nHG1uWadnqBxdQ" target="_blank" rel="noopener">YouTube-Kanal <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li></ul></li><li class="menu__item"><a class="menu__top" href="/fuell-process.github.io/fuell-dispensing/kontakt/">Kontakt</a><button class="menu__toggle" type="button" aria-expanded="false" aria-controls="sub4" aria-label="Untermenü: Kontakt"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="menu__sub" id="sub4"><li><a href="/fuell-process.github.io/fuell-dispensing/kontakt/">Übersicht: Kontakt</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/kontakt/">Kontaktformular</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/kontakt/#service">Service</a></li></ul></li></ul></nav>
+      <a class="btn btn--red header__cta" href="/fuell-process.github.io/fuell-dispensing/#kontakt">Anfrage stellen</a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menü"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="inhalt">
+    <section class="pg-hero pg-hero--plain">
+      <div class="container pg-hero__in">
+        <div class="pg-hero__text">
+          <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/fuell-process.github.io/fuell-dispensing/">Start</a></li><li aria-current="page">Downloads</li></ol></nav>
+          <p class="eyebrow">Info</p>
+          <h1>Downloads</h1>
+          <p class="pg-hero__lead">Datenblätter zu unseren Anlagen, der Fragebogen für Ihre Anfrage und die Dokumentation zur VX5. Die Dateien öffnen sich im Browser; zum Speichern klicken Sie mit der rechten Maustaste auf die Datei und wählen „Ziel speichern unter …“.</p>
+          <div class="btns pg-hero__btns"><a class="btn btn--red" href="/fuell-process.github.io/fuell-dispensing/kontakt/">Anfrage stellen <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="btn btn--outline" href="tel:+4961265980">+49 6126 598-0</a></div>
+        </div>
+        
+      </div>
+      
+    </section>
+    <section class="section" id="fragebogen" aria-labelledby="fragebogen-t"><div class="container"><div class="head"><h2 id="fragebogen-t">Fragebogen für Ihre Anfrage</h2><p class="head__lead">Mit dem Fragebogen erfassen Sie die Angaben, die wir für ein Konzept und ein Angebot brauchen. Schicken Sie ihn ausgefüllt an info@fuell-dispensing.com.</p></div><ul class="pg-dls"><li class="pg-dl"><span class="pg-dl__icon" aria-hidden="true">PDF</span>
+            <div class="pg-dl__body"><h3><a href="/fuell-process.github.io/fuell-dispensing/downloads/fuell-fragebogen-dosieranlagen.pdf" type="application/pdf">Fragebogen Dosieranlagen</a></h3><p>Zum Ausdrucken und Ausfüllen.</p>
+              <p class="pg-dl__meta">PDF · 5 Seiten · 54 KB · Deutsch</p></div>
+            <a class="btn btn--outline pg-dl__btn" href="/fuell-process.github.io/fuell-dispensing/downloads/fuell-fragebogen-dosieranlagen.pdf" download aria-label="Download: Fragebogen Dosieranlagen (PDF, 54 KB)">Download</a></li><li class="pg-dl"><span class="pg-dl__icon" aria-hidden="true">DOC</span>
+            <div class="pg-dl__body"><h3><a href="/fuell-process.github.io/fuell-dispensing/downloads/fuell-fragebogen-dosieranlagen.doc" type="application/msword">Fragebogen Dosieranlagen (Word)</a></h3><p>Zum Ausfüllen am Computer.</p>
+              <p class="pg-dl__meta">DOC · 308 KB · Deutsch</p></div>
+            <a class="btn btn--outline pg-dl__btn" href="/fuell-process.github.io/fuell-dispensing/downloads/fuell-fragebogen-dosieranlagen.doc" download aria-label="Download: Fragebogen Dosieranlagen (Word) (DOC, 308 KB)">Download</a></li></ul></div></section>
+    <section class="section section--gray" id="dosieren" aria-labelledby="dosieren-t"><div class="container"><div class="head"><h2 id="dosieren-t">Datenblätter: Dosieren</h2></div><ul class="pg-dls"><li class="pg-dl"><span class="pg-dl__icon" aria-hidden="true">PDF</span>
+            <div class="pg-dl__body"><h3><a href="/fuell-process.github.io/fuell-dispensing/downloads/fuell-simultanous-filling-unit.pdf" type="application/pdf">Simultanabfüllung</a></h3><p>Automatisches Befüllen einer Palettenlage: bis zu 15 Gebinde automatisiert, davon 3 gleichzeitig. Das steigert den Ausstoß deutlich, entlastet die Bediener beim Heben schwerer Lasten und optimiert Ihre Abläufe.</p>
+              <p class="pg-dl__meta">PDF · 2 Seiten · 314 KB · Englisch · <a class="pg-dl__rel" href="/fuell-process.github.io/fuell-dispensing/dosieranlagen/">Zum Produkt</a></p></div>
+            <a class="btn btn--outline pg-dl__btn" href="/fuell-process.github.io/fuell-dispensing/downloads/fuell-simultanous-filling-unit.pdf" download aria-label="Download: Simultanabfüllung (PDF, 314 KB)">Download</a></li><li class="pg-dl"><span class="pg-dl__icon" aria-hidden="true">PDF</span>
+            <div class="pg-dl__body"><h3><a href="/fuell-process.github.io/fuell-dispensing/downloads/fuell-fs2005-2-dispensing-system.pdf" type="application/pdf">Gravimetrisches Dosierzentrum FS 2005.2</a></h3><p>Die gravimetrischen Dosierzentren lassen sich für die Dosierung in kleine und große Ansatzgebinde auslegen.</p>
+              <p class="pg-dl__meta">PDF · 1 Seite · 292 KB · Englisch · <a class="pg-dl__rel" href="/fuell-process.github.io/fuell-dispensing/dosieranlagen/">Zum Produkt</a></p></div>
+            <a class="btn btn--outline pg-dl__btn" href="/fuell-process.github.io/fuell-dispensing/downloads/fuell-fs2005-2-dispensing-system.pdf" download aria-label="Download: Gravimetrisches Dosierzentrum FS 2005.2 (PDF, 292 KB)">Download</a></li><li class="pg-dl"><span class="pg-dl__icon" aria-hidden="true">PDF</span>
+            <div class="pg-dl__body"><h3><a href="/fuell-process.github.io/fuell-dispensing/downloads/fuell-volumetric-dispensing-system-vx5.pdf" type="application/pdf">Volumetrische Simultandosierung VX5</a></h3><p>Volumetrische Dosierung mit Double-Action-Kolbenpumpen; bei Bedarf mit gravimetrischer Kontrolle und in Ausführungen für UV-härtende Flüssigkeiten.</p>
+              <p class="pg-dl__meta">PDF · 1 Seite · 242 KB · Englisch · <a class="pg-dl__rel" href="/fuell-process.github.io/fuell-dispensing/dosieranlagen/">Zum Produkt</a></p></div>
+            <a class="btn btn--outline pg-dl__btn" href="/fuell-process.github.io/fuell-dispensing/downloads/fuell-volumetric-dispensing-system-vx5.pdf" download aria-label="Download: Volumetrische Simultandosierung VX5 (PDF, 242 KB)">Download</a></li><li class="pg-dl"><span class="pg-dl__icon" aria-hidden="true">PDF</span>
+            <div class="pg-dl__body"><h3><a href="/fuell-process.github.io/fuell-dispensing/downloads/fuell-in-can-tinting.pdf" type="application/pdf">In-Can-Tinting: Just-in-time-Produktion</a></h3><p>Das Füll In-Can-Tinting-System sichert Ihre Lieferbereitschaft – Produktion im Verkaufsgebinde nach Bedarf.</p>
+              <p class="pg-dl__meta">PDF · 1 Seite · 276 KB · Englisch · <a class="pg-dl__rel" href="/fuell-process.github.io/fuell-dispensing/dosieranlagen/">Zum Produkt</a></p></div>
+            <a class="btn btn--outline pg-dl__btn" href="/fuell-process.github.io/fuell-dispensing/downloads/fuell-in-can-tinting.pdf" download aria-label="Download: In-Can-Tinting: Just-in-time-Produktion (PDF, 276 KB)">Download</a></li><li class="pg-dl"><span class="pg-dl__icon" aria-hidden="true">PDF</span>
+            <div class="pg-dl__body"><h3><a href="/fuell-process.github.io/fuell-dispensing/downloads/fuell-dispensing-and-mixing.pdf" type="application/pdf">Dosieren und Mischen in einem Schritt</a></h3><p>Die Anlage arbeitet mit Massendurchflussmessern und ermöglicht paralleles Dosieren und Mischen, z. B. direkt in Metall-IBCs.</p>
+              <p class="pg-dl__meta">PDF · 1 Seite · 232 KB · Englisch · <a class="pg-dl__rel" href="/fuell-process.github.io/fuell-dispensing/dosieranlagen/">Zum Produkt</a></p></div>
+            <a class="btn btn--outline pg-dl__btn" href="/fuell-process.github.io/fuell-dispensing/downloads/fuell-dispensing-and-mixing.pdf" download aria-label="Download: Dosieren und Mischen in einem Schritt (PDF, 232 KB)">Download</a></li><li class="pg-dl"><span class="pg-dl__icon" aria-hidden="true">PDF</span>
+            <div class="pg-dl__body"><h3><a href="/fuell-process.github.io/fuell-dispensing/downloads/fuell-laboratory-dispensing-system.pdf" type="application/pdf">Labordosieranlage: Rezepturentwicklung</a></h3><p>Höchste Präzision beim Dosieren – für die Rezepturentwicklung in kleinsten Mengen, z. B. für Muster.</p>
+              <p class="pg-dl__meta">PDF · 1 Seite · 325 KB · Englisch · <a class="pg-dl__rel" href="/fuell-process.github.io/fuell-dispensing/dosieranlagen/">Zum Produkt</a></p></div>
+            <a class="btn btn--outline pg-dl__btn" href="/fuell-process.github.io/fuell-dispensing/downloads/fuell-laboratory-dispensing-system.pdf" download aria-label="Download: Labordosieranlage: Rezepturentwicklung (PDF, 325 KB)">Download</a></li><li class="pg-dl"><span class="pg-dl__icon" aria-hidden="true">PDF</span>
+            <div class="pg-dl__body"><h3><a href="/fuell-process.github.io/fuell-dispensing/downloads/fuell-electric-control-cabinet.pdf" type="application/pdf">Elektrischer Schaltschrank</a></h3><p>Der Schaltschrank steht außerhalb explosionsgefährdeter Bereiche, am besten in einem Steuerraum, und wird nach Ihren Vorgaben geplant.</p>
+              <p class="pg-dl__meta">PDF · 1 Seite · 202 KB · Englisch · <a class="pg-dl__rel" href="/fuell-process.github.io/fuell-dispensing/engineering/">Zum Produkt</a></p></div>
+            <a class="btn btn--outline pg-dl__btn" href="/fuell-process.github.io/fuell-dispensing/downloads/fuell-electric-control-cabinet.pdf" download aria-label="Download: Elektrischer Schaltschrank (PDF, 202 KB)">Download</a></li></ul></div></section>
+    <section class="section" id="lagern" aria-labelledby="lagern-t"><div class="container"><div class="head"><h2 id="lagern-t">Datenblätter: Lagern</h2></div><ul class="pg-dls"><li class="pg-dl"><span class="pg-dl__icon" aria-hidden="true">PDF</span>
+            <div class="pg-dl__body"><h3><a href="/fuell-process.github.io/fuell-dispensing/downloads/fuell-storing-delivery-containers.pdf" type="application/pdf">Lagern in Anliefergebinden</a></h3><p>Eimer, Hobbocks, Fässer, Kunststoff-IBCs und Metallcontainer lassen sich an das Lagersystem der Füll-Dosieranlagen anschließen – auch mit Umwälz- und Rühreinrichtung.</p>
+              <p class="pg-dl__meta">PDF · 1 Seite · 229 KB · Englisch · <a class="pg-dl__rel" href="/fuell-process.github.io/fuell-dispensing/peripherie/#lagersysteme">Zum Produkt</a></p></div>
+            <a class="btn btn--outline pg-dl__btn" href="/fuell-process.github.io/fuell-dispensing/downloads/fuell-storing-delivery-containers.pdf" download aria-label="Download: Lagern in Anliefergebinden (PDF, 229 KB)">Download</a></li><li class="pg-dl"><span class="pg-dl__icon" aria-hidden="true">PDF</span>
+            <div class="pg-dl__body"><h3><a href="/fuell-process.github.io/fuell-dispensing/downloads/fuell-stationary-containers-rack.pdf" type="application/pdf">Lagercontainer im Regalsystem</a></h3><p>Fest installierte Lagercontainer im Regal, meist für Halbfabrikate und andere Flüssigkeiten mit hohem Volumen. Das Regalsystem spart Platz in der Produktion.</p>
+              <p class="pg-dl__meta">PDF · 1 Seite · 330 KB · Englisch · <a class="pg-dl__rel" href="/fuell-process.github.io/fuell-dispensing/peripherie/#lagersysteme">Zum Produkt</a></p></div>
+            <a class="btn btn--outline pg-dl__btn" href="/fuell-process.github.io/fuell-dispensing/downloads/fuell-stationary-containers-rack.pdf" download aria-label="Download: Lagercontainer im Regalsystem (PDF, 330 KB)">Download</a></li></ul></div></section>
+    <section class="section section--gray" id="mischen" aria-labelledby="mischen-t"><div class="container"><div class="head"><h2 id="mischen-t">Datenblätter: Mischen</h2></div><ul class="pg-dls"><li class="pg-dl"><span class="pg-dl__icon" aria-hidden="true">PDF</span>
+            <div class="pg-dl__body"><h3><a href="/fuell-process.github.io/fuell-dispensing/downloads/fuell-single-post-agitator.pdf" type="application/pdf">Stativrührwerk mit Rollenbahn (FS 241 e Ex)</a></h3><p>In verschiedenen Ausführungen für Eimer, Hobbocks, Fässer oder IBCs; Sonderausführungen sind möglich.</p>
+              <p class="pg-dl__meta">PDF · 1 Seite · 320 KB · Englisch · <a class="pg-dl__rel" href="/fuell-process.github.io/fuell-dispensing/ruehrwerke/">Zum Produkt</a></p></div>
+            <a class="btn btn--outline pg-dl__btn" href="/fuell-process.github.io/fuell-dispensing/downloads/fuell-single-post-agitator.pdf" download aria-label="Download: Stativrührwerk mit Rollenbahn (FS 241 e Ex) (PDF, 320 KB)">Download</a></li><li class="pg-dl"><span class="pg-dl__icon" aria-hidden="true">PDF</span>
+            <div class="pg-dl__body"><h3><a href="/fuell-process.github.io/fuell-dispensing/downloads/fuell-agitators-fixed-installation.pdf" type="application/pdf">Rührwerke für den festen Einbau</a></h3><p>In explosionsgefährdeten Bereichen mit Flammendurchschlagsicherung (innen Zone 0, außen Zone 1).</p>
+              <p class="pg-dl__meta">PDF · 1 Seite · 179 KB · Englisch · <a class="pg-dl__rel" href="/fuell-process.github.io/fuell-dispensing/ruehrwerke/">Zum Produkt</a></p></div>
+            <a class="btn btn--outline pg-dl__btn" href="/fuell-process.github.io/fuell-dispensing/downloads/fuell-agitators-fixed-installation.pdf" download aria-label="Download: Rührwerke für den festen Einbau (PDF, 179 KB)">Download</a></li><li class="pg-dl"><span class="pg-dl__icon" aria-hidden="true">PDF</span>
+            <div class="pg-dl__body"><h3><a href="/fuell-process.github.io/fuell-dispensing/downloads/fuell-agitators-with-fixtures.pdf" type="application/pdf">Rührwerke mit Halterung</a></h3><p>Mit elektrischem oder pneumatischem Antrieb für Eimer, Fässer und IBCs.</p>
+              <p class="pg-dl__meta">PDF · 1 Seite · 340 KB · Englisch · <a class="pg-dl__rel" href="/fuell-process.github.io/fuell-dispensing/ruehrwerke/">Zum Produkt</a></p></div>
+            <a class="btn btn--outline pg-dl__btn" href="/fuell-process.github.io/fuell-dispensing/downloads/fuell-agitators-with-fixtures.pdf" download aria-label="Download: Rührwerke mit Halterung (PDF, 340 KB)">Download</a></li></ul></div></section>
+    <section class="section" id="dokumentation" aria-labelledby="dokumentation-t"><div class="container"><div class="head"><h2 id="dokumentation-t">Dokumentation VX5</h2></div><ul class="pg-dls"><li class="pg-dl"><span class="pg-dl__icon" aria-hidden="true">PDF</span>
+            <div class="pg-dl__body"><h3><a href="/fuell-process.github.io/fuell-dispensing/downloads/vx5-betriebsanleitung-de.pdf" type="application/pdf">Betriebsanleitung VX5</a></h3><p>Bedienung der volumetrischen Dosieranlage VX5.</p>
+              <p class="pg-dl__meta">PDF · 24 Seiten · 1,4 MB · Deutsch</p></div>
+            <a class="btn btn--outline pg-dl__btn" href="/fuell-process.github.io/fuell-dispensing/downloads/vx5-betriebsanleitung-de.pdf" download aria-label="Download: Betriebsanleitung VX5 (PDF, 1,4 MB)">Download</a></li><li class="pg-dl"><span class="pg-dl__icon" aria-hidden="true">PDF</span>
+            <div class="pg-dl__body"><h3><a href="/fuell-process.github.io/fuell-dispensing/downloads/vx5-operator-manual-en.pdf" type="application/pdf">Operator Manual VX5</a></h3><p>Operating instructions for the VX5.</p>
+              <p class="pg-dl__meta">PDF · 23 Seiten · 1,5 MB · Englisch</p></div>
+            <a class="btn btn--outline pg-dl__btn" href="/fuell-process.github.io/fuell-dispensing/downloads/vx5-operator-manual-en.pdf" download aria-label="Download: Operator Manual VX5 (PDF, 1,5 MB)">Download</a></li><li class="pg-dl"><span class="pg-dl__icon" aria-hidden="true">PDF</span>
+            <div class="pg-dl__body"><h3><a href="/fuell-process.github.io/fuell-dispensing/downloads/vx5-service-handbuch-de.pdf" type="application/pdf">Service-Handbuch VX5</a></h3><p>Wartung und Service der VX5.</p>
+              <p class="pg-dl__meta">PDF · 30 Seiten · 3,4 MB · Deutsch</p></div>
+            <a class="btn btn--outline pg-dl__btn" href="/fuell-process.github.io/fuell-dispensing/downloads/vx5-service-handbuch-de.pdf" download aria-label="Download: Service-Handbuch VX5 (PDF, 3,4 MB)">Download</a></li><li class="pg-dl"><span class="pg-dl__icon" aria-hidden="true">PDF</span>
+            <div class="pg-dl__body"><h3><a href="/fuell-process.github.io/fuell-dispensing/downloads/vx5-service-manual-en.pdf" type="application/pdf">Service Manual VX5</a></h3><p>Maintenance and service of the VX5.</p>
+              <p class="pg-dl__meta">PDF · 39 Seiten · 5,0 MB · Englisch</p></div>
+            <a class="btn btn--outline pg-dl__btn" href="/fuell-process.github.io/fuell-dispensing/downloads/vx5-service-manual-en.pdf" download aria-label="Download: Service Manual VX5 (PDF, 5,0 MB)">Download</a></li></ul></div></section>
+    <section class="section"><div class="container"><div class="head head--row"><h2>Passende Ratgeber</h2><div class="btns"><a class="link" href="/fuell-process.github.io/fuell-dispensing/ratgeber/">Alle Ratgeber <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="link" href="/fuell-process.github.io/fuell-dispensing/glossar/">Glossar <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div><div class="kn-cards"><a class="kn-card" href="/fuell-process.github.io/fuell-dispensing/ratgeber/dosieranlage-auswaehlen/"><span class="kn-cat">Grundlagen</span><strong>Dosieranlage auswählen: der Praxis-Leitfaden</strong><span>Welche Fragen Sie vor der Investition klären sollten: Komponenten, Durchsatz, Gebinde, Ex-Schutz, Lager und Software.</span></a><a class="kn-card" href="/fuell-process.github.io/fuell-dispensing/ratgeber/tanklager-planen/"><span class="kn-cat">Lager &amp; Peripherie</span><strong>Tanklager und Lagersysteme für Dosieranlagen planen</strong><span>Stationär oder Wechselgebinde, Umwälzung, Rührwerke und Wasserrecht: worauf es beim Lager ankommt.</span></a><a class="kn-card" href="/fuell-process.github.io/fuell-dispensing/ratgeber/ruehrwerk-auswaehlen/"><span class="kn-cat">Lager &amp; Peripherie</span><strong>Das passende Rührwerk auswählen</strong><span>Fünf Bauarten, elektrisch oder pneumatisch, Ex-geschützt: welches Rührwerk für welches Gebinde passt.</span></a></div></div></section>
+    <section class="section section--dark" aria-labelledby="kn-final">
+      <div class="container s-cta">
+        <div><h2 id="kn-final">Sprechen Sie mit uns über Ihre Dosieraufgabe</h2><p>Schicken Sie uns Ihre Produkte, die Zahl der Komponenten und den gewünschten Durchsatz. In der Vorprojektierung zeigen wir, welche Anlage zu Ihrer Produktion passt.</p></div>
+        <div class="btns"><a class="btn btn--red" href="/fuell-process.github.io/fuell-dispensing/#kontakt">Anfrage stellen <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="btn btn--light" href="tel:+4961265980">+49 6126 598-0</a></div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container footer__top">
+      <div class="footer__brand">
+        <img src="/fuell-process.github.io/fuell-dispensing/assets/img/fuell-dispensing-logo.png" width="256" height="70" alt="FÜLL Dispensing Systems" loading="lazy">
+        <address>Füll Systembau GmbH<br>Richard-Klinger-Straße 31<br>65510 Idstein, Deutschland</address>
+        <p><span class="footer__label">Zentrale</span><a href="tel:+4961265980">+49 6126 598-0</a><br><a href="mailto:info@fuell-dispensing.com">info@fuell-dispensing.com</a></p>
+        <p><span class="footer__label">Service</span><a href="tel:+49612659822">+49 6126 598-22</a><br><a href="mailto:service@fuell-dispensing.com">service@fuell-dispensing.com</a><br><span class="footer__hours">Mo–Do 7–16 Uhr, Fr 7–13 Uhr</span></p>
+        <p><a href="https://fuell-process.com/">Ein Unternehmen der Füll Process Group</a></p>
+      </div>
+      <nav class="footer__map" aria-label="Sitemap"><div class="fcol"><p class="fcol__title"><a href="/fuell-process.github.io/fuell-dispensing/dosieranlagen/">Produkte &amp; Leistungen</a></p><ul><li><a href="/fuell-process.github.io/fuell-dispensing/dosieranlagen/">Dosieranlagen</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/anlagenschema/">Anlagen im Schema</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/dosiersoftware/">Dosiersoftware</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/ruehrwerke/">Rührwerke</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/peripherie/">Peripherie</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/peripherie/#lagersysteme">Lagersysteme</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/engineering/">Engineering</a></li></ul></div><div class="fcol"><p class="fcol__title"><a href="/fuell-process.github.io/fuell-dispensing/maerkte/">Märkte</a></p><ul><li><a href="/fuell-process.github.io/fuell-dispensing/maerkte/druck-verpackung/">Druck &amp; Verpackung</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/maerkte/farben-lacke/">Farbe &amp; Lack</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/maerkte/chemie/">Chemie</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/maerkte/kosmetik-pharma/">Kosmetik, Pharma, Food</a></li></ul></div><div class="fcol"><p class="fcol__title"><a href="/fuell-process.github.io/fuell-dispensing/unternehmen/">Unternehmen</a></p><ul><li><a href="/fuell-process.github.io/fuell-dispensing/unternehmen/#gruppe">Standorte</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/unternehmen/#historie">Historie</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/unternehmen/#staerken">Stärken &amp; Werte</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/referenzen/">Referenzen</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/referenzen/#fallstudien">Fallbeispiele</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/unternehmen/#zertifizierungen">Zertifizierungen</a></li><li><a href="https://fuell-dispensing.com/unternehmen/aktuelle-stellenangebote/">Stellenangebote</a></li></ul></div><div class="fcol"><p class="fcol__title">Info</p><ul><li><a href="/fuell-process.github.io/fuell-dispensing/ratgeber/">Ratgeber</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/glossar/">Glossar</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/videos/">Videos</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/downloads/">Downloads</a></li><li><a href="https://www.youtube.com/channel/UCuraxCQK4nHG1uWadnqBxdQ" target="_blank" rel="noopener">YouTube-Kanal <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li></ul></div><div class="fcol"><p class="fcol__title"><a href="/fuell-process.github.io/fuell-dispensing/kontakt/">Kontakt</a></p><ul><li><a href="/fuell-process.github.io/fuell-dispensing/kontakt/">Kontaktformular</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/kontakt/#service">Service</a></li></ul></div></nav>
+    </div>
+    <div class="container footer__bottom"><span>© 2026 Füll Systembau GmbH</span>
+      <nav class="footer__links" aria-label="Impressum"><a href="https://fuell-dispensing.com/kontakt-fuell/impressum-2/">Impressum</a><a href="https://fuell-dispensing.com/kontakt-fuell/datenschutzhinweise/">Datenschutz</a><a href="https://fuell-dispensing.com/info/agbs/">AGB</a></nav></div>
+  </footer>
+  <script src="/fuell-process.github.io/fuell-dispensing/assets/js/site.js?v=c4eebf0d" defer></script>
+</body>
+</html>

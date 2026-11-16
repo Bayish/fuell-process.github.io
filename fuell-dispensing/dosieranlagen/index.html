@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="googlebot" content="noindex, nofollow">
+  <style>html.fpg-locked body{display:none!important}html.fpg-denied body>*:not(.fpg-deny){display:none!important}.fpg-deny{font:16px/1.6 system-ui,sans-serif;max-width:520px;margin:18vh auto;padding:0 24px;color:#1b1f23}.fpg-deny button{margin-top:16px;padding:10px 18px;font:inherit;cursor:pointer}</style>
+  <script>
+  /* Preview access check – simple browser prompt, not real security. */
+  (function () {
+    var H = '9a2ebb00508dfcb446b7c845bf572ad95cef7db6b07c463ba793637099b58980', K = 'fpg-preview', root = document.documentElement;
+    try { if (sessionStorage.getItem(K) === H) return; } catch (e) {}
+    root.classList.add('fpg-locked');
+    function deny() {
+      function show() {
+        root.classList.remove('fpg-locked'); root.classList.add('fpg-denied');
+        var d = document.createElement('div'); d.className = 'fpg-deny';
+        d.innerHTML = '<h1 style="font-size:24px">Geschützte Vorschau / Protected preview</h1><p>Benutzername oder Passwort falsch. / Wrong username or password.</p><button type="button">Erneut versuchen / Try again</button>';
+        d.querySelector('button').onclick = function () { location.reload(); };
+        document.body.insertBefore(d, document.body.firstChild);
+      }
+      if (document.body) show(); else document.addEventListener('DOMContentLoaded', show);
+    }
+    var u = window.prompt('Geschützte Vorschau – Benutzername / Protected preview – username:');
+    if (u === null) return deny();
+    var p = window.prompt('Passwort / Password:');
+    if (p === null) return deny();
+    if (!(window.crypto && crypto.subtle)) return deny();
+    crypto.subtle.digest('SHA-256', new TextEncoder().encode(u.trim() + ':' + p)).then(function (buf) {
+      var h = Array.prototype.map.call(new Uint8Array(buf), function (x) { return ('0' + x.toString(16)).slice(-2); }).join('');
+      if (h === H) { try { sessionStorage.setItem(K, H); } catch (e) {} root.classList.remove('fpg-locked'); }
+      else deny();
+    }, deny);
+  })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dosieranlagen für Farben, Lacke und Chemie | Füll Systembau</title>
+  <meta name="description" content="Gravimetrische und volumetrische Dosieranlagen von Füll: FS XS, FS MS, FS 2005.2, FS 182.2, FS 188, LX5, VX5, U-VX5 und In-Can-Tinting – kundenspezifisch.">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Füll Systembau">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:url" content="https://bayish.github.io/fuell-process.github.io/fuell-dispensing/dosieranlagen/">
+  <meta property="og:title" content="Dosieranlagen für Farben, Lacke und Chemie | Füll Systembau">
+  <meta property="og:description" content="Gravimetrische und volumetrische Dosieranlagen von Füll: FS XS, FS MS, FS 2005.2, FS 182.2, FS 188, LX5, VX5, U-VX5 und In-Can-Tinting – kundenspezifisch.">
+  <meta property="og:image" content="https://bayish.github.io/fuell-process.github.io/fuell-dispensing/assets/img/dosieranlage-dosierzentrum.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/fuell-process.github.io/fuell-dispensing/assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/fuell-process.github.io/fuell-dispensing/assets/img/apple-touch-icon.png">
+  <link rel="preload" href="/fuell-process.github.io/fuell-dispensing/assets/fonts/montserrat-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fuell-process.github.io/fuell-dispensing/assets/fonts/pt-sans-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fuell-process.github.io/fuell-dispensing/assets/fonts/montserrat-600-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/fuell-process.github.io/fuell-dispensing/assets/css/site.css?v=7537ae1a">
+  <link rel="stylesheet" href="/fuell-process.github.io/fuell-dispensing/assets/css/knowledge.css?v=6ceba060">
+  <link rel="stylesheet" href="/fuell-process.github.io/fuell-dispensing/assets/css/page.css?v=d211af6f">
+  <script>document.documentElement.classList.add('js')</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://fuell-dispensing.com/dosieranlagen/#webpage",
+      "url": "https://fuell-dispensing.com/dosieranlagen/",
+      "name": "Dosieranlagen für Farben, Lacke und Chemie | Füll Systembau",
+      "description": "Gravimetrische und volumetrische Dosieranlagen von Füll: FS XS, FS MS, FS 2005.2, FS 182.2, FS 188, LX5, VX5, U-VX5 und In-Can-Tinting – kundenspezifisch.",
+      "inLanguage": "de",
+      "isPartOf": {
+        "@id": "https://fuell-dispensing.com/#website"
+      },
+      "about": {
+        "@type": "Organization",
+        "@id": "https://fuell-dispensing.com/#organization",
+        "name": "Füll Systembau GmbH",
+        "url": "https://fuell-dispensing.com/"
+      },
+      "breadcrumb": {
+        "@id": "https://fuell-dispensing.com/dosieranlagen/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Start",
+          "item": "https://fuell-dispensing.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Dosieranlagen",
+          "item": "https://fuell-dispensing.com/dosieranlagen/"
+        }
+      ],
+      "@id": "https://fuell-dispensing.com/dosieranlagen/#breadcrumb"
+    },
+    {
+      "@type": "ItemList",
+      "name": "Dosieranlagen von Füll Systembau",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Product",
+            "name": "FS XS",
+            "description": "Das kleinste vollautomatische Dosierzentrum von Füll, entwickelt als kostengünstige Alternative für kleinste bis mittelgroße Druckfarbenverbräuche – ohne Abstriche bei Qualität und Nachvollziehbarkeit.",
+            "brand": {
+              "@type": "Brand",
+              "name": "Füll"
+            },
+            "manufacturer": {
+              "@type": "Organization",
+              "@id": "https://fuell-dispensing.com/#organization",
+              "name": "Füll Systembau GmbH",
+              "url": "https://fuell-dispensing.com/"
+            },
+            "category": "Dosieranlage"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Product",
+            "name": "FS MS",
+            "description": "Für die Dosierung in sehr kleine Gebindeöffnungen. Die Ventile sitzen in einer Reihe, die Waage fährt mit dem Gebinde zwischen den Ventilen.",
+            "brand": {
+              "@type": "Brand",
+              "name": "Füll"
+            },
+            "manufacturer": {
+              "@type": "Organization",
+              "@id": "https://fuell-dispensing.com/#organization",
+              "name": "Füll Systembau GmbH",
+              "url": "https://fuell-dispensing.com/"
+            },
+            "category": "Dosieranlage"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Product",
+            "name": "FS 2005.2",
+            "description": "Dosierzentrum für Hersteller von Farben, Additiven und Druckfarben sowie Verpackungsproduzenten – von hohen Jahresdurchsätzen bis zur Dosierung in Kleinstgebinde wie Dosen.",
+            "brand": {
+              "@type": "Brand",
+              "name": "Füll"
+            },
+            "manufacturer": {
+              "@type": "Organization",
+              "@id": "https://fuell-dispensing.com/#organization",
+              "name": "Füll Systembau GmbH",
+              "url": "https://fuell-dispensing.com/"
+            },
+            "category": "Dosieranlage"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "Product",
+            "name": "FS 182.2",
+            "description": "Die große Baureihe für viele Komponenten und große Behälter. Der Anwendungsbereich hängt von Anzahl, Durchsatz und physikalischen Eigenschaften der Komponenten ab.",
+            "brand": {
+              "@type": "Brand",
+              "name": "Füll"
+            },
+            "manufacturer": {
+              "@type": "Organization",
+              "@id": "https://fuell-dispensing.com/#organization",
+              "name": "Füll Systembau GmbH",
+              "url": "https://fuell-dispensing.com/"
+            },
+            "category": "Dosieranlage"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "Product",
+            "name": "FS 188",
+            "description": "Entwickelt für diskontinuierliche und kontinuierliche Beschickungsprozesse – überall dort, wo reaktive Komponenten dosiert und eventuell parallel gemischt werden, um Folgeprozesse wie Laminiermaschinen, Tauchbecken oder Vorhangbeschichter zu versorgen.",
+            "brand": {
+              "@type": "Brand",
+              "name": "Füll"
+            },
+            "manufacturer": {
+              "@type": "Organization",
+              "@id": "https://fuell-dispensing.com/#organization",
+              "name": "Füll Systembau GmbH",
+              "url": "https://fuell-dispensing.com/"
+            },
+            "category": "Dosieranlage"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@type": "Product",
+            "name": "VX5",
+            "description": "Kompakte volumetrische Dosieranlage mit patentierter Double-Action-Kolbenpumpe für den semi-industriellen Großhandelsbereich.",
+            "brand": {
+              "@type": "Brand",
+              "name": "Füll"
+            },
+            "manufacturer": {
+              "@type": "Organization",
+              "@id": "https://fuell-dispensing.com/#organization",
+              "name": "Füll Systembau GmbH",
+              "url": "https://fuell-dispensing.com/"
+            },
+            "category": "Dosieranlage"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "item": {
+            "@type": "Product",
+            "name": "U-VX5",
+            "description": "Kompakte Dosieranlage für Druckfarben niedriger bis mittlerer Viskosität – eine erschwingliche Option für kleine bis mittlere Verbräuche.",
+            "brand": {
+              "@type": "Brand",
+              "name": "Füll"
+            },
+            "manufacturer": {
+              "@type": "Organization",
+              "@id": "https://fuell-dispensing.com/#organization",
+              "name": "Füll Systembau GmbH",
+              "url": "https://fuell-dispensing.com/"
+            },
+            "category": "Dosieranlage"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "item": {
+            "@type": "Product",
+            "name": "In-Can-Tinting",
+            "description": "Bedarfsgerechte Produktion im Verkaufsgebinde: Behälter mit Barcode aufsetzen, freigeben – die Basis wird gravimetrisch vorgelegt, simultan mit Universalpasten volumetrisch getönt und im selbstreinigenden Rührwerk gerührt.",
+            "brand": {
+              "@type": "Brand",
+              "name": "Füll"
+            },
+            "manufacturer": {
+              "@type": "Organization",
+              "@id": "https://fuell-dispensing.com/#organization",
+              "name": "Füll Systembau GmbH",
+              "url": "https://fuell-dispensing.com/"
+            },
+            "category": "Dosieranlage"
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#inhalt">Zum Inhalt springen</a>
+  <div class="topbar"><div class="container topbar__in">
+    <a class="topbar__phone" href="tel:+4961265980"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span>Telefon: +49 6126 598-0</span></a>
+    <details class="langs"><summary><span class="vh">Sprache: </span>Deutsch</summary><ul><li><a href="/fuell-process.github.io/fuell-dispensing/dosieranlagen/" hreflang="de" lang="de" aria-current="true">Deutsch</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/" hreflang="en" lang="en">English</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/" hreflang="fr" lang="fr">Français</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/" hreflang="es" lang="es">Español</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/pl/" hreflang="pl" lang="pl">Polski</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/tr/" hreflang="tr" lang="tr">Türkçe</a></li></ul></details>
+  </div></div>
+  <header class="header">
+    <div class="container header__in">
+      <a class="brand" href="/fuell-process.github.io/fuell-dispensing/" aria-label="Füll Systembau"><img src="/fuell-process.github.io/fuell-dispensing/assets/img/fuell-dispensing-logo.png" width="256" height="70" alt="FÜLL Dispensing Systems"></a>
+      <nav class="nav" id="nav" aria-label="Navigation"><ul class="menu"><li class="menu__item"><a class="menu__top" href="/fuell-process.github.io/fuell-dispensing/dosieranlagen/">Produkte &amp; Leistungen</a><button class="menu__toggle" type="button" aria-expanded="false" aria-controls="sub0" aria-label="Untermenü: Produkte &amp; Leistungen"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="menu__sub" id="sub0"><li><a href="/fuell-process.github.io/fuell-dispensing/dosieranlagen/">Übersicht: Produkte &amp; Leistungen</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/dosieranlagen/">Dosieranlagen</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/anlagenschema/">Anlagen im Schema</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/dosiersoftware/">Dosiersoftware</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/ruehrwerke/">Rührwerke</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/peripherie/">Peripherie</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/peripherie/#lagersysteme">Lagersysteme</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/engineering/">Engineering</a></li></ul></li><li class="menu__item"><a class="menu__top" href="/fuell-process.github.io/fuell-dispensing/maerkte/">Märkte</a><button class="menu__toggle" type="button" aria-expanded="false" aria-controls="sub1" aria-label="Untermenü: Märkte"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="menu__sub" id="sub1"><li><a href="/fuell-process.github.io/fuell-dispensing/maerkte/">Übersicht: Märkte</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/maerkte/druck-verpackung/">Druck &amp; Verpackung</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/maerkte/farben-lacke/">Farbe &amp; Lack</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/maerkte/chemie/">Chemie</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/maerkte/kosmetik-pharma/">Kosmetik, Pharma, Food</a></li></ul></li><li class="menu__item"><a class="menu__top" href="/fuell-process.github.io/fuell-dispensing/unternehmen/">Unternehmen</a><button class="menu__toggle" type="button" aria-expanded="false" aria-controls="sub2" aria-label="Untermenü: Unternehmen"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="menu__sub" id="sub2"><li><a href="/fuell-process.github.io/fuell-dispensing/unternehmen/">Übersicht: Unternehmen</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/unternehmen/#gruppe">Standorte</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/unternehmen/#historie">Historie</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/unternehmen/#staerken">Stärken &amp; Werte</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/referenzen/">Referenzen</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/referenzen/#fallstudien">Fallbeispiele</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/unternehmen/#zertifizierungen">Zertifizierungen</a></li><li><a href="https://fuell-dispensing.com/unternehmen/aktuelle-stellenangebote/">Stellenangebote</a></li></ul></li><li class="menu__item"><span class="menu__top">Info</span><button class="menu__toggle" type="button" aria-expanded="false" aria-controls="sub3" aria-label="Untermenü: Info"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="menu__sub" id="sub3"><li><a href="/fuell-process.github.io/fuell-dispensing/ratgeber/">Ratgeber</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/glossar/">Glossar</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/videos/">Videos</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/downloads/">Downloads</a></li><li><a href="https://www.youtube.com/channel/UCuraxCQK4nHG1uWadnqBxdQ" target="_blank" rel="noopener">YouTube-Kanal <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li></ul></li><li class="menu__item"><a class="menu__top" href="/fuell-process.github.io/fuell-dispensing/kontakt/">Kontakt</a><button class="menu__toggle" type="button" aria-expanded="false" aria-controls="sub4" aria-label="Untermenü: Kontakt"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="menu__sub" id="sub4"><li><a href="/fuell-process.github.io/fuell-dispensing/kontakt/">Übersicht: Kontakt</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/kontakt/">Kontaktformular</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/kontakt/#service">Service</a></li></ul></li></ul></nav>
+      <a class="btn btn--red header__cta" href="/fuell-process.github.io/fuell-dispensing/#kontakt">Anfrage stellen</a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menü"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="inhalt">
+    <section class="pg-hero">
+      <div class="container pg-hero__in">
+        <div class="pg-hero__text">
+          <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/fuell-process.github.io/fuell-dispensing/">Start</a></li><li aria-current="page">Dosieranlagen</li></ol></nav>
+          <p class="eyebrow">Produkte &amp; Leistungen</p>
+          <h1>Dosieranlagen: flexibel, schnell, präzise</h1>
+          <p class="pg-hero__lead">Unser Kerngeschäft ist die kundenspezifische Auslegung und der Bau von Dosieranlagen nach den geforderten Prozessparametern. Anwendungen unterscheiden sich selbst innerhalb einer Branche stark – darum wird jede Anlage nach genauer Analyse zum passgenauen Unikat.</p>
+          <div class="btns pg-hero__btns"><a class="btn btn--red" href="/fuell-process.github.io/fuell-dispensing/kontakt/">Anfrage stellen <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="btn btn--outline" href="tel:+4961265980">+49 6126 598-0</a></div>
+        </div>
+        <figure class="pg-hero__media"><img class="" src="/fuell-process.github.io/fuell-dispensing/assets/img/dosieranlage-dosierzentrum.jpg" width="1600" height="1000" alt="Dosierzentrum von Füll Systembau mit Bedienterminal" fetchpriority="high" decoding="async"></figure>
+      </div>
+      <ul class="container pg-facts"><li><strong>bis 0,1 g</strong><span>Dosiergenauigkeit je nach Ausführung</span></li><li><strong>9 Baureihen</strong><span>vom Labor bis zur Produktion</span></li><li><strong>Ex und Nicht-Ex</strong><span>Ausführung nach ATEX möglich</span></li><li><strong>CALIPSO</strong><span>eigene Dosiersoftware seit 1993</span></li></ul>
+    </section>
+    <section class="section" id="gravimetrisch" aria-labelledby="gravimetrisch-t"><div class="container"><div class="head"><h2 id="gravimetrisch-t">Gravimetrische Dosierzentren</h2><p class="head__lead">Gravimetrisch gemessen wird die Masse – unabhängig von Dichte und Temperatur. Das ist der Standard, wenn Reproduzierbarkeit und Rückverfolgbarkeit zählen.</p></div><div class="pg-cards pg-cards--3"><article class="pg-card"><div class="pg-card__body"><span class="kn-cat">Kompakt</span><h3>FS XS</h3><p>Das kleinste vollautomatische Dosierzentrum von Füll, entwickelt als kostengünstige Alternative für kleinste bis mittelgroße Druckfarbenverbräuche – ohne Abstriche bei Qualität und Nachvollziehbarkeit.</p><ul class="pg-specs"><li>Ventile fest im Kreis angeordnet</li><li>für Ex- und Nicht-Ex-Umgebungen</li><li>wasser- und lösemittelhaltige sowie UV-härtende Produkte</li><li>alle Komponenten werden über die Ventile umgewälzt</li><li>kompakt und modular – ideal bei wenig Platz</li><li>überwacht via SPS und CALIPSO</li></ul></div></article><article class="pg-card"><div class="pg-card__body"><span class="kn-cat">Kleinste Gebinde</span><h3>FS MS</h3><p>Für die Dosierung in sehr kleine Gebindeöffnungen. Die Ventile sitzen in einer Reihe, die Waage fährt mit dem Gebinde zwischen den Ventilen.</p><ul class="pg-specs"><li>Ventile in einer Reihe</li><li>Flaschen mit Öffnung &gt; 20 mm</li><li>Gebindeträger für unterschiedliche Gebinde</li><li>kleine Durchsatzleistungen</li></ul></div></article><article class="pg-card"><div class="pg-card__body"><span class="kn-cat">Produktion</span><h3>FS 2005.2</h3><p>Dosierzentrum für Hersteller von Farben, Additiven und Druckfarben sowie Verpackungsproduzenten – von hohen Jahresdurchsätzen bis zur Dosierung in Kleinstgebinde wie Dosen.</p><ul class="pg-specs"><li>bis 32 Ventile in zwei Reihen</li><li>Eimer, 25-kg-Hobbocks</li><li>Waagen oder volumetrischer Dosierapparat HX5</li><li>servogesteuerte Ventile</li><li>wasser-, lösemittelhaltige und UV-härtende Produkte</li></ul></div></article><article class="pg-card"><div class="pg-card__body"><span class="kn-cat">Hoher Durchsatz</span><h3>FS 182.2</h3><p>Die große Baureihe für viele Komponenten und große Behälter. Der Anwendungsbereich hängt von Anzahl, Durchsatz und physikalischen Eigenschaften der Komponenten ab.</p><ul class="pg-specs"><li>mehr als 32 Ventile in zwei Reihen</li><li>Hobbocks, 200-L-Fässer, Prozessbehälter</li><li>mittlere bis hohe Durchsatzleistungen</li><li>Waagen oder HX5</li><li>servogesteuerte Ventile</li></ul></div></article><article class="pg-card"><div class="pg-card__body"><span class="kn-cat">Prozessbeschickung</span><h3>FS 188</h3><p>Entwickelt für diskontinuierliche und kontinuierliche Beschickungsprozesse – überall dort, wo reaktive Komponenten dosiert und eventuell parallel gemischt werden, um Folgeprozesse wie Laminiermaschinen, Tauchbecken oder Vorhangbeschichter zu versorgen.</p><ul class="pg-specs"><li>gravimetrisch gemessen</li><li>Waagen oder Massendurchflussmesser</li><li>hohe Reproduzierbarkeit und Rückverfolgbarkeit</li></ul></div></article></div></div></section>
+    <section class="section section--gray" id="labor" aria-labelledby="labor-t"><div class="container"><div class="pg-split"><div class="pg-split__text"><div class="head"><h2 id="labor-t">Labor und Entwicklung: LX5</h2></div><div class="kn-prose pg-prose"><p>Sie entwickeln, optimieren und korrigieren Rezepte, bevorraten dafür dutzende Grundkomponenten und machen das alles von Hand? Dann können Sie das Einwiegen der <a class="term" href="/fuell-process.github.io/fuell-dispensing/glossar/gravimetrische-dosierung/">gravimetrischen</a> Labordosieranlage LX5 überlassen – so werden Kapazitäten für die Auswertung Ihrer Dosierreihen frei.</p>
+<ul class="kn-list"><li>Höchste Ansprüche an Dosiergenauigkeit und reproduzierbare Ergebnisse</li><li>Für Reihenrezepturen in der Farben- und Lackindustrie (seit 2009)</li><li>Nahtlos in Labor- und Produktionsprozesse integrierbar – den Automatisierungsgrad bestimmen Sie selbst</li></ul></div></div><figure class="pg-split__media"><img class="" src="/fuell-process.github.io/fuell-dispensing/assets/img/labor-dosieranlage-lx5.jpg" width="800" height="450" alt="Labor-Dosieranlage LX5 mit Bedienterminal" loading="lazy" decoding="async"></figure></div></div></section>
+    <section class="section" id="volumetrisch" aria-labelledby="volumetrisch-t"><div class="container"><div class="head"><h2 id="volumetrisch-t">Volumetrisch dosieren und tönen</h2><p class="head__lead">Volumetrische Anlagen dosieren mehrere Komponenten gleichzeitig – ideal zum Tönen in vorgefüllte Gebinde.</p></div><div class="pg-cards pg-cards--3"><article class="pg-card"><div class="pg-card__body"><span class="kn-cat">Volumetrisch</span><h3>VX5</h3><p>Kompakte volumetrische Dosieranlage mit patentierter <a class="term" href="/fuell-process.github.io/fuell-dispensing/glossar/kolbenpumpe/">Double-Action-Kolbenpumpe</a> für den semi-industriellen Großhandelsbereich.</p><ul class="pg-specs"><li>simultane Dosierung von Tönpasten und Farbkonzentraten</li><li>mit internen Kanistern, externen Tanks oder kombiniert mit gravimetrischen Anlagen</li><li>seit 2010 für Farbengroßhandel und Anwender mit hohem Farbvolumen</li></ul></div></article><article class="pg-card"><div class="pg-card__body"><span class="kn-cat">Druckfarben</span><h3>U-VX5</h3><p>Kompakte Dosieranlage für Druckfarben niedriger bis mittlerer Viskosität – eine erschwingliche Option für kleine bis mittlere Verbräuche.</p><ul class="pg-specs"><li>simultan oder gravimetrisch kontrolliert</li><li>UV-härtende, lösemittel- und wasserbasierte Produkte</li><li>Batchgrößen 1 bis 5 kg</li><li>selbst 100-g-Ansätze reproduzierbar</li></ul></div></article><article class="pg-card"><div class="pg-card__body"><span class="kn-cat">Losgröße 1</span><h3>In-Can-Tinting</h3><p>Bedarfsgerechte Produktion im Verkaufsgebinde: Behälter mit Barcode aufsetzen, freigeben – die Basis wird gravimetrisch vorgelegt, simultan mit Universalpasten volumetrisch getönt und im selbstreinigenden Rührwerk gerührt.</p><ul class="pg-specs"><li>verschiedene Behälter über Universalgebindeträger</li><li>Automatisierungsgrad frei wählbar</li><li>bedarfsorientierte Fertigung ab Losgröße 1</li></ul></div></article></div></div></section>
+    <section class="section section--gray" id="vergleich" aria-labelledby="vergleich-t"><div class="container"><div class="head"><h2 id="vergleich-t">Alle Baureihen im Vergleich</h2></div><div class="kn-prose pg-prose"><div class="kn-table"><table><thead><tr><th scope="col">Baureihe</th><th scope="col">Prinzip</th><th scope="col">Ventilanordnung</th><th scope="col">Typische Gebinde</th><th scope="col">Durchsatz</th></tr></thead><tbody><tr><td>FS MS</td><td>gravimetrisch</td><td>eine Reihe, Waage fährt mit dem Gebinde</td><td>sehr kleine Öffnungen, z. B. Flaschen (&gt; 20 mm)</td><td>klein</td></tr><tr><td>FS XS</td><td>gravimetrisch</td><td>fest im Kreis</td><td>Eimer, Hobbocks</td><td>klein bis mittel</td></tr><tr><td>FS 2005.2</td><td>gravimetrisch (optional HX5 volumetrisch)</td><td>zwei Reihen, max. 32 Ventile</td><td>Eimer, 25-kg-Hobbocks, auch Dosen</td><td>mittel</td></tr><tr><td>FS 182.2</td><td>gravimetrisch (optional HX5 volumetrisch)</td><td>zwei Reihen, mehr als 32 Ventile</td><td>Hobbocks, 200-L-Fässer, Prozessbehälter</td><td>mittel bis hoch</td></tr><tr><td>FS 188</td><td>gravimetrisch (Waage oder Massendurchflussmesser)</td><td>projektspezifisch</td><td>Beschickung von Folgeprozessen</td><td>kontinuierlich oder diskontinuierlich</td></tr><tr><td>LX5</td><td>gravimetrisch</td><td>Labor</td><td>Laborgebinde</td><td>Reihenrezepturen</td></tr><tr><td>VX5</td><td>volumetrisch (Double-Action-Kolbenpumpe)</td><td>simultan</td><td>vorgefüllte Gebinde</td><td>semi-industriell</td></tr><tr><td>U-VX5</td><td>volumetrisch, optional gravimetrisch kontrolliert</td><td>simultan</td><td>Batches 1–5 kg, ab 100 g</td><td>klein bis mittel</td></tr><tr><td>In-Can-Tinting</td><td>gravimetrisch + volumetrisch</td><td>simultanes Tönen</td><td>Verkaufsgebinde ab Losgröße 1</td><td>bedarfsorientiert</td></tr></tbody></table></div>
+<p>Die Tabelle ist eine erste Orientierung. In der Vorprojektierung besprechen wir die wichtigen Punkte mit Ihnen und sorgen für die bestmögliche Integration in Ihr bestehendes Produktionsumfeld. Ausführlich: <a href="/fuell-process.github.io/fuell-dispensing/ratgeber/dosieranlage-auswaehlen/">Ratgeber Dosieranlage auswählen</a>.</p></div></div></section>
+    <section class="section" id="gemeinsam" aria-labelledby="gemeinsam-t"><div class="container"><div class="pg-split"><div class="pg-split__text"><div class="head"><h2 id="gemeinsam-t">Was alle Füll-Anlagen gemeinsam haben</h2></div><div class="kn-prose pg-prose"><ul class="kn-list"><li><strong>Kundenspezifisch:</strong> Ventile werden einzeln an Fließverhalten, Dichte und <a class="term" href="/fuell-process.github.io/fuell-dispensing/glossar/viskositaet/">Viskosität</a> angepasst.</li><li><strong>Homogene Rohstoffe:</strong> <a class="term" href="/fuell-process.github.io/fuell-dispensing/glossar/umwaelzung/">Umwälzung</a> und <a class="term" href="/fuell-process.github.io/fuell-dispensing/glossar/ruehrwerk/">Rührwerke</a> verhindern <a class="term" href="/fuell-process.github.io/fuell-dispensing/glossar/sedimentation/">Sedimentation</a>.</li><li><strong>Software aus eigenem Haus:</strong> <a class="term" href="/fuell-process.github.io/fuell-dispensing/glossar/calipso/">CALIPSO</a> verwaltet Aufträge, Rezepte, Bestände und Protokolle.</li><li><strong>Anbindung:</strong> Schnittstellen zu ERP, MES und Farbmetrik.</li><li><strong>Sicherheit:</strong> Ausführung für explosionsgefährdete Bereiche nach <a class="term" href="/fuell-process.github.io/fuell-dispensing/glossar/atex/">ATEX</a>.</li><li><strong>Modular:</strong> Ventile, Rohre und Lagerbehälter lassen sich später ergänzen.</li></ul>
+<aside class="kn-cta"><strong>Passt das zu Ihrer Anwendung?</strong><span>Schicken Sie uns Ihre Komponenten, Gebinde und Durchsätze – wir zeigen Ihnen in der Vorprojektierung, welche Lösung passt.</span><a class="btn btn--red" href="/fuell-process.github.io/fuell-dispensing/#kontakt">Anfrage stellen <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></aside></div></div><figure class="pg-split__media"><img class="" src="/fuell-process.github.io/fuell-dispensing/assets/img/anlage-steuerung-terminal.webp" width="1400" height="1126" alt="Dosieranlage mit Steuerung und Terminal bei Sherwin-Williams" loading="lazy" decoding="async"></figure></div></div></section>
+    <section class="section section--gray" aria-labelledby="pg-faq"><div class="container container--narrow"><div class="head"><h2 id="pg-faq">Häufige Fragen</h2></div><div class="faq"><details class="qa"><summary><h3>Wie genau dosieren Füll-Anlagen?</h3></summary><p>Je nach Ausführung bis zu 0,1 g. Die erreichbare Genauigkeit hängt von Waage, Ventil, Sollmenge und Produkt ab.</p></details><details class="qa"><summary><h3>Gibt es Anlagen für den Ex-Bereich?</h3></summary><p>Ja. Die FS XS ist für Ex- und Nicht-Ex-Umgebungen geeignet; größere Anlagen werden projektspezifisch nach ATEX ausgelegt.</p></details><details class="qa"><summary><h3>Kann ich gravimetrisch und volumetrisch kombinieren?</h3></summary><p>Ja. FS 2005.2 und FS 182.2 lassen sich mit Waagen oder dem volumetrischen Dosierapparat HX5 bestücken; beim In-Can-Tinting arbeiten beide Prinzipien zusammen.</p></details></div></div></section>
+    <section class="section"><div class="container"><div class="head head--row"><h2>Passende Ratgeber</h2><div class="btns"><a class="link" href="/fuell-process.github.io/fuell-dispensing/ratgeber/">Alle Ratgeber <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="link" href="/fuell-process.github.io/fuell-dispensing/glossar/">Glossar <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div><div class="kn-cards"><a class="kn-card" href="/fuell-process.github.io/fuell-dispensing/ratgeber/dosieranlage-auswaehlen/"><span class="kn-cat">Grundlagen</span><strong>Dosieranlage auswählen: der Praxis-Leitfaden</strong><span>Welche Fragen Sie vor der Investition klären sollten: Komponenten, Durchsatz, Gebinde, Ex-Schutz, Lager und Software.</span></a><a class="kn-card" href="/fuell-process.github.io/fuell-dispensing/ratgeber/gravimetrisch-volumetrisch-dosieren/"><span class="kn-cat">Grundlagen</span><strong>Gravimetrisch oder volumetrisch dosieren: Wann welches Verfahren?</strong><span>Masse oder Volumen? Vor- und Nachteile beider Verfahren, Einflussfaktoren und welche Anlage was nutzt.</span></a><a class="kn-card" href="/fuell-process.github.io/fuell-dispensing/ratgeber/druckfarben-dosieren/"><span class="kn-cat">Anwendungen</span><strong>Druckfarben automatisch dosieren</strong><span>UV-, lösemittel- und wasserbasierte Druckfarben: Anlagenwahl, Lagerung reaktiver Rohstoffe und ein Praxisbeispiel.</span></a></div></div></section>
+    <section class="section section--dark" aria-labelledby="kn-final">
+      <div class="container s-cta">
+        <div><h2 id="kn-final">Sprechen Sie mit uns über Ihre Dosieraufgabe</h2><p>Schicken Sie uns Ihre Produkte, die Zahl der Komponenten und den gewünschten Durchsatz. In der Vorprojektierung zeigen wir, welche Anlage zu Ihrer Produktion passt.</p></div>
+        <div class="btns"><a class="btn btn--red" href="/fuell-process.github.io/fuell-dispensing/#kontakt">Anfrage stellen <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="btn btn--light" href="tel:+4961265980">+49 6126 598-0</a></div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container footer__top">
+      <div class="footer__brand">
+        <img src="/fuell-process.github.io/fuell-dispensing/assets/img/fuell-dispensing-logo.png" width="256" height="70" alt="FÜLL Dispensing Systems" loading="lazy">
+        <address>Füll Systembau GmbH<br>Richard-Klinger-Straße 31<br>65510 Idstein, Deutschland</address>
+        <p><span class="footer__label">Zentrale</span><a href="tel:+4961265980">+49 6126 598-0</a><br><a href="mailto:info@fuell-dispensing.com">info@fuell-dispensing.com</a></p>
+        <p><span class="footer__label">Service</span><a href="tel:+49612659822">+49 6126 598-22</a><br><a href="mailto:service@fuell-dispensing.com">service@fuell-dispensing.com</a><br><span class="footer__hours">Mo–Do 7–16 Uhr, Fr 7–13 Uhr</span></p>
+        <p><a href="https://fuell-process.com/">Ein Unternehmen der Füll Process Group</a></p>
+      </div>
+      <nav class="footer__map" aria-label="Sitemap"><div class="fcol"><p class="fcol__title"><a href="/fuell-process.github.io/fuell-dispensing/dosieranlagen/">Produkte &amp; Leistungen</a></p><ul><li><a href="/fuell-process.github.io/fuell-dispensing/dosieranlagen/">Dosieranlagen</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/anlagenschema/">Anlagen im Schema</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/dosiersoftware/">Dosiersoftware</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/ruehrwerke/">Rührwerke</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/peripherie/">Peripherie</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/peripherie/#lagersysteme">Lagersysteme</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/engineering/">Engineering</a></li></ul></div><div class="fcol"><p class="fcol__title"><a href="/fuell-process.github.io/fuell-dispensing/maerkte/">Märkte</a></p><ul><li><a href="/fuell-process.github.io/fuell-dispensing/maerkte/druck-verpackung/">Druck &amp; Verpackung</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/maerkte/farben-lacke/">Farbe &amp; Lack</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/maerkte/chemie/">Chemie</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/maerkte/kosmetik-pharma/">Kosmetik, Pharma, Food</a></li></ul></div><div class="fcol"><p class="fcol__title"><a href="/fuell-process.github.io/fuell-dispensing/unternehmen/">Unternehmen</a></p><ul><li><a href="/fuell-process.github.io/fuell-dispensing/unternehmen/#gruppe">Standorte</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/unternehmen/#historie">Historie</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/unternehmen/#staerken">Stärken &amp; Werte</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/referenzen/">Referenzen</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/referenzen/#fallstudien">Fallbeispiele</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/unternehmen/#zertifizierungen">Zertifizierungen</a></li><li><a href="https://fuell-dispensing.com/unternehmen/aktuelle-stellenangebote/">Stellenangebote</a></li></ul></div><div class="fcol"><p class="fcol__title">Info</p><ul><li><a href="/fuell-process.github.io/fuell-dispensing/ratgeber/">Ratgeber</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/glossar/">Glossar</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/videos/">Videos</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/downloads/">Downloads</a></li><li><a href="https://www.youtube.com/channel/UCuraxCQK4nHG1uWadnqBxdQ" target="_blank" rel="noopener">YouTube-Kanal <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li></ul></div><div class="fcol"><p class="fcol__title"><a href="/fuell-process.github.io/fuell-dispensing/kontakt/">Kontakt</a></p><ul><li><a href="/fuell-process.github.io/fuell-dispensing/kontakt/">Kontaktformular</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/kontakt/#service">Service</a></li></ul></div></nav>
+    </div>
+    <div class="container footer__bottom"><span>© 2026 Füll Systembau GmbH</span>
+      <nav class="footer__links" aria-label="Impressum"><a href="https://fuell-dispensing.com/kontakt-fuell/impressum-2/">Impressum</a><a href="https://fuell-dispensing.com/kontakt-fuell/datenschutzhinweise/">Datenschutz</a><a href="https://fuell-dispensing.com/info/agbs/">AGB</a></nav></div>
+  </footer>
+  <script src="/fuell-process.github.io/fuell-dispensing/assets/js/site.js?v=c4eebf0d" defer></script>
+</body>
+</html>

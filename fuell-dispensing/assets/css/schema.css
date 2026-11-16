@@ -1,0 +1,128 @@
+/* Füll Systembau – sub-page "Dosieranlagen im Schema" (on top of site.css).
+   Light stages in the site colours; the canvas colours come from the --sch-* values ("r,g,b") read by schema.js. */
+:root {
+  --sch-accent: 134,38,51;   /* Füll red: flow, active parts */
+  --sch-line: 66,64,66;      /* outlines and points */
+  --sch-grid: 117,117,117;   /* floor grid, pipes */
+  --sch-ok: 30,128,72;       /* running / done */
+  --sch-spark: 190,62,80;    /* falling drops */
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --ok: #1e8048;
+}
+
+/* Intro */
+.s-intro { padding: clamp(36px, 5vw, 64px) 0 8px; }
+.crumbs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; font-size: 14.5px; color: var(--muted); }
+.crumbs a { color: var(--ink-2); }
+.s-intro h1 { max-width: 20ch; font-size: clamp(32px, 5vw, 60px); font-weight: 700; text-transform: uppercase; line-height: 1.05; }
+.s-intro h1 span { display: block; color: var(--red); }
+.s-intro__lead { max-width: 70ch; margin: 20px 0 0; font-size: 18px; color: var(--ink-2); }
+
+/* Stages (shared) */
+.journey__stage, .build__stage { position: relative; margin: 0; overflow: hidden; background: radial-gradient(90% 80% at 50% 45%, #fff 0%, #fff 45%, var(--gray-50) 100%); border: 1px solid var(--gray-100); border-top: 4px solid var(--red); }
+.journey__stage canvas, .build__stage canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.section--gray .journey__stage { background: radial-gradient(90% 80% at 50% 45%, #fff 0%, #fff 55%, #fbfbfb 100%); }
+
+/* Tour: type switcher */
+.journey__stage { height: clamp(460px, 70svh, 720px); }
+.stage__ladder { position: absolute; top: 16px; left: 16px; right: 16px; z-index: 1; display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.stage__ladder button { display: inline-flex; align-items: center; gap: 8px; padding: 9px 12px; border: 1px solid var(--gray-300); background: rgba(255,255,255,.92); color: var(--ink-2); font: 600 13px/1 var(--head); cursor: pointer; transition: color .25s, border-color .25s, background-color .25s; }
+.stage__ladder button b { color: var(--red); font-weight: 700; }
+.stage__ladder button:hover { border-color: var(--red); color: var(--red); }
+.stage__ladder button[aria-pressed="true"] { color: #fff; background: var(--red); border-color: var(--red); }
+.stage__ladder button[aria-pressed="true"] b { color: #fff; }
+.stage__level { position: absolute; left: 24px; bottom: 58px; font: 700 clamp(64px, 9vw, 120px)/.85 var(--head); letter-spacing: -0.04em; color: rgba(134,38,51,.9); pointer-events: none; }
+.stage__name { position: absolute; left: 28px; bottom: 24px; font: 700 clamp(18px, 2vw, 26px)/1 var(--head); color: var(--ink); pointer-events: none; }
+.stage__nav { position: absolute; right: 20px; bottom: 20px; display: flex; align-items: flex-end; gap: 12px; }
+.stage__nav button { display: inline-grid; place-items: center; width: 46px; height: 46px; border: 1px solid var(--gray-300); background: #fff; color: var(--ink-2); cursor: pointer; transition: border-color .25s, color .25s, transform .15s; }
+.stage__nav button svg { width: 18px; height: 18px; }
+.stage__nav button:hover { border-color: var(--red); color: var(--red); }
+.stage__nav button:active { transform: scale(.94); }
+.stage__meter { display: flex; align-items: flex-end; gap: 6px; padding-bottom: 6px; }
+.stage__meter span { width: 14px; height: calc(8px + var(--i) * 6px); background: var(--gray-300); transition: background-color .4s; }
+.stage__meter span.on { background: var(--red); }
+.stage__scale { position: absolute; right: 24px; bottom: 84px; display: flex; gap: 10px; font: 700 11.5px/1 var(--head); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+
+/* Build-up: one complete system + CALIPSO panel */
+.build__grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(400px, 1fr); gap: 20px; align-items: start; }
+.build__visual { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.build__stage { height: clamp(460px, 62vh, 620px); }
+.layers { display: flex; flex-wrap: wrap; gap: 8px; }
+.layer { display: inline-flex; align-items: center; gap: 9px; padding: 10px 14px; border: 1px solid var(--gray-300); background: #fff; color: var(--ink-2); font: 15px/1.2 var(--body); cursor: pointer; transition: border-color .25s, background-color .25s, color .25s; }
+.layer .sw { width: 10px; height: 10px; border: 2px solid var(--ink-2); }
+.layer--lines .sw { border-color: var(--red); border-radius: 50%; }
+.layer--control .sw { border-color: var(--ok); }
+.layer:hover { border-color: var(--red); color: var(--red); }
+.layer[aria-pressed="true"] { background: var(--red); border-color: var(--red); color: #fff; }
+.layer[aria-pressed="true"] .sw { border-color: #fff; }
+
+/* CALIPSO panel – modelled on the dispensing software, all values simulated */
+.calipso { display: flex; flex-direction: column; gap: 14px; padding: 18px; min-width: 0; background: #fff; border: 1px solid var(--gray-100); border-top: 4px solid var(--ink-2); color: var(--ink); }
+.cal-top { display: flex; align-items: center; gap: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--gray-100); }
+.cal-logo { font: 800 15px/1 var(--head); letter-spacing: .14em; color: var(--red); }
+.cal-order { font: 600 12.5px/1 var(--mono); color: var(--muted); }
+.cal-status { margin-left: auto; display: inline-flex; align-items: center; gap: 7px; padding: 6px 10px; border-radius: 999px; font: 700 11.5px/1 var(--mono); letter-spacing: .04em; text-transform: uppercase; background: var(--gray-100); color: var(--ink-2); }
+.cal-status::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.cal-status.is-run { background: rgba(134,38,51,.1); color: var(--red); }
+.cal-status.is-run::before { animation: blink 1s steps(2) infinite; }
+.cal-status.is-done { background: rgba(30,128,72,.12); color: var(--ok); }
+@keyframes blink { 50% { opacity: .2; } }
+.cal-info { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 0; }
+.cal-info div:first-child { grid-column: 1 / -1; }
+.cal-info div { padding: 10px 12px; min-width: 0; background: var(--gray-50); border: 1px solid var(--gray-100); }
+.cal-info dt { font: 700 11px/1 var(--head); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.cal-info dd { margin: 7px 0 0; font: 600 14px/1.25 var(--head); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cal-info [data-cal-total] { font-family: var(--mono); color: var(--red); }
+.cal-bar { height: 6px; background: var(--gray-100); overflow: hidden; }
+.cal-bar span { display: block; height: 100%; background: linear-gradient(90deg, var(--red-dark), var(--red)); transform-origin: left; transform: scaleX(0); transition: transform .1s linear; }
+.cal-scroll { overflow-x: auto; }
+.cal-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.cal-table th { padding: 0 5px 8px; text-align: left; font: 700 11px/1 var(--head); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--gray-300); }
+.cal-table td { padding: 8px 5px; border-bottom: 1px solid var(--gray-100); vertical-align: middle; transition: background-color .3s; }
+.cal-table td strong { display: block; font-weight: 700; }
+.cal-table td small { display: block; margin-top: 2px; font-size: 12.5px; color: var(--muted); }
+.cal-table .c-n { width: 22px; font-family: var(--mono); color: var(--muted); }
+.cal-table .c-num { font-family: var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap; text-align: right; }
+.cal-table th:nth-child(3), .cal-table th:nth-child(4), .cal-table th:nth-child(5) { text-align: right; }
+.cal-table .chip { display: inline-block; min-width: 0; padding: 4px 6px; font: 700 10.5px/1 var(--mono); text-transform: uppercase; text-align: center; color: var(--muted); border: 1px solid var(--gray-300); }
+.cal-table tr.is-run td { background: rgba(134,38,51,.06); }
+.cal-table tr.is-run .chip { color: #fff; background: var(--red); border-color: var(--red); }
+.cal-table tr.is-done .chip { color: var(--ok); border-color: rgba(30,128,72,.5); }
+.cal-table tr.is-done td:not(:last-child) { color: var(--ink-2); }
+.cal-sub { margin: 0 0 8px; font: 700 11px/1 var(--head); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.cal-units ul { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--gray-100); }
+.unit { display: grid; grid-template-columns: 12px minmax(0, 1fr) auto 46px; grid-template-areas: "dot name state time" "dot name cycle cycle"; align-items: center; column-gap: 10px; padding: 7px 4px; border-bottom: 1px solid var(--gray-100); font-size: 13.5px; }
+.unit__dot { grid-area: dot; width: 9px; height: 9px; border-radius: 50%; background: var(--gray-300); }
+.unit.is-on .unit__dot { background: var(--ok); box-shadow: 0 0 0 4px rgba(30,128,72,.15); }
+.unit.is-feed .unit__dot { background: var(--red); box-shadow: 0 0 0 4px rgba(134,38,51,.15); }
+.unit__name { grid-area: name; min-width: 0; }
+.unit__name strong { display: block; font-weight: 700; }
+.unit__name small { display: block; font-size: 12px; color: var(--muted); }
+.unit__state { grid-area: state; font: 700 11px/1 var(--mono); text-transform: uppercase; color: var(--muted); text-align: right; }
+.unit.is-on .unit__state { color: var(--ok); } .unit.is-feed .unit__state { color: var(--red); }
+.unit__time { grid-area: time; font: 600 13px/1 var(--mono); font-variant-numeric: tabular-nums; text-align: right; }
+.unit__cycle { grid-area: cycle; font-size: 12px; color: var(--muted); text-align: right; }
+.cal-note { margin: auto 0 0; font-size: 13px; line-height: 1.5; color: var(--muted); }
+
+/* Closing call to action */
+.s-cta { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px 48px; }
+.s-cta p { max-width: 60ch; margin: 12px 0 0; color: rgba(255,255,255,.82); }
+.s-cta .btns { justify-content: flex-start; }
+
+@media (max-width: 1100px) { .build__grid { grid-template-columns: 1fr; } .build__stage { height: auto; aspect-ratio: 16 / 10; } }
+@media (max-width: 760px) {
+  .journey__stage { height: clamp(480px, 78svh, 660px); }
+  .stage__ladder button { padding: 8px 9px; font-size: 12px; }
+  .stage__level { left: 16px; bottom: 74px; font-size: 64px; }
+  .stage__name { left: 18px; bottom: 50px; font-size: 18px; }
+  .stage__nav { left: 16px; right: 16px; bottom: 12px; justify-content: space-between; }
+  .stage__nav button { width: 44px; height: 32px; }
+  .stage__meter span { width: 10px; }
+  .stage__scale { display: none; }
+}
+@media (max-width: 560px) {
+  .build__stage { aspect-ratio: 1 / 1; }
+  .cal-table { font-size: 13px; } .cal-table th:nth-child(5), .cal-table td:nth-child(5) { display: none; }
+  .cal-table .chip { min-width: 0; }
+}
+@media (prefers-reduced-motion: reduce) { .cal-status.is-run::before { animation: none; } }

@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="googlebot" content="noindex, nofollow">
+  <style>html.fpg-locked body{display:none!important}html.fpg-denied body>*:not(.fpg-deny){display:none!important}.fpg-deny{font:16px/1.6 system-ui,sans-serif;max-width:520px;margin:18vh auto;padding:0 24px;color:#1b1f23}.fpg-deny button{margin-top:16px;padding:10px 18px;font:inherit;cursor:pointer}</style>
+  <script>
+  /* Preview access check – simple browser prompt, not real security. */
+  (function () {
+    var H = '9a2ebb00508dfcb446b7c845bf572ad95cef7db6b07c463ba793637099b58980', K = 'fpg-preview', root = document.documentElement;
+    try { if (sessionStorage.getItem(K) === H) return; } catch (e) {}
+    root.classList.add('fpg-locked');
+    function deny() {
+      function show() {
+        root.classList.remove('fpg-locked'); root.classList.add('fpg-denied');
+        var d = document.createElement('div'); d.className = 'fpg-deny';
+        d.innerHTML = '<h1 style="font-size:24px">Geschützte Vorschau / Protected preview</h1><p>Benutzername oder Passwort falsch. / Wrong username or password.</p><button type="button">Erneut versuchen / Try again</button>';
+        d.querySelector('button').onclick = function () { location.reload(); };
+        document.body.insertBefore(d, document.body.firstChild);
+      }
+      if (document.body) show(); else document.addEventListener('DOMContentLoaded', show);
+    }
+    var u = window.prompt('Geschützte Vorschau – Benutzername / Protected preview – username:');
+    if (u === null) return deny();
+    var p = window.prompt('Passwort / Password:');
+    if (p === null) return deny();
+    if (!(window.crypto && crypto.subtle)) return deny();
+    crypto.subtle.digest('SHA-256', new TextEncoder().encode(u.trim() + ':' + p)).then(function (buf) {
+      var h = Array.prototype.map.call(new Uint8Array(buf), function (x) { return ('0' + x.toString(16)).slice(-2); }).join('');
+      if (h === H) { try { sessionStorage.setItem(K, H); } catch (e) {} root.classList.remove('fpg-locked'); }
+      else deny();
+    }, deny);
+  })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dozajlama sistemleri ve karıştırıcılar | Füll Systembau</title>
+  <meta name="description" content="Boya, vernik, matbaa mürekkebi, kimya ve kozmetik için dozajlama sistemleri, karıştırıcılar ve depolama. 1965’ten beri, Idstein’da üretim, 2.500’den fazla tesis.">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Füll Systembau">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:url" content="https://bayish.github.io/fuell-process.github.io/fuell-dispensing/tr/">
+  <meta property="og:title" content="Dozajlama sistemleri ve karıştırıcılar | Füll Systembau">
+  <meta property="og:description" content="Boya, vernik, matbaa mürekkebi, kimya ve kozmetik için dozajlama sistemleri, karıştırıcılar ve depolama. 1965’ten beri, Idstein’da üretim, 2.500’den fazla tesis.">
+  <meta property="og:image" content="https://bayish.github.io/fuell-process.github.io/fuell-dispensing/assets/img/dosieranlage-dosierzentrum.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/fuell-process.github.io/fuell-dispensing/assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/fuell-process.github.io/fuell-dispensing/assets/img/apple-touch-icon.png">
+  <link rel="preload" href="/fuell-process.github.io/fuell-dispensing/assets/fonts/montserrat-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fuell-process.github.io/fuell-dispensing/assets/fonts/pt-sans-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fuell-process.github.io/fuell-dispensing/assets/fonts/montserrat-600-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fuell-process.github.io/fuell-dispensing/assets/video/build-hd-poster.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="/fuell-process.github.io/fuell-dispensing/assets/css/site.css?v=7537ae1a">
+  <script>document.documentElement.classList.add('js')</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://fuell-dispensing.com/#organization",
+      "name": "Füll Systembau GmbH",
+      "alternateName": [
+        "FÜLL Systembau",
+        "Füll Dispensing Systems"
+      ],
+      "url": "https://fuell-dispensing.com/",
+      "logo": "https://fuell-dispensing.com/assets/img/fuell-dispensing-logo.png",
+      "foundingDate": "1965",
+      "founder": {
+        "@type": "Person",
+        "name": "Werner Füll"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Richard-Klinger-Straße 31",
+        "postalCode": "65510",
+        "addressLocality": "Idstein",
+        "addressCountry": "DE"
+      },
+      "telephone": "+49 6126 598-0",
+      "email": "info@fuell-dispensing.com",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "telephone": "+49 6126 598-22",
+          "email": "service@fuell-dispensing.com",
+          "availableLanguage": [
+            "de",
+            "en"
+          ]
+        }
+      ],
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "Füll Process S.A.",
+        "url": "https://fuell-process.com/"
+      },
+      "knowsAbout": [
+        "LX5 laboratuvar dozajlama sistemi",
+        "FS XS ve U-VX5",
+        "FS 2005.2 ve FS 188",
+        "Dozajlama sistemleri",
+        "Karıştırıcılar",
+        "Çevre birimleri",
+        "Mühendislik",
+        "ATEX",
+        "ISO 9001",
+        "CALIPSO"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://fuell-dispensing.com/#website",
+      "url": "https://fuell-dispensing.com/",
+      "name": "Füll Systembau",
+      "publisher": {
+        "@id": "https://fuell-dispensing.com/#organization"
+      },
+      "inLanguage": [
+        "de",
+        "en",
+        "fr",
+        "es",
+        "pl",
+        "tr"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://fuell-dispensing.com/tr/#webpage",
+      "url": "https://fuell-dispensing.com/tr/",
+      "name": "Dozajlama sistemleri ve karıştırıcılar | Füll Systembau",
+      "description": "Boya, vernik, matbaa mürekkebi, kimya ve kozmetik için dozajlama sistemleri, karıştırıcılar ve depolama. 1965’ten beri, Idstein’da üretim, 2.500’den fazla tesis.",
+      "inLanguage": "tr",
+      "isPartOf": {
+        "@id": "https://fuell-dispensing.com/#website"
+      },
+      "about": {
+        "@id": "https://fuell-dispensing.com/#organization"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fuell-dispensing.com/tr/#faq",
+      "inLanguage": "tr",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Füll dozajlama sistemleri hangi ürünleri dozajlayabilir?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Düşük ve yüksek viskoziteli sıvılar ve pastalar: su ve solvent bazlı bileşenler ile UV ile kürlenen ürünler; örneğin boyalar, vernikler, matbaa mürekkepleri, katkı maddeleri, reçineler, yapıştırıcılar ve silikonlar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Gravimetrik mi yoksa hacimsel mi dozajlıyorsunuz?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Her ikisi de. Gravimetrik sistemler teraziler veya kütlesel debimetrelerle ölçer; hacimsel sistemler örneğin HX5 dozaj ünitesi veya VX5 ile çalışır. Seçim tekrarlanabilirliğe, kap boyutlarına ve kapasiteye bağlıdır."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Sistemler Ex alanlar için uygun mu?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Evet. Füll, ekipman üretimi için ATEX sertifikasına sahiptir. Sistemler, karıştırıcılar ve terminaller patlama riski bulunan ortamlar için tasarlanır."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Sistem ERP veya MES’e bağlanabilir mi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Evet. Kendi yazılım ve PLC departmanlarımız sistemleri üst sistemlere bağlar. Sherwin-Williams’ta tüm siparişler ERP sisteminden merkezi olarak Füll terminallerine yüklenir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Mevcut sistemler genişletilebilir veya modernize edilebilir mi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Evet. Modüler yapı sayesinde ek valfler, borular ve depolama tankları entegre edilebilir. Retrofit kapsamında kontrol sistemini, valfleri veya komple grupları yeniliyoruz; diğer üreticilerin sistemlerinde de."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Servise nasıl ulaşırım?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Telefon +49 6126 598-22 veya service@fuell-dispensing.com; pazartesi–perşembe 7–16, cuma 7–13 (Orta Avrupa saati). Birçok konu güvenli bir VPN bağlantısı üzerinden uzaktan bakım ile çözülebilir."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#inhalt">İçeriğe geç</a>
+  <div class="topbar"><div class="container topbar__in">
+    <a class="topbar__phone" href="tel:+4961265980"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span>Telefon: +49 6126 598-0</span></a>
+    <details class="langs"><summary><span class="vh">Dil: </span>Türkçe</summary><ul><li><a href="/fuell-process.github.io/fuell-dispensing/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/" hreflang="en" lang="en">English</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/" hreflang="fr" lang="fr">Français</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/" hreflang="es" lang="es">Español</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/pl/" hreflang="pl" lang="pl">Polski</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/tr/" hreflang="tr" lang="tr" aria-current="true">Türkçe</a></li></ul></details>
+  </div></div>
+  <header class="header">
+    <div class="container header__in">
+      <a class="brand" href="/fuell-process.github.io/fuell-dispensing/tr/" aria-label="Füll Systembau"><img src="/fuell-process.github.io/fuell-dispensing/assets/img/fuell-dispensing-logo.png" width="256" height="70" alt="FÜLL Dispensing Systems"></a>
+      <nav class="nav" id="nav" aria-label="Navigation"><ul class="menu"><li class="menu__item"><a class="menu__top" href="https://fuell-dispensing.com/products-services/?lang=en">Ürünler ve hizmetler</a><button class="menu__toggle" type="button" aria-expanded="false" aria-controls="sub0" aria-label="Alt menü: Ürünler ve hizmetler"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="menu__sub" id="sub0"><li><a href="https://fuell-dispensing.com/products-services/?lang=en">Genel bakış: Ürünler ve hizmetler (EN)</a></li><li><a href="https://fuell-dispensing.com/dispensing-machines/?lang=en">Dozajlama sistemleri (EN)</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/tr/semalar/">Şemada sistemler</a></li><li><a href="https://fuell-dispensing.com/dispensing-machines/dosiersoftware/?lang=en">Dozajlama yazılımı (EN)</a></li><li><a href="https://fuell-dispensing.com/agitators/?lang=en">Karıştırıcılar (EN)</a></li><li><a href="https://fuell-dispensing.com/products-services/peripherie/?lang=en">Çevre birimleri (EN)</a></li><li><a href="https://fuell-dispensing.com/products-services/peripherie/storage-systems/?lang=en">Depolama sistemleri (EN)</a></li><li><a href="https://fuell-dispensing.com/products-services/engineering/?lang=en">Mühendislik (EN)</a></li></ul></li><li class="menu__item"><a class="menu__top" href="https://fuell-dispensing.com/markets/?lang=en">Pazarlar</a><button class="menu__toggle" type="button" aria-expanded="false" aria-controls="sub1" aria-label="Alt menü: Pazarlar"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="menu__sub" id="sub1"><li><a href="https://fuell-dispensing.com/markets/?lang=en">Genel bakış: Pazarlar (EN)</a></li><li><a href="https://fuell-dispensing.com/markets/printing-packaging/?lang=en">Baskı ve ambalaj (EN)</a></li><li><a href="https://fuell-dispensing.com/markets/paint-dispensing-systems/?lang=en">Boya ve vernik (EN)</a></li><li><a href="https://fuell-dispensing.com/markets/chemistry/?lang=en">Kimya (EN)</a></li><li><a href="https://fuell-dispensing.com/markets/cosmetics-pharma/?lang=en">Kozmetik, ilaç, gıda (EN)</a></li></ul></li><li class="menu__item"><a class="menu__top" href="https://fuell-dispensing.com/company/?lang=en">Şirket</a><button class="menu__toggle" type="button" aria-expanded="false" aria-controls="sub2" aria-label="Alt menü: Şirket"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="menu__sub" id="sub2"><li><a href="https://fuell-dispensing.com/company/?lang=en">Genel bakış: Şirket (EN)</a></li><li><a href="https://fuell-dispensing.com/company/standorte/?lang=en">Lokasyonlar (EN)</a></li><li><a href="https://fuell-dispensing.com/company/historie/?lang=en">Tarihçe (EN)</a></li><li><a href="https://fuell-dispensing.com/company/strengths-and-values/?lang=en">Güçlü yönler ve değerler (EN)</a></li><li><a href="https://fuell-dispensing.com/company/credentials/?lang=en">Referanslar (EN)</a></li><li><a href="https://fuell-dispensing.com/company/case-studys/?lang=en">Vaka çalışmaları (EN)</a></li><li><a href="https://fuell-dispensing.com/company/certification/?lang=en">Sertifikalar (EN)</a></li><li><a href="https://fuell-dispensing.com/company/vacancies/?lang=en">İş ilanları (EN)</a></li></ul></li><li class="menu__item"><span class="menu__top">Bilgi</span><button class="menu__toggle" type="button" aria-expanded="false" aria-controls="sub3" aria-label="Alt menü: Bilgi"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="menu__sub" id="sub3"><li><a href="/fuell-process.github.io/fuell-dispensing/ratgeber/">Rehberler (DE)</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/glossar/">Sözlük (DE)</a></li><li><a href="https://fuell-dispensing.com/video/?lang=en">Videolar (EN)</a></li><li><a href="https://fuell-dispensing.com/info/download-neu/?lang=en">İndirmeler (EN)</a></li><li><a href="https://www.youtube.com/channel/UCuraxCQK4nHG1uWadnqBxdQ" target="_blank" rel="noopener">YouTube kanalı <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li></ul></li><li class="menu__item"><a class="menu__top" href="https://fuell-dispensing.com/contact/?lang=en">İletişim</a><button class="menu__toggle" type="button" aria-expanded="false" aria-controls="sub4" aria-label="Alt menü: İletişim"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="menu__sub" id="sub4"><li><a href="https://fuell-dispensing.com/contact/?lang=en">Genel bakış: İletişim (EN)</a></li><li><a href="https://fuell-dispensing.com/contact/?lang=en">İletişim formu (EN)</a></li><li><a href="https://fuell-dispensing.com/contact/service/?lang=en">Servis (EN)</a></li></ul></li></ul></nav>
+      <a class="btn btn--red header__cta" href="#kontakt">Talep gönderin</a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menü"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="inhalt">
+    <section class="hero" aria-labelledby="hero-title">
+      <video class="hero__video" muted playsinline loop preload="none" poster="/fuell-process.github.io/fuell-dispensing/assets/video/build-hd-poster.webp" aria-hidden="true" data-src="/fuell-process.github.io/fuell-dispensing/assets/video/build-hd.mp4"></video>
+      <div class="hero__shade" aria-hidden="true"></div>
+      <div class="container hero__in">
+        <p class="hero__claim">Maliyetleri düşürün. Süreçleri optimize edin. Kaliteyi artırın.</p>
+        <h1 id="hero-title">Dozajlama uygulamanızı otomatikleştiriyoruz.</h1>
+        <p class="hero__lead">Füll Systembau, 1965’ten beri düşük ve yüksek viskoziteli sıvılar için dozajlama, tank ve karıştırma tesisleri tasarlar ve üretir: müşteriye özel, Idstein’da (Almanya) üretilmiş ve dünya çapında kullanımda.</p>
+        <div class="hero__actions"><a class="btn btn--red" href="#kontakt">Talep gönderin <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="btn btn--light" href="#anlagen">Hangi sistem uygun?</a></div>
+        <p class="hero__note">Her tesis, ön proje aşamasında proses parametrelerinize göre tasarlanır.</p>
+      </div>
+    </section>
+
+    <section class="proof" aria-label="Füll Systembau">
+      <ul class="container proof__in"><li data-reveal style="--d:0.00s"><strong>1965’ten beri</strong><span>Werner Füll tarafından kuruldu, bugün Frankfurt yakınındaki Idstein’da</span></li><li data-reveal style="--d:0.06s"><strong>2.500+ tesis</strong><span>dünya çapında planlandı, monte edildi ve devreye alındı</span></li><li data-reveal style="--d:0.12s"><strong>ISO 9001</strong><span>1997’den beri sertifikalı, TÜV SÜD denetiminde</span></li><li data-reveal style="--d:0.18s"><strong>ATEX ve WHG</strong><span>patlama koruma sertifikası ve Alman su yasasına göre uzman firma</span></li></ul>
+    </section>
+
+    <section class="section section--gray" aria-labelledby="pain-title">
+      <div class="container">
+        <div class="head" data-reveal><h2 id="pain-title">Üretiminiz bugün nerede zaman ve malzeme kaybediyor?</h2><p class="head__lead">Birçok tesiste tartım, aktarma ve taşıma hâlâ elle yapılıyor. Bu zaman kaybettirir, partiler arasında farklılık yaratır ve Ex alanlarda riski artırır.</p></div>
+        <div class="pains"><article class="pain" data-reveal style="--d:0.00s">
+            <svg class="pain__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v16M5 20h14M4 9h16M4 9l-2.5 6a3 3 0 0 0 5 0zM20 9l-2.5 6a3 3 0 0 0 5 0z"/></svg>
+            <h3>Elle tartım</h3><p>Reçete başına onlarca bileşen, her biri ayrı ayrı tartılıyor. Bu süre, reçeteler ve kalite üzerindeki asıl işten eksiliyor.</p></article><article class="pain" data-reveal style="--d:0.06s">
+            <svg class="pain__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="7" ry="2.5"/><path d="M5 5v14c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5V5M5 10c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5M5 15c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5"/></svg>
+            <h3>Varil taşıma</h3><p>Hammaddeleri 200 litrelik variller içinde depodan üretime taşımak güç ister ve kaza riski taşır.</p></article><article class="pain" data-reveal style="--d:0.12s">
+            <svg class="pain__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c1 3.5 5 5.5 5 10a5 5 0 0 1-10 0c0-2.2 1-3.6 2.2-4.8.3 1.6 1 2.6 2 3 0-3.2-.4-5.6.8-8.2z"/></svg>
+            <h3>Ex alanda açık kaplar</h3><p>Solvent bazlı ürünleri açık kaplarda aktarmak çalışanları ve tesisi tehlikeye atar, üretimi kirletir.</p></article><article class="pain" data-reveal style="--d:0.18s">
+            <svg class="pain__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h8l4 4v14H6zM14 3v4h4M9 12h6M9 16h4"/></svg>
+            <h3>Eksik dokümantasyon</h3><p>Dozaj kaydı olmadan bir partinin nasıl üretildiğini kanıtlamak zordur. Aynı renk tonunu yeniden sipariş etmek risk hâline gelir.</p></article></div>
+        <p class="outro" data-reveal>Otomatik bir dozajlama sistemi bu sorunları birlikte çözer: kapalı sistemler, kontrollü dozajlama ve her partinin kaydı.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="flow-title">
+      <div class="container">
+        <div class="head" data-reveal><h2 id="flow-title">Mal kabulden hazır karışıma</h2><p class="head__lead">Füll yalnızca dozajlama sistemini değil, tüm malzeme akışını planlar: depodan boru hatlarına ve dolum aşamasına kadar. Her şey, Füll’ün 1993’ten beri geliştirdiği CALIPSO dozajlama yazılımı ile kontrol edilir.</p></div>
+        <ol class="flow"><li data-reveal style="--d:0.00s"><span class="flow__n" aria-hidden="true">1</span><h3>Depolama</h3><p>Hammaddeler ve yarı mamuller konteyner, tank veya ısıtmalı depolarda, kapalı sistem olarak.</p></li><li data-reveal style="--d:0.05s"><span class="flow__n" aria-hidden="true">2</span><h3>Aktarma</h3><p>Pompalar ve boru hatları bileşenleri varil taşımadan doğrudan dozajlama sistemine getirir.</p></li><li data-reveal style="--d:0.10s"><span class="flow__n" aria-hidden="true">3</span><h3>Sirkülasyon</h3><p>Sirkülasyon ve karıştırma aralıkları ürünleri homojen tutar ve çökelmeyi önler.</p></li><li data-reveal style="--d:0.15s"><span class="flow__n" aria-hidden="true">4</span><h3>Dozajlama</h3><p>Teraziler veya kütlesel debimetrelerle gravimetrik ya da hacimsel olarak, 0,1 g’a kadar hassasiyetle.</p></li><li data-reveal style="--d:0.20s"><span class="flow__n" aria-hidden="true">5</span><h3>Karıştırma ve dolum</h3><p>Dozajlama doğrudan kaba yapılır, kutudan konteynere kadar. Karıştırma işini Füll karıştırıcıları üstlenir.</p></li><li data-reveal style="--d:0.25s"><span class="flow__n" aria-hidden="true">6</span><h3>Kayıt</h3><p>Her dozajlama ve dolum işlemi kalite güvencesi ve parti izlenebilirliği için kaydedilir; istenirse ERP veya MES bağlantısıyla.</p></li></ol>
+        <div class="outro outro--row" data-reveal><p>Planlama, üretim ve montaj Idstein’da yapılır. Kendi yazılım, PLC ve elektronik departmanları, kontrol ve arayüzlerde hızlı çözüm sağlar.</p><a class="link" href="https://fuell-dispensing.com/dispensing-machines/dosiersoftware/?lang=en">CALIPSO dozajlama yazılımı (EN) <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      </div>
+    </section>
+
+    <figure class="pano">
+      <img src="/fuell-process.github.io/fuell-dispensing/assets/img/anlage-tanklager-halle.webp" srcset="/fuell-process.github.io/fuell-dispensing/assets/img/anlage-tanklager-halle-1280.webp 1280w, /fuell-process.github.io/fuell-dispensing/assets/img/anlage-tanklager-halle.webp 2400w" sizes="100vw" width="2400" height="1230" loading="lazy" decoding="async" alt="Sherwin-Williams’ta tank depolamalı üretim holü ve Füll Systembau dozajlama sistemi">
+      <figcaption class="container">El Salvador’daki Sherwin-Williams tesisinde renk pastaları, katkı maddeleri ve solventler için tank depolamalı üretim sistemi. Fotoğraf: Füll Systembau</figcaption>
+    </figure>
+
+    <section class="section section--gray" id="anlagen" aria-labelledby="sys-title">
+      <div class="container">
+        <div class="head" data-reveal><h2 id="sys-title">Üretiminize hangi dozajlama sistemi uygun?</h2><p class="head__lead">Her Füll sistemi müşteriye özel bir çözümdür. Seriler çerçeveyi belirler; tasarım bileşen sayısına, kapasiteye, ürün özelliklerine ve mevcut alana göre şekillenir.</p></div>
+        <div class="tiers"><article class="tier" data-reveal style="--d:0.00s">
+            <div class="tier__media"><img src="/fuell-process.github.io/fuell-dispensing/assets/img/labor-dosieranlage-lx5.jpg" width="800" height="450" loading="lazy" decoding="async" alt="Kumanda terminalli LX5 laboratuvar dozajlama sistemi"></div>
+            <div class="tier__body"><p class="tier__lvl">Laboratuvar ve Ar-Ge</p><h3>LX5 laboratuvar dozajlama sistemi</h3><p>Reçete geliştiren, optimize eden ve düzelten, bunun için onlarca temel bileşen bulunduran ekipler için. Tartımı LX5 üstlenir, otomasyon derecesini siz belirlersiniz.</p>
+              <a class="link" href="https://fuell-dispensing.com/dispensing-machines/?lang=en">Sistemleri görün (EN) <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+          </article><article class="tier" data-reveal style="--d:0.08s">
+            <div class="tier__media"><img src="/fuell-process.github.io/fuell-dispensing/assets/img/dosieranlage-dosierzentrum.jpg" width="1600" height="1000" loading="lazy" decoding="async" alt="Kumanda terminalli Füll Systembau dozajlama merkezi"></div>
+            <div class="tier__body"><p class="tier__lvl">Kompakt</p><h3>FS XS ve U-VX5</h3><p>FS XS, Füll’ün Ex ve Ex olmayan ortamlar için en küçük tam otomatik dozajlama merkezidir. U-VX5 matbaa mürekkeplerini 1–5 kg partilerde dozajlar; 100 g’lık partiler bile tekrarlanabilir şekilde.</p>
+              <a class="link" href="https://fuell-dispensing.com/dispensing-machines/?lang=en">Sistemleri görün (EN) <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+          </article><article class="tier" data-reveal style="--d:0.16s">
+            <div class="tier__media"><img src="/fuell-process.github.io/fuell-dispensing/assets/img/produktion-tanklager.webp" width="1400" height="933" loading="lazy" decoding="async" alt="Bir üretim tesisinde dozaj valfli tank depolama"></div>
+            <div class="tier__body"><p class="tier__lvl">Üretim</p><h3>FS 2005.2 ve FS 188</h3><p>Yüksek yıllık kapasiteden kutu gibi küçük kaplara kadar dozajlama merkezleri; teraziler veya HX5 hacimsel dozaj ünitesi ile. FS 188, sonraki prosesleri reaktif bileşenlerle de besler.</p>
+              <a class="link" href="https://fuell-dispensing.com/dispensing-machines/?lang=en">Sistemleri görün (EN) <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+          </article></div>
+        <div class="extras"><a class="extra" href="https://fuell-dispensing.com/dispensing-machines/?lang=en" data-reveal style="--d:0.00s"><strong>In-Can-Tinting</strong><span>Satış ambalajında tek adetten itibaren üretim: baz gravimetrik olarak eklenir, aynı anda renklendirilir, kendi kendini temizleyen karıştırıcıda karıştırılır.</span></a><a class="extra" href="https://fuell-dispensing.com/dispensing-machines/?lang=en" data-reveal style="--d:0.06s"><strong>VX5 hacimsel</strong><span>Yarı endüstriyel toptan satış için patentli çift etkili pistonlu pompaya sahip kompakt hacimsel dozajlama sistemi.</span></a><a class="extra" href="https://fuell-dispensing.com/dispensing-machines/dosiersoftware/?lang=en" data-reveal style="--d:0.12s"><strong>CALIPSO yazılımı</strong><span>Gravimetrik sistemler için sipariş, reçete ve stok yönetimi, şifre sistemi ve dozaj kaydı.</span></a></div>
+        <a class="schema-teaser" href="/fuell-process.github.io/fuell-dispensing/tr/semalar/" data-reveal>
+          <span class="schema-teaser__art" aria-hidden="true"></span>
+          <span class="schema-teaser__body"><strong>Etkileşimli şemada dozajlama sistemleri</strong><span>Bir sistemin yapısı, altı tip ve beş karıştırıcı – simüle edilmiş CALIPSO dozajlamasıyla.</span></span>
+          <span class="btn btn--red">Şemaları görün <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+        <p class="center" data-reveal><a class="btn btn--outline" href="https://fuell-dispensing.com/dispensing-machines/?lang=en">Tüm dozajlama sistemleri (EN) <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
+      </div>
+    </section>
+
+    <section class="section" id="leistungen" aria-labelledby="svc-title">
+      <div class="container">
+        <div class="head" data-reveal><h2 id="svc-title">Dozajlama sistemlerinden fazlası</h2><p class="head__lead">Füll karıştırıcılarını, depolama sistemlerini ve dozaj valflerini kendisi üretir; böylece Ex alanlardaki deneyimi her sisteme yansır.</p></div>
+        <div class="svcs svcs--3"><article class="svc" data-reveal style="--d:0.00s">
+            <div class="svc__media"><img src="/fuell-process.github.io/fuell-dispensing/assets/img/ruehrwerke-ibc.jpg" width="800" height="535" loading="lazy" decoding="async" alt="Çalışan Füll Systembau IBC karıştırıcıları"></div>
+            <div class="svc__body"><h3>Karıştırıcılar</h3><p>Geniş karıştırıcı yelpazesi: elektrikli, pnömatik, patlama korumalı, otomatik kaldırma tertibatlı veya tekerlekler üzerinde hareketli.</p><ul class="ticks"><li>Konteyner karıştırıcıları</li><li>Varil karıştırıcıları</li><li>IBC karıştırıcıları</li><li>Sehpalı karıştırıcılar</li><li>Özel karıştırıcılar</li></ul>
+              <a class="link" href="https://fuell-dispensing.com/agitators/?lang=en">Daha fazla bilgi (EN) <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+          </article><article class="svc" data-reveal style="--d:0.08s">
+            <div class="svc__media"><img src="/fuell-process.github.io/fuell-dispensing/assets/img/peripherie-dosierventile.jpg" width="1400" height="933" loading="lazy" decoding="async" alt="Bir Füll sisteminin dozaj valfleri ve silindirleri"></div>
+            <div class="svc__body"><h3>Çevre birimleri</h3><p>FÜLL en önemli ekipmanları kendisi üretir – böylece patlama riskli (Ex) alanlardaki uzun yıllara dayanan deneyimi her sisteme yansır.</p><ul class="ticks"><li>Otomatik ve manuel dozaj valfleri</li><li>Seviye göstergeleri</li><li>Konteyner ve tank depolama</li><li>Değiştirilebilir kaplar</li></ul>
+              <a class="link" href="https://fuell-dispensing.com/products-services/peripherie/?lang=en">Daha fazla bilgi (EN) <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+          </article><article class="svc" data-reveal style="--d:0.16s">
+            <div class="svc__media"><img src="/fuell-process.github.io/fuell-dispensing/assets/img/engineering-rohrleitungen.jpg" width="1148" height="768" loading="lazy" decoding="async" alt="Boru hatları ve tank depolamalı tesis"></div>
+            <div class="svc__body"><h3>Mühendislik</h3><p>Planlamadan montaja ve devreye almaya kadar – § 19 I WHG’ye (Alman Su Kaynakları Yasası) göre uzman firma olarak boru hattı inşası dahil.</p><ul class="ticks"><li>Danışmanlık</li><li>Süreç geliştirme</li><li>Genişletme ve retrofit</li><li>Boru hattı inşası</li></ul>
+              <a class="link" href="https://fuell-dispensing.com/products-services/engineering/?lang=en">Daha fazla bilgi (EN) <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+          </article></div>
+      </div>
+    </section>
+
+    <section class="section section--gray" id="referenzen" aria-labelledby="case-title">
+      <div class="container">
+        <div class="case">
+          <div class="case__media" data-reveal><img src="/fuell-process.github.io/fuell-dispensing/assets/img/referenz-zeller-gmelin.jpg" width="933" height="1400" loading="lazy" decoding="async" alt="Zeller &amp; Gmelin’de dozajlama"></div>
+          <div class="case__body" data-reveal style="--d:.08s">
+            <p class="eyebrow">Referanslar</p>
+            <h2 id="case-title">Zeller &amp; Gmelin UV mürekkeplerini nasıl otomatik dozajlıyor</h2>
+            <p>Almanya’nın Eislingen kentindeki Zeller &amp; Gmelin, ışınımla kürlenen matbaa mürekkeplerinin önde gelen tedarikçilerinden biridir. Füll, 2013’ten itibaren bu mürekkeplerin üretimini yeniden tasarladı: mal kabulden, 38 °C’de ısıtılan ve UV ışığından korunan depo ile boru hatlarından dozajlamaya kadar.</p><p>Yüksek viskoziteli, reaktif hammaddeler için iki ekip birkaç haftalık ortak denemelerle yeni bir Aircut valfi geliştirdi. Sistem 100 dozaj valfine kadar genişletilebilir. 2016’da Baden-Württemberg eyaleti hammaddelerin kaynak dostu kullanımını ödüllendirdi.</p><p>Bugün 200 litrelik varilleri taşımak yerine pompalar mürekkebi boru hatlarıyla sisteme iletiyor.</p>
+            <blockquote class="quote"><p><q>Birçok konu, uzaktan bakım sistemi üzerinden servis ve üretim arasında doğrudan çözülebiliyor.</q></p><footer>Andreas Beutinger, mürekkep fabrikası müdürü, Zeller &amp; Gmelin</footer></blockquote>
+            <a class="link" href="https://fuell-dispensing.com/company/case-studys/case-study-zeller-gmelin/?lang=en">Vaka çalışmasını okuyun (EN) <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+        <a class="case2" href="https://fuell-dispensing.com/company/case-studys/sherwin-williams/?lang=en" data-reveal>
+          <span class="case2__media"><img src="/fuell-process.github.io/fuell-dispensing/assets/img/referenz-sherwin-williams.jpg" width="1151" height="768" loading="lazy" decoding="async" alt="Sherwin-Williams’ta tank depolama ve dozajlama sistemi"></span>
+          <span class="case2__body"><strong>Sherwin-Williams: büyük tank depolamalı üretim</strong><span>Füll, El Salvador’daki tesis için anahtar teslim 64 bileşenli otomatik bir dozajlama sistemi ile tank deposu ve solvent üretim sistemi kurdu, ayrıca dokuz dozajlama sistemini daha bağladı. Tüm sistemler ATEX uyumludur ve ERP sistemine entegredir.</span><span class="ref__more">Vaka çalışmasını okuyun (EN) <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+        </a>
+        <p class="center" data-reveal><a class="link" href="https://fuell-dispensing.com/company/credentials/?lang=en">Tüm referanslar (EN) <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
+      </div>
+    </section>
+
+    <section class="section" id="maerkte" aria-labelledby="mkt-title">
+      <div class="container">
+        <div class="head head--row" data-reveal><div><h2 id="mkt-title">Birçok sektörde deneyim</h2><p class="head__lead">Gereksinimler farklıdır, ilke aynı kalır: her sistem ürünlerinize ve süreçlerinize göre tasarlanır. Füll sistemlerinin yarısından fazlası yurt dışına teslim edilir.</p></div>
+          <a class="link" href="https://fuell-dispensing.com/markets/?lang=en">Tüm pazarlar (EN) <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+        <div class="mkts"><article class="mkt" data-reveal style="--d:0.00s">
+            <div class="mkt__media"><img src="/fuell-process.github.io/fuell-dispensing/assets/img/markt-druck-verpackung.jpg" width="502" height="336" loading="lazy" decoding="async" alt=""></div>
+            <div class="mkt__body"><h3><a href="https://fuell-dispensing.com/markets/printing-packaging/?lang=en">Baskı ve ambalaj</a></h3><ul><li>Matbaa mürekkepleri ve vernikler: solvent bazlı, su bazlı, UV ile kürlenen</li><li>Laminasyon yapıştırıcıları, solvent bazlı</li><li>İnceltmeler</li><li>Katkı maddeleri</li></ul></div>
+          </article><article class="mkt" data-reveal style="--d:0.06s">
+            <div class="mkt__media"><img src="/fuell-process.github.io/fuell-dispensing/assets/img/markt-farbe-lack.jpg" width="500" height="337" loading="lazy" decoding="async" alt=""></div>
+            <div class="mkt__body"><h3><a href="https://fuell-dispensing.com/markets/paint-dispensing-systems/?lang=en">Otomotiv endüstrisi</a></h3><ul><li>Endüstriyel boyalar</li><li>Otomotiv boyaları (LABS içermeyenler dahil)</li><li>Otomotiv tamir boyaları</li><li>Dekoratif boyalar</li><li>Bina koruma</li><li>Ahşap koruma</li></ul></div>
+          </article><article class="mkt" data-reveal style="--d:0.12s">
+            <div class="mkt__media"><img src="/fuell-process.github.io/fuell-dispensing/assets/img/markt-chemie.jpg" width="548" height="365" loading="lazy" decoding="async" alt=""></div>
+            <div class="mkt__body"><h3><a href="https://fuell-dispensing.com/markets/chemistry/?lang=en">Kimya endüstrisi</a></h3><ul><li>Yağlar ve yağlayıcılar</li><li>Sızdırmazlık malzemeleri ve yapıştırıcılar</li><li>İki bileşenli sistemler</li><li>Reçineler</li><li>Lateks</li><li>Silikonlar</li></ul></div>
+          </article><article class="mkt" data-reveal style="--d:0.18s">
+            <div class="mkt__media"><img src="/fuell-process.github.io/fuell-dispensing/assets/img/markt-kosmetik.jpg" width="500" height="340" loading="lazy" decoding="async" alt=""></div>
+            <div class="mkt__body"><h3><a href="https://fuell-dispensing.com/markets/cosmetics-pharma/?lang=en">Kozmetik endüstrisi</a></h3><ul><li>Kokular</li><li>Aromalar</li><li>Tıbbi silikonlar</li><li>Kişisel bakım ürünleri</li><li>Koruyucular</li><li>Dental silikonlar</li></ul></div>
+          </article></div>
+      </div>
+    </section>
+
+    <section class="section section--gray" aria-labelledby="steps-title">
+      <div class="container">
+        <div class="head" data-reveal><h2 id="steps-title">Dört adımda sisteminize</h2><p class="head__lead">Ürünlerinizi ve süreçlerinizi siz bilirsiniz. Biz bunları mevcut üretiminize uyan bir sisteme dönüştürürüz.</p></div>
+        <ol class="steps"><li data-reveal style="--d:0.00s"><span class="step__n" aria-hidden="true">01</span><h3>Analiz</h3><p>Sıvı hammaddeler ve pastalardan yarı mamullere ve katkı maddelerine kadar ürünlerinizi, ayrıca üretiminizdeki iş ve malzeme akışlarını analiz ederiz.</p></li><li data-reveal style="--d:0.06s"><span class="step__n" aria-hidden="true">02</span><h3>Ön proje ve planlama</h3><p>Tüm önemli noktaları birlikte netleştiririz, gerekirse tüm tesisin 3D modeliyle. Yatırım getirisi hesabında destek olur, gerçekçi bütçelerle planlarız.</p></li><li data-reveal style="--d:0.12s"><span class="step__n" aria-hidden="true">03</span><h3>Üretim ve yazılım</h3><p>Tasarım, üretim ve montaj Idstein’da. Fonksiyon isteklerinizi ve sistemlerinize arayüzleri yazılımımıza programlarız.</p></li><li data-reveal style="--d:0.18s"><span class="step__n" aria-hidden="true">04</span><h3>Kurulum, eğitim, servis</h3><p>Kurulum, fonksiyon testi ve operatör eğitimi her sistemin parçasıdır. Ardından uzaktan servis, genişletme ve retrofit; diğer üreticilerin sistemleri için de.</p></li></ol>
+        <div class="center btns" data-reveal><a class="btn btn--red" href="#kontakt">Talep gönderin <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="btn btn--outline" href="https://fuell-dispensing.com/products-services/engineering/?lang=en">Mühendislik ayrıntıları (EN) <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="cert-title">
+      <div class="container certs-wrap">
+        <div data-reveal>
+          <h2 id="cert-title">Test edilmiş ve sertifikalı</h2><p class="head__lead">Füll, üretim, depolama ve Ex alanlar için geçerli gereklilikleri karşılar.</p>
+          <ul class="certs"><li data-reveal style="--d:0.00s"><strong>ISO 9001</strong><span>Bilgisayar kontrollü hassas dozajlama ve depolama sistemlerinin danışmanlığı, planlaması, projelendirilmesi ve inşası. TÜV SÜD denetiminde.</span></li><li data-reveal style="--d:0.06s"><strong>ATEX</strong><span>Patlama riski bulunan ortamlardaki ekipmanlar için 2014/34/AB Direktifi uyarınca AT sertifikası. TÜV SÜD Product Service denetiminde.</span></li><li data-reveal style="--d:0.12s"><strong>WHG uzman firması</strong><span>Suya zararlı sıvılar için tesislerin kurulumu, bakımı ve onarımı, örneğin taşma emniyetleri.</span></li><li data-reveal style="--d:0.18s"><strong>Sertifikalı kaynakçılar</strong><span>ISO 9606-1’e göre sertifikalı kaynakçılar.</span></li></ul>
+          <a class="link" href="https://fuell-dispensing.com/company/certification/?lang=en">Sertifikalar (EN) <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="tl" data-reveal style="--d:.08s">
+          <h3>Kilometre taşları</h3>
+          <ol><li><span>1965</span>Werner Füll şirketi kurar</li><li><span>1977</span>İlk otomatik dozajlama sistemi</li><li><span>1993</span>CALIPSO dozajlama yazılımı</li><li><span>1997</span>ISO 9001 sertifikası</li><li><span>2003</span>ATEX üretim onayı</li><li><span>2009</span>LX5 laboratuvar dozajlama sistemi</li><li><span>2016</span>Tecos Bruhin, Füll Process Group’a katılır</li></ol>
+          <a class="link" href="https://fuell-dispensing.com/company/historie/?lang=en">Şirket tarihi (EN) <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section section--gray" id="faq" aria-labelledby="faq-title">
+      <div class="container container--narrow">
+        <div class="head" data-reveal><h2 id="faq-title">Sık sorulan sorular</h2></div>
+        <div class="faq"><details class="qa"><summary><h3>Füll dozajlama sistemleri hangi ürünleri dozajlayabilir?</h3></summary><p>Düşük ve yüksek viskoziteli sıvılar ve pastalar: su ve solvent bazlı bileşenler ile UV ile kürlenen ürünler; örneğin boyalar, vernikler, matbaa mürekkepleri, katkı maddeleri, reçineler, yapıştırıcılar ve silikonlar.</p></details><details class="qa"><summary><h3>Gravimetrik mi yoksa hacimsel mi dozajlıyorsunuz?</h3></summary><p>Her ikisi de. Gravimetrik sistemler teraziler veya kütlesel debimetrelerle ölçer; hacimsel sistemler örneğin HX5 dozaj ünitesi veya VX5 ile çalışır. Seçim tekrarlanabilirliğe, kap boyutlarına ve kapasiteye bağlıdır.</p></details><details class="qa"><summary><h3>Sistemler Ex alanlar için uygun mu?</h3></summary><p>Evet. Füll, ekipman üretimi için ATEX sertifikasına sahiptir. Sistemler, karıştırıcılar ve terminaller patlama riski bulunan ortamlar için tasarlanır.</p></details><details class="qa"><summary><h3>Sistem ERP veya MES’e bağlanabilir mi?</h3></summary><p>Evet. Kendi yazılım ve PLC departmanlarımız sistemleri üst sistemlere bağlar. Sherwin-Williams’ta tüm siparişler ERP sisteminden merkezi olarak Füll terminallerine yüklenir.</p></details><details class="qa"><summary><h3>Mevcut sistemler genişletilebilir veya modernize edilebilir mi?</h3></summary><p>Evet. Modüler yapı sayesinde ek valfler, borular ve depolama tankları entegre edilebilir. Retrofit kapsamında kontrol sistemini, valfleri veya komple grupları yeniliyoruz; diğer üreticilerin sistemlerinde de.</p></details><details class="qa"><summary><h3>Servise nasıl ulaşırım?</h3></summary><p>Telefon +49 6126 598-22 veya service@fuell-dispensing.com; pazartesi–perşembe 7–16, cuma 7–13 (Orta Avrupa saati). Birçok konu güvenli bir VPN bağlantısı üzerinden uzaktan bakım ile çözülebilir.</p></details></div>
+      </div>
+    </section>
+
+    <section class="section section--dark" id="kontakt" aria-labelledby="contact-title">
+      <div class="container contact contact--cta" data-reveal>
+        <div>
+          <p class="eyebrow eyebrow--light">İletişim</p>
+          <h2 id="contact-title">Dozajlama görevinizi bizimle konuşun</h2>
+          <p class="contact__lead">Ürünlerinizi, bileşen sayısını ve ihtiyaç duyduğunuz kapasiteyi bize gönderin. Ön projede üretiminize hangi sistemin uygun olduğunu gösteririz.</p>
+        </div>
+        <div class="contact__actions"><a class="btn btn--red" href="https://fuell-dispensing.com/contact/?lang=en">Talep gönderin (EN) <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="btn btn--light" href="tel:+4961265980">+49 6126 598-0</a><a class="btn btn--ghost" href="mailto:info@fuell-dispensing.com">info@fuell-dispensing.com</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__top">
+      <div class="footer__brand">
+        <img src="/fuell-process.github.io/fuell-dispensing/assets/img/fuell-dispensing-logo.png" width="256" height="70" alt="FÜLL Dispensing Systems" loading="lazy">
+        <address>Füll Systembau GmbH<br>Richard-Klinger-Straße 31<br>65510 Idstein, Almanya</address>
+        <p><span class="footer__label">Merkez</span><a href="tel:+4961265980">+49 6126 598-0</a><br><a href="mailto:info@fuell-dispensing.com">info@fuell-dispensing.com</a></p>
+        <p><span class="footer__label">Servis</span><a href="tel:+49612659822">+49 6126 598-22</a><br><a href="mailto:service@fuell-dispensing.com">service@fuell-dispensing.com</a><br><span class="footer__hours">Pzt–Per 7–16, Cum 7–13 (CET)</span></p>
+        <p><a href="https://fuell-process.com/">Bir Füll Process Group şirketi</a></p>
+      </div>
+      <nav class="footer__map" aria-label="Sitemap"><div class="fcol"><p class="fcol__title"><a href="https://fuell-dispensing.com/products-services/?lang=en">Ürünler ve hizmetler</a></p><ul><li><a href="https://fuell-dispensing.com/dispensing-machines/?lang=en">Dozajlama sistemleri (EN)</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/tr/semalar/">Şemada sistemler</a></li><li><a href="https://fuell-dispensing.com/dispensing-machines/dosiersoftware/?lang=en">Dozajlama yazılımı (EN)</a></li><li><a href="https://fuell-dispensing.com/agitators/?lang=en">Karıştırıcılar (EN)</a></li><li><a href="https://fuell-dispensing.com/products-services/peripherie/?lang=en">Çevre birimleri (EN)</a></li><li><a href="https://fuell-dispensing.com/products-services/peripherie/storage-systems/?lang=en">Depolama sistemleri (EN)</a></li><li><a href="https://fuell-dispensing.com/products-services/engineering/?lang=en">Mühendislik (EN)</a></li></ul></div><div class="fcol"><p class="fcol__title"><a href="https://fuell-dispensing.com/markets/?lang=en">Pazarlar</a></p><ul><li><a href="https://fuell-dispensing.com/markets/printing-packaging/?lang=en">Baskı ve ambalaj (EN)</a></li><li><a href="https://fuell-dispensing.com/markets/paint-dispensing-systems/?lang=en">Boya ve vernik (EN)</a></li><li><a href="https://fuell-dispensing.com/markets/chemistry/?lang=en">Kimya (EN)</a></li><li><a href="https://fuell-dispensing.com/markets/cosmetics-pharma/?lang=en">Kozmetik, ilaç, gıda (EN)</a></li></ul></div><div class="fcol"><p class="fcol__title"><a href="https://fuell-dispensing.com/company/?lang=en">Şirket</a></p><ul><li><a href="https://fuell-dispensing.com/company/standorte/?lang=en">Lokasyonlar (EN)</a></li><li><a href="https://fuell-dispensing.com/company/historie/?lang=en">Tarihçe (EN)</a></li><li><a href="https://fuell-dispensing.com/company/strengths-and-values/?lang=en">Güçlü yönler ve değerler (EN)</a></li><li><a href="https://fuell-dispensing.com/company/credentials/?lang=en">Referanslar (EN)</a></li><li><a href="https://fuell-dispensing.com/company/case-studys/?lang=en">Vaka çalışmaları (EN)</a></li><li><a href="https://fuell-dispensing.com/company/certification/?lang=en">Sertifikalar (EN)</a></li><li><a href="https://fuell-dispensing.com/company/vacancies/?lang=en">İş ilanları (EN)</a></li></ul></div><div class="fcol"><p class="fcol__title">Bilgi</p><ul><li><a href="/fuell-process.github.io/fuell-dispensing/ratgeber/">Rehberler (DE)</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/glossar/">Sözlük (DE)</a></li><li><a href="https://fuell-dispensing.com/video/?lang=en">Videolar (EN)</a></li><li><a href="https://fuell-dispensing.com/info/download-neu/?lang=en">İndirmeler (EN)</a></li><li><a href="https://www.youtube.com/channel/UCuraxCQK4nHG1uWadnqBxdQ" target="_blank" rel="noopener">YouTube kanalı <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li></ul></div><div class="fcol"><p class="fcol__title"><a href="https://fuell-dispensing.com/contact/?lang=en">İletişim</a></p><ul><li><a href="https://fuell-dispensing.com/contact/?lang=en">İletişim formu (EN)</a></li><li><a href="https://fuell-dispensing.com/contact/service/?lang=en">Servis (EN)</a></li></ul></div></nav>
+    </div>
+    <div class="container footer__bottom"><span>© 2026 Füll Systembau GmbH</span>
+      <nav class="footer__links" aria-label="Künye"><a href="https://fuell-dispensing.com/contact/imprint/?lang=en">Künye</a><a href="https://fuell-dispensing.com/contact/data-protection-notice/?lang=en">Veri koruma</a><a href="https://fuell-dispensing.com/info/general-business-terms/?lang=en">Genel şartlar</a></nav><p class="sub-note">Ayrıntılı sayfalar İngilizce olarak mevcuttur.</p></div>
+  </footer>
+  <script src="/fuell-process.github.io/fuell-dispensing/assets/js/site.js?v=c4eebf0d" defer></script>
+</body>
+</html>
