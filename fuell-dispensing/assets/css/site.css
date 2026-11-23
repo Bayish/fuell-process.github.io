@@ -408,3 +408,10 @@ html, body { overflow-x: clip; }   /* elements waiting to slide in from the side
   .ref { min-height: 260px; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } html { scroll-behavior: auto; } .js [data-reveal], .js [data-reveal] img { opacity: 1; transform: none !important; } .js .head[data-reveal] h2::after { width: 64px; } .scroll-progress { display: none; } }
+
+/* Ex mark (yellow hexagon) for explosion-protected / ATEX content */
+.ex-badge { display: inline-block; width: 40px; height: auto; }
+.pg-card--ex .pg-card__body { position: relative; }
+.pg-card--ex .pg-card__body > .ex-badge { position: absolute; top: 16px; right: 16px; width: 48px; }
+.pg-card--ex h3 { padding-right: 60px; }
+.ex-badge--h1 { width: .95em; margin-left: .3em; vertical-align: -.08em; }

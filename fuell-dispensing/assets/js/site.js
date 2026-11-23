@@ -99,3 +99,14 @@
     onFrame();
   }
 })();
+
+// Contact form: time stamp for the bot check (the form also works without it) + show the reason on the error page
+(function () {
+  var ts = document.querySelector('.cf input[name="ts"]');
+  if (ts) ts.value = String(Date.now());
+  var reason = new URLSearchParams(location.search).get('grund');
+  if (reason) {
+    var el = document.querySelector('.cf-reason[data-grund="' + reason.replace(/[^a-z]/g, '') + '"]');
+    if (el) el.hidden = false;
+  }
+})();
