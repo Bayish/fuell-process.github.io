@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="googlebot" content="noindex, nofollow">
+  <style>html.fpg-locked body{display:none!important}html.fpg-denied body>*:not(.fpg-deny){display:none!important}.fpg-deny{font:16px/1.6 system-ui,sans-serif;max-width:520px;margin:18vh auto;padding:0 24px;color:#1b1f23}.fpg-deny button{margin-top:16px;padding:10px 18px;font:inherit;cursor:pointer}</style>
+  <script>
+  /* Preview access check – simple browser prompt, not real security. */
+  (function () {
+    var H = '9a2ebb00508dfcb446b7c845bf572ad95cef7db6b07c463ba793637099b58980', K = 'fpg-preview', root = document.documentElement;
+    try { if (sessionStorage.getItem(K) === H) return; } catch (e) {}
+    root.classList.add('fpg-locked');
+    function deny() {
+      function show() {
+        root.classList.remove('fpg-locked'); root.classList.add('fpg-denied');
+        var d = document.createElement('div'); d.className = 'fpg-deny';
+        d.innerHTML = '<h1 style="font-size:24px">Geschützte Vorschau / Protected preview</h1><p>Benutzername oder Passwort falsch. / Wrong username or password.</p><button type="button">Erneut versuchen / Try again</button>';
+        d.querySelector('button').onclick = function () { location.reload(); };
+        document.body.insertBefore(d, document.body.firstChild);
+      }
+      if (document.body) show(); else document.addEventListener('DOMContentLoaded', show);
+    }
+    var u = window.prompt('Geschützte Vorschau – Benutzername / Protected preview – username:');
+    if (u === null) return deny();
+    var p = window.prompt('Passwort / Password:');
+    if (p === null) return deny();
+    if (!(window.crypto && crypto.subtle)) return deny();
+    crypto.subtle.digest('SHA-256', new TextEncoder().encode(u.trim() + ':' + p)).then(function (buf) {
+      var h = Array.prototype.map.call(new Uint8Array(buf), function (x) { return ('0' + x.toString(16)).slice(-2); }).join('');
+      if (h === H) { try { sessionStorage.setItem(K, H); } catch (e) {} root.classList.remove('fpg-locked'); }
+      else deny();
+    }, deny);
+  })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dosage gravimétrique ou volumétrique ? | Füll</title>
+  <meta name="description" content="Dosage gravimétrique et volumétrique comparés : précision, vitesse, viscosité, densité et applications dans les peintures, vernis et la chimie.">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Füll Systembau">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:url" content="https://bayish.github.io/fuell-process.github.io/fuell-dispensing/fr/guide/gravimetrisch-volumetrisch-dosieren/">
+  <meta property="og:title" content="Dosage gravimétrique ou volumétrique ? | Füll">
+  <meta property="og:description" content="Dosage gravimétrique et volumétrique comparés : précision, vitesse, viscosité, densité et applications dans les peintures, vernis et la chimie.">
+  <meta property="og:image" content="https://bayish.github.io/fuell-process.github.io/fuell-dispensing/assets/img/dosieranlage-dosierzentrum.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/fuell-process.github.io/fuell-dispensing/assets/img/favicon-32.png?v=691ca975" sizes="32x32" type="image/png">
+  <link rel="icon" href="/fuell-process.github.io/fuell-dispensing/assets/img/favicon-192.png?v=c9fe9f39" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="/fuell-process.github.io/fuell-dispensing/assets/img/apple-touch-icon.png?v=e8b2a5eb">
+  <link rel="preload" href="/fuell-process.github.io/fuell-dispensing/assets/fonts/montserrat-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fuell-process.github.io/fuell-dispensing/assets/fonts/pt-sans-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fuell-process.github.io/fuell-dispensing/assets/fonts/montserrat-600-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/fuell-process.github.io/fuell-dispensing/assets/css/site.css?v=8c331d11">
+  <link rel="stylesheet" href="/fuell-process.github.io/fuell-dispensing/assets/css/knowledge.css?v=6ceba060">
+  <script>document.documentElement.classList.add('js')</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://fuell-dispensing.com/fr/guide/gravimetrisch-volumetrisch-dosieren/#article",
+      "headline": "Dosage gravimétrique ou volumétrique : quelle méthode choisir ?",
+      "description": "Dosage gravimétrique et volumétrique comparés : précision, vitesse, viscosité, densité et applications dans les peintures, vernis et la chimie.",
+      "inLanguage": "fr",
+      "url": "https://fuell-dispensing.com/fr/guide/gravimetrisch-volumetrisch-dosieren/",
+      "datePublished": "2026-11-16",
+      "dateModified": "2026-11-16",
+      "wordCount": 620,
+      "author": {
+        "@type": "Organization",
+        "@id": "https://fuell-dispensing.com/#organization",
+        "name": "Füll Systembau GmbH",
+        "url": "https://fuell-dispensing.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://fuell-dispensing.com/#organization",
+        "name": "Füll Systembau GmbH",
+        "url": "https://fuell-dispensing.com/"
+      },
+      "mainEntityOfPage": "https://fuell-dispensing.com/fr/guide/gravimetrisch-volumetrisch-dosieren/",
+      "about": [
+        "Dosage gravimétrique",
+        "Dosage volumétrique",
+        "Dosage en débit grossier et fin",
+        "Pompe à piston",
+        "Débitmètre massique",
+        "Précision de dosage"
+      ],
+      "isPartOf": {
+        "@type": "Blog",
+        "@id": "https://fuell-dispensing.com/fr/guide/#blog"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://fuell-dispensing.com/fr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guide",
+          "item": "https://fuell-dispensing.com/fr/guide/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Dosage gravimétrique ou volumétrique : quelle méthode choisir ?",
+          "item": "https://fuell-dispensing.com/fr/guide/gravimetrisch-volumetrisch-dosieren/"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#inhalt">Aller au contenu</a>
+  <div class="topbar"><div class="container topbar__in">
+    <a class="topbar__phone" href="tel:+4961265980"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span>Téléphone: +49 6126 598-0</span></a>
+    <details class="langs"><summary><span class="vh">Langue: </span><img class="flag" src="/fuell-process.github.io/fuell-dispensing/assets/img/flags/fr.svg" width="21" height="14" alt="" aria-hidden="true">Français</summary><ul><li><a href="/fuell-process.github.io/fuell-dispensing/ratgeber/gravimetrisch-volumetrisch-dosieren/" hreflang="de" lang="de"><img class="flag" src="/fuell-process.github.io/fuell-dispensing/assets/img/flags/de.svg" width="21" height="14" alt="" aria-hidden="true">Deutsch</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/guide/gravimetrisch-volumetrisch-dosieren/" hreflang="en" lang="en"><img class="flag" src="/fuell-process.github.io/fuell-dispensing/assets/img/flags/gb.svg" width="21" height="14" alt="" aria-hidden="true">English</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/guide/gravimetrisch-volumetrisch-dosieren/" hreflang="fr" lang="fr" aria-current="true"><img class="flag" src="/fuell-process.github.io/fuell-dispensing/assets/img/flags/fr.svg" width="21" height="14" alt="" aria-hidden="true">Français</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/guia/gravimetrisch-volumetrisch-dosieren/" hreflang="es" lang="es"><img class="flag" src="/fuell-process.github.io/fuell-dispensing/assets/img/flags/es.svg" width="21" height="14" alt="" aria-hidden="true">Español</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/tr/rehber/gravimetrisch-volumetrisch-dosieren/" hreflang="tr" lang="tr"><img class="flag" src="/fuell-process.github.io/fuell-dispensing/assets/img/flags/tr.svg" width="21" height="14" alt="" aria-hidden="true">Türkçe</a></li></ul></details>
+  </div></div>
+  <header class="header">
+    <div class="container header__in">
+      <a class="brand" href="/fuell-process.github.io/fuell-dispensing/fr/" aria-label="Füll Systembau"><img src="/fuell-process.github.io/fuell-dispensing/assets/img/fuell-dispensing-logo.png" width="256" height="70" alt="FÜLL Dispensing Systems"></a>
+      <nav class="nav" id="nav" aria-label="Navigation"><ul class="menu"><li class="menu__item"><a class="menu__top" href="/fuell-process.github.io/fuell-dispensing/fr/installations-de-dosage/">Produits et prestations</a><button class="menu__toggle" type="button" aria-expanded="false" aria-controls="sub0" aria-label="Sous-menu: Produits et prestations"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="menu__sub" id="sub0"><li><a href="/fuell-process.github.io/fuell-dispensing/fr/installations-de-dosage/">Vue d’ensemble: Produits et prestations</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/installations-de-dosage/">Installations de dosage</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/vannes-de-dosage/">Vannes de dosage</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/schemas/">Installations en schéma</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/logiciel-de-dosage/">Logiciel de dosage</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/agitateurs/">Agitateurs</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/peripheriques/">Périphériques</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/peripheriques/#lagersysteme">Systèmes de stockage</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/ingenierie/">Ingénierie</a></li></ul></li><li class="menu__item"><a class="menu__top" href="/fuell-process.github.io/fuell-dispensing/fr/marches/">Marchés</a><button class="menu__toggle" type="button" aria-expanded="false" aria-controls="sub1" aria-label="Sous-menu: Marchés"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="menu__sub" id="sub1"><li><a href="/fuell-process.github.io/fuell-dispensing/fr/marches/">Vue d’ensemble: Marchés</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/marches/impression-emballage/">Impression et emballage</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/marches/peintures-vernis/">Peintures et vernis</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/marches/chimie/">Chimie</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/marches/cosmetique-pharmacie/">Cosmétique, pharma, alimentaire</a></li></ul></li><li class="menu__item"><a class="menu__top" href="/fuell-process.github.io/fuell-dispensing/fr/entreprise/">Entreprise</a><button class="menu__toggle" type="button" aria-expanded="false" aria-controls="sub2" aria-label="Sous-menu: Entreprise"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="menu__sub" id="sub2"><li><a href="/fuell-process.github.io/fuell-dispensing/fr/entreprise/">Vue d’ensemble: Entreprise</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/entreprise/#gruppe">Sites</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/entreprise/#historie">Historique</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/entreprise/#staerken">Forces et valeurs</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/references/">Références</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/references/#fallstudien">Études de cas</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/entreprise/#zertifizierungen">Certifications</a></li></ul></li><li class="menu__item"><span class="menu__top">Infos</span><button class="menu__toggle" type="button" aria-expanded="false" aria-controls="sub3" aria-label="Sous-menu: Infos"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="menu__sub" id="sub3"><li><a href="/fuell-process.github.io/fuell-dispensing/fr/guide/">Guides (DE)</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/glossaire/">Glossaire (DE)</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/videos/">Vidéos</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/telechargements/">Téléchargements</a></li><li><a href="https://www.youtube.com/channel/UCuraxCQK4nHG1uWadnqBxdQ" target="_blank" rel="noopener">Chaîne YouTube <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li></ul></li><li class="menu__item"><a class="menu__top" href="/fuell-process.github.io/fuell-dispensing/fr/contact/">Contact</a><button class="menu__toggle" type="button" aria-expanded="false" aria-controls="sub4" aria-label="Sous-menu: Contact"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="menu__sub" id="sub4"><li><a href="/fuell-process.github.io/fuell-dispensing/fr/contact/">Vue d’ensemble: Contact</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/contact/">Formulaire de contact</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/contact/#service">Service</a></li></ul></li></ul></nav>
+      <a class="btn btn--red header__cta" href="/fuell-process.github.io/fuell-dispensing/fr/contact/">Demander une offre</a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="inhalt">
+    <article class="kn-article">
+      <header class="kn-head">
+        <div class="container">
+          <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/fuell-process.github.io/fuell-dispensing/fr/">Accueil</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/guide/">Guide</a></li><li aria-current="page">Dosage gravimétrique ou volumétrique : quelle méthode choisir ?</li></ol></nav>
+          <p class="eyebrow">Bases</p>
+          <h1>Dosage gravimétrique ou volumétrique : quelle méthode choisir ?</h1>
+          <p class="kn-meta">Füll Systembau · État : novembre 2026 · env. 4 min de lecture</p>
+        </div>
+      </header>
+      <div class="container kn-layout">
+        <aside class="kn-toc" aria-label="Sommaire"><p class="kn-toc__title">Sommaire</p><ol><li><a href="#le-principe-masse-ou-volume">Le principe : masse ou volume</a></li><li><a href="#gravim-trique-les-points-forts">Gravimétrique : les points forts</a></li><li><a href="#volum-trique-les-points-forts">Volumétrique : les points forts</a></li><li><a href="#comparaison-directe">Comparaison directe</a></li><li><a href="#facteurs-d-influence-dans-la-pratique">Facteurs d’influence dans la pratique</a></li><li><a href="#solutions-combin-es">Solutions combinées</a></li><li><a href="#comment-prendre-la-d-cision">Comment prendre la décision</a></li><li><a href="#haeufige-fragen">Questions fréquentes</a></li></ol>
+          <div class="kn-toc__terms"><p class="kn-toc__title">Termes</p><ul><li><a href="/fuell-process.github.io/fuell-dispensing/fr/glossaire/gravimetrische-dosierung/">Dosage gravimétrique</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/glossaire/volumetrische-dosierung/">Dosage volumétrique</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/glossaire/grob-feinstrom/">Dosage en débit grossier et fin</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/glossaire/kolbenpumpe/">Pompe à piston</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/glossaire/massendurchflussmesser/">Débitmètre massique</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/glossaire/dosiergenauigkeit/">Précision de dosage</a></li></ul></div></aside>
+        <div class="kn-prose">
+          <p class="kn-lead">Qu’une installation de dosage mesure la masse ou le volume détermine la précision, la vitesse et la traçabilité. Les deux méthodes ont leur raison d’être – et de nombreuses installations les combinent.</p>
+          <h2 id="le-principe-masse-ou-volume">Le principe : masse ou volume</h2>
+<p>Dans le <a class="term" href="/fuell-process.github.io/fuell-dispensing/fr/glossaire/gravimetrische-dosierung/">dosage gravimétrique</a>, le contenant repose sur une balance. La vanne s’ouvre jusqu’à atteindre la masse de consigne. On mesure donc directement ce qui figure dans la recette – car dans les industries des peintures, des vernis et de la chimie, les recettes sont généralement exprimées en fractions massiques.</p>
+<p>Dans le <a class="term" href="/fuell-process.github.io/fuell-dispensing/fr/glossaire/volumetrische-dosierung/">dosage volumétrique</a>, un volume défini est délivré, par exemple par une <a class="term" href="/fuell-process.github.io/fuell-dispensing/fr/glossaire/kolbenpumpe/">pompe à piston</a>. La masse est calculée à partir de la densité.</p><h2 id="gravim-trique-les-points-forts">Gravimétrique : les points forts</h2>
+<ul class="kn-list"><li><strong>Indépendant de la densité et de la température :</strong> la balance mesure la masse réelle.</li><li><strong>Grande reproductibilité :</strong> chaque ajout est contrôlé et enregistré.</li><li><strong>Flexible avec de nombreux composants :</strong> un <a class="term" href="/fuell-process.github.io/fuell-dispensing/fr/glossaire/dosierzentrum/">centre de dosage</a> peut doser de nombreuses matières premières l’une après l’autre dans le même contenant.</li><li><strong>Débit grossier et fin :</strong> on dose d’abord avec un débit élevé, puis finement juste avant la cible (<a class="term" href="/fuell-process.github.io/fuell-dispensing/fr/glossaire/grob-feinstrom/">dosage en débit grossier et fin</a>).</li></ul>
+<p>L’inconvénient : les composants sont en général dosés l’un après l’autre. Avec de nombreux composants par recette, l’opération dure donc plus longtemps qu’un dosage simultané.</p><h2 id="volum-trique-les-points-forts">Volumétrique : les points forts</h2>
+<ul class="kn-list"><li><strong>Dosage simultané :</strong> plusieurs composants en même temps, par exemple des <a class="term" href="/fuell-process.github.io/fuell-dispensing/fr/glossaire/toenpaste/">pâtes à teinter</a> pigmentées dans un contenant prérempli.</li><li>Très rapide pour les petites quantités.</li><li>Pas de dispositif de pesée nécessaire.</li></ul>
+<p>L’inconvénient : les écarts de densité, les bulles d’air ou les variations de température se répercutent directement sur la masse. De nombreux liquides se dilatent de façon mesurable lorsqu’ils sont chauffés – le même volume contient alors moins de masse.</p><h2 id="comparaison-directe">Comparaison directe</h2>
+<div class="kn-table"><table><thead><tr><th scope="col">Critère</th><th scope="col">Gravimétrique</th><th scope="col">Volumétrique</th></tr></thead><tbody><tr><td>Grandeur mesurée</td><td>Masse (balance, débitmètre massique)</td><td>Volume (pompe à piston, doseur)</td></tr><tr><td>Influence de la densité et de la température</td><td>faible</td><td>élevée</td></tr><tr><td>Ordre</td><td>le plus souvent l’un après l’autre</td><td>aussi simultané</td></tr><tr><td>Application typique</td><td>Fabrication à partir de nombreuses matières premières et produits semi-finis</td><td>Teinture dans des contenants préremplis, petites quantités</td></tr><tr><td>Traçabilité</td><td>chaque masse mesurée</td><td>calculée, contrôle gravimétrique en option</td></tr></tbody></table></div><h2 id="facteurs-d-influence-dans-la-pratique">Facteurs d’influence dans la pratique</h2>
+<p>La précision ne dépend pas seulement du principe de mesure. Sont tout aussi importants :</p>
+<ul class="kn-list"><li><strong>La <a class="term" href="/fuell-process.github.io/fuell-dispensing/fr/glossaire/dosierventil/">vanne de dosage</a> :</strong> le diamètre de sortie et la forme doivent correspondre au comportement à l’écoulement, à la densité et à la <a class="term" href="/fuell-process.github.io/fuell-dispensing/fr/glossaire/viskositaet/">viscosité</a>. Füll adapte les vannes individuellement aux substances à doser.</li><li><strong>L’entraînement de la vanne :</strong> les vannes servocommandées s’ouvrent avec précision et de façon reproductible.</li><li><strong>L’homogénéité de la matière première :</strong> si le pigment se dépose, la composition n’est pas bonne – quelle que soit la précision du dosage. C’est pourquoi les composants sont recirculés (<a class="term" href="/fuell-process.github.io/fuell-dispensing/fr/glossaire/umwaelzung/">recirculation</a>).</li><li>Les coulures et gouttes à la pointe de la vanne, en particulier avec des produits visqueux.</li></ul>
+<aside class="kn-cta"><strong>Est-ce adapté à votre application ?</strong><span>Envoyez-nous vos composants, contenants et débits – lors de l’avant-projet, nous vous montrons quelle solution convient.</span><a class="btn btn--red" href="/fuell-process.github.io/fuell-dispensing/fr/contact/">Envoyer une demande <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></aside><h2 id="solutions-combin-es">Solutions combinées</h2>
+<p>Dans de nombreuses installations, les deux principes travaillent ensemble. Avec l’<a class="term" href="/fuell-process.github.io/fuell-dispensing/fr/glossaire/in-can-tinting/">in-can tinting</a> de Füll, la base est d’abord ajoutée de façon gravimétrique, puis teintée de façon volumétrique et simultanée avec des pâtes. La <a href="/fuell-process.github.io/fuell-dispensing/fr/installations-de-dosage/">U-VX5</a> dose les encres à séchage UV de façon simultanée ou sous contrôle gravimétrique. Les centres de dosage Füll FS 2005.2 et FS 182.2 peuvent être équipés de balances ou du doseur volumétrique HX5.</p><h2 id="comment-prendre-la-d-cision">Comment prendre la décision</h2>
+<ul class="kn-list"><li>Nombreuses matières premières, fabrication à partir de produits semi-finis, exigences élevées de traçabilité : gravimétrique.</li><li>Teinture dans des contenants préremplis, grande vitesse, peu de pâtes : volumétrique.</li><li><strong>Les deux dans la même usine :</strong> installation combinée ou deux types d’installations avec un logiciel commun.</li></ul>
+          <h2 id="haeufige-fragen">Questions fréquentes</h2>
+          <div class="faq"><details class="qa"><summary><h3>Quelle méthode est la plus précise ?</h3></summary><p>Rapporté à la masse, le dosage gravimétrique est en général plus précis, car la densité et la température ne jouent aucun rôle. Les systèmes volumétriques atteignent aussi de bonnes valeurs dans des conditions constantes.</p></details><details class="qa"><summary><h3>Peut-on doser de façon volumétrique tout en pesant ?</h3></summary><p>Oui. Les dosages volumétriques peuvent être contrôlés en plus par une balance, ce qui préserve la traçabilité.</p></details></div>
+        </div>
+      </div>
+    </article>
+    <section class="section section--gray" aria-labelledby="kn-more">
+      <div class="container">
+        <div class="head head--row"><h2 id="kn-more">Autres guides</h2><a class="link" href="/fuell-process.github.io/fuell-dispensing/fr/guide/">Tous les guides <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+        <div class="kn-cards"><a class="kn-card" href="/fuell-process.github.io/fuell-dispensing/fr/guide/dosieranlage-auswaehlen/"><span class="kn-cat">Bases</span><strong>Choisir une installation de dosage : le guide pratique</strong><span>Ce qu’il faut clarifier avant d’investir : composants, débit, contenants, protection Ex, stockage et logiciel.</span></a><a class="kn-card" href="/fuell-process.github.io/fuell-dispensing/fr/guide/tanklager-planen/"><span class="kn-cat">Stockage et périphériques</span><strong>Planifier parcs de stockage et systèmes de stockage pour installations de dosage</strong><span>Fixe ou interchangeable, recirculation, agitateurs et législation sur l’eau : ce qui compte pour le stockage.</span></a><a class="kn-card" href="/fuell-process.github.io/fuell-dispensing/fr/guide/ruehrwerk-auswaehlen/"><span class="kn-cat">Stockage et périphériques</span><strong>Choisir l’agitateur adapté</strong><span>Cinq types, électriques ou pneumatiques, protégés Ex : quel agitateur pour quel contenant.</span></a></div>
+      </div>
+    </section>
+    <section class="section section--dark" aria-labelledby="kn-final">
+      <div class="container s-cta">
+        <div><h2 id="kn-final">Parlez-nous de votre tâche de dosage</h2><p>Envoyez-nous vos produits, le nombre de composants et le débit souhaité. Lors de l’avant-projet, nous vous montrons quelle installation convient à votre production.</p></div>
+        <div class="btns"><a class="btn btn--red" href="/fuell-process.github.io/fuell-dispensing/fr/contact/">Envoyer une demande <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="btn btn--light" href="tel:+4961265980">+49 6126 598-0</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__top">
+      <div class="footer__brand">
+        <img src="/fuell-process.github.io/fuell-dispensing/assets/img/fuell-dispensing-logo.png" width="256" height="70" alt="FÜLL Dispensing Systems" loading="lazy">
+        <address>Füll Systembau GmbH<br>Richard-Klinger-Straße 31<br>65510 Idstein, Allemagne</address>
+        <p><span class="footer__label">Standard</span><a href="tel:+4961265980">+49 6126 598-0</a><br><a href="mailto:info@fuell-dispensing.com">info@fuell-dispensing.com</a></p>
+        <p><span class="footer__label">Service</span><a href="tel:+49612659822">+49 6126 598-22</a><br><a href="mailto:service@fuell-dispensing.com">service@fuell-dispensing.com</a><br><span class="footer__hours">Lun–jeu 7 h–16 h, ven 7 h–13 h (HEC)</span></p>
+        <p><a href="https://fuell-process.com/">Une entreprise du Füll Process Group</a></p>
+      </div>
+      <nav class="footer__map" aria-label="Sitemap"><div class="fcol"><p class="fcol__title"><a href="/fuell-process.github.io/fuell-dispensing/fr/installations-de-dosage/">Produits et prestations</a></p><ul><li><a href="/fuell-process.github.io/fuell-dispensing/fr/installations-de-dosage/">Installations de dosage</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/vannes-de-dosage/">Vannes de dosage</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/schemas/">Installations en schéma</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/logiciel-de-dosage/">Logiciel de dosage</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/agitateurs/">Agitateurs</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/peripheriques/">Périphériques</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/peripheriques/#lagersysteme">Systèmes de stockage</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/ingenierie/">Ingénierie</a></li></ul></div><div class="fcol"><p class="fcol__title"><a href="/fuell-process.github.io/fuell-dispensing/fr/marches/">Marchés</a></p><ul><li><a href="/fuell-process.github.io/fuell-dispensing/fr/marches/impression-emballage/">Impression et emballage</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/marches/peintures-vernis/">Peintures et vernis</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/marches/chimie/">Chimie</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/marches/cosmetique-pharmacie/">Cosmétique, pharma, alimentaire</a></li></ul></div><div class="fcol"><p class="fcol__title"><a href="/fuell-process.github.io/fuell-dispensing/fr/entreprise/">Entreprise</a></p><ul><li><a href="/fuell-process.github.io/fuell-dispensing/fr/entreprise/#gruppe">Sites</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/entreprise/#historie">Historique</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/entreprise/#staerken">Forces et valeurs</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/references/">Références</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/references/#fallstudien">Études de cas</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/entreprise/#zertifizierungen">Certifications</a></li></ul></div><div class="fcol"><p class="fcol__title">Infos</p><ul><li><a href="/fuell-process.github.io/fuell-dispensing/fr/guide/">Guides (DE)</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/glossaire/">Glossaire (DE)</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/videos/">Vidéos</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/telechargements/">Téléchargements</a></li><li><a href="https://www.youtube.com/channel/UCuraxCQK4nHG1uWadnqBxdQ" target="_blank" rel="noopener">Chaîne YouTube <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li></ul></div><div class="fcol"><p class="fcol__title"><a href="/fuell-process.github.io/fuell-dispensing/fr/contact/">Contact</a></p><ul><li><a href="/fuell-process.github.io/fuell-dispensing/fr/contact/">Formulaire de contact</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/contact/#service">Service</a></li></ul></div></nav>
+    </div>
+    <div class="container footer__bottom"><span>© 2026 Füll Systembau GmbH</span>
+      <nav class="footer__links" aria-label="Mentions légales"><a href="https://fuell-dispensing.com/contact/imprint/?lang=en">Mentions légales</a><a href="https://fuell-dispensing.com/contact/data-protection-notice/?lang=en">Protection des données</a><a href="https://fuell-dispensing.com/info/general-business-terms/?lang=en">CGV</a></nav></div>
+  </footer>
+  <script src="/fuell-process.github.io/fuell-dispensing/assets/js/site.js?v=a7cc6650" defer></script>
+</body>
+</html>

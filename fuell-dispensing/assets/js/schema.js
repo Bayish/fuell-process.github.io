@@ -1,4 +1,4 @@
-// Füll Systembau (fuell-dispensing-web) – how a dispensing system is built, and six systems from simple to complex.
+// Füll Systembau (fuell-dispensing-web) – how a dispensing system is built, and seven systems from simple to complex.
 // Point-cloud schematics in the style of the hero animation. Values in the CALIPSO panel are a
 // simulation with example values, not technical data. Pages work without JS (static fallback text).
 (function () {
@@ -362,6 +362,36 @@
   tour(document.querySelector('[data-tour="systems"]'), function (e) {
     var SC = [];
 
+    // Roller coating unit (Walzenauftragswerk): the application station with many rollers side by side, where the lines used to be;
+    // the finished product runs over them from left to right. draw(t, run): rollers turn and product moves while it arrives.
+    function rollerUnit(s, cx, cz) {
+      var W = 3.0, H = 1.0, Dp = 2.2, top = 0.4 + H, R = 0.13, Z0 = cz - 1.0, Z1 = cz + 1.0, RX = [];
+      s.box(cx, 0.4 + H / 2, cz, W, H, Dp);                                  // station housing (as before)
+      for (var x = cx - 1.3; x <= cx + 1.3 + 1e-6; x += 0.35) RX.push(x);   // rollers where the lines were
+      RX.forEach(function (x) {
+        [Z0, (Z0 + Z1) / 2, Z1].forEach(function (z) {
+          for (var i = 0; i < 12; i++) { var a = i / 12 * 6.2832, b = (i + 1) / 12 * 6.2832; s.line([x + Math.cos(a) * R, top + Math.sin(a) * R, z], [x + Math.cos(b) * R, top + Math.sin(b) * R, z]); }
+        });
+        s.line([x, top + R, Z0], [x, top + R, Z1]); s.line([x, top - R, Z0], [x, top - R, Z1]);
+      });
+      return {
+        inlet: [cx - W / 2, top + 0.1, cz],                                  // feed enters at the side of the station
+        draw: function (t, run) {
+          var a = t * 0.005;
+          RX.forEach(function (x, i) {                                       // each roller turns (marker on its front end)
+            var g = run ? a * (i % 2 ? -1 : 1) : 0;
+            e.seg([x, top, Z1], [x + Math.cos(g) * R, top + Math.sin(g) * R, Z1], run ? AMBER : SKY, run ? 0.9 : 0.45, run ? 1.6 : 1);
+          });
+          if (!run) return;
+          var m = phase(t, 2600), x0 = RX[0], x1 = RX[RX.length - 1];       // finished product runs over the rollers from left to right
+          for (var r = 0; r < 6; r++) { var xx = x0 + ((m + r / 6) % 1) * (x1 - x0); e.seg([xx, top + R + 0.04, Z0 + 0.1], [xx, top + R + 0.04, Z1 - 0.1], AMBER, 0.6, 1.6); }
+        },
+      };
+    }
+
+
+
+
     (function () {   // 01 FS MS – valves in one row; the scale moves the container from valve to valve
       var s = new Scene(), xs = []; s.floor(6, 3.5);
       for (var i = 0; i < 8; i++) xs.push(-4.2 + i * 1.2);
@@ -471,8 +501,7 @@
       [-5, -3, -1].forEach(function (x) { s.tank(x, -2.4, 0.7, 2.0); });
       s.tank(2.0, -0.4, 1.0, 1.4);
       s.line([2.0, 3.1, -0.4], [2.0, 4.4, -0.4]); s.box(2.0, 4.6, -0.4, 0.6, 0.4, 0.6);
-      s.box(5.3, 0.9, 1.8, 3.0, 1.0, 2.2);
-      for (var x = 4.0; x <= 6.6; x += 0.35) s.line([x, 1.42, 0.8], [x, 1.42, 2.8]);
+      var RU = rollerUnit(s, 5.3, 1.8);                                      // finished product → roller coating unit
       [-5, -3, -1].forEach(function (tx, i) { s.pipe([[tx, 0.8, -2.4], [tx, 0.45, -2.4], [tx, 0.45, -1.0], [tx, 4.0, -1.0], [1.6 + i * 0.4, 4.0, -0.4], [1.6 + i * 0.4, 3.0, -0.4]]); s.box(tx, 2.2, -1.0, 0.4, 0.5, 0.4); });   // mass flow meter
       s.pipe([[2.0, 0.75, -0.4], [2.0, 0.35, -0.4], [2.0, 0.35, 1.8], [3.8, 0.35, 1.8], [3.8, 1.5, 1.8], [4.2, 1.5, 1.8]]);
       s.dyn = function (t) {
@@ -480,8 +509,60 @@
         e.flow(s.pipes[k], t, 7, 0.00028); e.flow(s.pipes[3], t, 10, 0.00022);
         for (var b = 0; b < 3; b++) { var ang = a + b * 2.094; e.seg([2.0, 1.6, -0.4], [2.0 + Math.cos(ang) * 0.75, 1.6, -0.4 + Math.sin(ang) * 0.75], AMBER, 0.9, 2); }
         for (var y = 1.2; y <= 2.4; y += 0.2) e.dot(2.0 + Math.cos(a * 1.5 + y * 3) * 0.6, y, -0.4 + Math.sin(a * 1.5 + y * 3) * 0.6, 1.6, AMBER, 0.8);
-        var m = phase(t, 2600);
-        for (var r = 0; r < 6; r++) { var xx = 4.0 + ((m + r / 6) % 1) * 2.6; e.seg([xx, 1.46, 0.9], [xx, 1.46, 2.7], AMBER, 0.55, 1.5); }
+        RU.draw(t, true);                                                    // fed continuously: the rollers keep turning
+      };
+      SC.push(s);
+    })();
+
+    (function () {   // 07 cascade dosing – strictly step by step: 1 + 2 into vessel 1 and mixed, then that mix + 3 into vessel 2 and mixed …
+      // Each step: fill (only the components of this step flow) → mix (feeds stopped, agitator runs) → next step. At the end the
+      // finished mixture goes to the roller coating unit.
+      var s = new Scene(), N = 6, TX = [], ZT = -2.7, ZM = 0.5, MY0 = 0.45, MR = 0.36, MH = 0.75;
+      for (var i = 0; i < N; i++) TX.push(-6.2 + i * 1.55);
+      s.floor(7.5, 4);
+      TX.forEach(function (x) {                                              // small component tanks, each with a mass flow meter
+        s.tank(x, ZT, 0.38, 1.1, 0.9);
+        s.box(x, 1.55, -1.5, 0.26, 0.36, 0.26);
+      });
+      var MX = TX.slice(1);                                                  // mixing vessel k sits in front of tank k + 1
+      MX.forEach(function (x) { s.tank(x, ZM, MR, MH, MY0); s.line([x, MY0 + MH + 0.3, ZM], [x, MY0 + MH + 0.75, ZM]); s.box(x, MY0 + MH + 0.85, ZM, 0.26, 0.2, 0.26); });
+      var top = MY0 + MH + 0.25;
+      function feedPipe(tx, mx, off) {                                       // tank → mass flow meter → top of its mixing vessel
+        return s.pipe([[tx, 0.75, ZT], [tx, 0.4, ZT], [tx, 0.4, -1.5], [tx, 1.95, -1.5], [mx + off, 1.95, -1.5], [mx + off, 1.95, ZM - 0.2], [mx + off, top, ZM - 0.2]]);
+      }
+      var FEEDP = [feedPipe(TX[0], MX[0], -0.18)];                           // component 1 → vessel 1
+      for (var k = 0; k < MX.length; k++) FEEDP.push(feedPipe(TX[k + 1], MX[k], k === 0 ? 0.18 : 0.12));   // component k + 2 → vessel k + 1
+      var TRANS = [];                                                        // mix of vessel k → top of vessel k + 1
+      for (var k2 = 0; k2 < MX.length - 1; k2++) TRANS.push(s.pipe([[MX[k2], MY0 - 0.1, ZM], [MX[k2], 0.2, ZM], [MX[k2], 0.2, ZM + 0.75], [MX[k2 + 1] - 0.15, 0.2, ZM + 0.75], [MX[k2 + 1] - 0.15, 0.2, ZM + 0.75], [MX[k2 + 1] - 0.15, top + 0.25, ZM + 0.75], [MX[k2 + 1] - 0.15, top + 0.25, ZM], [MX[k2 + 1] - 0.15, top, ZM]]));
+      var RU = rollerUnit(s, 5.3, ZM);                                       // finished mixture → roller coating unit
+      var last = MX[MX.length - 1];
+      var OUT = s.pipe([[last, MY0 - 0.1, ZM], [last, 0.2, ZM], [last, 0.2, ZM + 0.75], [RU.inlet[0] - 0.4, 0.2, ZM + 0.75], [RU.inlet[0] - 0.4, RU.inlet[1], ZM + 0.75], [RU.inlet[0] - 0.4, RU.inlet[1], ZM], [RU.inlet[0], RU.inlet[1], ZM]]);
+      var STEPS = MX.length + 1, STEP_MS = 3200;
+      s.dyn = function (t) {
+        var p = phase(t, STEPS * STEP_MS) * STEPS, k = Math.min(STEPS - 1, Math.floor(p)), f = p - k, a = t * 0.006;
+        var fill = f < 0.45, mix = f >= 0.45 && f < 0.9;                     // fill → mix → short pause
+        if (k < MX.length) {
+          if (fill) {
+            if (k === 0) { e.flow(s.pipes[FEEDP[0]], t, 6, 0.00028); e.flow(s.pipes[FEEDP[1]], t, 6, 0.00028); }   // 1 + 2
+            else { e.flow(s.pipes[TRANS[k - 1]], t, 6, 0.00028); e.flow(s.pipes[FEEDP[k + 1]], t, 6, 0.00028); }   // previous mix + next component
+          }
+        } else if (f < 0.9) e.flow(s.pipes[OUT], t, 7, 0.00026);             // last step: finished mixture → rollers
+        MX.forEach(function (x, m) {                                         // vessel contents and agitator
+          var lvl = m === k ? (fill ? f / 0.45 : 1) : m === k - 1 && fill ? 1 - f / 0.45 : 0;
+          if (k === STEPS - 1 && m === MX.length - 1) lvl = f < 0.9 ? 1 - f / 0.9 : 0;
+          if (lvl > 0.02) {
+            var y = MY0 + MH * 0.85 * lvl;
+            for (var d = 0; d < 14; d++) { var g = d / 14 * 6.2832 + (m === k ? a : 0); e.dot(x + Math.cos(g) * MR * 0.85, y, ZM + Math.sin(g) * MR * 0.85, 1.7, AMBER, 0.8); }
+          }
+          var stir = m === k && k < MX.length && f < 0.9, ang = stir ? a * (mix ? 2.2 : 1) : 0;
+          for (var b = 0; b < 3; b++) { var g2 = ang + b * 2.094; e.seg([x, MY0 + 0.3, ZM], [x + Math.cos(g2) * MR * 0.75, MY0 + 0.3, ZM + Math.sin(g2) * MR * 0.75], stir ? AMBER : SKY, stir ? 0.95 : 0.4, stir ? 2 : 1); }
+          if (m === k && mix && k < MX.length) e.dot(x, MY0 + MH + 0.55, ZM, 5 + Math.sin(t * 0.01) * 1.5, AMBER, 0.85);   // "mixing now"
+        });
+        TX.forEach(function (x, n) {                                         // green marker = this tank delivers right now
+          var act = fill && k < MX.length && (k === 0 ? n <= 1 : n === k + 1);
+          e.dot(x, 2.25, ZT, act ? 6 : 3, act ? GREEN : SKY, act ? 0.95 : 0.4);
+        });
+        RU.draw(t, k === STEPS - 1 && f < 0.9);
       };
       SC.push(s);
     })();

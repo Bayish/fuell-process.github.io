@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="googlebot" content="noindex, nofollow">
+  <style>html.fpg-locked body{display:none!important}html.fpg-denied body>*:not(.fpg-deny){display:none!important}.fpg-deny{font:16px/1.6 system-ui,sans-serif;max-width:520px;margin:18vh auto;padding:0 24px;color:#1b1f23}.fpg-deny button{margin-top:16px;padding:10px 18px;font:inherit;cursor:pointer}</style>
+  <script>
+  /* Preview access check – simple browser prompt, not real security. */
+  (function () {
+    var H = '9a2ebb00508dfcb446b7c845bf572ad95cef7db6b07c463ba793637099b58980', K = 'fpg-preview', root = document.documentElement;
+    try { if (sessionStorage.getItem(K) === H) return; } catch (e) {}
+    root.classList.add('fpg-locked');
+    function deny() {
+      function show() {
+        root.classList.remove('fpg-locked'); root.classList.add('fpg-denied');
+        var d = document.createElement('div'); d.className = 'fpg-deny';
+        d.innerHTML = '<h1 style="font-size:24px">Geschützte Vorschau / Protected preview</h1><p>Benutzername oder Passwort falsch. / Wrong username or password.</p><button type="button">Erneut versuchen / Try again</button>';
+        d.querySelector('button').onclick = function () { location.reload(); };
+        document.body.insertBefore(d, document.body.firstChild);
+      }
+      if (document.body) show(); else document.addEventListener('DOMContentLoaded', show);
+    }
+    var u = window.prompt('Geschützte Vorschau – Benutzername / Protected preview – username:');
+    if (u === null) return deny();
+    var p = window.prompt('Passwort / Password:');
+    if (p === null) return deny();
+    if (!(window.crypto && crypto.subtle)) return deny();
+    crypto.subtle.digest('SHA-256', new TextEncoder().encode(u.trim() + ':' + p)).then(function (buf) {
+      var h = Array.prototype.map.call(new Uint8Array(buf), function (x) { return ('0' + x.toString(16)).slice(-2); }).join('');
+      if (h === H) { try { sessionStorage.setItem(K, H); } catch (e) {} root.classList.remove('fpg-locked'); }
+      else deny();
+    }, deny);
+  })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Modernising a dispensing system: retrofit | Füll</title>
+  <meta name="description" content="When is a retrofit worthwhile? Control system, servo drives, valve cleaning and extension – how to bring an older dispensing system up to date.">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Füll Systembau">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:url" content="https://bayish.github.io/fuell-process.github.io/fuell-dispensing/en/guide/retrofit-dosieranlage/">
+  <meta property="og:title" content="Modernising a dispensing system: retrofit | Füll">
+  <meta property="og:description" content="When is a retrofit worthwhile? Control system, servo drives, valve cleaning and extension – how to bring an older dispensing system up to date.">
+  <meta property="og:image" content="https://bayish.github.io/fuell-process.github.io/fuell-dispensing/assets/img/dosieranlage-dosierzentrum.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/fuell-process.github.io/fuell-dispensing/assets/img/favicon-32.png?v=691ca975" sizes="32x32" type="image/png">
+  <link rel="icon" href="/fuell-process.github.io/fuell-dispensing/assets/img/favicon-192.png?v=c9fe9f39" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="/fuell-process.github.io/fuell-dispensing/assets/img/apple-touch-icon.png?v=e8b2a5eb">
+  <link rel="preload" href="/fuell-process.github.io/fuell-dispensing/assets/fonts/montserrat-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fuell-process.github.io/fuell-dispensing/assets/fonts/pt-sans-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fuell-process.github.io/fuell-dispensing/assets/fonts/montserrat-600-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/fuell-process.github.io/fuell-dispensing/assets/css/site.css?v=8c331d11">
+  <link rel="stylesheet" href="/fuell-process.github.io/fuell-dispensing/assets/css/knowledge.css?v=6ceba060">
+  <script>document.documentElement.classList.add('js')</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://fuell-dispensing.com/en/guide/retrofit-dosieranlage/#article",
+      "headline": "Modernising a dispensing system: retrofit instead of a new build",
+      "description": "When is a retrofit worthwhile? Control system, servo drives, valve cleaning and extension – how to bring an older dispensing system up to date.",
+      "inLanguage": "en",
+      "url": "https://fuell-dispensing.com/en/guide/retrofit-dosieranlage/",
+      "datePublished": "2026-11-16",
+      "dateModified": "2026-11-16",
+      "wordCount": 433,
+      "author": {
+        "@type": "Organization",
+        "@id": "https://fuell-dispensing.com/#organization",
+        "name": "Füll Systembau GmbH",
+        "url": "https://fuell-dispensing.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://fuell-dispensing.com/#organization",
+        "name": "Füll Systembau GmbH",
+        "url": "https://fuell-dispensing.com/"
+      },
+      "mainEntityOfPage": "https://fuell-dispensing.com/en/guide/retrofit-dosieranlage/",
+      "about": [
+        "Retrofit",
+        "PLC (programmable logic controller)",
+        "Remote maintenance",
+        "Automatic valve cleaning",
+        "Dispensing valve",
+        "CALIPSO"
+      ],
+      "isPartOf": {
+        "@type": "Blog",
+        "@id": "https://fuell-dispensing.com/en/guide/#blog"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fuell-dispensing.com/en/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guide",
+          "item": "https://fuell-dispensing.com/en/guide/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Modernising a dispensing system: retrofit instead of a new build",
+          "item": "https://fuell-dispensing.com/en/guide/retrofit-dosieranlage/"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#inhalt">Skip to content</a>
+  <div class="topbar"><div class="container topbar__in">
+    <a class="topbar__phone" href="tel:+4961265980"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span>Phone: +49 6126 598-0</span></a>
+    <details class="langs"><summary><span class="vh">Language: </span><img class="flag" src="/fuell-process.github.io/fuell-dispensing/assets/img/flags/gb.svg" width="21" height="14" alt="" aria-hidden="true">English</summary><ul><li><a href="/fuell-process.github.io/fuell-dispensing/ratgeber/retrofit-dosieranlage/" hreflang="de" lang="de"><img class="flag" src="/fuell-process.github.io/fuell-dispensing/assets/img/flags/de.svg" width="21" height="14" alt="" aria-hidden="true">Deutsch</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/guide/retrofit-dosieranlage/" hreflang="en" lang="en" aria-current="true"><img class="flag" src="/fuell-process.github.io/fuell-dispensing/assets/img/flags/gb.svg" width="21" height="14" alt="" aria-hidden="true">English</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/guide/retrofit-dosieranlage/" hreflang="fr" lang="fr"><img class="flag" src="/fuell-process.github.io/fuell-dispensing/assets/img/flags/fr.svg" width="21" height="14" alt="" aria-hidden="true">Français</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/guia/retrofit-dosieranlage/" hreflang="es" lang="es"><img class="flag" src="/fuell-process.github.io/fuell-dispensing/assets/img/flags/es.svg" width="21" height="14" alt="" aria-hidden="true">Español</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/tr/rehber/retrofit-dosieranlage/" hreflang="tr" lang="tr"><img class="flag" src="/fuell-process.github.io/fuell-dispensing/assets/img/flags/tr.svg" width="21" height="14" alt="" aria-hidden="true">Türkçe</a></li></ul></details>
+  </div></div>
+  <header class="header">
+    <div class="container header__in">
+      <a class="brand" href="/fuell-process.github.io/fuell-dispensing/en/" aria-label="Füll Systembau"><img src="/fuell-process.github.io/fuell-dispensing/assets/img/fuell-dispensing-logo.png" width="256" height="70" alt="FÜLL Dispensing Systems"></a>
+      <nav class="nav" id="nav" aria-label="Navigation"><ul class="menu"><li class="menu__item"><a class="menu__top" href="/fuell-process.github.io/fuell-dispensing/en/dispensing-systems/">Products &amp; Services</a><button class="menu__toggle" type="button" aria-expanded="false" aria-controls="sub0" aria-label="Submenu: Products &amp; Services"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="menu__sub" id="sub0"><li><a href="/fuell-process.github.io/fuell-dispensing/en/dispensing-systems/">Overview: Products &amp; Services</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/dispensing-systems/">Dispensing systems</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/dispensing-valves/">Dispensing valves</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/schematics/">Systems as schematics</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/dispensing-software/">Dispensing software</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/agitators/">Agitators</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/peripherals/">Equipment</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/peripherals/#lagersysteme">Storage systems</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/engineering/">Engineering</a></li></ul></li><li class="menu__item"><a class="menu__top" href="/fuell-process.github.io/fuell-dispensing/en/markets/">Markets</a><button class="menu__toggle" type="button" aria-expanded="false" aria-controls="sub1" aria-label="Submenu: Markets"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="menu__sub" id="sub1"><li><a href="/fuell-process.github.io/fuell-dispensing/en/markets/">Overview: Markets</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/markets/printing-packaging/">Printing &amp; packaging</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/markets/paints-coatings/">Paints &amp; coatings</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/markets/chemicals/">Chemicals</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/markets/cosmetics-pharma/">Cosmetics, pharma, food</a></li></ul></li><li class="menu__item"><a class="menu__top" href="/fuell-process.github.io/fuell-dispensing/en/company/">Company</a><button class="menu__toggle" type="button" aria-expanded="false" aria-controls="sub2" aria-label="Submenu: Company"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="menu__sub" id="sub2"><li><a href="/fuell-process.github.io/fuell-dispensing/en/company/">Overview: Company</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/company/#gruppe">Locations</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/company/#historie">History</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/company/#staerken">Strengths &amp; values</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/references/">References</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/references/#fallstudien">Case studies</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/company/#zertifizierungen">Certification</a></li></ul></li><li class="menu__item"><span class="menu__top">Info</span><button class="menu__toggle" type="button" aria-expanded="false" aria-controls="sub3" aria-label="Submenu: Info"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="menu__sub" id="sub3"><li><a href="/fuell-process.github.io/fuell-dispensing/en/guide/">Guides (DE)</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/glossary/">Glossary (DE)</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/videos/">Videos</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/downloads/">Downloads</a></li><li><a href="https://www.youtube.com/channel/UCuraxCQK4nHG1uWadnqBxdQ" target="_blank" rel="noopener">YouTube channel <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li></ul></li><li class="menu__item"><a class="menu__top" href="/fuell-process.github.io/fuell-dispensing/en/contact/">Contact</a><button class="menu__toggle" type="button" aria-expanded="false" aria-controls="sub4" aria-label="Submenu: Contact"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="menu__sub" id="sub4"><li><a href="/fuell-process.github.io/fuell-dispensing/en/contact/">Overview: Contact</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/contact/">Contact form</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/contact/#service">Service</a></li></ul></li></ul></nav>
+      <a class="btn btn--red header__cta" href="/fuell-process.github.io/fuell-dispensing/en/contact/">Send an enquiry</a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="inhalt">
+    <article class="kn-article">
+      <header class="kn-head">
+        <div class="container">
+          <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/fuell-process.github.io/fuell-dispensing/en/">Home</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/guide/">Guide</a></li><li aria-current="page">Modernising a dispensing system: retrofit instead of a new build</li></ol></nav>
+          <p class="eyebrow">Service</p>
+          <h1>Modernising a dispensing system: retrofit instead of a new build</h1>
+          <p class="kn-meta">Füll Systembau · As of November 2026 · approx. 3 min read</p>
+        </div>
+      </header>
+      <div class="container kn-layout">
+        <aside class="kn-toc" aria-label="Contents"><p class="kn-toc__title">Contents</p><ol><li><a href="#when-does-a-retrofit-make-sense">When does a retrofit make sense?</a></li><li><a href="#electrical-control-system">Electrical control system</a></li><li><a href="#valve-control-and-valve-lift">Valve control and valve lift</a></li><li><a href="#valve-carriage">Valve carriage</a></li><li><a href="#automatic-valve-cleaning">Automatic valve cleaning</a></li><li><a href="#extend-instead-of-replace">Extend instead of replace</a></li><li><a href="#haeufige-fragen">Frequently asked questions</a></li></ol>
+          <div class="kn-toc__terms"><p class="kn-toc__title">Terms</p><ul><li><a href="/fuell-process.github.io/fuell-dispensing/en/glossary/retrofit/">Retrofit</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/glossary/sps/">PLC (programmable logic controller)</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/glossary/fernwartung/">Remote maintenance</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/glossary/ventilreinigung/">Automatic valve cleaning</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/glossary/dosierventil/">Dispensing valve</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/glossary/calipso/">CALIPSO</a></li></ul></div></aside>
+        <div class="kn-prose">
+          <p class="kn-lead">A dispensing system is built for many years – a service life of 20 years is nothing unusual for Füll systems. Often it is only individual assemblies that need refreshing after a long service life. A <a class="term" href="/fuell-process.github.io/fuell-dispensing/en/glossary/retrofit/">retrofit</a> is then a cost-effective alternative to a new build.</p>
+          <h2 id="when-does-a-retrofit-make-sense">When does a retrofit make sense?</h2>
+<ul class="kn-list"><li>The control system or computer is outdated and spare parts are becoming scarce.</li><li>Production or the product range has grown, and the system needs more valves or storage containers.</li><li>The dispensing speed or accuracy is no longer sufficient.</li><li>New requirements for documentation or ERP connection.</li><li>Wear on heavily loaded assemblies.</li></ul>
+<p>As with new systems, system safety has top priority. Füll defines the degree of modernisation together with the customer – and also offers retrofits for systems from other manufacturers.</p><h2 id="electrical-control-system">Electrical control system</h2>
+<p>The computer stores system parameters, recipes, orders and logs. An industrial computer also ages and should be replaced after some time. Current control concepts communicate via Ethernet. This makes <a class="term" href="/fuell-process.github.io/fuell-dispensing/en/glossary/fernwartung/">remote maintenance</a> possible via secure VPN connections: service technicians can analyse the system down to the level of the <a class="term" href="/fuell-process.github.io/fuell-dispensing/en/glossary/sps/">PLC</a>.</p><h2 id="valve-control-and-valve-lift">Valve control and valve lift</h2>
+<p>In the FS 182.2 and FS 2005.2 series, the valves are controlled by servo drives. This enables a dynamic, precise dispensing sequence; dispensing parameters are determined and optimised automatically by <a class="term" href="/fuell-process.github.io/fuell-dispensing/en/glossary/calipso/">CALIPSO</a>. After a power failure, no initialisation is needed.</p>
+<p>The valve lift is the most heavily loaded assembly of a <a class="term" href="/fuell-process.github.io/fuell-dispensing/en/glossary/dosierzentrum/">dispensing centre</a>, because it opens and closes all valves. For <a class="term" href="/fuell-process.github.io/fuell-dispensing/en/glossary/grob-feinstrom/">coarse and fine flow dispensing</a> it has to work quickly and precisely.</p>
+<aside class="kn-cta"><strong>Does this fit your application?</strong><span>Send us your components, containers and throughputs – in the pre-engineering phase we show you which solution fits.</span><a class="btn btn--red" href="/fuell-process.github.io/fuell-dispensing/en/contact/">Send an enquiry <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></aside><h2 id="valve-carriage">Valve carriage</h2>
+<p>In most gravimetric systems, the valves sit on a carriage that moves the active valve under the lift by servo drive – usually at 250 mm/s. The same servo motors for lift and carriage simplify spare parts stocking, and the drive knows its position after a power failure.</p><h2 id="automatic-valve-cleaning">Automatic valve cleaning</h2>
+<p>If manual cleaning of the valve heads does not always succeed during production peaks, <a class="term" href="/fuell-process.github.io/fuell-dispensing/en/glossary/ventilreinigung/">automatic valve cleaning</a> is worthwhile. Rotating brushes clean the valve heads with a suitable cleaning agent that is circulated. This protects against contamination and carry-over of residues and saves operating time.</p><h2 id="extend-instead-of-replace">Extend instead of replace</h2>
+<p>More products, higher capacity, new raw materials: thanks to the modular design of Füll systems, additional valves, pipes, hoses and storage containers can be integrated. At Zeller &amp; Gmelin, for example, the system can be extended to up to 100 dispensing valves.</p>
+          <h2 id="haeufige-fragen">Frequently asked questions</h2>
+          <div class="faq"><details class="qa"><summary><h3>Does Füll also modernise systems from other manufacturers?</h3></summary><p>Yes, retrofit solutions are also available for products from other manufacturers.</p></details><details class="qa"><summary><h3>How does a retrofit work?</h3></summary><p>First the system is analysed. Then Füll proposes measures – from a control upgrade to replacing complete assemblies and storage tanks. You decide on the scope.</p></details></div>
+        </div>
+      </div>
+    </article>
+    <section class="section section--gray" aria-labelledby="kn-more">
+      <div class="container">
+        <div class="head head--row"><h2 id="kn-more">More guides</h2><a class="link" href="/fuell-process.github.io/fuell-dispensing/en/guide/">All guides <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+        <div class="kn-cards"><a class="kn-card" href="/fuell-process.github.io/fuell-dispensing/en/guide/dosieranlage-auswaehlen/"><span class="kn-cat">Basics</span><strong>Choosing a dispensing system: the practical guide</strong><span>What to clarify before investing: components, throughput, containers, Ex protection, storage and software.</span></a><a class="kn-card" href="/fuell-process.github.io/fuell-dispensing/en/guide/gravimetrisch-volumetrisch-dosieren/"><span class="kn-cat">Basics</span><strong>Gravimetric or volumetric dispensing: which method when?</strong><span>Mass or volume? Advantages and disadvantages of both methods, influencing factors and which system uses what.</span></a><a class="kn-card" href="/fuell-process.github.io/fuell-dispensing/en/guide/tanklager-planen/"><span class="kn-cat">Storage &amp; peripherals</span><strong>Planning tank farms and storage systems for dispensing systems</strong><span>Stationary or exchangeable containers, recirculation, agitators and water law: what matters in storage.</span></a></div>
+      </div>
+    </section>
+    <section class="section section--dark" aria-labelledby="kn-final">
+      <div class="container s-cta">
+        <div><h2 id="kn-final">Talk to us about your dispensing task</h2><p>Send us your products, the number of components and the required throughput. In the pre-engineering phase we show you which system fits your production.</p></div>
+        <div class="btns"><a class="btn btn--red" href="/fuell-process.github.io/fuell-dispensing/en/contact/">Send an enquiry <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="btn btn--light" href="tel:+4961265980">+49 6126 598-0</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__top">
+      <div class="footer__brand">
+        <img src="/fuell-process.github.io/fuell-dispensing/assets/img/fuell-dispensing-logo.png" width="256" height="70" alt="FÜLL Dispensing Systems" loading="lazy">
+        <address>Füll Systembau GmbH<br>Richard-Klinger-Straße 31<br>65510 Idstein, Germany</address>
+        <p><span class="footer__label">Main office</span><a href="tel:+4961265980">+49 6126 598-0</a><br><a href="mailto:info@fuell-dispensing.com">info@fuell-dispensing.com</a></p>
+        <p><span class="footer__label">Service</span><a href="tel:+49612659822">+49 6126 598-22</a><br><a href="mailto:service@fuell-dispensing.com">service@fuell-dispensing.com</a><br><span class="footer__hours">Mon–Thu 7:00–16:00, Fri 7:00–13:00 (CET)</span></p>
+        <p><a href="https://fuell-process.com/">A company of the Füll Process Group</a></p>
+      </div>
+      <nav class="footer__map" aria-label="Sitemap"><div class="fcol"><p class="fcol__title"><a href="/fuell-process.github.io/fuell-dispensing/en/dispensing-systems/">Products &amp; Services</a></p><ul><li><a href="/fuell-process.github.io/fuell-dispensing/en/dispensing-systems/">Dispensing systems</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/dispensing-valves/">Dispensing valves</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/schematics/">Systems as schematics</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/dispensing-software/">Dispensing software</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/agitators/">Agitators</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/peripherals/">Equipment</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/peripherals/#lagersysteme">Storage systems</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/engineering/">Engineering</a></li></ul></div><div class="fcol"><p class="fcol__title"><a href="/fuell-process.github.io/fuell-dispensing/en/markets/">Markets</a></p><ul><li><a href="/fuell-process.github.io/fuell-dispensing/en/markets/printing-packaging/">Printing &amp; packaging</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/markets/paints-coatings/">Paints &amp; coatings</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/markets/chemicals/">Chemicals</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/markets/cosmetics-pharma/">Cosmetics, pharma, food</a></li></ul></div><div class="fcol"><p class="fcol__title"><a href="/fuell-process.github.io/fuell-dispensing/en/company/">Company</a></p><ul><li><a href="/fuell-process.github.io/fuell-dispensing/en/company/#gruppe">Locations</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/company/#historie">History</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/company/#staerken">Strengths &amp; values</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/references/">References</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/references/#fallstudien">Case studies</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/company/#zertifizierungen">Certification</a></li></ul></div><div class="fcol"><p class="fcol__title">Info</p><ul><li><a href="/fuell-process.github.io/fuell-dispensing/en/guide/">Guides (DE)</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/glossary/">Glossary (DE)</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/videos/">Videos</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/downloads/">Downloads</a></li><li><a href="https://www.youtube.com/channel/UCuraxCQK4nHG1uWadnqBxdQ" target="_blank" rel="noopener">YouTube channel <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li></ul></div><div class="fcol"><p class="fcol__title"><a href="/fuell-process.github.io/fuell-dispensing/en/contact/">Contact</a></p><ul><li><a href="/fuell-process.github.io/fuell-dispensing/en/contact/">Contact form</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/contact/#service">Service</a></li></ul></div></nav>
+    </div>
+    <div class="container footer__bottom"><span>© 2026 Füll Systembau GmbH</span>
+      <nav class="footer__links" aria-label="Imprint"><a href="https://fuell-dispensing.com/contact/imprint/?lang=en">Imprint</a><a href="https://fuell-dispensing.com/contact/data-protection-notice/?lang=en">Data protection</a><a href="https://fuell-dispensing.com/info/general-business-terms/?lang=en">Terms</a></nav></div>
+  </footer>
+  <script src="/fuell-process.github.io/fuell-dispensing/assets/js/site.js?v=a7cc6650" defer></script>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="googlebot" content="noindex, nofollow">
+  <style>html.fpg-locked body{display:none!important}html.fpg-denied body>*:not(.fpg-deny){display:none!important}.fpg-deny{font:16px/1.6 system-ui,sans-serif;max-width:520px;margin:18vh auto;padding:0 24px;color:#1b1f23}.fpg-deny button{margin-top:16px;padding:10px 18px;font:inherit;cursor:pointer}</style>
+  <script>
+  /* Preview access check – simple browser prompt, not real security. */
+  (function () {
+    var H = '9a2ebb00508dfcb446b7c845bf572ad95cef7db6b07c463ba793637099b58980', K = 'fpg-preview', root = document.documentElement;
+    try { if (sessionStorage.getItem(K) === H) return; } catch (e) {}
+    root.classList.add('fpg-locked');
+    function deny() {
+      function show() {
+        root.classList.remove('fpg-locked'); root.classList.add('fpg-denied');
+        var d = document.createElement('div'); d.className = 'fpg-deny';
+        d.innerHTML = '<h1 style="font-size:24px">Geschützte Vorschau / Protected preview</h1><p>Benutzername oder Passwort falsch. / Wrong username or password.</p><button type="button">Erneut versuchen / Try again</button>';
+        d.querySelector('button').onclick = function () { location.reload(); };
+        document.body.insertBefore(d, document.body.firstChild);
+      }
+      if (document.body) show(); else document.addEventListener('DOMContentLoaded', show);
+    }
+    var u = window.prompt('Geschützte Vorschau – Benutzername / Protected preview – username:');
+    if (u === null) return deny();
+    var p = window.prompt('Passwort / Password:');
+    if (p === null) return deny();
+    if (!(window.crypto && crypto.subtle)) return deny();
+    crypto.subtle.digest('SHA-256', new TextEncoder().encode(u.trim() + ':' + p)).then(function (buf) {
+      var h = Array.prototype.map.call(new Uint8Array(buf), function (x) { return ('0' + x.toString(16)).slice(-2); }).join('');
+      if (h === H) { try { sessionStorage.setItem(K, H); } catch (e) {} root.classList.remove('fpg-locked'); }
+      else deny();
+    }, deny);
+  })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Planificar el almacenamiento para la dosificación | Füll</title>
+  <meta name="description" content="¿Tanques fijos, contenedores en estanterías o envases intercambiables? Cómo planificar el almacén de su equipo: recirculación, agitadores y WHG.">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Füll Systembau">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:url" content="https://bayish.github.io/fuell-process.github.io/fuell-dispensing/es/guia/tanklager-planen/">
+  <meta property="og:title" content="Planificar el almacenamiento para la dosificación | Füll">
+  <meta property="og:description" content="¿Tanques fijos, contenedores en estanterías o envases intercambiables? Cómo planificar el almacén de su equipo: recirculación, agitadores y WHG.">
+  <meta property="og:image" content="https://bayish.github.io/fuell-process.github.io/fuell-dispensing/assets/img/dosieranlage-dosierzentrum.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/fuell-process.github.io/fuell-dispensing/assets/img/favicon-32.png?v=691ca975" sizes="32x32" type="image/png">
+  <link rel="icon" href="/fuell-process.github.io/fuell-dispensing/assets/img/favicon-192.png?v=c9fe9f39" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="/fuell-process.github.io/fuell-dispensing/assets/img/apple-touch-icon.png?v=e8b2a5eb">
+  <link rel="preload" href="/fuell-process.github.io/fuell-dispensing/assets/fonts/montserrat-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fuell-process.github.io/fuell-dispensing/assets/fonts/pt-sans-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fuell-process.github.io/fuell-dispensing/assets/fonts/montserrat-600-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/fuell-process.github.io/fuell-dispensing/assets/css/site.css?v=8c331d11">
+  <link rel="stylesheet" href="/fuell-process.github.io/fuell-dispensing/assets/css/knowledge.css?v=6ceba060">
+  <script>document.documentElement.classList.add('js')</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://fuell-dispensing.com/es/guia/tanklager-planen/#article",
+      "headline": "Planificar parques de tanques y sistemas de almacenamiento para equipos de dosificación",
+      "description": "¿Tanques fijos, contenedores en estanterías o envases intercambiables? Cómo planificar el almacén de su equipo: recirculación, agitadores y WHG.",
+      "inLanguage": "es",
+      "url": "https://fuell-dispensing.com/es/guia/tanklager-planen/",
+      "datePublished": "2026-11-16",
+      "dateModified": "2026-11-16",
+      "wordCount": 512,
+      "author": {
+        "@type": "Organization",
+        "@id": "https://fuell-dispensing.com/#organization",
+        "name": "Füll Systembau GmbH",
+        "url": "https://fuell-dispensing.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://fuell-dispensing.com/#organization",
+        "name": "Füll Systembau GmbH",
+        "url": "https://fuell-dispensing.com/"
+      },
+      "mainEntityOfPage": "https://fuell-dispensing.com/es/guia/tanklager-planen/",
+      "about": [
+        "Parque de tanques",
+        "Envases intercambiables",
+        "IBC (gran recipiente para mercancías a granel)",
+        "Recirculación",
+        "Protección contra sobrellenado",
+        "Indicador de nivel"
+      ],
+      "isPartOf": {
+        "@type": "Blog",
+        "@id": "https://fuell-dispensing.com/es/guia/#blog"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://fuell-dispensing.com/es/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guía",
+          "item": "https://fuell-dispensing.com/es/guia/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Planificar parques de tanques y sistemas de almacenamiento para equipos de dosificación",
+          "item": "https://fuell-dispensing.com/es/guia/tanklager-planen/"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#inhalt">Ir al contenido</a>
+  <div class="topbar"><div class="container topbar__in">
+    <a class="topbar__phone" href="tel:+4961265980"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span>Teléfono: +49 6126 598-0</span></a>
+    <details class="langs"><summary><span class="vh">Idioma: </span><img class="flag" src="/fuell-process.github.io/fuell-dispensing/assets/img/flags/es.svg" width="21" height="14" alt="" aria-hidden="true">Español</summary><ul><li><a href="/fuell-process.github.io/fuell-dispensing/ratgeber/tanklager-planen/" hreflang="de" lang="de"><img class="flag" src="/fuell-process.github.io/fuell-dispensing/assets/img/flags/de.svg" width="21" height="14" alt="" aria-hidden="true">Deutsch</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/guide/tanklager-planen/" hreflang="en" lang="en"><img class="flag" src="/fuell-process.github.io/fuell-dispensing/assets/img/flags/gb.svg" width="21" height="14" alt="" aria-hidden="true">English</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/guide/tanklager-planen/" hreflang="fr" lang="fr"><img class="flag" src="/fuell-process.github.io/fuell-dispensing/assets/img/flags/fr.svg" width="21" height="14" alt="" aria-hidden="true">Français</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/guia/tanklager-planen/" hreflang="es" lang="es" aria-current="true"><img class="flag" src="/fuell-process.github.io/fuell-dispensing/assets/img/flags/es.svg" width="21" height="14" alt="" aria-hidden="true">Español</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/tr/rehber/tanklager-planen/" hreflang="tr" lang="tr"><img class="flag" src="/fuell-process.github.io/fuell-dispensing/assets/img/flags/tr.svg" width="21" height="14" alt="" aria-hidden="true">Türkçe</a></li></ul></details>
+  </div></div>
+  <header class="header">
+    <div class="container header__in">
+      <a class="brand" href="/fuell-process.github.io/fuell-dispensing/es/" aria-label="Füll Systembau"><img src="/fuell-process.github.io/fuell-dispensing/assets/img/fuell-dispensing-logo.png" width="256" height="70" alt="FÜLL Dispensing Systems"></a>
+      <nav class="nav" id="nav" aria-label="Navigation"><ul class="menu"><li class="menu__item"><a class="menu__top" href="/fuell-process.github.io/fuell-dispensing/es/equipos-de-dosificacion/">Productos y servicios</a><button class="menu__toggle" type="button" aria-expanded="false" aria-controls="sub0" aria-label="Submenú: Productos y servicios"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="menu__sub" id="sub0"><li><a href="/fuell-process.github.io/fuell-dispensing/es/equipos-de-dosificacion/">Vista general: Productos y servicios</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/equipos-de-dosificacion/">Instalaciones de dosificación</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/valvulas-de-dosificacion/">Válvulas de dosificación</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/esquemas/">Instalaciones en esquema</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/software-de-dosificacion/">Software de dosificación</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/agitadores/">Agitadores</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/perifericos/">Periféricos</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/perifericos/#lagersysteme">Sistemas de almacenamiento</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/ingenieria/">Ingeniería</a></li></ul></li><li class="menu__item"><a class="menu__top" href="/fuell-process.github.io/fuell-dispensing/es/mercados/">Mercados</a><button class="menu__toggle" type="button" aria-expanded="false" aria-controls="sub1" aria-label="Submenú: Mercados"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="menu__sub" id="sub1"><li><a href="/fuell-process.github.io/fuell-dispensing/es/mercados/">Vista general: Mercados</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/mercados/impresion-envases/">Impresión y embalaje</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/mercados/pinturas-barnices/">Pinturas y barnices</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/mercados/quimica/">Química</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/mercados/cosmetica-farmacia/">Cosmética, farma, alimentación</a></li></ul></li><li class="menu__item"><a class="menu__top" href="/fuell-process.github.io/fuell-dispensing/es/empresa/">Empresa</a><button class="menu__toggle" type="button" aria-expanded="false" aria-controls="sub2" aria-label="Submenú: Empresa"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="menu__sub" id="sub2"><li><a href="/fuell-process.github.io/fuell-dispensing/es/empresa/">Vista general: Empresa</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/empresa/#gruppe">Sedes</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/empresa/#historie">Historia</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/empresa/#staerken">Fortalezas y valores</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/referencias/">Referencias</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/referencias/#fallstudien">Casos prácticos</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/empresa/#zertifizierungen">Certificaciones</a></li></ul></li><li class="menu__item"><span class="menu__top">Info</span><button class="menu__toggle" type="button" aria-expanded="false" aria-controls="sub3" aria-label="Submenú: Info"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="menu__sub" id="sub3"><li><a href="/fuell-process.github.io/fuell-dispensing/es/guia/">Guías (DE)</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/glosario/">Glosario (DE)</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/videos/">Vídeos</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/descargas/">Descargas</a></li><li><a href="https://www.youtube.com/channel/UCuraxCQK4nHG1uWadnqBxdQ" target="_blank" rel="noopener">Canal de YouTube <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li></ul></li><li class="menu__item"><a class="menu__top" href="/fuell-process.github.io/fuell-dispensing/es/contacto/">Contacto</a><button class="menu__toggle" type="button" aria-expanded="false" aria-controls="sub4" aria-label="Submenú: Contacto"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="menu__sub" id="sub4"><li><a href="/fuell-process.github.io/fuell-dispensing/es/contacto/">Vista general: Contacto</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/contacto/">Formulario de contacto</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/contacto/#service">Servicio técnico</a></li></ul></li></ul></nav>
+      <a class="btn btn--red header__cta" href="/fuell-process.github.io/fuell-dispensing/es/contacto/">Solicitar oferta</a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menú"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="inhalt">
+    <article class="kn-article">
+      <header class="kn-head">
+        <div class="container">
+          <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/fuell-process.github.io/fuell-dispensing/es/">Inicio</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/guia/">Guía</a></li><li aria-current="page">Planificar parques de tanques y sistemas de almacenamiento para equipos de dosificación</li></ol></nav>
+          <p class="eyebrow">Almacenamiento y periféricos</p>
+          <h1>Planificar parques de tanques y sistemas de almacenamiento para equipos de dosificación</h1>
+          <p class="kn-meta">Füll Systembau · Actualizado: noviembre de 2026 · aprox. 3 min de lectura</p>
+        </div>
+      </header>
+      <div class="container kn-layout">
+        <aside class="kn-toc" aria-label="Contenido"><p class="kn-toc__title">Contenido</p><ol><li><a href="#qu-tipos-de-almacenamiento-existen">¿Qué tipos de almacenamiento existen?</a></li><li><a href="#c-mo-encontrar-la-soluci-n-adecuada">Cómo encontrar la solución adecuada</a></li><li><a href="#homogeneidad-recircular-y-agitar">Homogeneidad: recircular y agitar</a></li><li><a href="#bombear-en-lugar-de-cargar">Bombear en lugar de cargar</a></li><li><a href="#seguridad-y-legislaci-n-de-aguas">Seguridad y legislación de aguas</a></li><li><a href="#haeufige-fragen">Preguntas frecuentes</a></li></ol>
+          <div class="kn-toc__terms"><p class="kn-toc__title">Términos</p><ul><li><a href="/fuell-process.github.io/fuell-dispensing/es/glosario/tanklager/">Parque de tanques</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/glosario/wechselgebinde/">Envases intercambiables</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/glosario/ibc/">IBC (gran recipiente para mercancías a granel)</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/glosario/umwaelzung/">Recirculación</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/glosario/ueberfuellsicherung/">Protección contra sobrellenado</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/glosario/fuellstandsanzeiger/">Indicador de nivel</a></li></ul></div></aside>
+        <div class="kn-prose">
+          <p class="kn-lead">El equipo de dosificación es el corazón visible de la producción. Pero si funciona de forma fiable a menudo lo decide el almacén que tiene delante: allí se almacenan las materias primas, se mantienen homogéneas y se transportan al equipo.</p>
+          <h2 id="qu-tipos-de-almacenamiento-existen">¿Qué tipos de almacenamiento existen?</h2>
+<p>Füll distingue entre sistemas de almacenamiento fijos y <a class="term" href="/fuell-process.github.io/fuell-dispensing/es/glosario/wechselgebinde/">envases intercambiables</a>:</p>
+<div class="kn-table"><table><thead><tr><th scope="col">Tipo de almacenamiento</th><th scope="col">Ejemplos</th><th scope="col">Adecuado para</th></tr></thead><tbody><tr><td>Fijo en estantería</td><td>contenedores de almacenamiento, cúbicos o cilíndricos</td><td>muchos componentes en poca superficie</td></tr><tr><td>Fijo independiente</td><td>tanques de almacenamiento cilíndricos, grandes tanques</td><td>materias primas de alto consumo, suministro en camión cisterna</td></tr><tr><td>Envases intercambiables</td><td>cubos, bidones, latas, barriles, IBC de plástico y metal, recipientes redondos con placa seguidora o rascador</td><td>consumos bajos, cambios frecuentes de materia prima</td></tr></tbody></table></div><h2 id="c-mo-encontrar-la-soluci-n-adecuada">Cómo encontrar la solución adecuada</h2>
+<p>El diseño depende del consumo, la cantidad suministrada, el medio y las condiciones in situ. En Füll se realiza para ello un análisis detallado en la fase de oferta, junto con el operador y el proveedor de materias primas. Preguntas típicas:</p>
+<ul class="kn-list"><li>¿Cuánto se consume de cada componente al mes?</li><li>¿En qué envases suministra el proveedor y es posible el suministro en camión cisterna?</li><li>¿Hay que atemperar el almacén? En Zeller &amp; Gmelin, el almacén de materias primas para tintas UV se mantiene a 38 °C constantes y protegido de la luz UV.</li><li>¿Cuánto espacio hay disponible y a qué distancia del equipo de dosificación?</li></ul><h2 id="homogeneidad-recircular-y-agitar">Homogeneidad: recircular y agitar</h2>
+<p>Los productos pigmentados y las dispersiones tienden a la <a class="term" href="/fuell-process.github.io/fuell-dispensing/es/glosario/sedimentation/">sedimentación</a>. Sin contramedidas, la composición de la cantidad dosificada deja de ser correcta. Dos medios garantizan materias primas uniformes:</p>
+<ul class="kn-list"><li><strong><a class="term" href="/fuell-process.github.io/fuell-dispensing/es/glosario/umwaelzung/">Recirculación</a>:</strong> el producto circula por una línea en anillo y las válvulas de dosificación de vuelta al almacén. Para ello, las válvulas de dosificación de Füll tienen de serie conexiones de recirculación.</li><li><strong><a class="term" href="/fuell-process.github.io/fuell-dispensing/es/glosario/ruehrwerk/">Agitadores</a>:</strong> homogeneizan el contenido de tanques, contenedores y envases.</li></ul>
+<p>En el software de control <a class="term" href="/fuell-process.github.io/fuell-dispensing/es/glosario/calipso/">CALIPSO</a> se definen los intervalos de recirculación y agitación y los componentes se dividen en grupos. Con un diseño correcto, los retoques como el ajuste de tono se reducen claramente.</p>
+<aside class="kn-cta"><strong>¿Encaja con su aplicación?</strong><span>Envíenos sus componentes, envases y caudales – en la fase de anteproyecto le mostramos qué solución encaja.</span><a class="btn btn--red" href="/fuell-process.github.io/fuell-dispensing/es/contacto/">Enviar consulta <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></aside><h2 id="bombear-en-lugar-de-cargar">Bombear en lugar de cargar</h2>
+<p>Un almacén bien planificado sustituye los transportes manuales. En Zeller &amp; Gmelin, antes la tinta se llevaba del almacén a la producción en envases de 200 litros; hoy la transportan bombas a través de un sistema de tuberías. Esto mejora la ergonomía, elimina el riesgo de accidentes de transporte y facilita las compras, porque las materias primas pueden suministrarse en camión cisterna.</p><h2 id="seguridad-y-legislaci-n-de-aguas">Seguridad y legislación de aguas</h2>
+<p>En Alemania, los almacenes de líquidos peligrosos para el agua están sujetos a la legislación de aguas. Esto incluye, por ejemplo, <a class="term" href="/fuell-process.github.io/fuell-dispensing/es/glosario/ueberfuellsicherung/">protecciones contra sobrellenado</a> homologadas. Füll es <a class="term" href="/fuell-process.github.io/fuell-dispensing/es/glosario/whg-fachbetrieb/">empresa especializada WHG</a> y está cualificada para instalar partes de la planta relevantes para la seguridad, como las protecciones contra sobrellenado. El <a class="term" href="/fuell-process.github.io/fuell-dispensing/es/glosario/fuellstandsanzeiger/">indicador de nivel</a> FA 200/4 está homologado como protección contra sobrellenado según WHG y ATEX.</p>
+<p>Con disolventes inflamables se añade la <a class="term" href="/fuell-process.github.io/fuell-dispensing/es/glosario/ex-schutz/">protección Ex</a>, desde el agitador hasta el terminal.</p>
+          <h2 id="haeufige-fragen">Preguntas frecuentes</h2>
+          <div class="faq"><details class="qa"><summary><h3>¿Compensa un gran parque de tanques?</h3></summary><p>Con un consumo elevado de determinadas materias primas, a menudo sí: suministro en camión cisterna, menos manipulación de envases y menos residuos. En Sherwin-Williams, Füll se encargó de la ingeniería de un gran parque de tanques con depósitos de 25 a 50 toneladas.</p></details><details class="qa"><summary><h3>¿Puedo empezar con envases intercambiables?</h3></summary><p>Sí. Muchos equipos combinan tanques fijos para las materias primas principales con envases intercambiables para componentes de uso poco frecuente.</p></details></div>
+        </div>
+      </div>
+    </article>
+    <section class="section section--gray" aria-labelledby="kn-more">
+      <div class="container">
+        <div class="head head--row"><h2 id="kn-more">Más guías</h2><a class="link" href="/fuell-process.github.io/fuell-dispensing/es/guia/">Todas las guías <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+        <div class="kn-cards"><a class="kn-card" href="/fuell-process.github.io/fuell-dispensing/es/guia/dosieranlage-auswaehlen/"><span class="kn-cat">Fundamentos</span><strong>Elegir un equipo de dosificación: la guía práctica</strong><span>Qué aclarar antes de invertir: componentes, caudal, envases, protección Ex, almacenamiento y software.</span></a><a class="kn-card" href="/fuell-process.github.io/fuell-dispensing/es/guia/gravimetrisch-volumetrisch-dosieren/"><span class="kn-cat">Fundamentos</span><strong>Dosificación gravimétrica o volumétrica: ¿qué método y cuándo?</strong><span>¿Masa o volumen? Ventajas e inconvenientes de ambos métodos, factores de influencia y qué equipo utiliza qué.</span></a><a class="kn-card" href="/fuell-process.github.io/fuell-dispensing/es/guia/ruehrwerk-auswaehlen/"><span class="kn-cat">Almacenamiento y periféricos</span><strong>Elegir el agitador adecuado</strong><span>Cinco tipos, eléctricos o neumáticos, con protección Ex: qué agitador se adapta a qué envase.</span></a></div>
+      </div>
+    </section>
+    <section class="section section--dark" aria-labelledby="kn-final">
+      <div class="container s-cta">
+        <div><h2 id="kn-final">Hable con nosotros sobre su tarea de dosificación</h2><p>Envíenos sus productos, el número de componentes y el caudal deseado. En la fase de anteproyecto le mostramos qué equipo encaja en su producción.</p></div>
+        <div class="btns"><a class="btn btn--red" href="/fuell-process.github.io/fuell-dispensing/es/contacto/">Enviar consulta <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="btn btn--light" href="tel:+4961265980">+49 6126 598-0</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__top">
+      <div class="footer__brand">
+        <img src="/fuell-process.github.io/fuell-dispensing/assets/img/fuell-dispensing-logo.png" width="256" height="70" alt="FÜLL Dispensing Systems" loading="lazy">
+        <address>Füll Systembau GmbH<br>Richard-Klinger-Straße 31<br>65510 Idstein, Alemania</address>
+        <p><span class="footer__label">Central</span><a href="tel:+4961265980">+49 6126 598-0</a><br><a href="mailto:info@fuell-dispensing.com">info@fuell-dispensing.com</a></p>
+        <p><span class="footer__label">Servicio técnico</span><a href="tel:+49612659822">+49 6126 598-22</a><br><a href="mailto:service@fuell-dispensing.com">service@fuell-dispensing.com</a><br><span class="footer__hours">Lun–jue 7–16 h, vie 7–13 h (CET)</span></p>
+        <p><a href="https://fuell-process.com/">Una empresa del Füll Process Group</a></p>
+      </div>
+      <nav class="footer__map" aria-label="Sitemap"><div class="fcol"><p class="fcol__title"><a href="/fuell-process.github.io/fuell-dispensing/es/equipos-de-dosificacion/">Productos y servicios</a></p><ul><li><a href="/fuell-process.github.io/fuell-dispensing/es/equipos-de-dosificacion/">Instalaciones de dosificación</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/valvulas-de-dosificacion/">Válvulas de dosificación</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/esquemas/">Instalaciones en esquema</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/software-de-dosificacion/">Software de dosificación</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/agitadores/">Agitadores</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/perifericos/">Periféricos</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/perifericos/#lagersysteme">Sistemas de almacenamiento</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/ingenieria/">Ingeniería</a></li></ul></div><div class="fcol"><p class="fcol__title"><a href="/fuell-process.github.io/fuell-dispensing/es/mercados/">Mercados</a></p><ul><li><a href="/fuell-process.github.io/fuell-dispensing/es/mercados/impresion-envases/">Impresión y embalaje</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/mercados/pinturas-barnices/">Pinturas y barnices</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/mercados/quimica/">Química</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/mercados/cosmetica-farmacia/">Cosmética, farma, alimentación</a></li></ul></div><div class="fcol"><p class="fcol__title"><a href="/fuell-process.github.io/fuell-dispensing/es/empresa/">Empresa</a></p><ul><li><a href="/fuell-process.github.io/fuell-dispensing/es/empresa/#gruppe">Sedes</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/empresa/#historie">Historia</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/empresa/#staerken">Fortalezas y valores</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/referencias/">Referencias</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/referencias/#fallstudien">Casos prácticos</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/empresa/#zertifizierungen">Certificaciones</a></li></ul></div><div class="fcol"><p class="fcol__title">Info</p><ul><li><a href="/fuell-process.github.io/fuell-dispensing/es/guia/">Guías (DE)</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/glosario/">Glosario (DE)</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/videos/">Vídeos</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/descargas/">Descargas</a></li><li><a href="https://www.youtube.com/channel/UCuraxCQK4nHG1uWadnqBxdQ" target="_blank" rel="noopener">Canal de YouTube <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li></ul></div><div class="fcol"><p class="fcol__title"><a href="/fuell-process.github.io/fuell-dispensing/es/contacto/">Contacto</a></p><ul><li><a href="/fuell-process.github.io/fuell-dispensing/es/contacto/">Formulario de contacto</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/contacto/#service">Servicio técnico</a></li></ul></div></nav>
+    </div>
+    <div class="container footer__bottom"><span>© 2026 Füll Systembau GmbH</span>
+      <nav class="footer__links" aria-label="Aviso legal"><a href="https://fuell-dispensing.com/contact/imprint/?lang=en">Aviso legal</a><a href="https://fuell-dispensing.com/contact/data-protection-notice/?lang=en">Protección de datos</a><a href="https://fuell-dispensing.com/info/general-business-terms/?lang=en">Condiciones generales</a></nav></div>
+  </footer>
+  <script src="/fuell-process.github.io/fuell-dispensing/assets/js/site.js?v=a7cc6650" defer></script>
+</body>
+</html>

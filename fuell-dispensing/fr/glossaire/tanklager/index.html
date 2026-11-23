@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="googlebot" content="noindex, nofollow">
+  <style>html.fpg-locked body{display:none!important}html.fpg-denied body>*:not(.fpg-deny){display:none!important}.fpg-deny{font:16px/1.6 system-ui,sans-serif;max-width:520px;margin:18vh auto;padding:0 24px;color:#1b1f23}.fpg-deny button{margin-top:16px;padding:10px 18px;font:inherit;cursor:pointer}</style>
+  <script>
+  /* Preview access check – simple browser prompt, not real security. */
+  (function () {
+    var H = '9a2ebb00508dfcb446b7c845bf572ad95cef7db6b07c463ba793637099b58980', K = 'fpg-preview', root = document.documentElement;
+    try { if (sessionStorage.getItem(K) === H) return; } catch (e) {}
+    root.classList.add('fpg-locked');
+    function deny() {
+      function show() {
+        root.classList.remove('fpg-locked'); root.classList.add('fpg-denied');
+        var d = document.createElement('div'); d.className = 'fpg-deny';
+        d.innerHTML = '<h1 style="font-size:24px">Geschützte Vorschau / Protected preview</h1><p>Benutzername oder Passwort falsch. / Wrong username or password.</p><button type="button">Erneut versuchen / Try again</button>';
+        d.querySelector('button').onclick = function () { location.reload(); };
+        document.body.insertBefore(d, document.body.firstChild);
+      }
+      if (document.body) show(); else document.addEventListener('DOMContentLoaded', show);
+    }
+    var u = window.prompt('Geschützte Vorschau – Benutzername / Protected preview – username:');
+    if (u === null) return deny();
+    var p = window.prompt('Passwort / Password:');
+    if (p === null) return deny();
+    if (!(window.crypto && crypto.subtle)) return deny();
+    crypto.subtle.digest('SHA-256', new TextEncoder().encode(u.trim() + ':' + p)).then(function (buf) {
+      var h = Array.prototype.map.call(new Uint8Array(buf), function (x) { return ('0' + x.toString(16)).slice(-2); }).join('');
+      if (h === H) { try { sessionStorage.setItem(K, H); } catch (e) {} root.classList.remove('fpg-locked'); }
+      else deny();
+    }, deny);
+  })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Parc de stockage: Définition | Füll Systembau</title>
+  <meta name="description" content="Un parc de stockage est l’ensemble des réservoirs fixes dans lesquels les matières premières et les produits semi-finis sont stockés pour la production.">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Füll Systembau">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:url" content="https://bayish.github.io/fuell-process.github.io/fuell-dispensing/fr/glossaire/tanklager/">
+  <meta property="og:title" content="Parc de stockage: Définition | Füll Systembau">
+  <meta property="og:description" content="Un parc de stockage est l’ensemble des réservoirs fixes dans lesquels les matières premières et les produits semi-finis sont stockés pour la production.">
+  <meta property="og:image" content="https://bayish.github.io/fuell-process.github.io/fuell-dispensing/assets/img/dosieranlage-dosierzentrum.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/fuell-process.github.io/fuell-dispensing/assets/img/favicon-32.png?v=691ca975" sizes="32x32" type="image/png">
+  <link rel="icon" href="/fuell-process.github.io/fuell-dispensing/assets/img/favicon-192.png?v=c9fe9f39" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="/fuell-process.github.io/fuell-dispensing/assets/img/apple-touch-icon.png?v=e8b2a5eb">
+  <link rel="preload" href="/fuell-process.github.io/fuell-dispensing/assets/fonts/montserrat-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fuell-process.github.io/fuell-dispensing/assets/fonts/pt-sans-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fuell-process.github.io/fuell-dispensing/assets/fonts/montserrat-600-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/fuell-process.github.io/fuell-dispensing/assets/css/site.css?v=8c331d11">
+  <link rel="stylesheet" href="/fuell-process.github.io/fuell-dispensing/assets/css/knowledge.css?v=6ceba060">
+  <script>document.documentElement.classList.add('js')</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "DefinedTerm",
+      "@id": "https://fuell-dispensing.com/fr/glossaire/tanklager/#term",
+      "name": "Parc de stockage",
+      "description": "Un parc de stockage est l’ensemble des réservoirs fixes dans lesquels les matières premières et les produits semi-finis sont stockés pour la production.",
+      "url": "https://fuell-dispensing.com/fr/glossaire/tanklager/",
+      "inLanguage": "fr",
+      "inDefinedTermSet": {
+        "@type": "DefinedTermSet",
+        "@id": "https://fuell-dispensing.com/fr/glossaire/#set",
+        "name": "Glossaire de la technique de dosage"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://fuell-dispensing.com/fr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Glossaire",
+          "item": "https://fuell-dispensing.com/fr/glossaire/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Parc de stockage",
+          "item": "https://fuell-dispensing.com/fr/glossaire/tanklager/"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#inhalt">Aller au contenu</a>
+  <div class="topbar"><div class="container topbar__in">
+    <a class="topbar__phone" href="tel:+4961265980"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span>Téléphone: +49 6126 598-0</span></a>
+    <details class="langs"><summary><span class="vh">Langue: </span><img class="flag" src="/fuell-process.github.io/fuell-dispensing/assets/img/flags/fr.svg" width="21" height="14" alt="" aria-hidden="true">Français</summary><ul><li><a href="/fuell-process.github.io/fuell-dispensing/glossar/tanklager/" hreflang="de" lang="de"><img class="flag" src="/fuell-process.github.io/fuell-dispensing/assets/img/flags/de.svg" width="21" height="14" alt="" aria-hidden="true">Deutsch</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/en/glossary/tanklager/" hreflang="en" lang="en"><img class="flag" src="/fuell-process.github.io/fuell-dispensing/assets/img/flags/gb.svg" width="21" height="14" alt="" aria-hidden="true">English</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/glossaire/tanklager/" hreflang="fr" lang="fr" aria-current="true"><img class="flag" src="/fuell-process.github.io/fuell-dispensing/assets/img/flags/fr.svg" width="21" height="14" alt="" aria-hidden="true">Français</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/es/glosario/tanklager/" hreflang="es" lang="es"><img class="flag" src="/fuell-process.github.io/fuell-dispensing/assets/img/flags/es.svg" width="21" height="14" alt="" aria-hidden="true">Español</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/tr/sozluk/tanklager/" hreflang="tr" lang="tr"><img class="flag" src="/fuell-process.github.io/fuell-dispensing/assets/img/flags/tr.svg" width="21" height="14" alt="" aria-hidden="true">Türkçe</a></li></ul></details>
+  </div></div>
+  <header class="header">
+    <div class="container header__in">
+      <a class="brand" href="/fuell-process.github.io/fuell-dispensing/fr/" aria-label="Füll Systembau"><img src="/fuell-process.github.io/fuell-dispensing/assets/img/fuell-dispensing-logo.png" width="256" height="70" alt="FÜLL Dispensing Systems"></a>
+      <nav class="nav" id="nav" aria-label="Navigation"><ul class="menu"><li class="menu__item"><a class="menu__top" href="/fuell-process.github.io/fuell-dispensing/fr/installations-de-dosage/">Produits et prestations</a><button class="menu__toggle" type="button" aria-expanded="false" aria-controls="sub0" aria-label="Sous-menu: Produits et prestations"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="menu__sub" id="sub0"><li><a href="/fuell-process.github.io/fuell-dispensing/fr/installations-de-dosage/">Vue d’ensemble: Produits et prestations</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/installations-de-dosage/">Installations de dosage</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/vannes-de-dosage/">Vannes de dosage</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/schemas/">Installations en schéma</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/logiciel-de-dosage/">Logiciel de dosage</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/agitateurs/">Agitateurs</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/peripheriques/">Périphériques</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/peripheriques/#lagersysteme">Systèmes de stockage</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/ingenierie/">Ingénierie</a></li></ul></li><li class="menu__item"><a class="menu__top" href="/fuell-process.github.io/fuell-dispensing/fr/marches/">Marchés</a><button class="menu__toggle" type="button" aria-expanded="false" aria-controls="sub1" aria-label="Sous-menu: Marchés"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="menu__sub" id="sub1"><li><a href="/fuell-process.github.io/fuell-dispensing/fr/marches/">Vue d’ensemble: Marchés</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/marches/impression-emballage/">Impression et emballage</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/marches/peintures-vernis/">Peintures et vernis</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/marches/chimie/">Chimie</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/marches/cosmetique-pharmacie/">Cosmétique, pharma, alimentaire</a></li></ul></li><li class="menu__item"><a class="menu__top" href="/fuell-process.github.io/fuell-dispensing/fr/entreprise/">Entreprise</a><button class="menu__toggle" type="button" aria-expanded="false" aria-controls="sub2" aria-label="Sous-menu: Entreprise"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="menu__sub" id="sub2"><li><a href="/fuell-process.github.io/fuell-dispensing/fr/entreprise/">Vue d’ensemble: Entreprise</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/entreprise/#gruppe">Sites</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/entreprise/#historie">Historique</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/entreprise/#staerken">Forces et valeurs</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/references/">Références</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/references/#fallstudien">Études de cas</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/entreprise/#zertifizierungen">Certifications</a></li></ul></li><li class="menu__item"><span class="menu__top">Infos</span><button class="menu__toggle" type="button" aria-expanded="false" aria-controls="sub3" aria-label="Sous-menu: Infos"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="menu__sub" id="sub3"><li><a href="/fuell-process.github.io/fuell-dispensing/fr/guide/">Guides (DE)</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/glossaire/">Glossaire (DE)</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/videos/">Vidéos</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/telechargements/">Téléchargements</a></li><li><a href="https://www.youtube.com/channel/UCuraxCQK4nHG1uWadnqBxdQ" target="_blank" rel="noopener">Chaîne YouTube <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li></ul></li><li class="menu__item"><a class="menu__top" href="/fuell-process.github.io/fuell-dispensing/fr/contact/">Contact</a><button class="menu__toggle" type="button" aria-expanded="false" aria-controls="sub4" aria-label="Sous-menu: Contact"><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="menu__sub" id="sub4"><li><a href="/fuell-process.github.io/fuell-dispensing/fr/contact/">Vue d’ensemble: Contact</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/contact/">Formulaire de contact</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/contact/#service">Service</a></li></ul></li></ul></nav>
+      <a class="btn btn--red header__cta" href="/fuell-process.github.io/fuell-dispensing/fr/contact/">Demander une offre</a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="inhalt">
+    <article class="kn-article">
+      <header class="kn-head">
+        <div class="container"><nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/fuell-process.github.io/fuell-dispensing/fr/">Accueil</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/glossaire/">Glossaire</a></li><li aria-current="page">Parc de stockage</li></ol></nav><p class="eyebrow">Glossaire</p><h1>Parc de stockage</h1></div>
+      </header>
+      <div class="container kn-layout kn-layout--term">
+        <div class="kn-prose">
+          <p class="kn-dfn"><strong>Parc de stockage:</strong> Un parc de stockage est l’ensemble des réservoirs fixes dans lesquels les matières premières et les produits semi-finis sont stockés pour la production.</p>
+          <p>Il comprend les cuves et conteneurs, pompes, tuyauteries, agitateurs et la mesure de niveau. Un parc de stockage bien planifié alimente directement l’installation de dosage et rend inutiles les transports manuels.</p><p>Füll planifie, construit et monte des systèmes de stockage, de l’étagère avec conteneurs de stockage jusqu’au grand parc de cuves. Chez Sherwin-Williams, Füll a assuré l’ingénierie d’un grand parc de stockage avec des cuves de 25 à 50 tonnes.</p>
+          <aside class="kn-cta"><strong>Est-ce adapté à votre application ?</strong><span>Envoyez-nous vos composants, contenants et débits – lors de l’avant-projet, nous vous montrons quelle solution convient.</span><a class="btn btn--red" href="/fuell-process.github.io/fuell-dispensing/fr/contact/">Envoyer une demande <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></aside>
+          <p><a class="link" href="/fuell-process.github.io/fuell-dispensing/fr/glossaire/">Tous les termes du glossaire <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
+        </div>
+        <aside class="kn-toc kn-side" aria-label="Contenus associés">
+          <p class="kn-toc__title">Termes associés</p><ul><li><a href="/fuell-process.github.io/fuell-dispensing/fr/glossaire/wechselgebinde/">Contenants interchangeables</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/glossaire/umwaelzung/">Recirculation</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/glossaire/ueberfuellsicherung/">Dispositif anti-débordement</a></li></ul>
+          <p class="kn-toc__title">Dans le guide</p><ul><li><a href="/fuell-process.github.io/fuell-dispensing/fr/guide/dosieranlage-auswaehlen/">Choisir une installation de dosage : le guide pratique</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/guide/tanklager-planen/">Planifier parcs de stockage et systèmes de stockage pour installations de dosage</a></li></ul>
+          <p class="kn-toc__title">Solution adaptée</p><p><a class="link" href="/fuell-process.github.io/fuell-dispensing/fr/peripheriques/#lagersysteme">En savoir plus chez Füll Systembau <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
+        </aside>
+      </div>
+    </article>
+    <section class="section section--dark" aria-labelledby="kn-final">
+      <div class="container s-cta">
+        <div><h2 id="kn-final">Parlez-nous de votre tâche de dosage</h2><p>Envoyez-nous vos produits, le nombre de composants et le débit souhaité. Lors de l’avant-projet, nous vous montrons quelle installation convient à votre production.</p></div>
+        <div class="btns"><a class="btn btn--red" href="/fuell-process.github.io/fuell-dispensing/fr/contact/">Envoyer une demande <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="btn btn--light" href="tel:+4961265980">+49 6126 598-0</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__top">
+      <div class="footer__brand">
+        <img src="/fuell-process.github.io/fuell-dispensing/assets/img/fuell-dispensing-logo.png" width="256" height="70" alt="FÜLL Dispensing Systems" loading="lazy">
+        <address>Füll Systembau GmbH<br>Richard-Klinger-Straße 31<br>65510 Idstein, Allemagne</address>
+        <p><span class="footer__label">Standard</span><a href="tel:+4961265980">+49 6126 598-0</a><br><a href="mailto:info@fuell-dispensing.com">info@fuell-dispensing.com</a></p>
+        <p><span class="footer__label">Service</span><a href="tel:+49612659822">+49 6126 598-22</a><br><a href="mailto:service@fuell-dispensing.com">service@fuell-dispensing.com</a><br><span class="footer__hours">Lun–jeu 7 h–16 h, ven 7 h–13 h (HEC)</span></p>
+        <p><a href="https://fuell-process.com/">Une entreprise du Füll Process Group</a></p>
+      </div>
+      <nav class="footer__map" aria-label="Sitemap"><div class="fcol"><p class="fcol__title"><a href="/fuell-process.github.io/fuell-dispensing/fr/installations-de-dosage/">Produits et prestations</a></p><ul><li><a href="/fuell-process.github.io/fuell-dispensing/fr/installations-de-dosage/">Installations de dosage</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/vannes-de-dosage/">Vannes de dosage</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/schemas/">Installations en schéma</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/logiciel-de-dosage/">Logiciel de dosage</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/agitateurs/">Agitateurs</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/peripheriques/">Périphériques</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/peripheriques/#lagersysteme">Systèmes de stockage</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/ingenierie/">Ingénierie</a></li></ul></div><div class="fcol"><p class="fcol__title"><a href="/fuell-process.github.io/fuell-dispensing/fr/marches/">Marchés</a></p><ul><li><a href="/fuell-process.github.io/fuell-dispensing/fr/marches/impression-emballage/">Impression et emballage</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/marches/peintures-vernis/">Peintures et vernis</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/marches/chimie/">Chimie</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/marches/cosmetique-pharmacie/">Cosmétique, pharma, alimentaire</a></li></ul></div><div class="fcol"><p class="fcol__title"><a href="/fuell-process.github.io/fuell-dispensing/fr/entreprise/">Entreprise</a></p><ul><li><a href="/fuell-process.github.io/fuell-dispensing/fr/entreprise/#gruppe">Sites</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/entreprise/#historie">Historique</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/entreprise/#staerken">Forces et valeurs</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/references/">Références</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/references/#fallstudien">Études de cas</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/entreprise/#zertifizierungen">Certifications</a></li></ul></div><div class="fcol"><p class="fcol__title">Infos</p><ul><li><a href="/fuell-process.github.io/fuell-dispensing/fr/guide/">Guides (DE)</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/glossaire/">Glossaire (DE)</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/videos/">Vidéos</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/telechargements/">Téléchargements</a></li><li><a href="https://www.youtube.com/channel/UCuraxCQK4nHG1uWadnqBxdQ" target="_blank" rel="noopener">Chaîne YouTube <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li></ul></div><div class="fcol"><p class="fcol__title"><a href="/fuell-process.github.io/fuell-dispensing/fr/contact/">Contact</a></p><ul><li><a href="/fuell-process.github.io/fuell-dispensing/fr/contact/">Formulaire de contact</a></li><li><a href="/fuell-process.github.io/fuell-dispensing/fr/contact/#service">Service</a></li></ul></div></nav>
+    </div>
+    <div class="container footer__bottom"><span>© 2026 Füll Systembau GmbH</span>
+      <nav class="footer__links" aria-label="Mentions légales"><a href="https://fuell-dispensing.com/contact/imprint/?lang=en">Mentions légales</a><a href="https://fuell-dispensing.com/contact/data-protection-notice/?lang=en">Protection des données</a><a href="https://fuell-dispensing.com/info/general-business-terms/?lang=en">CGV</a></nav></div>
+  </footer>
+  <script src="/fuell-process.github.io/fuell-dispensing/assets/js/site.js?v=a7cc6650" defer></script>
+</body>
+</html>
