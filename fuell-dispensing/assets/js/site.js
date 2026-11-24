@@ -108,5 +108,170 @@
   if (reason) {
     var el = document.querySelector('.cf-reason[data-grund="' + reason.replace(/[^a-z]/g, '') + '"]');
     if (el) el.hidden = false;
+    (new URLSearchParams(location.search).get('feld') || '').split(',').forEach(function (f) {   // which fields were wrong
+      var li = f && document.querySelector('.cf-fields li[data-feld="' + f.replace(/[^a-z0-9]/g, '') + '"]');
+      if (li) li.hidden = false;
+    });
   }
+})();
+
+// Forms (contact + application): our own checks with clear messages at the wrong field, in the page language. The server checks the
+// same rules (services/form/src/app.ts). With JavaScript the form is sent in the background – if the server still rejects something,
+// the message appears in the form and nothing typed is lost. Without JavaScript the browser checks the HTML rules and the server pages are used.
+(function () {
+  var EMAIL = /^[^\s@<>"']{1,64}@[^\s@<>"']+\.[A-Za-z]{2,24}$/, PHONE = /^[0-9+()\/ .-]*$/, NUMBER = /^\d{1,6}([.,]\d{1,2})?$/, MB = 1024 * 1024;
+  Array.prototype.forEach.call(document.querySelectorAll('form.cf[data-msg]'), function (form) {
+    var M, L = null;
+    try { M = JSON.parse(form.getAttribute('data-msg')); if (form.dataset.limits) L = JSON.parse(form.dataset.limits); } catch (e) { return; }
+    form.noValidate = true;
+    form.dataset.checked = '1';                                    // the GitHub preview leaves the form to this script (see site-tools/build_preview.py)
+    var fmt = function (s, v) { return String(s || M.invalid).replace(/\{(\w+)\}/g, function (_, k) { return v && v[k] != null ? v[k] : ''; }); };
+    var mb = function (n) { return (n / MB).toLocaleString(document.documentElement.lang || 'de', { maximumFractionDigits: 1 }); };
+    var summary = document.createElement('div');
+    summary.className = 'cf__summary'; summary.setAttribute('role', 'alert'); summary.tabIndex = -1; summary.hidden = true;
+    form.insertBefore(summary, form.firstChild);
+
+    // one "unit" per question: its box (.cf__f / fieldset / consent line), the controls and the field name
+    var units = Array.prototype.map.call(form.querySelectorAll('.cf__f, .cf__consent'), function (box) {
+      var ctl = box.querySelectorAll('input, select, textarea');
+      return { box: box, ctl: ctl, name: ctl.length ? ctl[0].name : '' };
+    }).filter(function (u) { return u.name && u.name !== 'website'; });
+    var byName = function (n) { return units.filter(function (u) { return u.name === n; })[0]; };
+    function label(u) {
+      var l = u.box.querySelector('legend, label');
+      return l ? l.textContent.replace(/\s*\*\s*$/, '').replace(/\s+/g, ' ').trim().slice(0, 80) : u.name;
+    }
+
+    // rules – sync; files are checked separately (reading the first bytes is async)
+    function check(u) {
+      var c = u.ctl[0], v = c.type === 'file' ? '' : String(c.value || '').trim();
+      if (u.name === 'name') return v.length < 2 ? M.nameShort : '';
+      if (u.name === 'email') return !v ? M.emailEmpty : !EMAIL.test(v) ? M.emailBad : '';
+      if (u.name === 'phone') return v && !PHONE.test(v) ? M.phoneBad : '';
+      if (u.name === 'consent') return c.checked ? '' : M.consent;
+      if (u.name === 'message' && c.hasAttribute('minlength')) return v.length < 10 ? fmt(M.messageShort, { n: 10 - v.length }) : '';
+      if (c.type === 'checkbox' || c.type === 'radio') {
+        var any = Array.prototype.some.call(u.ctl, function (x) { return x.checked; });
+        return !any && (u.box.dataset.required || c.required) ? M.choose || M.required : '';
+      }
+      if (c.type === 'number') {
+        if (c.validity && c.validity.badInput) return M.number;
+        if (v && !NUMBER.test(v)) return M.number;
+      }
+      if (c.required && !v) return c.tagName === 'SELECT' ? M.choose || M.required : M.required;
+      return '';
+    }
+    function pdfHead(f) {                                          // a real PDF starts with "%PDF" (a renamed Word file does not)
+      if (!f.slice || !window.Response) return Promise.resolve(/\.pdf$/i.test(f.name));
+      return new Response(f.slice(0, 4)).text().then(function (t) { return t === '%PDF'; }).catch(function () { return true; });
+    }
+    function checkFiles() {                                        // → { unitName: message }
+      var out = {}, cv = byName('cv'), more = byName('files');
+      if (!cv || !L) return Promise.resolve(out);
+      var cvFiles = Array.prototype.slice.call(cv.ctl[0].files || []), extra = more ? Array.prototype.slice.call(more.ctl[0].files || []) : [];
+      if (!cvFiles.length) out.cv = M.cv;
+      if (extra.length > L.maxFiles - 1) out.files = fmt(M.anzahl, { max: L.maxFiles - 1, n: extra.length });
+      var all = cvFiles.map(function (f) { return ['cv', f]; }).concat(extra.map(function (f) { return ['files', f]; }));
+      all.forEach(function (x) { if (!out[x[0]] && x[1].size > L.maxFileMb * MB) out[x[0]] = fmt(M.groesse, { file: x[1].name, size: mb(x[1].size), max: L.maxFileMb }); });
+      var total = all.reduce(function (n, x) { return n + x[1].size; }, 0);
+      if (!out.files && !out.cv && total > L.maxTotalMb * MB) out[extra.length ? 'files' : 'cv'] = fmt(M.gesamt, { size: mb(total), max: L.maxTotalMb });
+      return Promise.all(all.map(function (x) { return pdfHead(x[1]); })).then(function (ok) {
+        ok.forEach(function (good, i) { var x = all[i]; if (!good && !out[x[0]]) out[x[0]] = fmt(M.pdf, { file: x[1].name }); });
+        return out;
+      });
+    }
+
+    function mark(u, msg) {
+      var err = u.box.querySelector('.cf__err');
+      if (!msg) {
+        if (err) err.remove();
+        u.box.classList.remove('cf__f--err');
+        Array.prototype.forEach.call(u.ctl, function (c) { c.removeAttribute('aria-invalid'); });
+        return;
+      }
+      if (!err) { err = document.createElement('span'); err.className = 'cf__err'; err.id = 'err-' + u.name; u.box.appendChild(err); }
+      err.textContent = msg;
+      u.box.classList.add('cf__f--err');
+      Array.prototype.forEach.call(u.ctl, function (c) {
+        c.setAttribute('aria-invalid', 'true');
+        var d = (c.getAttribute('aria-describedby') || '').split(' ').filter(Boolean);
+        if (d.indexOf(err.id) < 0) { d.push(err.id); c.setAttribute('aria-describedby', d.join(' ')); }
+      });
+    }
+    function showSummary(list, text) {                              // list: [unit, message] – links jump to the field
+      summary.replaceChildren();
+      if (!list.length && !text) { summary.hidden = true; return; }
+      var p = document.createElement('strong'); p.textContent = text || M.summary; summary.appendChild(p);
+      if (list.length) {
+        var ul = document.createElement('ul');
+        list.forEach(function (x) {
+          var li = document.createElement('li'), a = document.createElement('a');
+          a.href = '#' + (x[0].ctl[0].id || ''); a.textContent = (x[0].name === 'consent' ? '' : label(x[0]) + ': ') + x[1];   // consent: the long sentence is not repeated
+          a.onclick = function (ev) { ev.preventDefault(); x[0].ctl[0].focus(); };
+          li.appendChild(a); ul.appendChild(li);
+        });
+        summary.appendChild(ul);
+      }
+      summary.hidden = false;
+    }
+    function checkAll() {
+      return checkFiles().then(function (files) {
+        var list = [];
+        units.forEach(function (u) {
+          var msg = files.hasOwnProperty(u.name) ? files[u.name] : u.ctl[0].type === 'file' ? '' : check(u);
+          mark(u, msg); if (msg) list.push([u, msg]);
+        });
+        return list;
+      });
+    }
+    function fail(list, text) {
+      showSummary(list, text);
+      if (list.length) { list[0][0].ctl[0].focus(); list[0][0].box.scrollIntoView({ block: 'center' }); }
+      else { summary.focus(); summary.scrollIntoView({ block: 'center' }); }
+    }
+
+    // while correcting: a marked field is checked again at once; a filled field is checked when leaving it. When the field is left by a
+    // mouse click, the message waits until the click is over – otherwise the page would shift under the pointer and the click miss.
+    var pointerDown = false, later = null;
+    document.addEventListener('pointerdown', function () { pointerDown = true; }, true);
+    document.addEventListener('pointerup', function () { pointerDown = false; if (later) { var f = later; later = null; setTimeout(f, 0); } }, true);
+    var recheck = function (ev) {
+      var u = units.filter(function (x) { return x.box.contains(ev.target); })[0];
+      if (!u) return;
+      if (u.ctl[0].type === 'file') { checkFiles().then(function (f) { mark(byName('cv'), f.cv || ''); if (byName('files')) mark(byName('files'), f.files || ''); }); return; }
+      var run = function () { mark(u, check(u)); if (!form.querySelector('.cf__f--err')) showSummary([]); };
+      if (u.box.classList.contains('cf__f--err')) run();
+      else if (ev.type === 'focusout' && String(ev.target.value || '').trim() && ev.target.type !== 'checkbox' && ev.target.type !== 'radio') { if (pointerDown) later = run; else run(); }
+    };
+    form.addEventListener('input', recheck); form.addEventListener('change', recheck); form.addEventListener('focusout', recheck);
+
+    var busy = false, btn = form.querySelector('button[type="submit"]'), btnHtml = btn ? btn.innerHTML : '';
+    form.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      if (busy) return;
+      busy = true;
+      checkAll().then(function (list) {
+        if (list.length) { busy = false; summary.classList.remove('cf__summary--ok'); return fail(list); }
+        showSummary([]);
+        if (form.dataset.preview) { busy = false; summary.classList.add('cf__summary--ok'); return fail([], form.dataset.preview); }   // preview copy: no server
+        summary.classList.remove('cf__summary--ok');
+        if (btn) { btn.disabled = true; btn.textContent = M.sending; }
+        return fetch(form.action, { method: 'POST', body: new FormData(form), credentials: 'same-origin' }).then(function (r) {
+          var url = new URL(r.url || location.href), q = url.searchParams, why = q.get('grund');
+          if (r.ok && r.redirected && !why) { location.href = url.pathname; return; }      // thank-you page
+          var fields = (q.get('feld') || '').split(',').filter(Boolean), bad = [];
+          if (why === 'eingabe') fields.forEach(function (n) { var u = byName(n); if (u) { var m = check(u) || M.invalid; mark(u, m); bad.push([u, m]); } });
+          if (why === 'datei') {
+            var u = byName(fields[0] === 'anzahl' ? 'files' : 'cv') || byName('cv'), k = fields[0] || 'pdf';
+            var m = fmt(M[k + 'Any'] || M[k], { max: k === 'anzahl' ? L.maxFiles - 1 : k === 'gesamt' || k === 'gesamtAny' ? L.maxTotalMb : L.maxFileMb, n: '' });
+            if (u) { mark(u, m); bad.push([u, m]); }
+          }
+          fail(bad, bad.length ? '' : M[why] || M.versand);
+        });
+      }).catch(function () { fail([], M.network); }).then(function () {
+        busy = false;
+        if (btn && document.contains(btn) && !/^\/(.*\/)?(danke|thank-you|merci|gracias|tesekkurler)\/$/.test(location.pathname)) { btn.disabled = false; btn.innerHTML = btnHtml; }
+      });
+    });
+  });
 })();
