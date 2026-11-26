@@ -302,11 +302,23 @@ h1, h2, h3 { font-weight: 700; letter-spacing: -0.03em; }
 /* group slogan in the hero + guiding idea / vision / mission (approved group texts) */
 .v-slogan { margin: 18px 0 0; font-size: clamp(20px, 2.2vw, 28px); font-weight: 700; letter-spacing: -.01em; color: #8fc1ff; }
 .v-slogan + .v-hero__lead { margin-top: 14px; }
-.v-mission { background: #f4f7fb; }
-.v-mission__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 24px; margin-top: 40px; }
-.v-mission__card { padding: 32px; background: #fff; border-radius: 12px; border-top: 4px solid var(--accent); box-shadow: 0 8px 28px rgba(4,63,113,.08); }
-.v-mission__card h3, .v-mission__practice h3 { margin: 0 0 10px; font-size: 14px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); }
-.v-mission__card p { margin: 0; font-size: clamp(18px, 1.6vw, 21px); line-height: 1.5; font-weight: 500; }
-.v-mission__practice { max-width: 860px; margin: 40px auto 0; text-align: center; }
-.v-mission__practice p { margin: 0; font-size: 17px; line-height: 1.7; }
-.v-mission__practice p.v-mission__claim { margin-top: 20px; font-size: clamp(18px, 1.6vw, 21px); font-weight: 700; color: var(--accent); }
+.v-mission { background: linear-gradient(180deg, #fff 0%, var(--surface-2) 100%); }
+.v-mission__intro { max-width: 760px; margin: 0 auto clamp(36px, 5vw, 56px); text-align: center; }
+.v-mission__title { margin-top: 14px; font-size: clamp(36px, 5.2vw, 62px); line-height: 1.04; background: linear-gradient(90deg, var(--navy), var(--accent)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.v-mission__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 24px; }
+.v-mission__card { position: relative; overflow: hidden; padding: clamp(28px, 3.5vw, 44px); background: #fff; border: 1px solid var(--line); border-radius: var(--radius-lg); box-shadow: var(--shadow); transition: transform .3s, box-shadow .3s; }
+.v-mission__card::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 4px; background: linear-gradient(90deg, var(--navy), var(--accent)); }
+.v-mission__card:hover { transform: translateY(-4px); box-shadow: 0 2px 4px rgba(13,27,42,.06), 0 20px 44px rgba(13,27,42,.12); }
+.v-mission__icon { display: grid; place-items: center; width: 52px; height: 52px; margin-bottom: 22px; border-radius: 14px; background: rgba(31,111,235,.1); color: var(--accent); }
+.v-mission__icon svg { width: 26px; height: 26px; }
+.v-mission__card h3 { margin: 0 0 10px; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); }
+.v-mission__card p { margin: 0; font-size: clamp(19px, 1.8vw, 24px); line-height: 1.45; font-weight: 600; letter-spacing: -.01em; color: var(--ink); }
+.v-mission__practice { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: clamp(16px, 4vw, 56px); margin-top: clamp(40px, 5vw, 64px); padding-top: clamp(32px, 4vw, 48px); border-top: 1px solid var(--line-strong); }
+.v-mission__practice h3 { margin: 0; font-size: clamp(22px, 2.2vw, 28px); line-height: 1.2; color: var(--navy); }
+.v-mission__practice p { margin: 0; font-size: 17px; line-height: 1.75; color: var(--ink-2); }
+.v-mission__claim { display: flex; align-items: center; gap: 20px; margin-top: clamp(36px, 4vw, 52px); padding: clamp(24px, 3vw, 36px) clamp(24px, 4vw, 48px); border-radius: var(--radius-lg); background: linear-gradient(120deg, var(--deep) 0%, var(--navy) 100%); color: #fff; box-shadow: 0 20px 50px rgba(4,63,113,.25); }
+.v-mission__claim-mark { flex: none; display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; background: rgba(143,193,255,.16); color: #8fc1ff; }
+.v-mission__claim p { margin: 0; font-size: clamp(19px, 2vw, 26px); line-height: 1.35; font-weight: 700; letter-spacing: -.015em; }
+@media (max-width: 760px) { .v-mission__practice { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .v-mission__claim { flex-direction: column; align-items: flex-start; } }
+@media (prefers-reduced-motion: reduce) { .v-mission__card { transition: none; } .v-mission__card:hover { transform: none; } }
