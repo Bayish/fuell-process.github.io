@@ -1,5 +1,5 @@
 /* Version 5 – "Vention" style: modern product site, navy hero video, blue buttons, white sections, tabs */
-@import url("base.css?v=4d750645");
+@import url("base.css?v=b4b3edee");
 
 :root {
   --section: clamp(56px, 6.5vw, 96px);  /* v5: tighter section spacing */
@@ -255,3 +255,46 @@ h1, h2, h3 { font-weight: 700; letter-spacing: -0.03em; }
 .v-co--feature .v-co__media img { position: absolute; inset: 0; }
 .v-co--feature .v-co__cta { margin-top: 10px; }
 @media (max-width: 900px) { .v-co--feature .v-co__media img { position: static; } }
+
+/* Group figures: three cards */
+.v-facts__grid:has(> .fact:nth-child(3):last-child) { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 560px) {
+  .v-facts__grid:has(> .fact:nth-child(3):last-child) { gap: 8px; }
+  .v-facts__grid:has(> .fact:nth-child(3):last-child) .fact { padding: 16px 12px; }
+  .v-facts__grid:has(> .fact:nth-child(3):last-child) .fact__label { font-size: 12.5px; hyphens: auto; }
+}
+/* Values: icon instead of number */
+.v-value__icon { position: relative; display: inline-grid; place-items: center; width: 68px; height: 68px; margin-bottom: 22px; border-radius: 18px;
+  background: linear-gradient(140deg, rgba(31,111,235,.55) 0%, rgba(31,111,235,.14) 100%);
+  border: 1px solid rgba(143,193,255,.35);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.18), 0 10px 26px rgba(31,111,235,.25);
+  color: #e3efff; transition: transform .35s var(--ease), box-shadow .35s var(--ease), background .35s; }
+.v-value__icon svg { width: 40px; height: 40px; stroke-width: 1.45; }
+.v-value__icon::after { content: ""; position: absolute; inset: -8px; border-radius: 24px; background: radial-gradient(closest-side, rgba(31,111,235,.35), transparent); z-index: -1; opacity: .7; }
+.v-value:hover .v-value__icon { transform: translateY(-3px) scale(1.04); background: linear-gradient(140deg, #3b86ff 0%, #1f6feb 100%); box-shadow: inset 0 1px 0 rgba(255,255,255,.3), 0 14px 32px rgba(31,111,235,.45); color: #fff; }
+@media (max-width: 560px) { .v-value__icon { width: 60px; height: 60px; border-radius: 16px; } .v-value__icon svg { width: 36px; height: 36px; } }
+
+/* Company principles (presentation "Values and Principles", slides 3–4) */
+.v-principles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: clamp(28px, 4vw, 64px); margin: 0; padding: 0; list-style: none; counter-reset: none; }
+.v-principle { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 20px; align-items: start; padding: 26px 0; border-top: 1px solid var(--line); }
+.v-principle:nth-last-child(-n+2) { border-bottom: 1px solid var(--line); }
+.v-principle__num { display: inline-grid; place-items: center; width: 48px; height: 48px; border-radius: 14px; font: 700 15px/1 var(--font); letter-spacing: -0.01em; color: var(--accent); background: rgba(31,111,235,.08); border: 1px solid rgba(31,111,235,.2); transition: background-color .3s, color .3s; }
+.v-principle:hover .v-principle__num { background: var(--accent); color: #fff; }
+.v-principle h3 { margin: 4px 0 8px; font-size: 20px; letter-spacing: -0.015em; }
+.v-principle p { margin: 0; color: var(--ink-2); font-size: 15.5px; line-height: 1.6; }
+@media (max-width: 800px) {
+  .v-principles { grid-template-columns: 1fr; }
+  .v-principle:nth-last-child(2) { border-bottom: 0; }
+  .v-principle { grid-template-columns: 48px minmax(0, 1fr); gap: 14px; padding: 20px 0; }
+  .v-principle__num { width: 42px; height: 42px; font-size: 14px; }
+}
+.v-principles-sec .h2 { hyphens: manual; -webkit-hyphens: manual; }
+
+/* Principles: icon instead of number */
+.v-principle__icon { display: inline-grid; place-items: center; width: 60px; height: 60px; border-radius: 16px;
+  background: linear-gradient(140deg, rgba(31,111,235,.16) 0%, rgba(31,111,235,.05) 100%);
+  border: 1px solid rgba(31,111,235,.22); box-shadow: 0 8px 20px rgba(31,111,235,.12);
+  color: var(--accent); transition: transform .35s var(--ease), background .35s, color .35s, box-shadow .35s; }
+.v-principle__icon svg { width: 40px; height: 40px; stroke-width: 1.4; }
+.v-principle:hover .v-principle__icon { transform: translateY(-2px); background: linear-gradient(140deg, #3b86ff 0%, #1f6feb 100%); color: #fff; box-shadow: 0 12px 26px rgba(31,111,235,.35); }
+@media (max-width: 800px) { .v-principle { grid-template-columns: 54px minmax(0, 1fr); gap: 16px; } .v-principle__icon { width: 52px; height: 52px; border-radius: 14px; } .v-principle__icon svg { width: 36px; height: 36px; } }

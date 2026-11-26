@@ -186,7 +186,12 @@
   document.querySelectorAll('[data-highlight]').forEach(function (el) {
     var words = el.textContent.trim().split(/\s+/);
     el.setAttribute('aria-label', el.textContent.trim());
-    el.innerHTML = words.map(function (w) { return '<span aria-hidden="true">' + w + '</span>'; }).join(' ');
+    el.textContent = '';                                       // rebuild as DOM nodes, never as HTML
+    words.forEach(function (w, i) {
+      var sp = document.createElement('span'); sp.setAttribute('aria-hidden', 'true'); sp.textContent = w;
+      if (i) el.appendChild(document.createTextNode(' '));
+      el.appendChild(sp);
+    });
     var spans = el.querySelectorAll('span');
     if (reduceMotion) { spans.forEach(function (s) { s.classList.add('on'); }); return; }
     var queued = false;
