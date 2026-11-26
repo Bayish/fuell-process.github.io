@@ -298,3 +298,14 @@ h1, h2, h3 { font-weight: 700; letter-spacing: -0.03em; }
 .v-principle__icon svg { width: 40px; height: 40px; stroke-width: 1.4; }
 .v-principle:hover .v-principle__icon { transform: translateY(-2px); background: linear-gradient(140deg, #3b86ff 0%, #1f6feb 100%); color: #fff; box-shadow: 0 12px 26px rgba(31,111,235,.35); }
 @media (max-width: 800px) { .v-principle { grid-template-columns: 54px minmax(0, 1fr); gap: 16px; } .v-principle__icon { width: 52px; height: 52px; border-radius: 14px; } .v-principle__icon svg { width: 36px; height: 36px; } }
+
+/* group slogan in the hero + guiding idea / vision / mission (approved group texts) */
+.v-slogan { margin: 18px 0 0; font-size: clamp(20px, 2.2vw, 28px); font-weight: 700; letter-spacing: -.01em; color: #8fc1ff; }
+.v-slogan + .v-hero__lead { margin-top: 14px; }
+.v-mission { background: #f4f7fb; }
+.v-mission__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 24px; margin-top: 40px; }
+.v-mission__card { padding: 32px; background: #fff; border-radius: 12px; border-top: 4px solid var(--accent); box-shadow: 0 8px 28px rgba(4,63,113,.08); }
+.v-mission__card h3, .v-mission__practice h3 { margin: 0 0 10px; font-size: 14px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); }
+.v-mission__card p { margin: 0; font-size: clamp(18px, 1.6vw, 21px); line-height: 1.5; font-weight: 500; }
+.v-mission__practice { max-width: 860px; margin: 40px auto 0; text-align: center; }
+.v-mission__practice p { margin: 0; font-size: 17px; line-height: 1.7; }
